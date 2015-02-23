@@ -8,12 +8,12 @@ Data Structures and Algorithms lab repository
 ```
 Lab 1: Introduction to GIT and the work-flow of the lab + starting with Singly Linked Lists
 ```
-* Assignment: TBA
+* Assignment 1: [Basic Operations on a Singly Linked List](https://github.com/AC-2015-Sem2/DSA-lab/tree/master/Assignments/Assignment%201) 
 
 ```
 Lab 2: Circular Linked Lists and Doubly Linked Lists (+ Introduction to complexity)
 ```
-* Assignment: TBA
+* Assignment 2: TBA
 
 ```
 Lab 3: Test 1 - Lists
@@ -23,12 +23,12 @@ Lab 3: Test 1 - Lists
 ```
 Lab 4: Trees - more precisely, Binary Trees, Balanced Binary Trees
 ```
-* Assignment: TBA
+* Assignment 3: TBA
 
 ```
 Lab 5: Binary Search Trees
 ```
-* Assignment: TBA
+* Assignment 4: TBA
 
 ```
 Lab 6: Test 2 - Trees
@@ -38,17 +38,17 @@ Lab 6: Test 2 - Trees
 ```
 Lab 7: Hash Tables - introduction, collision detection, usages
 ```
-* Assignment: TBA
+* Assignment 5: TBA
 
 ```
 Lab 8: Graphs - representation and traversals
 ```
-* Assignment: TBA
+* Assignment 6: TBA
 
 ```
 Lab 9: Graphs - Graph Processing Algorithms (Dijkstra, Prim, Kursal, Floyd etc.)
 ```
-* Assignment: TBA
+* Assignment 7: TBA
 
 ```
 Lab 10: Test 3 - Graphs
@@ -58,7 +58,7 @@ Lab 10: Test 3 - Graphs
 ```
 Lab 11: Sorting Algorithms - Bubble, Insertion, Selection, Merge, Quick, Radix.
 ```
-* Assignment: TBA
+* Assignment 8: TBA
 
 ```
 Lab 12: Test 4 - Sorting Algorithms
