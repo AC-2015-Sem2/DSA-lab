@@ -82,6 +82,13 @@ Lab 13: Exam problem practice
 
 ### Administrative
 
-Max number of absences = 1 (NOT applicable for test days)
-Assignments will be given dynamic feedback through GIT and will be graded only after one says he/she is thoroughly done with it.
-Only assignments which are pushed to GIT will be graded and taken into consideration.
+* Max number of absences = 1 (NOT applicable for test days)
+* Assignments will be given dynamic feedback through GIT and will be graded only after one says he/she is thoroughly done with it.
+* Only assignments which are pushed to GIT will be graded and taken into consideration.
+
+
+### GIT Tutorials
+
+* 1 - [Installing GIT](https://www.youtube.com/watch?v=4ZNYfbXnpXQ&list=PLxDrAnoepRN2OXJ4boGqPF0LIADjWGqe7&index=1)
+* 2 - [Fork and Clone](https://www.youtube.com/watch?v=mJQAfbARvMI&index=2&list=PLxDrAnoepRN2OXJ4boGqPF0LIADjWGqe7)
+* 3 - [Commit Push and Pull Request](https://www.youtube.com/watch?v=nPq0yClIDhM&index=3&list=PLxDrAnoepRN2OXJ4boGqPF0LIADjWGqe7)
