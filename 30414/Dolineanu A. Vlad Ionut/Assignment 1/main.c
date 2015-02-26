@@ -108,6 +108,7 @@ void deleteFirst()
 {
     if(head == tail)
     {
+        free(head);
         head = NULL;
         tail = NULL;
     }
@@ -124,6 +125,7 @@ void deleteLast()
 {
     if(head == tail)
     {
+        free(tail);
         head = NULL;
         tail = NULL;
     }
@@ -173,11 +175,7 @@ void deleteX(int x)
         deleteFirst();
     if(tail->data == x)
         deleteLast();
-    if(head == tail && head->data == x)
-    {
-        head = NULL;
-        tail = NULL;
-    }
+
     newNode = head;
 
     while(newNode->next != NULL)
