@@ -1,0 +1,13 @@
+# depslib dependency file v1.0
+1424988345 source:e:\dropbox\utcn\dsa\lab projects\assignment 1\main.c
+	<stdio.h>
+	<stdlib.h>
+	"SLL.h"
+
+1424944391 e:\dropbox\utcn\dsa\lab projects\assignment 1\sll.h
+
+1424986140 source:e:\dropbox\utcn\dsa\lab projects\assignment 1\sll.c
+	"SLL.h"
+	<stdio.h>
+	<stdlib.h>
+
