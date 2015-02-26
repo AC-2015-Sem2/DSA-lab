@@ -8,33 +8,39 @@ typedef struct s_node{
 	struct s_node *next;
 }t_node;
 
-t_node *head = NULL, *tail = NULL;
+FILE *g;
 
-void	PRINT_ALL()
+t_node *head = NULL, *tail = NULL;
+void	print_all()
 {
 	t_node *tmp = head;
 	while (tmp != NULL)
 	{
-		printf("%d ", tmp->data);
+		fprintf(g, "%d ", tmp->data);
 		tmp = tmp->next;
 	}
-	printf("\n");
+	fprintf(g, "\n");
 }
 
-void	PRINT_F(int x)
+void	print_first(int x)
 {
 	int i = 1;
 	t_node *tmp;
 	tmp = (t_node*)malloc(sizeof(t_node));
-	tmp = head;
-	//printf("Print the first %d elements from list if exists:\n", x);
-	while (i <= x && tmp)
+	if (tmp == NULL)
+		fprintf(g, "\nNode creation failed!\n");
+	else
 	{
-		printf("%d ", tmp->data);
-		tmp = tmp->next;
-		i++;
+		tmp = head;
+		//fprintf(g, "Print the first %d elements from list if exists:\n", x);
+		while (i <= x && tmp != NULL)
+		{
+			fprintf(g, "%d ", tmp->data);
+			tmp = tmp->next;
+			i++;
+		}
+		fprintf(g, "\n");
 	}
-	printf("\n");
 }
 
 int	ft_list_length()
@@ -44,7 +50,7 @@ int	ft_list_length()
 	if (head == NULL)
 		return (0);
 	tmp = head;
-	while (tmp)
+	while (tmp != NULL)
 	{
 		i++;
 		tmp=tmp->next;
@@ -52,42 +58,42 @@ int	ft_list_length()
 	return (i);
 }
 
-void	PRINT_L(int x)
+void	print_last(int x)
 {
 	int	n, i;
 	t_node	*tmp;
 
-	//printf("Print the last %d elements in list if exists:\n", x);
+	//fprintf(g, "Print the last %d elements in list if exists:\n", x);
 	if (head == NULL)
-		printf("Empty list!\n");
+		fprintf(g, "Empty list!\n");
 	else
 	{
 		tmp = head;
 		n = ft_list_length();
 		i = 1;
-		while (tmp && i <= n - x)
+		while (tmp != NULL && i <= n - x)
 		{
 			tmp = tmp->next;
 			i++;
 		}
-		while (tmp)
-			{
-				printf("%d ", tmp->data);
-				tmp = tmp->next;
-			}
-		printf("\n");
+		while (tmp != NULL)
+		{
+			fprintf(g, "%d ", tmp->data);
+			tmp = tmp->next;
+		}
+		fprintf(g, "\n");
 	}
-		
+
 }
 
-void    AF(int data)
+void    add_first(int data)
 {
 	if(head == NULL)
 	{
 		t_node *tmp;
 		tmp = (t_node*)malloc(sizeof(t_node));
 		if (tmp == NULL)
-			printf("\nNode creation failed!\n");
+			fprintf(g, "\nNode creation failed!\n");
 		tmp->data = data;
 		tmp->next = NULL;
 		head = tmp;
@@ -98,7 +104,7 @@ void    AF(int data)
 		t_node *tmp;
 		tmp = (t_node*)malloc(sizeof(t_node));
 		if (tmp == NULL)
-			printf("\nNode creation failed!\n");
+			fprintf(g, "\nNode creation failed!\n");
 		else
 		{
 			tmp->data = data;
@@ -108,89 +114,89 @@ void    AF(int data)
 	}
 }
 
-void    AL(int data)
+void    add_last(int data)
 {
 	if(head == NULL)
-        {
-                t_node *tmp;
-                tmp = (t_node*)malloc(sizeof(t_node));
-                if (tmp == NULL)
-                                printf("\nNode creation failed!\n");
+	{
+		t_node *tmp;
+		tmp = (t_node*)malloc(sizeof(t_node));
+		if (tmp == NULL)
+			fprintf(g, "\nNode creation failed!\n");
 		else
 		{
- 	               tmp->data = data;
-        	        tmp->next = NULL;
+			tmp->data = data;
+			tmp->next = NULL;
 			head = tmp;
-                	tail = tmp;
+			tail = tmp;
 		}
-        }
-        else
-        {
-                t_node *ptr;
-                ptr = (t_node*)malloc(sizeof(t_node));
-		
-                if (ptr == NULL)
-                        printf("\nNode creation failed!\n");
+	}
+	else
+	{
+		t_node *ptr;
+		ptr = (t_node*)malloc(sizeof(t_node));
+
+		if (ptr == NULL)
+			fprintf(g, "\nNode creation failed!\n");
 		else
 		{
 			ptr->data = data;
 			ptr->next = NULL;	
-               		tail->next = ptr;
-            		tail = ptr;
+			tail->next = ptr;
+			tail = ptr;
 		}
-        }
+	}
 }
 
-void	DF()
+void	delete_first()
 {
 	if (head == NULL)
-		//printf("Nothing to delete!\n");
+		//fprintf(g, "Nothing to delete!\n");
 		return;
 	else if (head == tail)
-		{
-			head = NULL;
-			tail = NULL;
-		}
+	{
+		head = NULL;
+		tail = NULL;
+	}
 	else
-		{
-			t_node *tmp;
-			tmp = (t_node*)malloc(sizeof(tmp));
-			tmp = head;
-			head = head->next;
-			free(tmp);
-			tmp = NULL;
-		}
+	{
+		t_node *tmp;
+		tmp = (t_node*)malloc(sizeof(tmp));
+		tmp = head;
+		head = head->next;
+		free(tmp);
+		tmp = NULL;
+	}
 }
 
-void	DL()
+void	delete_last()
 {
 	if (head == NULL)
-                //printf("Nothing to delete!\n");
+		//fprintf(g, "Nothing to delete!\n");
 		return ;
-        else if (head == tail)
-                {
-                        head = NULL;
-                        tail = NULL;
-                }   
-        else
-                {
-                        t_node *tmp;
-                        tmp = (t_node*)malloc(sizeof(tmp));
-                        tmp = head;
-			while (tmp->next != tail)
-				tmp = tmp->next;
-			tmp->next = NULL;
-			free(tail);
-			tail = tmp;
-                }	
+	else if (head == tail)
+	{
+		head = NULL;
+		tail = NULL;
+	}   
+	else
+	{
+		t_node *tmp;
+		tmp = (t_node*)malloc(sizeof(tmp));
+		tmp = head;
+		while (tmp->next != tail)
+			tmp = tmp->next;
+		tmp->next = NULL;
+		free(tail);
+		tail = tmp;
+	}	
 
 }
 
-void	DOOM_THE_LIST()
+void	doom_list()
 {
 	t_node *tmp;
 	tmp = (t_node*)malloc(sizeof(t_node));
-	while (head->next)
+	while (head->next != NULL)
 	{
 		tmp = head;
 		if (head->next)
@@ -200,58 +206,81 @@ void	DOOM_THE_LIST()
 	}
 	free(head);
 	head = NULL;
-	//printf("The list has been DOOMED!!!\n");
+	//fprintf(g, "The list has been DOOMED!!!\n");
 }
 
-void	DE(int x)
+void	delete_at(int x)
 {
 	t_node *tmp;
 	tmp = (t_node*)malloc(sizeof(t_node));
 	if (head == NULL)
-		printf("No list!\n");
+		fprintf(g, "No list!\n");
 	else	if (head->data == x)
-		DF();
+		delete_first();
 	else 
 	{
 		tmp = head;
 		while (tmp->next != NULL && tmp->next->next != NULL && tmp->next->data != x)
 			tmp = tmp->next;
-		if (tmp->next && tmp->next->data == x)
-			{
-				t_node *ptr;
-				ptr = (t_node*)malloc(sizeof(t_node));
-				ptr = tmp->next;
-				tmp->next = ptr->next;
-				free(ptr);
-				ptr = NULL;
-			}
+		if (tmp->next != NULL && tmp->next->data == x)
+		{
+			t_node *ptr;
+			ptr = (t_node*)malloc(sizeof(t_node));
+			ptr = tmp->next;
+			tmp->next = ptr->next;
+			free(ptr);
+			ptr = NULL;
+		}
 		//else
-		//	printf("No element %d in the list!\n", x);
+		//	fprintf(g, "No element %d in the list!\n", x);
 	}
 }
 
 int main(int argc, char **argv)
 {
-	AF(5);
-	AF(6);
-	AF(21);
-	AL(12);
-	DF();
-	DL();
-	DE(3);
-	DE(6);
-	AF(2);
-	AL(200);
-	PRINT_ALL();
-	AF(1);
-	PRINT_F(2);
-	PRINT_L(3);
-	DOOM_THE_LIST();
-	DL();
-	AF(42);
-	AL(24);
-	AF(9);
-	PRINT_ALL();
-	PRINT_L(2);
+	FILE *f = fopen("input.dat", "r");
+	g = fopen ("output.dat", "w");
+	char *op;
+	int value;
+
+	op = (char*)malloc(sizeof(char) * 10);
+	while(fscanf(f, "%s", op) > 0)
+	{
+		if(strcmp(op, "AF") == 0)
+		{
+			fscanf(f, "%d", &value);
+			add_first(value);
+		}
+		else if(strcmp(op, "AL") == 0)
+		{
+			fscanf(f, "%d", &value);
+			add_last(value);
+		}
+		else if(strcmp(op, "DF") == 0)
+			delete_first();
+		else if(strcmp(op, "DL") == 0)
+			delete_last();
+		else if(strcmp(op, "DOOM_THE_LIST") == 0)
+			doom_list();
+		else if(strcmp(op, "DE")==0)
+		{
+			fscanf(f, "%d", &value);
+			delete_at(value);
+		}
+		else if(strcmp(op, "PRINT_ALL")==0)
+			print_all();
+		else if(strcmp(op, "PRINT_F")==0)
+		{
+			fscanf(f, "%d", &value);
+			print_first(value);
+		}
+		else if(strcmp(op, "PRINT_L")==0)
+		{
+			fscanf(f, "%d", &value);
+			print_last(value);
+		}
+	}
+	fclose(f);
+	fclose(g);
 	return (0);
 }
