@@ -1,15 +1,14 @@
 #include "functions.h"
 
-void printAll(FILE *out)
+void printAll(FILE *fileOutput)
 {
-    node *aux;
-    aux = head; //we store the head in the variable aux
+    node *aux = head; //we store the head in the variable aux
     while(aux!=NULL)
     {
-        fprintf(out,"%d ", aux->value);
+        fprintf(fileOutput,"%d ", aux->value);
         aux = aux->next;
     }
-    printf("\n");
+    fprintf(fileOutput," \n");
 }
 
 void addFirst(int value)
@@ -53,7 +52,7 @@ void addLast(int value)
 
 void deleteFirst()
 {
-    if(tail==NULL) //there is no node, the list is empty
+    if(head==NULL) //there is no node, the list is empty
     {
         printf("The list is already empty!");
     }
@@ -61,8 +60,9 @@ void deleteFirst()
     {
         if  (head==tail) //in this case we only have one element, we make it NULL
         {
-            head = NULL;
-            tail = NULL;
+         head= NULL;
+         tail= NULL;
+         free(head);
         }
         else //>2 elements
         {
@@ -76,7 +76,7 @@ void deleteFirst()
 
 void deleteLast()
 {
-    if(tail==NULL)
+    if(head==NULL)
     {
         printf("The list is already empty!");
     }
@@ -84,14 +84,11 @@ void deleteLast()
     {
         if  (head==tail)
         {
-            head = NULL;
-            tail = NULL;
+           deleteFirst();
         }
         else //>2 elements
         {
-            node *aux; //we create an auxiliary variable of type node
-            tail->next=NULL;
-            aux=tail;//we store the tail in aux, so we can delete it after we make some operations with tail (we "shift left" it)
+            node *aux = tail; //we create an auxiliary variable of type node; we store the tail in aux, so we can delete it after we make some operations with tail (we "shift left" it)
             node *previousNode;
             previousNode = head;//with the previousNode variable we go from head to the previous of the tail element (the left element before tail)
             while(previousNode->next!=tail)
@@ -109,7 +106,7 @@ void deleteAll()
 {
     if(head==NULL)
     {
-        printf("The list is already empty!");
+        printf("The list is already empty");
     }
     else
     {
@@ -137,6 +134,7 @@ int deleteX(int value) //it is an "int" function which returns 1 (true) if such 
     if(head==NULL)
     {
         printf("The list is empty!");
+         return 0;
     }
     node *aux, *previous;
     aux=head;
@@ -170,20 +168,19 @@ int deleteX(int value) //it is an "int" function which returns 1 (true) if such 
 void printFirstX(int value, FILE *fileOutput)
 {
 
-    node *aux;
-    aux = head;
+    node *aux = head;
     int i;
     for(i=0; (i<value)&&(aux!=NULL); i++) //we go traverse the list ("chain") from the head till the given value x, and print them out!
     {
         fprintf(fileOutput,"%d ", aux-> value);
         aux=aux->next;
     }
+    fprintf(fileOutput," \n");
 }
 
 void printLastX(int value,  FILE *fileOutput)
 {
-    node *aux;
-    aux=head;
+    node *aux=head;
     int counter = 0; // in the variable counter we sill store the length of the 'chain' (the number of elements/nodes in the list)
     while(aux!=NULL)
     {
@@ -202,4 +199,5 @@ void printLastX(int value,  FILE *fileOutput)
         fprintf(fileOutput,"%d ", aux-> value); //print only the last x the in file "output.dat"
         aux= aux->next;
     }
+    fprintf(fileOutput," \n");
 }

@@ -67,7 +67,7 @@ int main()
             printLastX(value, fileOutput);
         }
     }
-
+    fclose(fileOutput);
     return 0;
 }
 
