@@ -9,6 +9,7 @@ Data Structures and Algorithms lab repository
 Lab 1: Introduction to GIT and the work-flow of the lab + starting with Singly Linked Lists
 ```
 * Assignment 1: [Basic Operations on a Singly Linked List](https://github.com/AC-2015-Sem2/DSA-lab/tree/master/Assignments/Assignment%201) 
+* Assignment 1 - extra credit: [Wanted: Jim Kong-nu](https://github.com/AC-2015-Sem2/DSA-lab/tree/master/Assignments/Assignment%201%20-%20extra%20credit) 
 
 ```
 Lab 2: Circular Linked Lists and Doubly Linked Lists (+ Introduction to complexity)
