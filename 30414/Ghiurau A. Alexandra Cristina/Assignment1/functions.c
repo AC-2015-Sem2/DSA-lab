@@ -60,9 +60,8 @@ void deleteFirst()
     {
         if  (head==tail) //in this case we only have one element, we make it NULL
         {
-         head= NULL;
-         tail= NULL;
-         free(head);
+            free(head);
+            head= NULL;
         }
         else //>2 elements
         {
@@ -84,7 +83,7 @@ void deleteLast()
     {
         if  (head==tail)
         {
-           deleteFirst();
+            deleteFirst();
         }
         else //>2 elements
         {
@@ -134,7 +133,7 @@ int deleteX(int value) //it is an "int" function which returns 1 (true) if such 
     if(head==NULL)
     {
         printf("The list is empty!");
-         return 0;
+        return 0;
     }
     node *aux, *previous;
     aux=head;
