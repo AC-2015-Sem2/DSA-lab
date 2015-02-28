@@ -3,8 +3,10 @@
  based on the read string
 */
 
+#include<string.h>
 #include "SLL_definition.h"
 #include "SLL_io.h"
+#include "SLL_operations.h"
 
 enum
 //all of the commands that can be in the file

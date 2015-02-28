@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1425124430 source:c:\users\alexh\desktop\fork\dsa-lab\30414\huruiala v. vasile alexandru\assignments\codeblocks\assignment1\main.c
+1425138350 source:c:\users\alexh\desktop\fork\dsa-lab\30414\huruiala v. vasile alexandru\assignments\codeblocks\assignment1\main.c
 	<stdio.h>
 	<stdlib.h>
 	"SLL.h"
@@ -14,20 +14,22 @@
 
 1424977929 c:\users\alexh\desktop\fork\dsa-lab\30414\huruiala v. vasile alexandru\assignments\codeblocks\assignment1\sll_operations.h
 
-1425124114 source:c:\users\alexh\desktop\fork\dsa-lab\30414\huruiala v. vasile alexandru\assignments\codeblocks\assignment1\sll_operations.c
+1425125158 source:c:\users\alexh\desktop\fork\dsa-lab\30414\huruiala v. vasile alexandru\assignments\codeblocks\assignment1\sll_operations.c
 	<stdio.h>
 	<stdlib.h>
 	"SLL_definition.h"
 
-1425124148 c:\users\alexh\desktop\fork\dsa-lab\30414\huruiala v. vasile alexandru\assignments\codeblocks\assignment1\sll_io.h
+1425138371 c:\users\alexh\desktop\fork\dsa-lab\30414\huruiala v. vasile alexandru\assignments\codeblocks\assignment1\sll_io.h
 	<stdio.h>
 
-1425124155 source:c:\users\alexh\desktop\fork\dsa-lab\30414\huruiala v. vasile alexandru\assignments\codeblocks\assignment1\sll_io.c
+1425138350 source:c:\users\alexh\desktop\fork\dsa-lab\30414\huruiala v. vasile alexandru\assignments\codeblocks\assignment1\sll_io.c
 	<stdio.h>
 
 1424978600 c:\users\alexh\desktop\fork\dsa-lab\30414\huruiala v. vasile alexandru\assignments\codeblocks\assignment1\sll_interpret.h
 
-1425124430 source:c:\users\alexh\desktop\fork\dsa-lab\30414\huruiala v. vasile alexandru\assignments\codeblocks\assignment1\sll_interpret.c
+1425138485 source:c:\users\alexh\desktop\fork\dsa-lab\30414\huruiala v. vasile alexandru\assignments\codeblocks\assignment1\sll_interpret.c
+	<string.h>
 	"SLL_definition.h"
 	"SLL_io.h"
+	"SLL_operations.h"
 

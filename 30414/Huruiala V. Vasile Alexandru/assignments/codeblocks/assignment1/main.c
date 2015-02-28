@@ -1,7 +1,7 @@
 /****************/
 /**ASSIGNMENT 1**/
 /****************/
-/*see SLL_io.h for file paths*/
+/*see SLL_io.c for file paths*/
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -10,8 +10,13 @@
 int main()
 {
     //IO init
-    FILE* In = fopen(INPUT_FILE, "r");
-    FILE* Out = fopen(OUTPUT_FILE, "w");
+    FILE* In = NULL;
+    FILE* Out = NULL;
+    if(openFiles(&In, &Out) != 0)
+    {
+        printf("Error. File could not be open.\n");
+        exit(-1);
+    }
 
     //List pointers init
     Node* Head = NULL;
@@ -22,8 +27,11 @@ int main()
     int param;
     while(readLine(In, cmd, &param) != -1)
     {
-        Interpret(cmd, param, &Head, &Tail, Out);
         //the operation selector, the main component
+        if(Interpret(cmd, param, &Head, &Tail, Out) != 0)
+        {
+            printf("Invalid command detected: %s not recognized.\n", cmd);
+        }
     }
 
     return 0;

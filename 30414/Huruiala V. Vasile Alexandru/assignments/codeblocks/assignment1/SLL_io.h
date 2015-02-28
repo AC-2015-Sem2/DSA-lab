@@ -1,6 +1,5 @@
 #include<stdio.h>
-#define OUTPUT_FILE "output.dat"
-#define INPUT_FILE "input.dat"
 #define MAX_LENGTH 14
 
+int openFiles(FILE** I, FILE** O);
 int readLine(FILE* In, char* command, int* param);
