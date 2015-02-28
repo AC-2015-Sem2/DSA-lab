@@ -25,7 +25,6 @@ void AddFirst(Node** head, Node** tail, int val)
         NewElement->next = *head;
         *head = NewElement;
     }
-    return;
 }
 
 /*AL
@@ -47,7 +46,6 @@ void AddLast(Node** head, Node** tail, int val)
         (*tail)->next = NewElement;
         *tail = NewElement;
     }
-    return;
 }
 
 /*DF
@@ -72,7 +70,6 @@ void DeleteFirst(Node** head, Node** tail)
             free(del);
         }
     }
-    return;
 }
 
 /*DL
@@ -110,7 +107,6 @@ void DeleteLast(Node** head, Node** tail)
             free(ndel);
         }
     }
-    return;
 }
 
 /*DOOM_THE_LIST
@@ -126,7 +122,6 @@ void Anihilate(Node** head, Node** tail)
         free(del);
     }
     *tail = NULL;
-    return;
 }
 
 /*DE
@@ -175,7 +170,6 @@ void Delete(Node** head, Node** tail, int val)
         }
         free(current);
     }
-    return;
 }
 
 /*PRINT_ALL
@@ -195,7 +189,6 @@ void PrintAll(FILE* Out, Node* head)
         current = current->next;
     }
     fprintf(Out, "\n");
-    return;
 }
 
 /*PRINT_F
@@ -218,7 +211,6 @@ void PrintF(FILE* Out, Node* head, int count)
         listPrinted++;
     }
     fprintf(Out, "\n");
-    return;
 }
 
 /*PRINT_L
@@ -260,5 +252,4 @@ void PrintL(FILE* Out, Node* head, int count)
         current = current->next;
     }
     fprintf(Out, "\n");
-    return;
 }
