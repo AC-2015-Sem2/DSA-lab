@@ -18,16 +18,12 @@ int main()
     Node* Tail = NULL;
 
     //Input loop
-    char cmd[14];
+    char cmd[MAX_LENGTH];
     int param;
     while(readLine(In, cmd, &param) != -1)
     {
-        //printf("%s %d\n", cmd, param);//DEBUG
-        //scanf("%c", &c);//DEBUG
-        Interpret(cmd, param, &Head, &Tail, Out);//the operation selector, the main component
-        cmd[0] = 0;//reset the string to signal the exit
-                   //if the input file reached eof
-        //PrintAll(stdout, Head);//DEBUG
+        Interpret(cmd, param, &Head, &Tail, Out);
+        //the operation selector, the main component
     }
 
     return 0;

@@ -1,20 +1,20 @@
 /*This contains all the operations(functions) on the list
 The double pointer stuff is the only way I managed to
-get away without using any globals
+ get away without using any globals
 */
 #include<stdio.h>
 #include<stdlib.h>
 #include "SLL_definition.h"
 
 /*AF
-allocates a new element and links it to head
+Allocates a new element and links it to head
 then moves the head to the new element
 */
 void AddFirst(Node** head, Node** tail, int val)
 {
     Node* NewElement = (Node*)malloc(sizeof(Node));
     NewElement->value = val;
-    if(*head == NULL)//if the list is empty
+    if(*head == NULL)//if the list is empty create the list
     {
         NewElement->next = NULL;
         *head = NewElement;
@@ -29,7 +29,7 @@ void AddFirst(Node** head, Node** tail, int val)
 }
 
 /*AL
-allocates a new element and links the tail to it
+Allocates a new element and links the tail to it
 then moves the tail to the new element
 */
 void AddLast(Node** head, Node** tail, int val)
@@ -37,7 +37,7 @@ void AddLast(Node** head, Node** tail, int val)
     Node* NewElement = (Node*)malloc(sizeof(Node));
     NewElement->value = val;
     NewElement->next = NULL;
-    if(*tail == NULL)//if empty
+    if(*tail == NULL)//if empty initialize it
     {
         *tail = NewElement;
         *head = *tail;
@@ -51,8 +51,9 @@ void AddLast(Node** head, Node** tail, int val)
 }
 
 /*DF
-deletes the first element deallocating it
+Deletes the first element deallocating it
 and moves the head one position forward
+Deletes the entire list if there is only 1 element
 */
 void DeleteFirst(Node** head, Node** tail)
 {
@@ -72,6 +73,9 @@ void DeleteFirst(Node** head, Node** tail)
 }
 
 /*DL
+Deletes the last element in the list
+moving the tail one position towards the head
+Deletes the entire list if there is only 1 element
 */
 void DeleteLast(Node** head, Node** tail)
 {
@@ -85,14 +89,16 @@ void DeleteLast(Node** head, Node** tail)
     //we must get to the second last element(the new tail)
     //only then can we delete the tail
     {
-        Node* del = *head;
+        Node* del = *head;//one position behind ndel, it will become the new tail
         Node* ndel = del->next;
-        while(ndel->next != NULL)//second last element condition
+        while(ndel->next != NULL)
         {
             del = del->next;
             ndel = del->next;
         }
 
+        //at this point, ndel point to the last element
+        //and del at the second lat
         *tail = del;
         (*tail)->next = NULL;
 
@@ -102,7 +108,7 @@ void DeleteLast(Node** head, Node** tail)
 }
 
 /*DOOM_THE_LIST
-deallocates all the list
+Deallocates all the list,
 nulls head and tail
 */
 void Anihilate(Node** head, Node** tail)
@@ -118,20 +124,28 @@ void Anihilate(Node** head, Node** tail)
 }
 
 /*DE
-searches for the first occurrence of val in the list
+Searches for the first occurrence of val in the list
 deallocates it and relinks the list properly
 */
 void Delete(Node** head, Node** tail, int val)
 {
     Node* current = *head;
     Node* prev = NULL;
-    while((current != NULL)&&(current->value != val))
+    int found = 0;
+    while((current != NULL)&&(found == 0))
     //stops at the end of the list or when finds its target
     {
-        prev = current;
-        current = current->next;
+        if(current->value != val)
+        {
+            prev = current;
+            current = current->next;
+        }
+        else
+        {
+            found = 1;
+        }
     }
-    if(current != NULL)
+    if(found == 1)
     //an element to be destroyed has been found
     {
         if(*head == *tail)
@@ -150,16 +164,16 @@ void Delete(Node** head, Node** tail, int val)
         else
         {
             prev->next = current->next;//fills the gap
-            if(current == *tail)
+            if(current == *tail)//if it is the last the tail is also relocated
                 *tail = prev;
         }
         free(current);
     }
-    return ;
+    return;
 }
 
 /*PRINT_ALL
-lists all from head to tail in Out
+Lists all from head to tail in Out
 */
 void PrintAll(FILE* Out, Node* head)
 {
@@ -179,7 +193,7 @@ void PrintAll(FILE* Out, Node* head)
 }
 
 /*PRINT_F
-prints the first "count" elements in the list
+Prints the first "count" elements in the list
 */
 void PrintF(FILE* Out, Node* head, int count)
 {
@@ -202,7 +216,7 @@ void PrintF(FILE* Out, Node* head, int count)
 }
 
 /*PRINT_L
-prints the last "count" elements
+Prints the last "count" elements
 this is tricky because the length is needed if you
 do not store the elements somewhere else
 */

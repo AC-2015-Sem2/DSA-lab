@@ -1,13 +1,14 @@
 /*This is the main part of the code
-which selects which function to use
-based on the read string
+ which selects which function to use
+ based on the read string
 */
 
 #include "SLL_definition.h"
 #include "SLL_io.h"
 
 enum
-//again, only TOTAL matters
+//all of the commands that can be in the file
+//only TOTAL matters(for string comparison)
 {
     AF = 0, AL, DF, DL, DOOM_THE_LIST, DE, PRINT_ALL, PRINT_F, PRINT_L,
     TOTAL
@@ -22,8 +23,6 @@ int Interpret(char* command, int parameter, Node** head, Node** tail, FILE* Out)
     for(i = 0; (i < TOTAL)&&(found == -1); i++)
         if(strcmp(command, COMMAND[i]) == 0)
             found = i;
-
-    //printf("%s %d|%d %s\n", command, parameter, found, COMMAND[found-1]);//DEBUG
 
     switch(found)
     {

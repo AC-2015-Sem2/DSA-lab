@@ -1,38 +1,24 @@
 /*This contains the reading function
-it always reads a string
-and it reads an int where necessary, indicated in the enum
+ it reads an entire line of the file
+ then it reads the string and parameter from that line
+A string will always be present but in the case
+ a number is not param will get a random dump value
+ but it is not a problem since param would not be used
 */
 
 #include<stdio.h>
+#define MAX_LENGTH 14
 
-enum
-//the ops which have a parameter, used only to get TOTAL
-{
-    AF = 0,
-    AL,
-    DE,
-    PRINT_F,
-    PRINT_L,
-    TOTAL
-};
-const char* const CMD_W_PARAM[] = {"AF", "AL", "DE", "PRINT_F", "PRINT_L"};
 
 int readLine(FILE* In, char* command, int* param)
 {
-    fscanf(In, "%s", command);
-
-    if(command[0] == 0)
+    char line[MAX_LENGTH];
+    if(fgets(line, MAX_LENGTH, In) == 0)
+    {
         //the exit(eof) condition
         return -1;
-
-    int i;
-    int found = 0;
-    for(i = 0; (i < TOTAL)&&(found == 0); i++)
-        if(strcmp(command, CMD_W_PARAM[i]) == 0)
-            found = 1;
-
-    if(found == 1)
-        fscanf(In, "%d", param);
+    }
+    sscanf(line, "%s %d", command, param);
 
     return 0;
 }

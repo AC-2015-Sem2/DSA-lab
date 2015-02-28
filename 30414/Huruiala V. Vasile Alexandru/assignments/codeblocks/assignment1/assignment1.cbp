@@ -31,6 +31,20 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
+		<Unit filename="SLL.h" />
+		<Unit filename="SLL_definition.h" />
+		<Unit filename="SLL_interpret.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="SLL_interpret.h" />
+		<Unit filename="SLL_io.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="SLL_io.h" />
+		<Unit filename="SLL_operations.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="SLL_operations.h" />
 		<Unit filename="main.c">
 			<Option compilerVar="CC" />
 		</Unit>
