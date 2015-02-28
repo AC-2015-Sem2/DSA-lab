@@ -33,6 +33,7 @@ int main()
             printf("Invalid command detected: %s not recognized.\n", cmd);
         }
     }
+    closeFiles(&In, &Out);
 
     return 0;
 }

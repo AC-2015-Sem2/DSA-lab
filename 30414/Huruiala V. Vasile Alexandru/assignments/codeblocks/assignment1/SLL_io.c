@@ -27,6 +27,16 @@ int openFiles(FILE** I, FILE** O)
     return 0;
 }
 
+int closeFiles(FILE** I, FILE** O)
+{
+    fclose(*I);
+    *I = NULL;
+    fclose(*O);
+    *O = NULL;
+
+    return 0;
+}
+
 int readLine(FILE* In, char* command, int* param)
 {
     char line[MAX_LENGTH];

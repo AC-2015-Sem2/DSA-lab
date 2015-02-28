@@ -57,17 +57,20 @@ Deletes the entire list if there is only 1 element
 */
 void DeleteFirst(Node** head, Node** tail)
 {
-    if(*head == *tail)//if there is only one element in the list nulls tail as well
+    if(*head != NULL)
     {
-        free(*head);
-        *head = NULL;
-        *tail = NULL;
-    }
-    else
-    {
-        Node* del = *head;
-        *head = (*head)->next;
-        free(del);
+        if(*head == *tail)//if there is only one element in the list nulls tail as well
+        {
+            free(*head);
+            *head = NULL;
+            *tail = NULL;
+        }
+        else
+        {
+            Node* del = *head;
+            *head = (*head)->next;
+            free(del);
+        }
     }
     return;
 }
@@ -79,30 +82,33 @@ Deletes the entire list if there is only 1 element
 */
 void DeleteLast(Node** head, Node** tail)
 {
-    if(*head == *tail)//single element list
+    if(*head != NULL)
     {
-        free(*head);
-        *head = NULL;
-        *tail = NULL;
-    }
-    else
-    //we must get to the second last element(the new tail)
-    //only then can we delete the tail
-    {
-        Node* del = *head;//one position behind ndel, it will become the new tail
-        Node* ndel = del->next;
-        while(ndel->next != NULL)
+        if(*head == *tail)//single element list
         {
-            del = del->next;
-            ndel = del->next;
+            free(*head);
+            *head = NULL;
+            *tail = NULL;
         }
+        else
+        //we must get to the second last element(the new tail)
+        //only then can we delete the tail
+        {
+            Node* del = *head;//one position behind ndel, it will become the new tail
+            Node* ndel = del->next;
+            while(ndel->next != NULL)
+            {
+                del = del->next;
+                ndel = del->next;
+            }
 
-        //at this point, ndel point to the last element
-        //and del at the second lat
-        *tail = del;
-        (*tail)->next = NULL;
+            //at this point, ndel point to the last element
+            //and del at the second lat
+            *tail = del;
+            (*tail)->next = NULL;
 
-        free(ndel);
+            free(ndel);
+        }
     }
     return;
 }
