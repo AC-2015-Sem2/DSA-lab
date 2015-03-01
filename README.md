@@ -83,9 +83,19 @@ Lab 13: Exam problem practice
 
 ### Administrative
 
-* Max number of absences = 1 (NOT applicable for test days)
+* Max number of absences = 1 (NOT applicable for test days - if you miss a test day, you'll have to take the test separately, problem will be more difficult)
 * Assignments will be given dynamic feedback through GIT and will be graded only after one says he/she is thoroughly done with it.
 * Only assignments which are pushed to GIT will be graded and taken into consideration.
+* "Extra credit" assignments can only be completed by those who already have completed the 'normal' assignments. They will be even more thoroughly inspected and evaluated.
+
+### About tests
+
+* Grades range: 1-10
+* Code does not even compile: 1 (by default, no excuses)
+* For every warning: -0.25 on the grade - your code should be clean enough to surpass any Codeblocks warnings
+* Cheating attempts: 1 (by default, no excuses)
+* Work will be copied to USB stick and will be graded in maximum 48 hours
+* Results on GIT - check grades.xls file in every group folder
 
 
 ### GIT Tutorials
