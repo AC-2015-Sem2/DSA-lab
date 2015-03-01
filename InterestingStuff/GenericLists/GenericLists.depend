@@ -1,0 +1,11 @@
+# depslib dependency file v1.0
+1425227116 source:c:\users\alex\desktop\predare\2014-2015 - sem2\dsa-lab\interestingstuff\genericlists\main.c
+	"list_h.h"
+
+1425226472 c:\users\alex\desktop\predare\2014-2015 - sem2\dsa-lab\interestingstuff\genericlists\list_h.h
+	<stdio.h>
+	<stdlib.h>
+
+1425227309 source:c:\users\alex\desktop\predare\2014-2015 - sem2\dsa-lab\interestingstuff\genericlists\list_impl.c
+	"list_h.h"
+
