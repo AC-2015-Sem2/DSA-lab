@@ -93,3 +93,10 @@ Lab 13: Exam problem practice
 * 1 - [Installing GIT](https://www.youtube.com/watch?v=4ZNYfbXnpXQ&list=PLxDrAnoepRN2OXJ4boGqPF0LIADjWGqe7&index=1)
 * 2 - [Fork and Clone](https://www.youtube.com/watch?v=mJQAfbARvMI&index=2&list=PLxDrAnoepRN2OXJ4boGqPF0LIADjWGqe7)
 * 3 - [Commit Push and Pull Request](https://www.youtube.com/watch?v=nPq0yClIDhM&index=3&list=PLxDrAnoepRN2OXJ4boGqPF0LIADjWGqe7)
+
+
+### Interesting Stuff
+
+* [Generic Lists](https://github.com/AC-2015-Sem2/DSA-lab/tree/master/Interesting%20Stuff/GenericLists) more exactly, how to create a (reusable) node which can remain the same for most of the functionality of the list regardless of the problem to be solved?
+* [Pointers to functions](https://github.com/AC-2015-Sem2/DSA-lab/tree/master/Interesting%20Stuff/PointersToFunctions) a cute example of how you can use a structure to simulate OOP behaviour.
+
