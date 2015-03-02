@@ -170,4 +170,6 @@ void	kill_jim_kong_nu(t_info info)
 			}
 		}
 	}
+	free(c);
+	free(x);
 }
