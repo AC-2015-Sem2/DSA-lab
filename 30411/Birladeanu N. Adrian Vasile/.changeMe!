@@ -1,0 +1,275 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+FILE *fin, *fout;
+
+typedef struct nodetype
+{
+    int code;
+    struct nodetype *next;
+
+} NodeT;
+NodeT *head, *tail;
+
+void add_first(int nod)
+{
+    if(head==NULL)
+    {
+        head=(NodeT*)(malloc(sizeof(NodeT*)));
+        head->code=nod;
+        head->next=NULL;
+    }
+    else
+    {
+        if(tail==NULL)
+        {
+            NodeT *now;
+            now=(NodeT*)malloc(sizeof(NodeT*));
+            now->code=nod;
+            tail=head;
+            head=now;
+            head->next=tail;
+        }
+        else
+        {
+            NodeT *now;
+            now=(NodeT*)malloc(sizeof(NodeT*));
+            now->next=head;
+            now->code=nod;
+            head=now;
+        }
+    }
+}
+
+void add_last(int nod)
+{
+    if(head==NULL)
+    {
+        head=(NodeT*)malloc(sizeof(NodeT*));
+        head->code=nod;
+        head->next=NULL;
+    }
+    else
+    {
+        if(tail==NULL)
+        {
+            tail=(NodeT*)malloc(sizeof(NodeT*));
+            tail->code=nod;
+            head->next=tail;
+            tail->next=NULL;
+        }
+        else
+        {
+            NodeT *now;
+            now=(NodeT*)malloc(sizeof(NodeT*));
+            tail->next=now;
+            tail=now;
+            tail->code=nod;
+            tail->next=NULL;
+        }
+    }
+}
+
+void print_all()
+{
+    NodeT *aux=head;
+    while(aux!=NULL)
+    {
+        fprintf(fout, "%d ", aux->code);
+        aux=aux->next;
+    }
+    fprintf(fout, "\n");
+}
+
+int del_f()
+{
+    if(head==NULL)return 0;
+    if(tail==NULL)
+    {
+        free(head);
+        head=NULL;
+        return 0;
+    }
+    NodeT *aux;
+    aux=head;
+    head=aux->next;
+    free(aux);
+    return 0;
+}
+
+int del_l()
+{
+    if(tail==NULL)
+    {
+        if(head==NULL)return 0;
+        free(head);
+        head=NULL;
+        return 0;
+    }
+    NodeT *aux=head;
+    while(aux->next!=tail)aux=aux->next;
+    aux->next=NULL;
+    free(tail);
+    tail=aux;
+    //fprintf(fout, "%d \n", tail->code);
+    return 0;
+}
+
+void doom()
+{
+    NodeT *aux=head;
+    while(aux->next!=NULL)
+    {
+        head=aux->next;
+        free(aux);
+        aux=head;
+    }
+    free(aux);
+    head=NULL;
+    tail=NULL;
+}
+
+int del(int nod)
+{
+    NodeT *q, *q1;
+    if(head->code==nod)
+    {
+        del_f();
+        return 0;
+    }
+    if(tail->code==nod)
+    {
+        del_l();
+        return 0;
+    }
+    q1=head;
+    q=head->next;
+    while(q!=NULL)
+    {
+        if(q->code==nod)
+        {
+            q1->next=q->next;
+            free(q);
+        }
+        q1->next=q;
+        q=q->next;
+    }
+    return 0;
+}
+
+void print_f(int nod)
+{
+    int c=1; //index
+    int i=1;
+    NodeT *aux=head;
+    while(aux->next!=NULL)
+    {
+        aux=aux->next;
+        c++;
+    }
+    aux=head;
+    if(nod>c)print_all();
+    else for(i=1; i<=nod; i++)
+        {
+            fprintf(fout, "%d ", aux->code);
+            aux=aux->next;
+        }
+    fprintf(fout, "\n");
+}
+
+void print_l(nod)
+{
+    int c=1; //index
+    int b;
+    NodeT *aux=head;
+    while(aux->next!=NULL)
+    {
+        aux=aux->next;
+        c++;
+    }
+    if(nod>c)print_all();
+    else
+    {
+        b=c-nod;
+        c=1;
+        aux=head;
+        while(aux->next!=NULL)
+        {
+            if(c>b)fprintf(fout, "%d ", aux->code);
+            aux=aux->next;
+            c++;
+        }
+        fprintf(fout, "%d \n", aux->code);
+    }
+}
+
+int decide(char a[], int nod)
+{
+    if(strcmp(a, "AF")==0)
+    {
+        add_first(nod);
+        return 0;
+    }
+    if(strcmp(a, "AL")==0)
+    {
+        add_last(nod);
+        return 0;
+    }
+    if(strcmp(a, "DF")==0)
+    {
+        del_f();
+        return 0;
+    }
+    if(strcmp(a, "DL")==0)
+    {
+        del_l();
+        return 0;
+    }
+    if(strcmp(a, "DOOM_THE_LIST")==0)
+    {
+        doom();
+        return 0;
+    }
+    if(strcmp(a, "DE")==0)
+    {
+        del(nod);
+        return 0;
+    }
+    if(strcmp(a, "PRINT_ALL")==0)
+    {
+        print_all();
+        return 0;
+    }
+    if(strcmp(a, "PRINT_F")==0)
+    {
+        print_f(nod);
+        return 0;
+    }
+    if(strcmp(a, "PRINT_L")==0)
+    {
+        print_l(nod);
+        return 0;
+    }
+    printf("Comanda \" %s \" nerecunoscuta! \n", a);
+    return 0;
+}
+
+
+
+int main()
+{
+    char a[14];
+    int b=1, nod;
+    fin=fopen("input.dat", "r");
+    if(fin==NULL)perror("Error 404: file not found");
+    fout=fopen("output.dat", "w");
+    while(b!=-1)
+    {
+        b=fscanf(fin, "%s %d", a, &nod);
+        if(b!=-1)decide(a, nod);
+    }
+    fclose(fin);
+    fclose(fout);
+    return 0;
+}
