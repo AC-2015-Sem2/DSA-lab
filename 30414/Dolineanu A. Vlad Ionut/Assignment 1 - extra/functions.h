@@ -13,19 +13,20 @@ typedef struct st_node
 typedef struct list_elem{
     node* head;
     node* tail;
-}lst;
+}waveList;
 
 typedef struct country_elem{
 char name[20];
-lst *waves;
+waveList *waves;
 struct country_elem *next;
 }country;
 
 node* createNode(int data);
 country* createCountry();
-lst* createList();
-void addLast(lst* list, int data);
-void printList(lst* list);
+waveList* createList();
+void addLast(waveList* list, int data);
+void printList(waveList* list);
+void readElements(int *sentinelNumber, int *countryNumber, waveList *sentinels, country** first, country** last);
 
 
 
