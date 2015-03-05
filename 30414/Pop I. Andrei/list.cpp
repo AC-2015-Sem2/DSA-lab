@@ -14,9 +14,8 @@ NODE *head, *tail;
 
 void printAll(FILE *out)
 {
-    NODE *p;
+    NODE *p=head;
 
-    p=head;
     while(p!=NULL)
     {
         fprintf(out, "%d ", p->data);
@@ -38,8 +37,7 @@ void addFirst(int data)
 
     else
     {
-        NODE *newnode;
-        newnode=(NODE*) malloc(sizeof(NODE));
+        NODE *newnode=(NODE*) malloc(sizeof(NODE));
         newnode->next=head;
         head=newnode;
         newnode->data=data;
@@ -82,8 +80,7 @@ void delFirst()
 
 void delLast()
 {
-    NODE *curent;
-    curent=head;
+    NODE *curent=head;
 
     if(tail!=NULL)
     {
@@ -92,7 +89,7 @@ void delLast()
 
         tail=curent;
         curent=curent->next;
-        tail->next=0;
+        tail->next=NULL;
         free(curent);
     }
 }
@@ -209,43 +206,36 @@ int main()
             fscanf(in, " %d", &data);
             addFirst(data);
         }
+        else if(strcmp(op, "AL")==0)
+        {
+            fscanf(in, " %d", &data);
+            addLast(data);
+        }
+        else if(strcmp(op, "DF")==0)
+            delFirst();
+        else if(strcmp(op, "DL")==0)
+            delLast();
+        else if(strcmp(op, "PRINT_ALL")==0)
+            printAll(out);
+        else if(strcmp(op, "DOOM_THE_LIST")==0)
+            ddl();
+        else if(strcmp(op, "DE")==0)
+        {
+            fscanf(in, " %d", &data);
+            delX(data);
+        }
+        else if(strcmp(op, "PRINT_F")==0)
+        {
+            fscanf(in, " %d", &data);
+            printF(data, out);
+        }
         else
-            if(strcmp(op, "AL")==0)
-            {
-                fscanf(in, " %d", &data);
-                addLast(data);
-            }
-            else
-                if(strcmp(op, "DF")==0)
-                    delFirst();
-                else
-                    if(strcmp(op, "DL")==0)
-                        delLast();
-                    else
-                        if(strcmp(op, "PRINT_ALL")==0)
-                            printAll(out);
-                        else
-                            if(strcmp(op, "DOOM_THE_LIST")==0)
-                                ddl();
-                            else
-                                if(strcmp(op, "DE")==0)
-                                {
-                                    fscanf(in, " %d", &data);
-                                    delX(data);
-                                }
-                                else
-                                    if(strcmp(op, "PRINT_F")==0)
-                                    {
-                                        fscanf(in, " %d", &data);
-                                        printF(data, out);
-                                    }
-                                    else
-                                    {
-                                        fscanf(in, " %d", &data);
-                                        printL(data, out); //this is tricky because first we have to go trough the whole list and count how many elements it has (nr)
-                                                        //if the number (nr) of elem is less or equal to x we print the whole list
-                                                        //else we jump over the first nr-x elements and we print the last x elements
-                                    }
+        {
+            fscanf(in, " %d", &data);
+            printL(data, out); //this is tricky because first we have to go trough the whole list and count how many elements it has (nr)
+            //if the number (nr) of elem is less or equal to x we print the whole list
+            //else we jump over the first nr-x elements and we print the last x elements
+        }
     }
 
     return 0;

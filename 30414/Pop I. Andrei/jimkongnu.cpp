@@ -10,19 +10,19 @@ typedef struct nod
 
 typedef struct nod1
 {
-    char name[100];
+    char *name;
     NODE *head;
     NODE *tail;
     struct nod1 *next;
 }COUNTRY;
 
-COUNTRY *first, *last;
-NODE *sen_first, *sen_last;
+COUNTRY *first, *last, *sen;
 
-void addCountry(char name[100])
+void addCountry(char *name)
 {
     COUNTRY *newnode;
     newnode=(COUNTRY*) malloc(sizeof(COUNTRY));
+    newnode->name=(char*) malloc(sizeof(name));
     strcpy(newnode->name, name);
 
     if(first==NULL)
@@ -40,42 +40,23 @@ void addCountry(char name[100])
     }
 }
 
-void addWave(int data)
+void addNode(int data, COUNTRY *where)
 {
     NODE *newnode;
     newnode=(NODE*) malloc(sizeof(NODE));
     newnode->data=data;
 
-    if(last->head==NULL)
+    if(where->head==NULL)
     {
-        last->head=newnode;
-        last->tail=newnode;
+        where->head=newnode;
+        where->tail=newnode;
         newnode->next=NULL;
     }
     else
     {
-        last->tail->next=newnode;
-        last->tail=newnode;
+        where->tail->next=newnode;
+        where->tail=newnode;
         newnode->next=NULL;
-    }
-}
-
-void addSen(int  data)
-{
-    NODE *newnode;
-    newnode=(NODE*) malloc(sizeof(NODE));
-    newnode->data=data;
-
-    if(sen_first==NULL)
-    {
-        sen_first=sen_last=newnode;
-        newnode->next=NULL;
-    }
-    else
-    {
-        sen_last->next=newnode;
-        newnode->next=NULL;
-        sen_last=newnode;
     }
 }
 
@@ -117,16 +98,21 @@ void decide(FILE *in, FILE *out)
 
     fscanf(in, "%d", &nr_sen);
 
+    sen=(COUNTRY*) malloc(sizeof(COUNTRY));
+    sen->name=(char*) malloc(9);
+    strcpy(sen->name, "sentinels");
+    sen->head=sen->tail=NULL;
+
     for(i=0; i<nr_sen; i++)
     {
         fscanf(in, "%d", &data);
         sen_total_life+=data;
-        addSen(data);
+        addNode(data, sen);
     }
 
     sen_total_life+=1; //we add tyrant's life
 
-    fscanf(in, "%d %*c", &nr_ctry);
+    fscanf(in, "%d%*c", &nr_ctry);
 
     for(i=0; i<nr_ctry; i++)
     {
@@ -142,7 +128,7 @@ void decide(FILE *in, FILE *out)
             data=atoi(p);
             temp_power+=data;
             if(p)
-                addWave(data);
+                addNode(data, last);
         }
 
         if(temp_power>maxpower)
@@ -168,7 +154,7 @@ void decide(FILE *in, FILE *out)
 
     if(sen_total_life<=total_power)
     {
-        fprintf(out, "The tyrant was killed\n");
+        fprintf(out, "The tyrant was killed!\n");
         last_hit(sen_total_life, out);
     }
     else
@@ -183,7 +169,7 @@ void decide(FILE *in, FILE *out)
     {
         fprintf(out, "No country could have defeated all the sentinels.\n");
 
-        NODE *curent=sen_first;
+        NODE *curent=sen->head;
         int nr=0;
 
         while(maxpower-(curent->data)>0)
@@ -213,6 +199,5 @@ int main()
     out=fopen("output.dat", "w");
 
     decide(in, out);
-    //print();
 }
 
