@@ -12,13 +12,13 @@ int calculateDefense(waveList *sentinels)
     return totalDefense;
 }
 
-void computeBest(country** newCountry, char** bestName, char** worstName, int *totalDamage, int *maxDamage)
+void computeBest(country** auxCountry, char** bestName, char** worstName, int *totalDamage, int *maxDamage)
 {
     int minDamage = 99999;
-    while(*newCountry != NULL)
+    while(*auxCountry != NULL)
     {
         int thisDamage = 0;
-        node* search = (*newCountry)->waves->head;
+        node* search = (*auxCountry)->waves->head;
         while(search != NULL)
         {
             thisDamage += search->data;
@@ -29,29 +29,29 @@ void computeBest(country** newCountry, char** bestName, char** worstName, int *t
         if(thisDamage > *maxDamage)
         {
             *maxDamage = thisDamage;
-            *bestName = (*newCountry)->name;
+            *bestName = (*auxCountry)->name;
         }
         else if(thisDamage < minDamage)
         {
             minDamage = thisDamage;
-            *worstName = (*newCountry)->name;
+            *worstName = (*auxCountry)->name;
         }
 
-        *newCountry = (*newCountry)->next;
+        *auxCountry = (*auxCountry)->next;
     }
 
 }
 
-void computeLast(int currentHealth, country** newCountry, country* first, FILE* g)
+void computeLast(int currentHealth, country** auxCountry, country* first, FILE* g)
 {
     int wave = 1;
     while(currentHealth > 0)
     {
-        *newCountry = first;
-        while(*newCountry != NULL)
+        *auxCountry = first;
+        while(*auxCountry != NULL)
         {
             int j;
-            node* src = (*newCountry)->waves->head;
+            node* src = (*auxCountry)->waves->head;
             for(j=1; j<wave; j++)
                 if(src->next != NULL)
                     src = src->next;
@@ -59,7 +59,7 @@ void computeLast(int currentHealth, country** newCountry, country* first, FILE* 
                     break;
             if(currentHealth - src->data < 0)
             {
-                fprintf(g, "Last hit was done by: %s\n", (*newCountry)->name);
+                fprintf(g, "Last hit was done by: %s\n", (*auxCountry)->name);
                 currentHealth -= src->data;
                 break;
             }
@@ -67,18 +67,23 @@ void computeLast(int currentHealth, country** newCountry, country* first, FILE* 
             {
                 currentHealth -= src->data;
             }
-            *newCountry = (*newCountry)->next;
+            *auxCountry = (*auxCountry)->next;
         }
         wave++;
     }
 }
 
-void computeSingleCountry(country** newCountry, waveList *sentinels, int totalDefense, int maxDamage, int *turrets, int *chipped, int *nr, FILE* g)
+void computeSingleCountry(country** auxCountry, waveList *sentinels, int totalDefense, int maxDamage, FILE* g)
 {
-    while(*newCountry != NULL)
+    int turrets = 0;
+    int chipped = 0;
+    int nr=0;
+    char *name;
+
+    while(*auxCountry != NULL)
     {
         int thisDamage = 0;
-        node* search = (*newCountry)->waves->head;
+        node* search = (*auxCountry)->waves->head;
         while(search != NULL)
         {
             thisDamage += search->data;
@@ -87,21 +92,22 @@ void computeSingleCountry(country** newCountry, waveList *sentinels, int totalDe
 
         if(thisDamage >= totalDefense)
         {
-            fprintf(g,"%s ", (*newCountry)->name);
-            *nr = *nr + 1;
+            fprintf(g,"%s ", (*auxCountry)->name);
+            nr++;
         }
 
         if(thisDamage == maxDamage && maxDamage < totalDefense)
         {
             int hp;
-            search = (*newCountry)->waves->head;
+            name = (*auxCountry)->name;
+            search = (*auxCountry)->waves->head;
             node* currentSent = sentinels->head;
             hp = currentSent->data;
             while(search != NULL)
             {
                 if(hp - search->data <= 0)
                 {
-                    *turrets = *turrets + 1;
+                    turrets++;
                     int diff = search->data - hp;
                     currentSent = currentSent->next;
                     hp = currentSent->data;
@@ -113,9 +119,15 @@ void computeSingleCountry(country** newCountry, waveList *sentinels, int totalDe
                 }
                 search = search->next;
             }
-            *chipped = currentSent->data - hp;
+            chipped = currentSent->data - hp;
         }
-        *newCountry = (*newCountry)->next;
+        *auxCountry = (*auxCountry)->next;
     }
+
+        if(nr==0)
+        fprintf(g,"No country ");
+    fprintf(g, "could have defeated all the sentinels\n");
+    if(nr==0)
+        fprintf(g, "%s could have brought down the first %d sentinels and would have chipped off %d life points from sentinel %d\n", name, turrets, chipped, turrets+1);
 }
 
