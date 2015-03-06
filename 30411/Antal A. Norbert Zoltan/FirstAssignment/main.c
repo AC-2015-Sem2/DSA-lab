@@ -71,7 +71,7 @@ void DeleteFirst(){
 void DeleteLast(){
     if (head==NULL) return;
     NodeT* node = head;
-    if (head == tail) {
+    if (head==tail) {
         head = NULL;
         tail = NULL;
         return;
