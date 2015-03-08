@@ -1,0 +1,22 @@
+# depslib dependency file v1.0
+1425828204 source:c:\users\alexa\desktop\extraassignment_var3\listfunctions.c
+	"listFunctions.h"
+	"lists.h"
+
+1425827995 c:\users\alexa\desktop\extraassignment_var3\listfunctions.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"lists.h"
+
+1425827995 c:\users\alexa\desktop\extraassignment_var3\lists.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1425828204 source:c:\users\alexa\desktop\extraassignment_var3\main.c
+	<stdio.h>
+	<stdlib.h>
+	"listFunctions.h"
+	"lists.h"
+
