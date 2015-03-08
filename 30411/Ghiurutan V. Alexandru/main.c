@@ -62,6 +62,7 @@ void deletelast()
         {
             //One node.
             head=tail=NULL;
+            free(q);
         }
         else
         {
@@ -85,7 +86,7 @@ void deletefirst()
         }
     }
 }
-void doom_the_list()
+void doomthelist()
 {
     nodeT *q;
     while(head!=NULL)
@@ -94,8 +95,9 @@ void doom_the_list()
         head=q->next;
         free(q);
     }
+    tail=NULL;
 }
-void remove_given(int givenkey)
+void removegiven(int givenkey)
 {
     nodeT *q,*q1;
     q=head;
@@ -131,7 +133,7 @@ void remove_given(int givenkey)
         }
     }
 }
-void print_all(FILE *pf)
+void printall(FILE *pf)
 {
     nodeT *q;
     q=head;
@@ -145,7 +147,7 @@ void print_all(FILE *pf)
         fprintf(pf,"\n");
     }
 }
-void print_first_x(FILE *pf,int x)
+void printfirstx(FILE *pf,int x)
 {
     nodeT *q;
     int nr=0;
@@ -165,7 +167,7 @@ void print_first_x(FILE *pf,int x)
         fprintf(pf,"\n");
     }
 }
-void print_last_x(FILE *pf,int x)
+void printlastx(FILE *pf,int x)
 {
     nodeT *q;
     int nr=0;
@@ -179,7 +181,7 @@ void print_last_x(FILE *pf,int x)
         }
         if(x>=nr)
         {
-            print_all(pf);
+            printall(pf);
         }
         else
         {
@@ -223,13 +225,13 @@ int main()
         char *p=strtok(s," ");
         if(strcmp(p,"AF")==0)
         {
-            p=strtok(NULL,"\0");
+            p=strtok(NULL,"\n");
             sscanf(p,"%d",&x);
             addfirst(x);
         }
         if(strcmp(p,"AL")==0)
         {
-            p=strtok(NULL,"\0");
+            p=strtok(NULL,"\n");
             sscanf(p,"%d",&x);
             addlast(x);
         }
@@ -243,29 +245,29 @@ int main()
         }
         if(strcmp(p,"DOOM_THE_LIST")==0)
         {
-            doom_the_list();
+            doomthelist();
         }
         if(strcmp(p,"DE")==0)
         {
-            p=strtok(NULL,"\0");
+            p=strtok(NULL,"\n");
             sscanf(p,"%d",&x);
-            remove_given(x);
+            removegiven(x);
         }
         if(strcmp(p,"PRINT_ALL")==0)
         {
-            print_all(pf);
+            printall(pf);
         }
         if(strcmp(p,"PRINT_F")==0)
         {
-            p=strtok(NULL,"\0");
+            p=strtok(NULL,"\n");
             sscanf(p,"%d",&x);
-            print_first_x(pf,x);
+            printfirstx(pf,x);
         }
         if(strcmp(p,"PRINT_L")==0)
         {
-            p=strtok(NULL,"\0");
+            p=strtok(NULL,"\n");
             sscanf(p,"%d",&x);
-            print_last_x(pf,x);
+            printlastx(pf,x);
         }
     }
     fclose(f);
