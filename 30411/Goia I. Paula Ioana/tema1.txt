@@ -1,0 +1,221 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+typedef struct NodeT
+{
+    int code;
+    struct NodeT* next;
+} NodeT;
+NodeT *head, *tail;
+FILE *in,*out;
+
+void addFirst(int code)
+{
+    if(head==NULL)
+    {
+        head=(NodeT*)malloc(sizeof(NodeT));
+        head->code=code;
+        head->next=NULL;
+    }
+    else if (tail==NULL)
+    {
+        tail=head;
+        NodeT* p=(NodeT*)malloc(sizeof(NodeT));
+        p->code=code;
+        p->next=tail;
+        head=p;
+    }
+    else
+    {
+        NodeT* p=(NodeT*)malloc(sizeof(NodeT));
+        p->code=code;
+        p->next=head;
+        head=p;
+    }
+}
+
+void addLast(int code)
+{
+    if(head==NULL)
+    {
+        head=(NodeT*)malloc(sizeof(NodeT));
+        head->code=code;
+        head->next=NULL;
+        tail=head;
+    }
+    else if (tail==NULL)
+    {
+        NodeT* p=(NodeT*)malloc(sizeof(NodeT));
+        p->code=code;
+        p->next=NULL;
+        tail=p;
+    }
+    else
+    {
+        NodeT* p=(NodeT*)malloc(sizeof(NodeT));
+        p->code=code;
+        p->next=NULL;
+        tail->next=p;
+        tail=p;
+    }
+}
+
+void printlist()
+{
+    NodeT* aux=head;
+    while(aux!=NULL)
+    {
+        fprintf(out,"%d ",aux->code);
+        aux=aux->next;
+    }
+    fprintf(out,"\n");
+}
+void delete_first()
+{
+    NodeT *p;
+    if(head!=NULL )
+    {
+        p=head ;
+        head=head ->next ;
+        free(p) ;
+        if (head== NULL)
+            tail=NULL;
+    }
+}
+void delete_last()
+{
+    NodeT *q, *q1;
+    q1 = NULL;
+    q = head ;
+    if(q!=NULL)
+    {
+        while(q!=tail)
+        {
+            q1=q;
+            q=q->next ;
+        }
+        if(q==head)
+        {
+            head=NULL;
+            tail=NULL;
+        }
+        else
+        {
+            q1->next=NULL;
+            tail=q1;
+        }
+    }
+}
+void delete_element(int nr)
+{
+    NodeT *q,*q1;
+    q1=NULL;
+    q=head;
+
+    while(q!=NULL)
+    {
+        if(q->code==nr)break;
+        q1=q;
+        q=q->next;
+    }
+    if(q!=NULL)
+    {
+        if(q==head)
+        {
+            head =head->next;
+            if (head== NULL)tail=NULL;
+        }
+        else
+        {
+            q1->next=q->next;
+            if(q==tail )tail=q1;
+
+        }
+    }
+}
+void doom_the_list()
+{
+    NodeT *p;
+    while (head!= NULL )
+    {
+        p=head;
+        head=head->next;
+    }
+    tail=NULL;
+}
+void print_first(int z)
+{
+    int i=1;
+    NodeT* p=head;
+    while(i<=z)
+    {
+        if(p!=NULL){
+        fprintf(out,"%d ",p->code);
+        p=p->next;
+        i++;}
+        else break;
+    }
+    fprintf(out,"\n");
+}
+int listLength()
+{
+  NodeT* p=head;
+  int l=0;
+    while (p!=NULL)
+  {
+    l++;
+    p=p->next;
+  }
+  return l;
+}
+void print_last(int z)
+{
+    int i=1,n;
+    NodeT* p=head;
+    n=listLength();
+    while(i<=n-z)
+    {
+        if(p!=NULL){
+        p=p->next;
+        i++;}
+        else break;
+    }
+    while(i<=n)
+    {
+        if(p!=NULL){
+        fprintf(out,"%d ",p->code);
+        p=p->next;
+        i++;}
+        else break;
+    }
+    fprintf(out,"\n");
+}
+int main()
+{
+    char s[30];
+    int x;
+    out=fopen("out.txt","w");
+    in=fopen("in.txt","r");
+    int c;
+    c=fscanf(in,"%s %d",s,&x);
+    while(c>0)
+    {
+        //printf("%s %d\n",s,x);
+        if(!strcmp(s,"AL"))addLast(x);
+        if(!strcmp(s,"AF"))addFirst(x);
+        if(!strcmp(s,"DE"))delete_element(x);
+        if(!strcmp(s,"PRINT_F"))print_first(x);
+        if(!strcmp(s,"PRINT_L"))print_last(x);
+        if(!strcmp(s,"PRINT_ALL"))printlist();
+        if(!strcmp(s,"DOOM_THE_LIST"))doom_the_list();
+        if(!strcmp(s,"DF"))delete_first();
+        if(!strcmp(s,"DL"))delete_last();
+        strcpy(s,"");
+      c=fscanf(in,"%s %d",s,&x);
+
+    }
+
+
+    return 0;
+}
