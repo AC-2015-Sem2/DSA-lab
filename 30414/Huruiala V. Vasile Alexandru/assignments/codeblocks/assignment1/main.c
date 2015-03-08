@@ -19,8 +19,8 @@ int main()
     }
 
     //List pointers init
-    Node* Head = NULL;
-    Node* Tail = NULL;
+    List* L = NULL;
+    ListInit(&L);
 
     //Input loop
     char cmd[MAX_LENGTH];
@@ -28,7 +28,7 @@ int main()
     while(readLine(In, cmd, &param) != -1)
     {
         //the operation selector, the main component
-        if(Interpret(cmd, param, &Head, &Tail, Out) != 0)
+        if(((*L->Interpret)(L, cmd, (void*)param, Out)) != 0)
         {
             printf("Invalid command detected: %s not recognized.\n", cmd);
         }

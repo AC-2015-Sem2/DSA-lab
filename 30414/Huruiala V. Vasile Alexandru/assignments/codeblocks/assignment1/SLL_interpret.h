@@ -1,4 +1,4 @@
 /*This function has its own header file
 */
 
-int Interpret(char* command, int parameter, Node** head, Node** tail, FILE* Out);
+int Interpret(List* L, char* cmd, void* data, FILE* Out);

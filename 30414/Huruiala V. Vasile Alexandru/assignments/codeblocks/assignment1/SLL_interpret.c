@@ -17,26 +17,26 @@ enum
 };
 const char* const COMMAND[] = {"AF", "AL", "DF", "DL", "DOOM_THE_LIST", "DE", "PRINT_ALL", "PRINT_F", "PRINT_L"};
 
-int Interpret(char* command, int parameter, Node** head, Node** tail, FILE* Out)
+int Interpret(List* L, char* cmd, void* data, FILE* Out)
 {
     int i;
     int found = -1;
     //searhing the command in the database
     for(i = 0; (i < TOTAL)&&(found == -1); i++)
-        if(strcmp(command, COMMAND[i]) == 0)
+        if(strcmp(cmd, COMMAND[i]) == 0)
             found = i;
 
     switch(found)
     {
-        case 0:{AddFirst(head, tail, parameter);}break;
-        case 1:{AddLast(head, tail, parameter);}break;
-        case 2:{DeleteFirst(head, tail);}break;
-        case 3:{DeleteLast(head, tail);}break;
-        case 4:{Anihilate(head, tail);}break;
-        case 5:{Delete(head, tail, parameter);}break;
-        case 6:{PrintAll(Out, *head);}break;
-        case 7:{PrintF(Out, *head, parameter);}break;
-        case 8:{PrintL(Out, *head, parameter);}break;
+        case 0:{(*L->AddFirst)(L, data);}break;
+        case 1:{(*L->AddLast)(L, data);}break;
+        case 2:{(*L->DeleteFirst)(L);}break;
+        case 3:{(*L->DeleteLast)(L);}break;
+        case 4:{(*L->Anihilate)(L);}break;
+        case 5:{(*L->Delete)(L, data);}break;
+        case 6:{(*L->PrintAll)(L, Out);}break;
+        case 7:{(*L->PrintF)(L, Out, (int)data);}break;
+        case 8:{(*L->PrintL)(L, Out, (int)data);}break;
         default:{return -1;}break;//not recognized
     }
     return 0;//successful
