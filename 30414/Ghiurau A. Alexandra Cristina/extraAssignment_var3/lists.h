@@ -4,20 +4,20 @@
 #ifndef LISTS_H
 #define LISTS_H
 
-typedef struct listOfLists
-{
-    int value;
-    struct listOfLists *next;
-} listOfLists;
-
-extern listOfLists *genericHead, *genericTail;
-
 typedef struct node
 {
-    char *countryName;
-    listOfLists *nextWave;
+    int value;
     struct node *next;
 } node;
 
-extern node *head, *tail;
+extern node *genericHead, *genericTail;
+
+typedef struct listOfLists
+{
+    char *countryName;
+    node *nextWave;
+    struct listOfLists *next;
+} listOfLists;
+
+extern listOfLists *head, *tail;
 #endif // LISTS_H
