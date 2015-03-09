@@ -235,27 +235,11 @@ int main()
             sscanf(p,"%d",&x);
             addlast(x);
         }
-        if(strcmp(p,"DF")==0)
-        {
-            deletefirst();
-        }
-        if(strcmp(p,"DL")==0)
-        {
-            deletelast();
-        }
-        if(strcmp(p,"DOOM_THE_LIST")==0)
-        {
-            doomthelist();
-        }
         if(strcmp(p,"DE")==0)
         {
             p=strtok(NULL,"\n");
             sscanf(p,"%d",&x);
             removegiven(x);
-        }
-        if(strcmp(p,"PRINT_ALL")==0)
-        {
-            printall(pf);
         }
         if(strcmp(p,"PRINT_F")==0)
         {
@@ -268,6 +252,23 @@ int main()
             p=strtok(NULL,"\n");
             sscanf(p,"%d",&x);
             printlastx(pf,x);
+        }
+        p=strtok(s,"\n");
+        if(strcmp(p,"DF")==0)
+        {
+            deletefirst();
+        }
+        if(strcmp(p,"DL")==0)
+        {
+            deletelast();
+        }
+        if(strcmp(p,"DOOM_THE_LIST")==0)
+        {
+            doomthelist();
+        }
+        if(strcmp(p,"PRINT_ALL")==0)
+        {
+            printall(pf);
         }
     }
     fclose(f);
