@@ -1,0 +1,208 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+typedef struct list
+{
+    int value;
+    struct list* next;
+} NodeT;
+NodeT *tail,*head;
+void addfirst(int x)
+{
+
+    if (head==NULL)
+    {
+        head=(NodeT*)malloc(sizeof(NodeT));
+        head->value=x;
+        head->next=NULL;
+    }
+    else if(tail==NULL)
+    {
+        NodeT *now;
+        now=(NodeT*)malloc(sizeof(NodeT*));
+        now->value=x;
+        now->next=head;
+        tail=head;
+        head=now;
+    }
+    else
+    {
+        NodeT *nod;
+        nod=(NodeT*)malloc(sizeof(NodeT*));
+        nod->next=head;
+        nod->value=x;
+        head=nod;
+    }
+}
+void addlast(int x)
+{
+    if (head==NULL)
+    {
+        head=(NodeT*)malloc(sizeof(NodeT));
+        head->value=x;
+        head->next=NULL;
+    }
+    else if(tail==NULL)
+    {
+        tail=(NodeT*)malloc(sizeof(NodeT));
+        tail->value=x;
+        tail->next=NULL;
+    }
+    else
+    {
+        NodeT *now=(NodeT*)malloc(sizeof(NodeT));
+        now->value=x;
+        now->next=NULL;
+        tail->next=now;
+        tail=now;
+    }
+}
+void deletefirst()
+{
+    NodeT *p = head;
+    head=head->next;
+    free( p );
+    if (head==NULL)
+        tail=NULL;
+}
+void deletelast()
+{
+    NodeT *prev,*current;
+    current=head;
+    prev=NULL;
+    if (current->next==NULL)
+        head=tail=NULL;
+    else
+    {
+        while (current!=tail)
+        {
+            prev=current;
+            current=current->next;
+        }
+        prev->next=NULL;
+        tail=prev;
+        free(current);
+    }
+
+}
+void doom()
+{
+    NodeT *p;
+    while (head!=NULL)
+    {
+        p=head;
+        head=head->next;
+        free(p);
+    }
+    tail=NULL;
+}
+void deletevalue(int x)
+{
+    NodeT *q=head;
+    NodeT *q1=NULL;
+    while (q!=NULL)
+    {
+        if (q->value==x)
+            break;
+        else
+        {
+            q1=q;
+            q=q->next;
+        }
+    }
+    if (q!=NULL)
+    {
+        if(q==head)
+            head=q->next;
+        else
+        {
+            if(q->next!=NULL) q1->next=q->next;
+            else
+            {
+                tail=q1;
+                q1->next=NULL;
+            }
+        }
+    }
+}
+void printall(FILE *ps)
+{
+    NodeT *p;
+    p=head;
+    while (p!=NULL)
+    {
+        fprintf(ps,"%d ",p->value);
+        p=p->next;
+    }
+    fprintf(ps,"\n");
+}
+void printfirst(int x,FILE *ps)
+{
+    NodeT *p;
+    p=head;
+    int i;
+    for (i=0; i<=x; i++)
+    {
+        if (p==NULL)
+            break;
+        else
+        {
+           fprintf(ps,"%d ",p->value);
+           p=p->next;
+        }
+    }
+    fprintf(ps,"\n");
+}
+void printlast(int x,FILE *ps)
+{
+    int count=0;
+    NodeT *p=head;
+    while (p!=NULL)
+    {
+        count++;
+        p=p->next;
+    }
+    if (count<=x)
+        printall(ps);
+    else
+        {
+            int i;
+            p=head;
+            for(i=0;i<=count-x;i++)
+            {
+                p=p->next;
+            }
+            while (p!=NULL)
+            {
+                fprintf(ps,"%d ",p->value);
+                 p=p->next;
+            }
+            fprintf(ps,"\n");
+        }
+}
+int main()
+{
+    //open file for read
+    FILE  *pf=fopen("input.dat","r");
+    //open file for write
+    FILE *ps=fopen("output.dat","w");
+    fseek(pf,0,SEEK_SET);
+    char line[200];
+    while (fgets(line,sizeof(line),pf)!=NULL)
+    {
+        //read the command from the line
+        char oper[15];
+        int number;
+        sscanf(line,"%s %d",&oper,&number);
+        if (strcmp(oper,"AL")==0) addfirst(number);
+        if (strcmp(oper,"AF")==0) addlast(number);
+        if (strcmp(oper,"DF")==0) deletefirst();
+        if (strcmp(oper,"DL")==0) deletelast();
+        if (strcmp(oper,"DOOM_THE_LIST")==0) doom();
+        if (strcmp(oper,"DE")==0) deletevalue(number);
+        if (strcmp(oper,"PRINT_ALL")==0) printall(ps);
+        if (strcmp(oper,"PRINT_F")==0) printfirst(number,ps);
+        if (strcmp(oper,"PRINT_L")==0) printlast(number,ps);
+    }
+    return 0;
+}
