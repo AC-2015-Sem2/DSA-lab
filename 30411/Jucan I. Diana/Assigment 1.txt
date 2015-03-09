@@ -1,0 +1,215 @@
+#include<string.h>
+#include <stdio.h>
+#include <stdlib.h>
+
+typedef struct node
+{
+    int code;
+    struct node* next;
+} NodeT;
+NodeT* head,*tail;
+
+void addfirst (int code)
+{
+    if(head==NULL)
+    {
+
+        head=(NodeT*)malloc(sizeof(NodeT*));
+        head->code=code;
+        head->next=NULL;
+        tail=head;
+    }
+    else
+    {
+        NodeT*p=(NodeT*)malloc(sizeof(NodeT*));
+        p->code=code;
+        p->next=head;
+        head=p;
+    }
+}
+void addlast(int code)
+{
+    NodeT* p=(NodeT*)malloc(sizeof(NodeT));
+    p->code=code;
+    if(head==NULL)
+    {
+        head=p;
+        tail=p;
+        p->next=NULL;
+    }
+    else if(tail!=NULL)
+    {
+        p->next=NULL;
+        tail->next=p;
+        tail=p;
+
+    }
+}
+void deletefirst()
+{
+    NodeT *p;
+    if(head!=NULL)
+    {
+        p=head;
+        head=head->next;
+        free(p);
+        if(head==NULL)
+            tail=NULL;
+    }
+}
+void deletelast()
+{
+    NodeT *q,*q1;
+    q1=NULL;
+    q=head;
+    if(q!=NULL)
+    {
+        while(q!=tail)
+        {
+            q1=q;
+            q=q->next;
+        }
+
+        if(q==head)
+            head=tail=NULL;
+        else
+        {
+            q1->next=NULL;
+            tail=q1;
+        }
+        free(q);
+    }
+}
+void delete_a_node(int code)
+{
+    NodeT *q,*q1;
+    q1=NULL;
+    q=head;
+    while(q!=NULL)
+    {
+        if(q->code==code)
+            break;
+        q1=q;
+        q=q->next;
+    }
+    if(q!=NULL)
+    {
+        if(q==head)
+        {
+            head=head->next;
+            free(q);
+            if(head==NULL)
+                tail=NULL;
+        }
+        else
+        {
+            q1->next=q->next;
+            if(q==tail)
+                tail=q1;
+            free(q);
+        }
+    }
+}
+void delete_the_list ()
+{
+    NodeT*p;
+    while(head!=NULL)
+    {
+        p=head;
+        head=head->next;
+        free(p);
+    }
+    tail=NULL;
+}
+void printlist(FILE *f)
+{
+    NodeT* aux=head;
+    while(aux!=NULL)  // aux!=NULL    {
+    {
+        fprintf(f,"%d ",aux->code );
+        aux=aux->next;
+    }
+    fprintf(f,"\n");
+}
+void print_the_first_nodes (FILE *pf,int x)
+{
+    NodeT* aux=head;
+    int k=0;
+    while(aux!=NULL && k<=x)
+    {
+        k++;
+        fprintf(pf,"%d ",aux->code);
+        aux=aux->next;
+    }
+    fprintf(pf,"\n");
+}
+void print_the_last_nodes(FILE* pf,int x)
+{
+    NodeT* aux=head;
+    int k=0;
+    while(aux!=NULL)
+    {
+        k++;
+        aux=aux->next;
+    }
+    aux=head;
+    int j=0;
+    while(aux!=NULL )
+    {
+        j++;
+        if(j>k-x)
+            fprintf(pf,"%d ",aux->code);
+            aux=aux->next;
+    }
+    fprintf(pf,"\n");
+}
+int main()
+{
+    FILE *f;
+    f=fopen("input.dat","r");
+    if(f==NULL)
+    {
+        perror("cannot create file!");
+        return -1;
+    }
+    char s[20];
+    int code;
+    FILE *ff;
+    ff=fopen("output.dat","w");
+    if(ff==NULL)
+    {
+        perror("cannot create file!");
+        return -1;
+    }
+    while(fscanf(f,"%s ",s)==1)
+    {
+        if((strcmp(s,"AF")==0)||(strcmp(s,"AL")==0)||(strcmp(s,"DE")==0)||(strcmp(s,"PRINTF_F")==0)||(strcmp(s,"PRINT_L")==0))
+           {
+
+            fscanf(f,"%d ",&code);
+            printf("%s %d\n",s,code);
+           }
+        else
+            printf("%s\n",s);
+            if(strcmp(s,"AL")==0)
+            addlast(code);
+            if(strcmp(s,"AF")==0)
+            addfirst(code);
+            if(strcmp(s,"DE")==0)
+            delete_a_node(code);
+            if(strcmp(s,"PRINT_F")==0)
+            print_the_first_nodes(ff,code);
+            if(strcmp(s,"PRINT_L")==0)
+            print_the_last_nodes(ff,code);
+            if(strcmp(s,"DF")==0)
+            deletefirst();
+            if(strcmp(s,"DL")==0)
+            deletelast();
+            if(strcmp(s,"DOOM_THE_LIST")==0)
+            delete_the_list();
+            if(strcmp(s,"PRINT_ALL")==0)
+            printlist(ff);
+    }
+    fclose(f);
+    return 0;
+}
