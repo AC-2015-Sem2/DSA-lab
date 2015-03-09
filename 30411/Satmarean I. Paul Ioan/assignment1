@@ -147,7 +147,7 @@ void deleteElement(int x)
                 aux1=head;
                 head=head->next;
                 free(aux1);
-            }
+            }else
         if(tail!=NULL)
         {
             aux2=head;
@@ -211,7 +211,7 @@ void PRINT_L (int x)
             while(aux!=NULL)
             {if(i>=((ne-x)+1))
                 fprintf(pf2,"%d ",aux->code);
-
+                
                 aux=aux->next;
                 i++;
             }
@@ -232,17 +232,17 @@ void select()
               if(strcmp(s,"DF")==0)
               {
                   deleteFirst();
-                  printlist();
+
               }else
               if(strcmp(s,"DL")==0)
               {
                   deleteLast();
-                  printlist();
+
               }else
               if(strcmp(s,"DOOM_THE_LIST")==0)
               {
                   DOOM_THE_LIST();
-                  printlist();
+
               }else
               if(strcmp(s,"PRINT_ALL")==0)
               {
