@@ -1,0 +1,241 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+typedef struct node
+{
+    int code;
+    struct node *next;
+} NodeT;
+
+struct node *head,*tail;
+
+void addFirst(int code)
+{
+    if (head==NULL)
+    {
+        head=(struct node*)malloc(sizeof(struct node*));
+        head->code=code;
+        head->next=NULL;
+    }
+    else
+    {
+        if (tail==NULL)
+        {
+            tail=head;
+            struct node *p=(struct node*)malloc(sizeof(struct node*));
+            p->code=code;
+            p->next=head;
+            head=p;
+        }
+        else
+        {
+            struct node *p=(struct node*)malloc(sizeof(struct node*));
+            p->code=code;
+            p->next=head;
+            head=p;
+        }
+    }
+}
+void printlist(FILE *af)
+{
+    struct node *p=head;
+    while (p!=NULL)
+    {
+        fprintf(af,"%d ",p->code);
+        p=p->next;
+    }
+    fprintf(af,"\n");
+}
+void addLast(int code)
+{
+    if (head==NULL)
+    {
+        head=(struct node*)malloc(sizeof(struct node*));
+        head->code=code;
+        head->next=NULL;
+    }
+    else
+    {
+        if (tail==NULL)
+        {
+            struct node *p=(struct node*)malloc(sizeof(struct node*));
+            p->code=code;
+            p->next=NULL;
+            tail=p;
+            head->next=tail;
+        }
+        else
+        {
+            struct node *p=(struct node*)malloc(sizeof(struct node*));
+            p->code=code;
+            p->next=NULL;
+            tail->next=p;
+            tail=p;
+        }
+    }
+}
+NodeT* find(int x)
+{
+    NodeT *aux;
+    aux=head;
+    while(aux!=NULL && aux->code!=x)
+    {
+        aux=aux->next;
+    }
+    return aux;
+}
+
+void deleteFirst()
+{
+    NodeT *aux;
+    aux=head;
+    head=head->next;
+    free(aux);
+
+}
+
+void deleteLast()
+{
+    if (head!=NULL)
+    {
+        NodeT *p;
+        p=head;
+        while (p->next!=tail)
+            p=p->next;
+        free(tail);
+        tail=p;
+    }
+
+}
+
+void doom()
+{
+    NodeT *p,*aux;
+    p=head;
+    while (p!=NULL)
+    {
+        aux=p;
+        p=p->next;
+        free(aux);
+    }
+    head=NULL;
+    tail=NULL;
+
+}
+
+void deleteFind(int x)
+{
+    NodeT *p,*aux;
+    p=head;
+    while(p!=NULL && p->code!=x)
+    {
+        aux=p;
+        p=p->next;
+    }
+    if (p!=NULL)
+    {
+        if (head==p)
+        {
+            head=p->next;
+            free(p);
+        }
+        else
+        {
+            aux->next=p->next;
+            free(p);
+        }
+    }
+}
+int nrelem()
+{
+    NodeT *p=head;
+    int nr=0;
+    while (p!=NULL)
+    {
+        nr++;
+        p=p->next;
+    }
+    return nr;
+
+}
+void printFirst(int x, FILE *f)
+{
+    NodeT *p=head;
+    while (x!=0 && p!=NULL)
+    {
+        fprintf(f,"%d ", p->code);
+        p=p->next;
+        x--;
+
+    }
+}
+
+void printLast(int x, FILE *p)
+{
+    NodeT *aux=head;
+    int nr=nrelem();
+    if (nr<x)
+        printlist(p);
+    else
+    {
+        while (nr-x!=0)
+        {
+            aux=aux->next;
+            x++;
+        }
+        while (aux!=NULL)
+        {
+            fprintf(p,"%d ", aux->code);
+            aux=aux->next;
+        }
+        fprintf(p,"\n");
+    }
+}
+
+int main()
+{
+    FILE *f=fopen("input.dat","r");
+    FILE *pf=fopen("output.dat","w");
+    char s[10];
+    int x;
+    while (fscanf(f,"%s", s)==1)
+    {
+        if (strcmp(s,"AF")==0)
+        {
+            fscanf(f,"%d", &x);
+            addFirst(x);
+        }
+        if (strcmp(s,"AL")==0)
+        {
+            fscanf(f,"%d", &x);
+            addLast(x);
+        }
+
+        if (strcmp(s,"DF")==0)
+            deleteFirst();
+        if (strcmp(s,"DL")==0)
+            deleteLast();
+            if (strcmp(s,"DOOM_THE_LIST")==0)
+                doom();
+        if (strcmp(s,"DE")==0)
+        {
+            fscanf(f,"%d", &x);
+            deleteFind(x);
+        }
+
+        if (strcmp(s,"PRINT_ALL")==0)
+            printlist(pf);
+        if (strcmp(s,"PRINT_F")==0)
+        {
+            fscanf(f,"%d", &x);
+            printFirst(x,pf);
+        }
+        if (strcmp(s,"PRINT_L")==0)
+        {
+            fscanf(f,"%d", &x);
+            printLast(x,pf);
+        }
+    }
+    return 0;
+}
