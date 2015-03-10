@@ -19,17 +19,17 @@ void ComProc(char* s){
         AddLast(value);
     }
     else if(!strcmp(com, "DF"))
-        DeleteFirst();
+        {DeleteFirst();}
     else if(!strcmp(com, "DL"))
-        DeleteLast();
+        {DeleteLast();}
     else if(!strcmp(com, "DOOM_THE_LIST"))
-        DOOM();
+        {DOOM();}
     else if(!strcmp(com, "DE")){
         sscanf(s, "%*s %d", &value);
         Del(value);
     }
     else if(!strcmp(com, "PRINT_ALL"))
-        PrintAll();
+        {PrintAll();}
     else if(!strcmp(com, "PRINT_F")){
         sscanf(s, "%*s %d", &value);
         PrintFirst(value);
