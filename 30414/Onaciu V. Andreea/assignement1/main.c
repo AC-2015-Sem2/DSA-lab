@@ -10,15 +10,15 @@ int main()
     char operation[10];
     f=fopen("input.dat","r");
     if (f==NULL)
-     {
-      perror("Error while opening the input file.");
-     }
+    {
+        perror("Error while opening the input file.");
+    }
 
     g=fopen("output.dat","w");
     if (g==NULL)
-     {
-      perror("Eroor while opening the output file.");
-     }
+    {
+        perror("Eroor while opening the output file.");
+    }
 
     while (fscanf(f,"%s %d \n",operation,&x)>0)
     {
