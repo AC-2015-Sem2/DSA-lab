@@ -1,0 +1,49 @@
+# depslib dependency file v1.0
+1425995861 source:c:\users\rana\desktop\tries\assignmentextra\functionsfortheheadercells.c
+	"list_h.h"
+
+1425996798 c:\users\rana\desktop\tries\assignmentextra\list_h.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1425996116 source:c:\users\rana\desktop\tries\assignmentextra\functionsforthelistofwaves.c
+	"list_h.h"
+
+1425996873 source:c:\users\rana\desktop\tries\assignmentextra\functionsforthesentinellist.c
+	"list_h.h"
+
+1425935025 source:c:\users\rana\desktop\tries\assignmentextra\main.c
+	<stdio.h>
+	<stdlib.h>
+	"list_h.h"
+	<string.h>
+
+1425996969 source:c:\users\rana\desktop\tries\assignmentextra\obtainingtheoutput.c
+	"list_h.h"
+	<limits.h>
+
+1425995861 source:c:\users\rana\desktop\assignmentextra\functionsfortheheadercells.c
+	"list_h.h"
+
+1425996798 c:\users\rana\desktop\assignmentextra\list_h.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1425996116 source:c:\users\rana\desktop\assignmentextra\functionsforthelistofwaves.c
+	"list_h.h"
+
+1425996873 source:c:\users\rana\desktop\assignmentextra\functionsforthesentinellist.c
+	"list_h.h"
+
+1425935025 source:c:\users\rana\desktop\assignmentextra\main.c
+	<stdio.h>
+	<stdlib.h>
+	"list_h.h"
+	<string.h>
+
+1425996969 source:c:\users\rana\desktop\assignmentextra\obtainingtheoutput.c
+	"list_h.h"
+	<limits.h>
+
