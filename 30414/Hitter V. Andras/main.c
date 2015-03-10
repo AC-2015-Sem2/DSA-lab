@@ -118,9 +118,7 @@ void DeleteElement(int data)
     node *aux=head, *aux2;
     if (head->data==data) deleteFirst();
     else
-        if (tail->data==data) deleteLast();
-        else
-        {
+    {
             while((aux->next->data!=data) && (aux->next->next!=NULL))
             {
                 aux=aux->next;
@@ -131,7 +129,8 @@ void DeleteElement(int data)
             aux->next=aux->next->next;
             free(aux2);
             }
-        }
+            else {if (tail->data==data) deleteLast();}
+    }
 }
 
 void printFirst(int data)
@@ -174,7 +173,7 @@ void printLast(int data)
 int main()
 {
 int x,k=1;
-char s[20],c;
+char s[20];
      fp = fopen("input.dat","r");
      g=fopen("output.dat","w");
 
@@ -199,7 +198,6 @@ char s[20],c;
         if (strcmp(s, "PRINT_L")==0) {printLast(x);print();}
         s[0]='\0';
     }
-
     fclose(fp);
     fclose(g);
     return 0;
