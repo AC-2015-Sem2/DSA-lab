@@ -31,39 +31,18 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
-		<Unit filename="AddFirst.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="DeleteCertainElement.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="PrintLastElements.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="addLast.c">
+		<Unit filename="addFunctions.c">
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="definingStructure.h" />
-		<Unit filename="deleteFirst.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="deleteLast.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="doomTheList.c">
+		<Unit filename="deleteFunctions.c">
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="functions.h" />
 		<Unit filename="main.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="numberOfElements.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="print.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="printFirst.c">
+		<Unit filename="printingFunctions.c">
 			<Option compilerVar="CC" />
 		</Unit>
 		<Extensions>

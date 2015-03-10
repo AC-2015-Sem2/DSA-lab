@@ -2,7 +2,7 @@
 int numberOfElements();
 void addFirst(int x);
 void addLast(int x);
-void deleteCertainElement(int x);
+void deleteElementByKey(int x);
 void deleteFirst();
 void deleteLast();
 void doomTheList();
