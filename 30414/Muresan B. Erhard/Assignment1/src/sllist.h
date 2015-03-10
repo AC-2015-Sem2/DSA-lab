@@ -37,5 +37,7 @@ Node *createNode(int);
 List *createList();
 void addAtFirst(List *, Node *);
 void addAtLast(List *, Node *);
+void deleteFirst(List *);
+void deleteLast(List *);
 
 #endif // SLLIST_H_INCLUDED
