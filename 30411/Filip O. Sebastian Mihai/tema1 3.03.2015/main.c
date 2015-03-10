@@ -15,7 +15,7 @@ void addFirst(int code)
         head->code=code;
         head->next=NULL;
     }
-    else if(tail==NULL)
+    else if(tail==head)
     {
         NodeT* now=(NodeT*)malloc(sizeof(NodeT*));
         now->code=code;
@@ -43,7 +43,7 @@ void addLast(int code)
     }
     else
     {
-        if (tail==NULL)
+        if (tail==head)
         {
             struct node *p=(struct node*)malloc(sizeof(struct node*));
             p->code=code;
