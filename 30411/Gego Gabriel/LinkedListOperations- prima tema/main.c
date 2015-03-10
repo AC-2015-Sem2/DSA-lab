@@ -19,14 +19,7 @@ typedef struct node
    		    head->next=NULL;
    		    tail=head;
             }
-   		 else if(tail==NULL)
-   		 {node* k=(node*)malloc(sizeof(node));
-   		  k->value=value;
-   		  k->next=NULL;
-   		  tail=k;}
-
-
-   		  else
+        else
    		  {node* k=(node*)malloc(sizeof(node));
    		  k->value=value;
    		  k->next=NULL;
