@@ -21,7 +21,7 @@ void PrintFirst(int x){
     if (head==tail) {fprintf(pfile, "%d\n\n", head->data); return;}
     NodeT* node = head;
     int i = 0;
-    while (i<x && node!= tail){
+    while (i<x && node!=tail){
         fprintf(pfile, "%d\n", node->data);
         node = node->next;
         i++;
