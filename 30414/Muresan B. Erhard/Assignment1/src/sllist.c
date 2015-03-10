@@ -13,3 +13,27 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
+
+#include "sllist.h"
+
+/* creates single linked node */
+Node *createNode(int data)
+{
+  Node *node = (Node *)malloc(sizeof(Node));
+  if (node == NULL)
+    perror("Couldn't allocate memory for the new node!");
+  node->data = data;
+  node->next = NULL;
+  return node;
+}
+
+/* creates empty single linked list */
+List *createList()
+{
+  List *list = (List *)malloc(sizeof(List));
+  if (list == NULL)
+    perror("Couldn't allocate memory for the new list!");
+  list->head = NULL;
+  list->tail = NULL;
+  return list;
+}

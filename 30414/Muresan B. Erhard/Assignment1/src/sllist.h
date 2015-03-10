@@ -17,10 +17,13 @@
 #ifndef SLLIST_H_INCLUDED
 #define SLLIST_H_INCLUDED
 
+#include <stdlib.h>
+#include <stdio.h>
+
 typedef struct _node
 {
   int data; /* the value it holds */
-  _node *next; /* pointer to the next node */
+  struct _node *next; /* pointer to the next node */
 }Node;
 
 typedef struct
@@ -29,5 +32,8 @@ typedef struct
   Node *tail; /* pointer to the last node of the list */
 
 }List;
+
+Node *createNode(int);
+List *createList();
 
 #endif // SLLIST_H_INCLUDED
