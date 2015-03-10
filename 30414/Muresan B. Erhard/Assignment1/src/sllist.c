@@ -37,3 +37,40 @@ List *createList()
   list->tail = NULL;
   return list;
 }
+
+/* add node to the head of the list */
+void addAtFirst(List *L, Node *pNode)
+{
+  if(L == NULL || pNode == NULL)
+    {
+      perror("Invalid list or node!");
+      return;
+    }
+  if(L->head == NULL) /* list is empty */
+    { /* head == tail == NULL */
+      L->head = pNode;
+      L->tail = pNode;
+    }
+  else
+    {
+      pNode->next = L->head;
+      L->head = pNode;
+    }
+}
+
+/* add node to the tail of the list */
+void addAtLast(List *L, Node *pNode)
+{
+  if(L == NULL || pNode == NULL)
+    {
+      perror("Invalid list or node!");
+      return;
+    }
+  if(L->tail == NULL) /* list is empty */
+    addAtFirst(L, pNode);
+  else
+    {
+      L->tail->next = pNode;
+      L->tail = pNode;
+    }
+}

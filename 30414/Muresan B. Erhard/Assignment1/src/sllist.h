@@ -35,5 +35,7 @@ typedef struct
 
 Node *createNode(int);
 List *createList();
+void addAtFirst(List *, Node *);
+void addAtLast(List *, Node *);
 
 #endif // SLLIST_H_INCLUDED
