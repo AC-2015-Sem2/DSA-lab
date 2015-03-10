@@ -174,9 +174,47 @@ int main()
 {
     FILE *f=fopen("input.txt","r");
     FILE *f2=fopen("output.txt","w");
+    int x;
     char s[20];
 
+    while (fscanf(f,"%s",&s)==1)
+    {
 
+
+        if (strcmp("AF",s)==0)
+        {
+            fscanf(f,"%d",&x);
+            AddFirst(x);
+        }
+        else if (strcmp("AL",s)==0)
+        {
+            fscanf(f,"%d",&x);
+            AddLast(x);
+        }
+        else if (strcmp("DF",s)==0)
+            DeleteFirst();
+        else if (strcmp("DL",s)==0)
+            DeleteLast();
+        else if (strcmp("DOOM_THE_LIST",s)==0)
+            Doom();
+        else if (strcmp("DE",s)==0)
+        {
+            fscanf(f,"%d",&x);
+            DeleteElem(x);
+        }
+        else if (strcmp("PRINT_ALL",s)==0)
+            PrintAll(f2);
+        else if (strcmp("PRINT_F",s)==0)
+        {
+            fscanf(f,"%d",&x);
+            PrintFirstX(f2,x);
+        }
+        else if (strcmp("PRINT_L",s)==0)
+        {
+            fscanf(f,"%d",&x);
+            PrintLastX(f2,x);
+        }
+    }
     fclose(f);
     fclose(f2);
     return 0;
