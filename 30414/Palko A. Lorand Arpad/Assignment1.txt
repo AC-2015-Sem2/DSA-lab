@@ -1,0 +1,228 @@
+#include <stdlib.h>
+#include <stdio.h>
+
+typedef struct node
+{
+    int data;
+    struct node* next;
+} node;
+node *head,*tail;
+
+void AL(int data)
+{
+    node *a;
+    a=(node*)malloc(sizeof(node));
+    a->data=data;
+    tail->next=a;
+    a->next=NULL;
+    tail=a;
+}
+
+void AF(int data)
+{
+    node *a;
+    if (head==NULL)
+    {
+        head=(node*)malloc(sizeof(node));
+        tail=head;
+        head->data=data;
+        head->next=NULL;
+    }
+    else
+    {
+        a=(node*)malloc(sizeof(node));
+        a->data=data;
+        a->next=head;
+        head=a;
+    }
+}
+
+void DF()
+{
+    if(head==tail)
+    {
+        head=NULL;
+        tail=NULL;
+    }
+    else
+    {
+        node* a=(node*)malloc(sizeof(node));
+        a=head;
+        head=head->next;
+        free(a);
+    }
+}
+
+void DL()
+{
+    if(head==tail)
+    {
+        head=NULL;
+        tail=NULL;
+    }
+    else
+    {
+        node* a=(node*)malloc(sizeof(node));
+        a=head;
+        while(a!=NULL)
+        {
+            if(a->next==tail)
+            {
+                tail=a;
+                tail->next=NULL;
+                free(a->next);
+                break;
+            }
+            else a=a->next;
+        }
+    }
+}
+
+void DOOM()
+{
+    node* a=(node*)malloc(sizeof(node));
+    node* b=(node*)malloc(sizeof(node));
+    a=head;
+    b=a;
+    while(a!= NULL)
+    {
+        a=a->next;
+        free(b);
+        b=a;
+    }
+    head=NULL;
+    tail=NULL;
+
+}
+
+void DELX(int x)
+{
+    node* a=(node*)malloc(sizeof(node));
+    node* b=(node*)malloc(sizeof(node));
+
+    if(head->data==x)
+        DF();
+    if(tail->data==x)
+        DL();
+    if(head==tail && head->data==x)
+    {
+        head=NULL;
+        tail=NULL;
+    }
+    a=head;
+
+    while(a->next!=NULL)
+    {
+        b=a->next;
+        if(b->data==x)
+        {
+            a->next=b->next;
+            free(b);
+        }
+
+        a=a->next;
+    }
+
+}
+
+void PrALL()
+{
+    node* a=head;
+    FILE* f=fopen("output.dat", "a");
+    while(a!= NULL)
+    {
+        fprintf(f, "%d ", a->data);
+        a=a->next;
+    }
+    fprintf(f, "\n");
+    fclose(f);
+
+}
+
+void PrFx(int x)
+{
+        int c=1;
+    node* a=head;
+    FILE* f=fopen("output.dat", "a");
+    while(a!=NULL && c<=x)
+    {
+        fprintf(f, "%d ", a->data);
+        a=a->next;
+        c++;
+    }
+    fprintf(f, "\n");
+    fclose(f);
+
+}
+
+void PrLx(int x)
+{
+        int c=0, n=0;
+    node* a=head;
+    FILE* f=fopen("output.dat", "a");
+    while(a!=NULL)
+    {
+        n++;
+        a=a->next;
+    }
+
+    a=head;
+    while(a!=NULL)
+    {
+         c++;
+         if(c>n-x)
+            fprintf(f, "%d ", a->data);
+        a=a->next;
+    }
+
+    fprintf(f, "\n");
+    fclose(f);
+
+}
+int main()
+{
+    FILE* g=fopen("input.dat", "r");
+
+    char t[20];
+    int value;
+
+    while(fscanf(g, "%s", t)>0)
+    {
+        if(strcmp(t, "AF")==0)
+        {
+            fscanf(g, "%d", &value);
+            AF(value);
+        }
+        else if(strcmp(t, "AL")==0)
+        {
+            fscanf(g, "%d", &value);
+            AL(value);
+        }
+        else if(strcmp(t, "DF")==0)
+            DF();
+        else if(strcmp(t, "DL")==0)
+            DL();
+        else if(strcmp(t, "DOOM_THE_LIST")==0)
+            DOOM()
+        else if(strcmp(t, "DE")==0)
+        {
+            fscanf(g, "%d", &value);
+            DELX(value);
+        }
+        else if(strcmp(t, "PRINT_ALL")==0)
+            PrALL();
+        else if(strcmp(t, "PRINT_F")==0)
+        {
+            fscanf(g, "%d", &value);
+            PrFx(value);
+        }
+        else if(strcmp(t, "PRINT_L")==0)
+        {
+            fscanf(g, "%d", &value);
+            PrLx(value);
+        }
+    }
+
+    fclose(g);
+    return 0;
+}
