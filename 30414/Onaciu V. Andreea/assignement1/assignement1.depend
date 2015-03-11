@@ -1,0 +1,11 @@
+# depslib dependency file v1.0
+1425838012 source:d:\pcprojects\dsaprojects\assignement1\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"SLLfunctions.h"
+
+1425985484 d:\pcprojects\dsaprojects\assignement1\sllfunctions.h
+	<stdlib.h>
+	<stdio.h>
+
