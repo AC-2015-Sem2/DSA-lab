@@ -39,5 +39,7 @@ void addAtFirst(List *, Node *);
 void addAtLast(List *, Node *);
 void deleteFirst(List *);
 void deleteLast(List *);
+void deleteNodeByValue(List *, int);
+void deleteAll(List *);
 
 #endif // SLLIST_H_INCLUDED
