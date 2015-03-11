@@ -1,0 +1,111 @@
+# depslib dependency file v1.0
+1425160289 source:d:\faculta\an1\sem_2\dsa\laborator\lab1\programs\assignment1\addfirst.c
+	<stdlib.h>
+	"definingStructure.h"
+
+1425161731 d:\faculta\an1\sem_2\dsa\laborator\lab1\programs\assignment1\definingstructure.h
+	<stdio.h>
+
+1425140939 source:d:\faculta\an1\sem_2\dsa\laborator\lab1\programs\assignment1\addlast.c
+	"definingStructure.h"
+	<stdlib.h>
+
+1425161731 source:d:\faculta\an1\sem_2\dsa\laborator\lab1\programs\assignment1\deletecertainelement.c
+	<stdlib.h>
+	"definingStructure.h"
+
+1425161731 source:d:\faculta\an1\sem_2\dsa\laborator\lab1\programs\assignment1\deletefirst.c
+	"definingStructure.h"
+	<stdlib.h>
+
+1425161731 source:d:\faculta\an1\sem_2\dsa\laborator\lab1\programs\assignment1\deletelast.c
+	"definingStructure.h"
+	<stdlib.h>
+
+1425143205 source:d:\faculta\an1\sem_2\dsa\laborator\lab1\programs\assignment1\doomthelist.c
+	<stdlib.h>
+	"definingStructure.h"
+
+1425161731 source:d:\faculta\an1\sem_2\dsa\laborator\lab1\programs\assignment1\print.c
+	<stdlib.h>
+	"definingStructure.h"
+
+1425161731 source:d:\faculta\an1\sem_2\dsa\laborator\lab1\programs\assignment1\main.c
+	<stdlib.h>
+	<string.h>
+	"definingStructure.h"
+	"functions.h"
+
+1425161731 d:\faculta\an1\sem_2\dsa\laborator\lab1\programs\assignment1\functions.h
+
+1425161730 source:d:\faculta\an1\sem_2\dsa\laborator\lab1\programs\assignment1\printfirst.c
+	<stdlib.h>
+	"definingStructure.h"
+
+1425161730 source:d:\faculta\an1\sem_2\dsa\laborator\lab1\programs\assignment1\numberofelements.c
+	<stdlib.h>
+	"definingStructure.h"
+
+1425161731 source:d:\faculta\an1\sem_2\dsa\laborator\lab1\programs\assignment1\printlastelements.c
+	<stdlib.h>
+	"definingStructure.h"
+
+1425160289 source:c:\users\rana\desktop\git_lab\myown\dsa-lab\30414\pop p. roxana\assignment1\addfirst.c
+	<stdlib.h>
+	"definingStructure.h"
+
+1425992363 c:\users\rana\desktop\git_lab\myown\dsa-lab\30414\pop p. roxana\assignment1\definingstructure.h
+	<stdio.h>
+	<stdlib.h>
+
+1425140939 source:c:\users\rana\desktop\git_lab\myown\dsa-lab\30414\pop p. roxana\assignment1\addlast.c
+	"definingStructure.h"
+	<stdlib.h>
+
+1425991577 source:c:\users\rana\desktop\git_lab\myown\dsa-lab\30414\pop p. roxana\assignment1\deletecertainelement.c
+	<stdlib.h>
+	"definingStructure.h"
+
+1425987036 source:c:\users\rana\desktop\git_lab\myown\dsa-lab\30414\pop p. roxana\assignment1\deletefirst.c
+	"definingStructure.h"
+	<stdlib.h>
+
+1425988636 source:c:\users\rana\desktop\git_lab\myown\dsa-lab\30414\pop p. roxana\assignment1\deletelast.c
+
+1425985736 source:c:\users\rana\desktop\git_lab\myown\dsa-lab\30414\pop p. roxana\assignment1\doomthelist.c
+	<stdlib.h>
+	"definingStructure.h"
+
+1425989366 source:c:\users\rana\desktop\git_lab\myown\dsa-lab\30414\pop p. roxana\assignment1\main.c
+	<stdlib.h>
+	<string.h>
+	"definingStructure.h"
+	"functions.h"
+
+1425936512 c:\users\rana\desktop\git_lab\myown\dsa-lab\30414\pop p. roxana\assignment1\functions.h
+
+1425161730 source:c:\users\rana\desktop\git_lab\myown\dsa-lab\30414\pop p. roxana\assignment1\numberofelements.c
+	<stdlib.h>
+	"definingStructure.h"
+
+1425161731 source:c:\users\rana\desktop\git_lab\myown\dsa-lab\30414\pop p. roxana\assignment1\print.c
+	<stdlib.h>
+	"definingStructure.h"
+
+1425161730 source:c:\users\rana\desktop\git_lab\myown\dsa-lab\30414\pop p. roxana\assignment1\printfirst.c
+	<stdlib.h>
+	"definingStructure.h"
+
+1425161731 source:c:\users\rana\desktop\git_lab\myown\dsa-lab\30414\pop p. roxana\assignment1\printlastelements.c
+	<stdlib.h>
+	"definingStructure.h"
+
+1425992363 source:c:\users\rana\desktop\git_lab\myown\dsa-lab\30414\pop p. roxana\assignment1\deletefunctions.c
+	"definingStructure.h"
+
+1425992363 source:c:\users\rana\desktop\git_lab\myown\dsa-lab\30414\pop p. roxana\assignment1\printingfunctions.c
+	"definingStructure.h"
+
+1425992549 source:c:\users\rana\desktop\git_lab\myown\dsa-lab\30414\pop p. roxana\assignment1\addfunctions.c
+	"definingStructure.h"
+

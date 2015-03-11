@@ -1,0 +1,283 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+FILE *f;
+
+typedef struct node
+{
+    int code;
+    struct node* next;
+
+} nodeT;
+
+nodeT* head, *tail;
+
+
+void addFirst(int code)
+{
+    if(head==NULL)
+    {
+        head=(nodeT*)malloc(sizeof(nodeT*));
+        head->code=code;
+        head->next=NULL;
+        tail=head;
+    }
+    else if(tail==NULL)
+    {
+        tail=head;
+        nodeT *p=(nodeT*)malloc(sizeof(nodeT*));
+        p->code=code;
+        p->next=head;
+        //tail=head;
+        head=p;
+
+
+    }
+    else
+    {
+        nodeT *d=(nodeT*)malloc(sizeof(nodeT*));
+        d->code=code;
+        d->next=head;
+        head=d;
+    }
+}
+
+
+void printList()
+{
+    nodeT* aux=head;
+    while(aux!=NULL)
+    {
+        fprintf(f,"%d ",aux->code);
+        aux=aux->next;
+    }
+    fprintf(f,"\n");
+}
+
+
+
+void addLast(int code)
+{
+    if(head==NULL)          // hogyha ures peldaul, exact ca inainte
+    {
+
+        head=(nodeT*)malloc(sizeof(nodeT*));
+        head->code=code;
+        head->next=NULL;
+        tail=head;
+    }
+    else
+    {
+        nodeT* r=(nodeT*)malloc(sizeof(nodeT*));
+        r->code=code;
+        r->next=NULL;
+        tail->next=r;
+        tail=r;
+    }
+
+}
+
+
+
+
+nodeT* find(int x)
+{
+
+    nodeT* aux;
+    aux=head;
+    while(aux!=NULL  && aux->code!=x)
+    {
+        aux=aux->next;
+    }
+    return aux;
+}
+
+
+
+void delete_first()
+{
+    nodeT *p;
+    if (head!= NULL )
+    {
+        p=head;
+        head= head->next;
+        free(p) ;
+        if(head==NULL)
+            tail=NULL;
+    }
+}
+void delete_last()
+{
+    nodeT *q, *q1;
+    q1=NULL;
+    q=head;
+    if(q!=NULL)
+    {
+        while(q != tail)
+        {
+            q1=q;
+            q=q->next;
+        }
+
+        if(q==NULL)
+        {
+            head=tail=NULL;
+        }
+        else
+        {
+            q1->next=NULL;
+            tail=q1;
+        }
+        free(q);
+    }
+}
+
+
+
+
+
+void delete_x(int x)
+{
+    nodeT* f;
+    f=find(x);
+    if(f != NULL)
+    {
+        if(head->code==x) delete_first();
+        else
+        {
+            nodeT *aux=head,*aux1;
+            while((aux != NULL)&&(aux->code != x))
+            {
+                aux1=aux;
+                aux=aux->next;
+            }
+            aux1->next=aux->next;
+            free(aux);
+        }
+    }
+
+
+}
+void delete_all()
+{
+    nodeT *p;
+    while(head !=NULL)
+    {
+        p=head;
+        head=head->next;
+        free(p);
+    }
+    tail=NULL;
+}
+int nr_of_list()
+{
+    int i=0;
+    nodeT* aux=head;
+    while(aux !=tail)
+    {
+        aux=aux->next;
+
+        i++;
+    }
+    return i+1;
+}
+
+
+void print_f_x(int x)
+{
+
+    int m=nr_of_list();
+
+    if(x>m) printList();
+    else
+    {
+        int i;
+        nodeT* aux=head;
+        for(i=0; i<x; i++)
+        {
+            fprintf(f,"%d ",aux->code);
+            aux=aux->next;
+
+        }
+    }
+    fprintf(f,"\n");
+}
+
+
+
+void print_l_x(int x)
+{
+    nodeT* aux=head;
+    int i,k=0;
+    int h=nr_of_list();
+
+
+    if(x>h) printList();
+    else
+    {
+        aux=head;
+        while(k != h-x)
+        {
+            aux=aux->next;
+            k++;
+        }
+    }
+    for(i=1; i<=x; i++)
+    {
+        fprintf(f,"%d ",aux->code);
+        aux=aux->next;
+    }
+
+    fprintf(f,"\n");
+}
+
+
+
+
+int main()
+{
+    f=fopen("output.txt","w");
+    if(f==NULL)
+    {
+        perror("cannot to be written");
+        return -100;
+    }
+    char op[29];
+    int nr=0,n;
+    FILE *pf=fopen("input.txt","r");
+    if(pf==NULL)
+        perror("cannot open");
+    char line[100];
+    while(fgets(line,sizeof(line),pf) != NULL)
+        nr++;
+    int i,k;
+    fseek(pf,0,SEEK_SET);
+    for(i=0; i<nr; i++)
+    {
+        k=fscanf(pf,"%s %d\n",op,&n);
+        if( k == 2)
+        {
+            if(strcmp(op,"AF")==0) addFirst(n);
+            if(strcmp(op,"AL")==0) addLast(n);
+            if(strcmp(op,"DE")==0) delete_x(n);
+            if(strcmp(op,"PRINT_F")==0) print_f_x(n);
+            if(strcmp(op,"PRINT_L")==0) print_l_x(n);
+        }
+        else if( k == 1)
+        {
+            if(strcmp(op,"PRINT_ALL")==0)  printList();
+            if(strcmp(op,"DF")==0)   delete_first();
+            if(strcmp(op,"DL")==0)   delete_last();
+            if(strcmp(op,"DOOM_THE_LIST")==0)
+            {
+                delete_all();
+            }
+
+        }
+
+    }
+
+    fclose(pf);
+    fclose(f);
+    return 0;
+}

@@ -1,0 +1,235 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+typedef struct node
+{
+    int x;
+    struct node *next;
+}NodeT;
+
+NodeT *head,*tail;
+
+void AF (int x)
+{
+    if(head==NULL)
+    {
+        head=(NodeT*)malloc(sizeof(NodeT*));
+        head->x=x;
+        head->next=NULL;
+    }
+    else if(tail==NULL)
+    {
+        tail=head;
+        NodeT* p=(NodeT*)malloc(sizeof(NodeT*));
+        p->x=x;
+        p->next=head;
+        head=p;
+    }
+    else
+    {
+        NodeT* p=(NodeT*)malloc(sizeof(NodeT*));
+        p->x=x;
+        p->next=head;
+        head=p;
+    }
+}
+
+void PrintList()
+{
+    NodeT *aux=head;
+    while(aux!=NULL)
+    {
+        printf("%d ",aux->x);
+        aux=aux->next;
+    }
+}
+void AL(int x)
+{
+    if(head==NULL)
+    {
+        head=(NodeT*)malloc(sizeof(NodeT*));
+        head->x=x;
+        head->next=NULL;
+        tail=head;
+    }
+    else
+    {
+        NodeT* p=(NodeT*)malloc(sizeof(NodeT*));
+        p->x=x;
+        p->next=NULL;
+        tail->next=p;
+        tail=p;
+
+    }
+}
+void DF()
+{
+    if(head==NULL)
+        printf("Nothing to delete ");
+    else
+    {
+        NodeT *aux=head->next;
+        head->next=NULL;
+        head=aux;
+    }
+}
+void DL()
+{
+    NodeT *aux=head,*p=NULL;
+
+    while(aux!=tail)
+    {
+        p=aux;
+        aux=aux->next;
+    }
+    if(p==head)
+        head=tail=NULL;
+    else
+    {   p->next=NULL;
+        tail=p;
+    }
+}
+void DOOM_THE_LIST()
+{
+    NodeT *p;
+    while(head!=NULL)
+    {
+        p=head;
+        head=head->next;
+        free(p);
+    }
+    tail=NULL;
+}
+void DE(int a)
+{
+    NodeT *p=head,*p1=NULL;
+    while(p!=NULL)
+    {
+        if(p->x==a)
+            break;
+        p1=p;
+        p=p->next;
+    }
+    if(p!=NULL)
+    {
+        if(p==head)
+        {
+            head=head->next;
+            if(head==NULL)
+                tail=NULL;
+        }
+        else
+        {
+            p1->next=p->next;
+            if(p==tail)
+                tail=p1;
+        }
+
+    }
+}
+
+int nr_of_elements()
+{
+    int nr=0;
+    NodeT *p=head;
+    while(p!=tail)
+    {
+        nr++;
+        p=p->next;
+    }
+    nr++;
+    return nr;
+}
+void PRINT_ALL(FILE *out)
+{
+    NodeT *p=head;
+    if(head!=NULL)
+    {
+        while(p!=NULL)
+        {
+            fprintf(out,"%d ",p->x);
+            p=p->next;
+        }
+    }
+    return;
+}
+void PRINT_F(FILE *out,int b)
+{
+    int i;
+    NodeT *p=head;
+    if(p!=NULL)
+        for(i=0;i<b;i++)
+        {
+            fprintf(out,"%d ",p->x);
+            p=p->next;
+        }
+    return;
+}
+
+
+void PRINT_L(FILE *out,int x)
+{
+    NodeT *p=head;
+    int nr=nr_of_elements();
+    if(x>nr)
+    {
+        while(p!=NULL)
+        {
+            fprintf(out,"%d",p->x);
+            p=p->next;
+        }
+    }
+    else
+    {
+        int k=1;
+        p=head;
+        while(k<=nr-x)
+            if(p!=NULL)
+            {
+                p=p->next;
+                k++;
+            }
+        int i;
+        for(i=k;i<=nr;i++)
+        {
+            fprintf(out,"%d",p->x);
+            p=p->next;
+        }
+    }
+}
+
+int main()
+{
+    FILE *in=fopen("input.dat","r");
+    FILE *out=fopen("output.dat","a");
+    fseek(in,0,SEEK_SET);
+    char *line=(char*)malloc(sizeof(char)*10);
+    int nr;
+    while(fscanf(in,"%s %d",line,&nr)>0)
+    {
+        if(strcmp(line,"AF")==0)
+            AF(nr);
+        if(strcmp(line,"AL")==0)
+            AL(nr);
+        if(strcmp(line,"DF")==0)
+            DF();
+        if(strcmp(line,"DE")==0)
+            DE(nr);
+        if(strcmp(line,"DF")==0)
+            DL();
+        if(strcmp(line,"DOOM_THE_LIST")==0)
+            DOOM_THE_LIST();
+        if(strcmp(line,"PRINT_ALL")==0)
+            PRINT_ALL(out);
+        if(strcmp(line,"PRINT_F")==0)
+            PRINT_F(out,nr);
+        if(strcmp(line,"PRINT_L")==0)
+            PRINT_L(out,nr);
+
+    }
+    fclose(in);
+    fclose(out);
+    PrintList();
+    return 0;
+}

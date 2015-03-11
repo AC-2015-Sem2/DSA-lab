@@ -1,0 +1,229 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+typedef struct node
+{
+    int code;
+    struct node* next;
+}NodeT;
+
+NodeT *head;
+NodeT *tail, *now, *next;
+
+void addFirst(int code)
+{
+    if (head==NULL)
+    {
+        head=(NodeT*)malloc (sizeof (NodeT));
+        head ->code=code;
+        head->next=NULL;
+    }
+    else if (tail==NULL)
+    {
+       NodeT* now=(NodeT*)malloc(sizeof(NodeT*));
+       now->code=code;
+       now->next=head;
+       tail=head;
+       head=now;
+    }
+    else
+    {
+        NodeT* nod;
+        nod=(NodeT*) malloc (sizeof(NodeT*));
+        nod->next=head;
+        nod->code=code;
+        head=nod;
+    }
+}
+
+void addLast(int code)
+{
+    if (tail==NULL)
+    {
+        tail= (NodeT*)malloc(sizeof(NodeT*));
+    head=tail;
+       tail->code=code;
+       tail->next=NULL;
+    }
+     else
+     {
+         now=(NodeT*)malloc(sizeof(NodeT));
+         now->code=code;
+         now->next=NULL;
+         tail->next=now;
+         tail=now;
+     }
+}
+
+void deleteFirst()
+{
+    if (head==tail)
+    {
+        head=NULL;
+        tail=NULL;
+    }
+    else
+    {
+        now=(NodeT*)malloc(sizeof(NodeT));
+        now=head->next;
+        free(head);
+        head=now;
+    }
+}
+
+void deleteLast()
+{
+    if (head==tail)
+    {
+        head=NULL;
+        tail=NULL;
+    }
+    else
+    {
+        now=(NodeT*)malloc(sizeof(NodeT));
+        now=head;
+        while (now->next!=NULL)
+        {
+            if (now->next==tail)
+            {
+                now=tail;
+                tail->next=NULL;
+                free(now=next);
+
+            }
+            else
+            {
+                now=now->next;
+            }
+        }
+    }
+}
+
+void doom()
+{
+    now=(NodeT*)malloc(sizeof(NodeT*));
+    while (head!=NULL)
+    {
+         now=head->next;
+        free(head);
+        head=now;
+    }
+    head=NULL;
+    tail=NULL;
+}
+
+void deletex(int x)
+{
+    if  (head->code==x) deleteFirst();
+    if (tail->code==x) deleteLast();
+    if ((head==tail)&&(head->code==x))
+    {
+        head=NULL;
+        tail==NULL;
+    }
+   now=(NodeT*)malloc(sizeof(NodeT*)); NodeT* var;
+   var=(NodeT*)malloc(sizeof(NodeT*)); now->next=head;
+    while (now->next!=NULL)
+    {
+         var =now->next;
+        if (now->next==x)
+        {
+       now->next=var->next;
+       free(var);
+
+        }
+        now=now->next;
+    }
+}
+NodeT* aux;
+void printList ()
+{
+    NodeT *aux=head;
+    while (aux !=NULL)
+    {
+        printf ("%d ", aux->code);
+        aux=aux->next;
+    }
+}
+
+int count()
+{
+    NodeT *t = head;
+    int length = 0;
+    while(t!=NULL)
+    {
+        length++;
+        t=t->next;
+    }
+return(length);
+}
+
+void PRINT_F()
+{
+    NodeT *p;
+now=head;
+while ( now != NULL )
+if ( now->next = x )
+{
+return now;break;
+}
+else
+now= now->next ;
+
+if (x>count()) printlist();
+ /* not found */
+}
+
+
+
+int main()
+{
+
+    FILE* fisier = fopen("input.txt", "r");
+    char caz[15];
+    int n;
+    if (fisier==NULL)
+    {
+        printf("Error in opening the file.");
+        exit(1);
+    }
+
+    while(fscanf(fisier,"%s",caz)>0)
+    {
+        if (strcmp(caz,"AF")==0)
+        {
+            fscanf(fisier,"%d",&n);
+            addfirst(n);
+        }
+        else if (strcmp(caz,"AL")==0)
+        {
+            fscanf(fisier,"%d",&n);
+            addlast(n);
+        }
+        else if (strcmp(caz,"DF")==0)
+            deletefirst();
+        else if(strcmp(caz,"DL")==0)
+            deletelast();
+        else if(strcmp(caz,"DE")==0)
+        {
+            fscanf(fisier,"%d",&n);
+            deletex(n);
+        }
+        else if(strcmp(caz,"PRINT_ALL")==0)
+            printlist();
+        else if(strcmp(caz,"PRINT_F")==0)
+        {
+            fscanf(fisier,"%d",&n);
+            printfirstx(n);
+        }
+        else if(strcmp(caz,"PRINT_L")==0)
+        {
+            fscanf(fisier,"%d",&n);
+            printlastx(n);
+        }
+        else if(strcmp(caz,"DOOM_THE_LIST")==0)
+            DOOM();
+    }
+    fclose(fisier);
+    return 0;
+}

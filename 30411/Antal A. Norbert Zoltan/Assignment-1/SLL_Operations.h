@@ -1,0 +1,6 @@
+#ifndef SLL_OPERATIONS_H_INCLUDED
+#define SLL_OPERATIONS_H_INCLUDED
+
+void ComProc(char*);
+
+#endif // SLL_OPERATIONS_H_INCLUDED

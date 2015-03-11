@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1426023762 source:e:\c++\sem2assignment1extra\main.c
+	<string.h>
+	<stdio.h>
+	<stdlib.h>
+

@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1426007147 source:c:\users\gabriel\desktop\problemept cp\linkedlistoperations\main.c
+	<string.h>
+	<stdio.h>
+	<stdlib.h>
+

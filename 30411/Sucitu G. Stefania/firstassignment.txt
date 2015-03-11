@@ -1,0 +1,256 @@
+#include <stdio.h>
+#include <stdlib.h>
+typedef struct node
+{
+    int x;
+    struct node* next;
+} node;
+node *head, *tail;
+
+node* find(int n)
+{
+    node *aux;
+    aux=head;
+    while(aux!=NULL && aux->x!=n)
+    {
+        aux=aux->next;
+    }
+    return aux;
+}
+void AF(int x)
+{
+    if (head==NULL)
+    {
+        head=(node*)malloc(sizeof(node*));
+        head->x=x;
+        head->next=NULL;
+    }
+    else if (tail==NULL)
+    {
+        tail=head;
+        node* t=(node*)malloc(sizeof(node*));
+        t->x=x;
+        t->next=head;
+        head=t;
+    }
+    else
+    {
+        node* t=(node*)malloc(sizeof(node*));
+        t->x=x;
+        t->next=head;
+        head=t;
+    }
+}
+
+void AL(int x)
+{
+    if (head==NULL)
+    {
+        head=(struct node*)malloc(sizeof(struct node*));
+        head->x;
+        head->next=NULL;
+    }
+    else
+    {
+        if (tail==NULL)
+        {
+            struct node *t=(struct node*)malloc(sizeof(struct node*));
+            t->x;
+            t->next=NULL;
+            tail=t;
+            head->next=tail;
+        }
+        else
+        {
+            struct node *t=(struct node*)malloc(sizeof(struct node*));
+            t->x;
+            t->next=NULL;
+            tail->next=t;
+            tail=t;
+        }
+    }
+}
+
+void DF()
+{
+    if (head!=NULL)
+    {
+        node* t=head;
+        head=head->next;
+        free(t);
+    }
+}
+void DL()
+{
+    if (head!=NULL)
+    {
+        if (head==tail)
+        {
+            free(tail);
+            head=NULL;
+            tail=NULL;
+        }
+        else
+        {
+            node* t=tail;
+            node* aux=head;
+            while (aux->next!=t)
+            {
+                aux=aux->next;
+            }
+            aux->next=NULL;
+            free(t);
+            tail=aux;
+        }
+    }
+}
+
+void  DOOM_THE_LIST()
+{
+    if (head!=NULL)
+    {
+
+        node *t=head,*y=head->next;
+        while (y!=NULL)
+        {
+            free(t);
+            t=y;
+            y=y->next;
+        }
+
+        head=NULL;
+        tail=NULL;
+    }
+}
+
+void DE(int x)
+{
+    node *t;
+    t=find(x);
+    node *y=head;
+    if (t!=NULL)
+    {
+        if (t==head)
+        {
+            DF();
+        }
+        else
+        {
+            while (y->next!=t)
+            {
+                y=y->next;
+            }
+            y->next=t->next;
+            free (t);
+        }
+    }
+}
+
+void PRINT_ALL(FILE *af)
+{
+    node* t=head;
+    while (t!=NULL)
+    {
+        fprintf(af,"%d ",t->x);
+        t=t->next;
+    }
+    fprintf(af,"\n");
+}
+
+void PRINT_F(int n, FILE *af)
+{
+    int i;
+    node *t=head;
+    for(i=1; i<=n; i++)
+    {
+        fprintf(af,"%d ",t->x);
+        t=t->next;
+    }
+    fprintf(af,"\n");
+}
+
+void PRINT_L(int n,FILE *af)
+{
+    node *t=head;
+    int i,j=0;
+    while (t!=NULL)
+    {
+        j++;
+        t=t->next;
+    }
+    t=head;
+    if (j<n)
+    {
+        PRINT_ALL(af);
+    }
+    else
+    {
+        for (i=1; i<=j-n; i++)
+        {
+            t=t->next;
+        }
+        while (t!=NULL)
+        {
+            fprintf(af,"%d ",t->x);
+            t=t->next;
+        }
+    }
+    fprintf(af,"\n");
+}
+void citire()
+{
+    char a[100];
+    int x;
+    FILE *pf=fopen("input.dat","r");
+    FILE *af=fopen("output.dat","w");
+    while (fscanf(pf,"%s",a)==1)
+    {
+        if(strcmp(a,"AF")==0)
+        {
+            fscanf(pf," %d",&x);
+            AF(x);
+        }
+        if(strcmp(a,"AL")==0)
+        {
+            fscanf(pf," %d",&x);
+            AL(x);
+        }
+        if(strcmp(a,"DF")==0)
+        {
+            DF();
+        }
+        if(strcmp(a,"DL")==0)
+        {
+            DL();
+        }
+        if(strcmp(a,"DOOM_THE_LIST")==0)
+        {
+            DOOM_THE_LIST();
+        }
+        if(strcmp(a,"DE")==0)
+        {
+            fscanf(pf," %d",&x);
+            DE(x);
+        }
+        if(strcmp(a,"PRINT_ALL")==0)
+        {
+            PRINT_ALL(af);
+        }
+        if(strcmp(a,"PRINT_F")==0)
+        {
+            fscanf(pf," %d",&x);
+            PRINT_F(x,af);
+        }
+        if(strcmp(a,"PRINT_L")==0)
+        {
+            fscanf(pf," %d",&x);
+            PRINT_L(x,af);
+        }
+    }
+}
+int main()
+{
+    citire();
+    return 0;
+}
+

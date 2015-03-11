@@ -1,0 +1,34 @@
+# depslib dependency file v1.0
+1425306641 source:c:\users\alexh\desktop\fork\dsa-lab\30414\huruiala v. vasile alexandru\assignments\codeblocks\assignment1extra\main.c
+	<stdio.h>
+	<stdlib.h>
+	"JKN.h"
+
+1425312781 source:c:\users\alexh\desktop\fork\dsa-lab\30414\huruiala v. vasile alexandru\assignments\codeblocks\assignment1extra\jkn_io.c
+	<stdio.h>
+	<string.h>
+	"SLL_definition.h"
+	"SLL_functions.h"
+
+1425212564 c:\users\alexh\desktop\fork\dsa-lab\30414\huruiala v. vasile alexandru\assignments\codeblocks\assignment1extra\sll_definition.h
+
+1425305043 source:c:\users\alexh\desktop\fork\dsa-lab\30414\huruiala v. vasile alexandru\assignments\codeblocks\assignment1extra\sll_functions.c
+	"SLL_definition.h"
+	<stdlib.h>
+	<string.h>
+
+1425208114 c:\users\alexh\desktop\fork\dsa-lab\30414\huruiala v. vasile alexandru\assignments\codeblocks\assignment1extra\jkn.h
+	"SLL_definition.h"
+	"JKN_io.h"
+
+1425306481 c:\users\alexh\desktop\fork\dsa-lab\30414\huruiala v. vasile alexandru\assignments\codeblocks\assignment1extra\jkn_io.h
+
+1425306481 c:\users\alexh\desktop\fork\dsa-lab\30414\huruiala v. vasile alexandru\assignments\codeblocks\assignment1extra\sll_functions.h
+
+1425310848 source:c:\users\alexh\desktop\fork\dsa-lab\30414\huruiala v. vasile alexandru\assignments\codeblocks\assignment1extra\jkn_battle.c
+	<stdio.h>
+	<stdlib.h>
+	"SLL_definition.h"
+	"SLL_functions.h"
+	"JKN_io.h"
+
