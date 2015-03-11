@@ -193,3 +193,81 @@ void deleteAll(List *L)
       deleteFirst(L);
     }
 }
+
+/* print all elements of the list */
+void printList(List *L)
+{
+  if(L == NULL)
+    {
+      perror("Invalid list!");
+      return;
+    }
+
+  Node *pNode = L->head;
+  while(pNode != NULL)
+    {
+      if(pNode == L->tail)
+	fprintf(fpOut, "%d\n", pNode->data);
+      else
+	fprintf(fpOut, "%d ", pNode->data);
+      pNode = pNode->next;
+    }
+}
+
+/* print first n elements of the list */
+void printNFirst(List *L, int n)
+{
+  if(L == NULL)
+    return;
+  if(n <= 0)
+    return;
+  int ne = 0;
+  Node *pNode = L->head;
+  while(pNode != NULL)
+    {
+      ne++;
+      if(ne <= n)
+	{
+	  if(ne == n)
+	    fprintf(fpOut, "%d\n", pNode->data);
+	  else
+	    fprintf(fpOut, "%d ", pNode->data);
+	}
+      pNode = pNode->next;
+    }
+}
+
+/* print last n elements of the list */
+void printNLast(List *L, int n)
+{
+  if(L == NULL)
+    return;
+  if(n <= 0)
+    return;
+
+  int nc, ns;
+  nc = 0;
+  Node *pNode = L->head;
+  while(pNode != NULL)
+    {
+      nc++;
+      pNode = pNode->next;
+    }
+  if(n > nc)
+    n = nc;
+  ns = nc - n + 1;
+  nc = 0;
+  pNode = L->head;
+  while(pNode != NULL)
+    {
+      nc++;
+      if(nc >= ns)
+	{
+	  if(pNode == L->tail)
+	    fprintf(fpOut, "%d\n", pNode->data);
+	  else
+	    fprintf(fpOut, "%d ", pNode->data);
+	}
+      pNode = pNode->next;
+    }
+}

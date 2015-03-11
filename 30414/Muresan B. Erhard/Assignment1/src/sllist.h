@@ -41,5 +41,10 @@ void deleteFirst(List *);
 void deleteLast(List *);
 void deleteNodeByValue(List *, int);
 void deleteAll(List *);
+void printList(List *);
+void printNFirst(List *, int);
+void printNLast(List *, int);
+
+extern FILE *fpOut;
 
 #endif // SLLIST_H_INCLUDED
