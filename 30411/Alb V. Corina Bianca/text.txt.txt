@@ -1,0 +1,161 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+typedef struct nod{
+    int data;
+    struct nod* next;
+} nodt;
+
+nodt* first=NULL;
+nodt* last=NULL;
+
+void AF(int x){
+    if(first==NULL){
+        first->data=x;
+        last->data=x;
+    }
+    else if (first!=NULL){
+        nodt * p;
+        p=(nodt*)malloc(sizeof(nodt));
+        p->next=first;
+        p->data=x;
+        first=p;
+    }
+}
+
+void AL(int x){
+    if(last==NULL){
+        last->data=x;
+        first->data=x;
+    }
+    else if (last!=NULL){
+        nodt * p;
+        p=(nodt*)malloc(sizeof(nodt));
+        p->next=NULL;
+        last->next=p;
+        last=p;
+    }
+}
+
+void DF(){
+    if(first->next==NULL){
+        free(first);
+    }
+    else if(first->next!=NULL){
+        nodt * p;
+        p=(nodt*)malloc(sizeof(nodt));
+        p=first;
+        p->next=first;
+        free(p);
+    }
+}
+
+void DL(){
+    nodt * q=NULL, *q1=first;
+    if(q1==NULL){
+        first=NULL;
+        last==NULL;
+    }
+    else if (q1!=NULL){
+        while(q1!=NULL){
+            q=q1;
+            q1=q1->next;
+        }
+    free(q);
+    }
+    else if (q1->next==NULL){
+        free(q1);
+    }
+}
+
+void DOOM(){
+    while(first!=NULL){
+        nodt * p;
+        p=(nodt*)malloc(sizeof(nodt));
+        p=first;
+        first=p->next;
+        free(p);
+    }
+    last==NULL;
+}
+
+void DE(int x){
+    nodt *p=first, *p1=NULL;
+    p=(nodt*)malloc(sizeof(nodt));
+    p1=(nodt*)malloc(sizeof(nodt));
+    while(p!=NULL){
+        if (p->data==x){
+            p1=p->next;
+            p=p1->next;
+        }
+        else{
+            p1=p;
+            p=p->next;
+        }
+    }
+}
+
+void PALL(){
+    nodt * p;
+    p=(nodt*)malloc(sizeof(nodt));
+    p=first;
+    while(p!=NULL){
+        printf("%d ",p->data);
+        p=p->next;
+    }
+}
+
+void PF(int x){
+    int i=1;
+    nodt * p;
+    p=(nodt*)malloc(sizeof(nodt));
+    p=first;
+    while(i!=x || p!=NULL){
+        printf("%d ",p->data);
+        i++;
+    }
+}
+
+void PL(int x){
+    int i=0;
+    nodt * p, *p1;
+    p=(nodt*)malloc(sizeof(nodt));
+    p1=(nodt*)malloc(sizeof(nodt));
+    p=first;
+    p1=first;
+    while(p!=NULL){
+        p=p1->next;
+        p1=p;
+        i++;
+    }
+    int j=1;
+    p1=first;
+    while(j<i-x){
+        p=p1;
+        p1=p->next;
+        j++;
+    }
+    while(p!=NULL){
+        printf("%d ",p->data);
+        p=p->next;
+    }
+}
+int main()
+{
+    FILE *f;
+    f=fopen("lists.txt","r");
+    if (f==NULL){
+        perror("cannot open file!");
+    }
+    else{
+    while (!eof(f)){
+        fgets(s,7,*f);
+        p=NULL;
+        p=strtok(s," ");
+        n=0;
+        if (s){
+        nr=(NULL," ");
+        atoi(nr,n);}
+        s(n);
+    return 0;
+}
