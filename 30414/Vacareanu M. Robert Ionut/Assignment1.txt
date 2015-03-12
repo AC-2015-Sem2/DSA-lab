@@ -1,0 +1,155 @@
+#include <iostream>
+#include <stdlib.h>
+#include <stdio.h>
+#include <string.h>
+
+using namespace std;
+
+typedef struct node{
+
+int data;
+struct node* next;
+
+}Node;
+Node *head, *tail;
+// Globally declared file pointers
+// To be accessible in every function
+static FILE* readFile;
+static FILE* writeFile;
+
+void addFirst(int data){
+    if (head == NULL){
+    head = (Node*) malloc(sizeof(Node));
+    head->data = data;
+    head->next = NULL;
+    tail = head;
+}
+    else{
+        Node *newNode = (Node*) malloc(sizeof(newNode));
+        newNode->data = data;
+        newNode->next = head;
+        head = newNode;
+    }
+}
+void addLast(int data){
+    if (head == NULL){
+        head = (Node*) malloc(sizeof(Node));
+        head->data = data;
+        head->next = NULL;
+        tail = head;
+    }
+    else{
+        Node *newNode = (Node*) malloc(sizeof(newNode));
+        newNode->data = data;
+        newNode->next = NULL;
+        tail->next = newNode;
+        tail = newNode;
+    }
+}
+void deleteFirst(){
+    head = head->next;
+}
+void deleteLast(){
+    Node *p, *t;
+    p = head;
+    t = 0;
+    while (p->next != NULL){
+        t = p;
+        p = p->next;
+    }
+    t->next = NULL;
+    tail = t;
+}
+void doomList(){
+head = NULL;
+}
+void deleteElem(int x){
+    Node *temp1, *temp2;
+    temp1 = head;
+    temp2 = head->next;
+    for (int i=0; i<x; i++){
+        temp1->next = temp2;
+        temp2 = temp2->next;
+    }
+}
+void printAll(){
+    Node *p;
+    p = head;
+    while (p != NULL){
+        fprintf(writeFile, "%d ", p->data);
+        p = p->next;
+    }
+    fprintf(writeFile, "\n");
+}
+void printFirstElements(int x){
+    Node *p;
+    p = head;
+    int nrEl=0;
+    // Get the number of elements in the list
+    while(p != NULL){
+        nrEl++;
+        p = p->next;
+    }
+    p = head;
+    // Print all if x is bigger than the number of elements in the list
+    if(x>=nrEl){
+            printAll();
+    }
+    else{
+    for (int i=0; i<x; i++){
+            fprintf(writeFile, "%d ", p->data);
+            p = p->next;
+        }
+}
+}
+void printLastElements(int x){
+    Node *p;
+    int nrEl=0; // Number of elements in the list
+    p = head;
+    while(p != NULL){
+        nrEl++;
+        p = p->next;
+    }
+    p = head;
+    if (nrEl <= x){
+        printAll();
+    }
+
+    // This can be tricky because if we don't take care of the special case when x is bigger than the number of elements, the loop will not make any sense to the compiler
+    else{
+        for (int i = 0; i<nrEl-x; i++) p=p->next;
+        for (int i = 0; i<x; i++){
+            fprintf(writeFile, "%d ", p->data);
+            p = p->next;
+        }
+        }
+}
+
+
+int main()
+{
+    readFile = fopen("input.dat", "r");
+    writeFile = fopen("output.dat", "w");
+    char command[50];
+    int arg=0;
+    head = NULL;
+    tail = NULL;
+    if((readFile = fopen("input.dat", "r"))==NULL) exit(1);
+    if((writeFile = fopen("output.dat", "w"))== NULL) exit(1);
+
+
+// Input processing
+while(fscanf(readFile, "%s %d", &command, &arg) != EOF){
+    if(strcmp("AF", command) == 0) addFirst(arg);
+    else if(strcmp("AL", command) == 0) addLast(arg);
+    else if(strcmp("DF", command) == 0) deleteFirst();
+    else if(strcmp("DL", command) == 0) deleteLast();
+    else if(strcmp("DOOM_THE_LIST", command) == 0) doomList();
+    else if(strcmp("DE", command) == 0) deleteElem(arg);
+    else if(strcmp("PRINT_ALL", command) == 0) printAll();
+    else if(strcmp("PRINT_F", command) == 0) printFirstElements(arg);
+    else if(strcmp("PRINT_L", command) == 0) printLastElements(arg);
+    fclose(readFile);
+    fclose(writeFile);
+    return 0;
+}
