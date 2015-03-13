@@ -14,7 +14,8 @@ Lab 1: Introduction to GIT and the work-flow of the lab + starting with Singly L
 ```
 Lab 2: Circular Linked Lists and Doubly Linked Lists (+ Introduction to complexity)
 ```
-* Assignment 2: TBA
+* Assignment 2: 2.1 - [Basic Operations on Doubly Linked Lists with Santinel](https://github.com/AC-2015-Sem2/DSA-lab/tree/master/Assignments/Assignment%202.1%20-%20doubly%20linked%20lists)
+					- [Queue (or qwewe)](https://github.com/AC-2015-Sem2/DSA-lab/tree/master/Assignments/Assignment%202.2%20-%20queue)
 
 ```
 Lab 3: Test 1 - Lists
