@@ -13,7 +13,7 @@ typedef struct node
 nodeT *head, *tail;
 void Enqueue(int x,int y)
 {
-    if (tail==0)
+    if (head==0)
     {
         nodeT *aux=(nodeT*)malloc(sizeof(nodeT));
         aux->money=x;
