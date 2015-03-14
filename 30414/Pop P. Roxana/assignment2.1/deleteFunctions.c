@@ -7,10 +7,9 @@ void deleteFirst()
     {
         if (List->head==List->tail)
         {
-            node * aux=List->head;
+            free(List->head);
             List->head=NULL;
             List->tail=NULL;
-            free(aux);
         }
         else
         {
@@ -30,10 +29,9 @@ void deleteLast()
     {
         if (List->head==List->tail)
         {
-            node * aux=List->head;
+            free(List->head);
             List->head=NULL;
             List->tail=NULL;
-            free(aux);
         }
         else
         {
