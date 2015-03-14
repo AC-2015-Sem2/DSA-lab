@@ -16,10 +16,12 @@ typedef struct
 } SENTINEL;
 
 SENTINEL *sentinel;
+
 void addfirst(int givencode)
 {
-    if(sentinel->head==NULL)
+    if(sentinel==NULL)
     {
+        sentinel=(SENTINEL *)malloc(sizeof(SENTINEL));
         sentinel->head=(nodeT *)malloc(sizeof(nodeT));
         sentinel->head->code=givencode;
         sentinel->head->next=NULL;
@@ -45,8 +47,9 @@ void addfirst(int givencode)
 
 void addlast(int givencode)
 {
-    if(sentinel->head==NULL)
+    if(sentinel==NULL)
     {
+        sentinel=(SENTINEL *)malloc(sizeof(SENTINEL));
         sentinel->head=(nodeT *)malloc(sizeof(nodeT));
         sentinel->head->next=NULL;
         sentinel->head->previous=NULL;
@@ -60,6 +63,7 @@ void addlast(int givencode)
         p->next=NULL;
         p->code=givencode;
         p->previous=sentinel->tail;
+        sentinel->tail->next=p;
         sentinel->tail=p;
         (sentinel->length)++;
     }
