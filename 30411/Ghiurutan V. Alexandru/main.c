@@ -71,146 +71,179 @@ void addlast(int givencode)
 
 void deletelast()
 {
-    nodeT *q=sentinel->tail;
-    if(sentinel->head!=NULL)
+    if(sentinel!=NULL)
     {
-        sentinel->tail=sentinel->tail->previous;
-        sentinel->tail->next=NULL;
-        if(sentinel->tail==NULL)
+        nodeT *q=sentinel->tail;
+        if(sentinel->head!=NULL)
         {
-            sentinel->head=NULL;
+            sentinel->tail=sentinel->tail->previous;
+            sentinel->tail->next=NULL;
+            if(sentinel->tail==NULL)
+            {
+                sentinel->head=NULL;
+                sentinel=NULL;
+            }
+            free(q);
+            if(sentinel!=NULL)
+            {
+                (sentinel->length)--;
+            }
         }
-        free(q);
-        (sentinel->length)--;
     }
 }
 
 void deletefirst()
 {
-    nodeT *q=sentinel->head;
-    if(q!=NULL)
+    if(sentinel!=NULL)
     {
-        sentinel->head=sentinel->head->next;
-        sentinel->head->previous=NULL;
-        if(sentinel->head==NULL)
+        nodeT *q=sentinel->head;
+        if(q!=NULL)
         {
-            //One node
-            sentinel->tail=NULL;
-        }
-        else
-        {
+            sentinel->head=sentinel->head->next;
             sentinel->head->previous=NULL;
+            if(sentinel->head==NULL)
+            {
+                //One node
+                sentinel->tail=NULL;
+                sentinel=NULL;
+            }
+            else
+            {
+                sentinel->head->previous=NULL;
+            }
+            free(q);
+            if(sentinel!=NULL)
+            {
+                (sentinel->length)--;
+            }
         }
-        free(q);
-        (sentinel->length)--;
     }
 }
 
 void deletegiven(int givencode)
 {
-    nodeT *q;
-    //Step 1:Accessing the node
-    for(q=sentinel->head; q!=NULL; q=q->next)
+    if(sentinel!=NULL)
     {
-        if(q->code==givencode)
+        nodeT *q;
+        //Step 1:Accessing the node
+        for(q=sentinel->head; q!=NULL; q=q->next)
         {
-            break;
+            if(q->code==givencode)
+            {
+                break;
+            }
         }
-    }
-    if(q!=NULL)
-    {
-        //Step 2:Deleting the node
-        if(q==sentinel->head&&q==sentinel->tail)
+        if(q!=NULL)
         {
-            //One node
-            sentinel->head=NULL;
-            sentinel->tail=NULL;
-            free(q);
-            (sentinel->length)--;
-        }
-        else if(q==sentinel->head)
-        {
-            sentinel->head=sentinel->head->next;
-            sentinel->head->previous=NULL;
-            free(q);
-            (sentinel->length)--;
-        }
-        else
-        {
-            q->previous->next=q->next;
-            q->next->previous=q->previous;
-            free(q);
-            (sentinel->length)--;
+            //Step 2:Deleting the node
+            if(q==sentinel->head&&q==sentinel->tail)
+            {
+                //One node
+                sentinel->head=NULL;
+                sentinel->tail=NULL;
+                (sentinel->length)--;
+                free(q);
+                sentinel=NULL;
+            }
+            else if(q==sentinel->head)
+            {
+                sentinel->head=sentinel->head->next;
+                sentinel->head->previous=NULL;
+                free(q);
+                (sentinel->length)--;
+            }
+            else
+            {
+                q->previous->next=q->next;
+                q->next->previous=q->previous;
+                free(q);
+                (sentinel->length)--;
+            }
         }
     }
 }
 
 void doomthelist()
 {
-    nodeT *q;
-    while(sentinel->head!=NULL)
+    if(sentinel!=NULL)
     {
-        q=sentinel->head;
-        sentinel->head=q->next;
-        free(q);
+
+        nodeT *q;
+        while(sentinel->head!=NULL)
+        {
+            q=sentinel->head;
+            sentinel->head=q->next;
+            free(q);
+        }
+        sentinel->tail=NULL;
+        sentinel->length=0;
+        sentinel=NULL;
     }
-    sentinel->tail=NULL;
 }
 
 void printall(FILE *pf)
 {
-    nodeT *q;
-    q=sentinel->head;
-    while(q!=NULL)
+    if(sentinel!=NULL)
     {
-        fprintf(pf,"%d ",q->code);
-        q=q->next;
-    }
-    if(sentinel->head!=NULL)
-    {
-        fprintf(pf,"\n");
-    }
-}
-
-void printfirstx(FILE *pf,int x)
-{
-    nodeT *q;
-    int nr;
-    for(q=sentinel->head,nr=0; q!=NULL; q=q->next,nr++)
-    {
-        if(nr==x)
-        {
-            break;
-        }
-        fprintf(pf,"%d ",q->code);
-    }
-    if(sentinel->head!=NULL)
-    {
-        fprintf(pf,"\n");
-
-    }
-}
-
-void printlastx(FILE *pf,int x)
-{
-    nodeT *q;
-    int nr;
-    if(x>=sentinel->length)
-    {
-        printall(pf);
-    }
-    else
-    {
-        for(q=sentinel->tail,nr=1; nr!=x; q=q->previous,nr++)
-        {
-            ;
-        }
+        nodeT *q;
+        q=sentinel->head;
         while(q!=NULL)
         {
             fprintf(pf,"%d ",q->code);
             q=q->next;
         }
-        fprintf(pf,"\n");
+        if(sentinel->head!=NULL)
+        {
+            fprintf(pf,"\n");
+        }
+    }
+}
+
+void printfirstx(FILE *pf,int x)
+{
+    if(sentinel!=NULL)
+    {
+        nodeT *q;
+        int nr;
+        for(q=sentinel->head,nr=0; q!=NULL; q=q->next,nr++)
+        {
+            if(nr==x)
+            {
+                break;
+            }
+            fprintf(pf,"%d ",q->code);
+        }
+        if(sentinel->head!=NULL)
+        {
+            fprintf(pf,"\n");
+
+        }
+    }
+}
+
+void printlastx(FILE *pf,int x)
+{
+    if(sentinel!=NULL)
+    {
+        nodeT *q;
+        int nr;
+        if(x>=sentinel->length)
+        {
+            printall(pf);
+        }
+        else
+        {
+            for(q=sentinel->tail,nr=1; nr!=x; q=q->previous,nr++)
+            {
+                ;
+            }
+            while(q!=NULL)
+            {
+                fprintf(pf,"%d ",q->code);
+                q=q->next;
+            }
+            fprintf(pf,"\n");
+        }
     }
 }
 
@@ -257,7 +290,7 @@ int main()
         {
             p=strtok(NULL,"\0");
             sscanf(p,"%d",&x);
-            printall(pf);
+            printfirstx(pf,x);
         }
         if(strcmp("PRINT_L",p)==0)
         {
