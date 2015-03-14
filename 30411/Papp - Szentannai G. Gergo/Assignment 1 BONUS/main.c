@@ -36,8 +36,8 @@ int main()
     fscanf(pf,"%d",&n_s);
 
     // Reading value of sentinels
-    int sentinels[n_s+1];
-    int sen[n_s];
+    int *sentinels=(int*) malloc(sizeof(int)*n_s+1);
+    int *sen=(int*) malloc(sizeof(int)*n_s);
     int q;
     int i;
     int tot_s=1; // total strength of sentinels (1 for the tyrant)
