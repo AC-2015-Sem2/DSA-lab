@@ -12,7 +12,7 @@ typedef struct sentinel{
     nodt* first;
     nodt* last;
     int sent_size;
-};
+}SentinelT;
 
 struct sentinel * sent;
 
@@ -198,6 +198,7 @@ int main()
         return -1;
     }
     int n;
+    command=(char*)malloc(sizeof(char)*10);
     while (fscanf(f,"%c %d",command,&nr)>0){
         if (strcmp(command,"AF")){
             AF(nr);
