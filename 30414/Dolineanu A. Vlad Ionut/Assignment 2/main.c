@@ -9,7 +9,7 @@ int main()
     ourList = (list*)malloc(sizeof(list));
     ourList->head = NULL;
     ourList->tail = NULL;
-    ourList->number = 0;
+    ourList->length = 0;
 
     FILE* g = fopen("input.dat", "r");
 

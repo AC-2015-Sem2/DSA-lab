@@ -4,7 +4,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#define ALLOC_NODE (node*)malloc(sizeof(node))
+#define ALLOC_NODE() (node*)malloc(sizeof(node))
 
 typedef struct st_node
 {
@@ -17,7 +17,7 @@ typedef struct sentinel
 {
     node* head;
     node* tail;
-    int number;
+    int length;
 }list;
 
 list *ourList;
