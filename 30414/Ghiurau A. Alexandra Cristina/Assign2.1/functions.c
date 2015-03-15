@@ -10,97 +10,99 @@ struct node* getNewNode(int x)
     return newNode;
 }
 
-
 void addFirst(int x)
 {
     struct node *newNode = getNewNode(x);
-    if (head == NULL)
+    if (s->head == NULL)
     {
-        head = tail = newNode;
+        s->head = s->tail = newNode;
         newNode->next = newNode->prev = NULL;
         // return;
     }
     else
     {
-        newNode->next = head;
+        newNode->next = s->head;
         newNode->prev = NULL;
-        head->prev = newNode;
-        head = newNode;
+        s->head->prev = newNode;
+        s->head = newNode;
     }
+    s->length++;
 }
 void addLast(int x)
 {
     struct node *newNode = getNewNode(x);
-    if (head == NULL)
+    if (s->head == NULL)
     {
-        head = tail = newNode;
+        s->head = s->tail = newNode;
         newNode->next = newNode->prev = NULL;
         // return;
     }
     else
     {
         newNode->next = NULL;
-        newNode->prev = tail;
-        tail->next = newNode;
-        tail = newNode;
+        newNode->prev = s->tail;
+        s->tail->next = newNode;
+        s->tail = newNode;
     }
-
+    s->length++;
 }
 
 void  deleteFirst()
 {
-    node *newNode = head;
-    if(head != NULL)
+    node *newNode = s->head;
+    if(s->head != NULL)
     {
-        head->next->prev = NULL;
-        head = head->next;
+        s->head->next->prev = NULL;
+        s->head = s->head->next;
         free(newNode);
     }
     /* SAU: (deși așa mi-a crăpat):
 
-      head = head->next; //nonempty list assumed
+      s->head = head->next; //nonempty list assumed
       free(newNode);
-      if(head == NULL)
-          tail = NULL; //list became empty
+      if(s->head == NULL)
+          s->tail = NULL; //list became empty
       else
-          head->prev = NULL;*/
+          s->head->prev = NULL;*/
+    s->length--;
 }
 
 void deleteLast()
 {
-    node *newNode = tail;
+    node *newNode = s->tail;
 
     if(newNode != NULL)
     {
         newNode->prev->next = NULL;
-        tail = newNode->prev;
+        s->tail = newNode->prev;
         free(newNode);
     }
     /* SAU: (deși așa mi-a crăpat):
 
-        tail = tail->prev;
-        if(tail ==NULL)
-            head = NULL; //list became empty
+        s->tail = tail->prev;
+        if(s->tail ==NULL)
+            s->head = NULL; //list became empty
     else
-        tail->next = NULL;
+        s->tail->next = NULL;
     free(newNode);*/
+    s->length--;
 }
 
 void deleteX(int x)
 {
-    if(head->value == x)
+    if(s->head->value == x)
     {
         deleteFirst();
     }
-    else if(tail->value == x)
+    else if(s->tail->value == x)
     {
         deleteLast();
     }
     else
     {
-        node* newNode = head;
+        node* newNode = s->head;
 
-        while(newNode->next != tail )
+        while(newNode->next != s->tail )
         {
             if(newNode->value == x)
             {
@@ -111,25 +113,26 @@ void deleteX(int x)
             newNode=newNode->next;
         }
 
-
     }
+      s->length--;
 }
 
 void deleteAll()
 {
     node *newNode;
-    while(head != NULL)
+    while(s->head != NULL)
     {
-        newNode = head;
-        head = head->next;
+        newNode = s->head;
+        s->head = s->head->next;
         free(newNode);
     }
-    tail = NULL;
+    s->tail = NULL;
+      s->length = 0;
 }
 
 void printAll(FILE *fileOutput)
 {
-    struct node *temp = head;
+    struct node *temp = s->head;
     while(temp != NULL)
     {
         fprintf(fileOutput,"%d ", temp->value);
@@ -140,7 +143,7 @@ void printAll(FILE *fileOutput)
 
 void printFirstX(int value, FILE *fileOutput)
 {
-    node *newNode = head;
+    node *newNode = s->head;
     int i;
     for(i=0; ((i<value)&&(newNode!=NULL)); i++)
     {
@@ -152,9 +155,9 @@ void printFirstX(int value, FILE *fileOutput)
 
 void printLastX(int value,  FILE *fileOutput)
 {
-    node *newNode = tail;
+    node *newNode = s->tail;
     int i;
-    for(i=0; ((i<value) && (newNode!= head)); i++)
+    for(i=0; ((i<value) && (newNode!= s->head)); i++)
 
     {
         fprintf(fileOutput,"%d ", newNode-> value);

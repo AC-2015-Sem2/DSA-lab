@@ -10,8 +10,14 @@ typedef struct node
     struct node *prev;
 } node;
 
-node *head;
-node *tail;
+typedef struct list_sentinel
+{
+    int length;
+    node *head;
+    node *tail;
+} list_sentinel;
+
+list_sentinel *s;
 
 
 void printAll();

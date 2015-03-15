@@ -4,7 +4,6 @@
 #include "functions.h"
 
 
-
 int main()
 {
     FILE *file, *fileOutput;
@@ -18,7 +17,9 @@ int main()
 
     fileOutput= fopen("output.dat","w");
 
-    //  s = (santinel*)malloc(sizeof(santinel));
+    s = (list_sentinel*)malloc(sizeof(list_sentinel));
+    s->head = 0;
+    s->tail = 0;
     char line[1000];
     int value;
     while(fscanf(file,"%s", line)!=EOF)
