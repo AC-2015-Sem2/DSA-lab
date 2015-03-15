@@ -1,0 +1,13 @@
+# depslib dependency file v1.0
+1426421355 source:d:\aplicatii\dsd\homework_2.2.c\customer.c
+	<stdlib.h>
+	<stdio.h>
+
+1426428550 source:d:\aplicatii\dsd\homework_2.2.c\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"customer.h"
+
+1426425040 d:\aplicatii\dsd\homework_2.2.c\customer.h
+

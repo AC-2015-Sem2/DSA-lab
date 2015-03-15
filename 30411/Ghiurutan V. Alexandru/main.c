@@ -1,14 +1,17 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include "customer.h"
+
 typedef struct node
 {
-    int code;
+    int money;
+    int time;
     struct node *next;
     struct node *previous;
 } nodeT;
 
-typedef struct
+typedef struct s
 {
     nodeT *head;
     nodeT *tail;
@@ -17,13 +20,14 @@ typedef struct
 
 SENTINEL *sentinel;
 
-void addfirst(int givencode)
+void enqueue(int x,int y)
 {
     if(sentinel==NULL)
     {
         sentinel=(SENTINEL *)malloc(sizeof(SENTINEL));
         sentinel->head=(nodeT *)malloc(sizeof(nodeT));
-        sentinel->head->code=givencode;
+        sentinel->head->money=x;
+        sentinel->head->time=y;
         sentinel->head->next=NULL;
         sentinel->head->previous=NULL;
         sentinel->tail=sentinel->head;
@@ -32,291 +36,97 @@ void addfirst(int givencode)
     else
     {
         nodeT *p=(nodeT *)malloc(sizeof(nodeT));
-        p->next=sentinel->head;
-        p->code=givencode;
-        sentinel->head->previous=p;
-        if(sentinel->head->next==NULL)
-        {
-            //One node
-            sentinel->tail->previous=p;
-        }
-        sentinel->head=p;
-        (sentinel->length)++;
-    }
-}
-
-void addlast(int givencode)
-{
-    if(sentinel==NULL)
-    {
-        sentinel=(SENTINEL *)malloc(sizeof(SENTINEL));
-        sentinel->head=(nodeT *)malloc(sizeof(nodeT));
-        sentinel->head->next=NULL;
-        sentinel->head->previous=NULL;
-        sentinel->head->code=givencode;
-        sentinel->tail=sentinel->head;
-        (sentinel->length)++;
-    }
-    else
-    {
-        nodeT *p=(nodeT *)malloc(sizeof(nodeT));
+        p->money=x;
+        p->time=y;
         p->next=NULL;
-        p->code=givencode;
         p->previous=sentinel->tail;
-        sentinel->tail->next=p;
         sentinel->tail=p;
         (sentinel->length)++;
     }
 }
 
-void deletelast()
+int moneycustomer(int t)
 {
-    if(sentinel!=NULL)
+    nodeT *q;
+    q=sentinel->head;
+    int nr,t1;
+    nr=0;
+    t1=0;
+    while(t-(q->time+t1)>=0)
     {
-        nodeT *q=sentinel->tail;
-        if(sentinel->head!=NULL)
+        if(q==NULL)
         {
-            sentinel->tail=sentinel->tail->previous;
-            sentinel->tail->next=NULL;
-            if(sentinel->tail==NULL)
-            {
-                sentinel->head=NULL;
-                sentinel=NULL;
-            }
-            free(q);
-            if(sentinel!=NULL)
-            {
-                (sentinel->length)--;
-            }
-        }
-    }
-}
-
-void deletefirst()
-{
-    if(sentinel!=NULL)
-    {
-        nodeT *q=sentinel->head;
-        if(q!=NULL)
-        {
-            sentinel->head=sentinel->head->next;
-            sentinel->head->previous=NULL;
-            if(sentinel->head==NULL)
-            {
-                //One node
-                sentinel->tail=NULL;
-                sentinel=NULL;
-            }
-            else
-            {
-                sentinel->head->previous=NULL;
-            }
-            free(q);
-            if(sentinel!=NULL)
-            {
-                (sentinel->length)--;
-            }
-        }
-    }
-}
-
-void deletegiven(int givencode)
-{
-    if(sentinel!=NULL)
-    {
-        nodeT *q;
-        //Step 1:Accessing the node
-        for(q=sentinel->head; q!=NULL; q=q->next)
-        {
-            if(q->code==givencode)
-            {
-                break;
-            }
-        }
-        if(q!=NULL)
-        {
-            //Step 2:Deleting the node
-            if(q==sentinel->head&&q==sentinel->tail)
-            {
-                //One node
-                sentinel->head=NULL;
-                sentinel->tail=NULL;
-                (sentinel->length)--;
-                free(q);
-                sentinel=NULL;
-            }
-            else if(q==sentinel->head)
-            {
-                sentinel->head=sentinel->head->next;
-                sentinel->head->previous=NULL;
-                free(q);
-                (sentinel->length)--;
-            }
-            else
-            {
-                q->previous->next=q->next;
-                q->next->previous=q->previous;
-                free(q);
-                (sentinel->length)--;
-            }
-        }
-    }
-}
-
-void doomthelist()
-{
-    if(sentinel!=NULL)
-    {
-
-        nodeT *q;
-        while(sentinel->head!=NULL)
-        {
-            q=sentinel->head;
-            sentinel->head=q->next;
-            free(q);
-        }
-        sentinel->tail=NULL;
-        sentinel->length=0;
-        sentinel=NULL;
-    }
-}
-
-void printall(FILE *pf)
-{
-    if(sentinel!=NULL)
-    {
-        nodeT *q;
-        q=sentinel->head;
-        while(q!=NULL)
-        {
-            fprintf(pf,"%d ",q->code);
-            q=q->next;
-        }
-        if(sentinel->head!=NULL)
-        {
-            fprintf(pf,"\n");
-        }
-    }
-}
-
-void printfirstx(FILE *pf,int x)
-{
-    if(sentinel!=NULL)
-    {
-        nodeT *q;
-        int nr;
-        for(q=sentinel->head,nr=0; q!=NULL; q=q->next,nr++)
-        {
-            if(nr==x)
-            {
-                break;
-            }
-            fprintf(pf,"%d ",q->code);
-        }
-        if(sentinel->head!=NULL)
-        {
-            fprintf(pf,"\n");
-
-        }
-    }
-}
-
-void printlastx(FILE *pf,int x)
-{
-    if(sentinel!=NULL)
-    {
-        nodeT *q;
-        int nr;
-        if(x>=sentinel->length)
-        {
-            printall(pf);
+            break;
         }
         else
         {
-            for(q=sentinel->tail,nr=1; nr!=x; q=q->previous,nr++)
-            {
-                ;
-            }
-            while(q!=NULL)
-            {
-                fprintf(pf,"%d ",q->code);
-                q=q->next;
-            }
-            fprintf(pf,"\n");
+            nr+=q->money;
+            t1=q->time;
+            q=q->next;
         }
     }
+    return nr;
 }
 
-int main()
+void callqueue(FILE *f,FILE *pf,int nrc)
 {
-    char s[20];
-    FILE *pf,*f;
-    f=fopen("input.txt","r");
-    if(f==NULL)
+    char tab[50];
+    int x,y,t,i,nr;
+    char c;
+    nr=0;
+    fseek(f,0L,SEEK_SET);
+    for(i=0; i<nrc; i++)
     {
-        perror("Can't open file \"input.txt\"\n");
+        fgets(tab,sizeof(tab),f);
+        sscanf(tab,"%*s %d %d",&x,&y);
+        enqueue(x,y);
+    }
+    do
+    {
+        fscanf(f,"%d%c",&t,&c);
+        nr=moneycustomer(t);
+        fprintf(pf,"After %d seconds: %d\n",t,nr);
+    }
+    while(c==' ');
+}
+
+int main(int argc,char *argv[])
+{
+    int nrc;
+    if(argc!=3)
+    {
+        perror("Incorrect number of arguments!\n");
         return -1;
     }
-    fseek(f,0L,SEEK_SET);
-    pf=fopen("output.txt","w");
+    if(strcmp(argv[1],"input.txt")!=0)
+    {
+        printf("Incorrect argument \"%s\".",argv[1]);
+        return -2;
+    }
+    if(strcmp(argv[2],"output.txt")!=0)
+    {
+        printf("Incorrect argument \"%s\".",argv[2]);
+        return -3;
+    }
+    FILE *pf,*f;
+    f=fopen(argv[1],"r");
+    if(f==NULL)
+    {
+        perror("Can't open file!\n");
+        return -4;
+    }
+    pf=fopen(argv[2],"w");
     if(pf==NULL)
     {
-        perror("Can't create file \"output.txt\"\n");
-        return(-2);
+        perror("Can't create file!");
+        return -5;
     }
-    while(fgets(s,sizeof(s),f)!=NULL)
-    {
-        char *p=strtok(s," ");
-        int x;
-        if(strcmp("AF",p)==0)
-        {
-            p=strtok(NULL,"\0");
-            sscanf(p,"%d",&x);
-            addfirst(x);
-        }
-        if(strcmp("AL",p)==0)
-        {
-            p=strtok(NULL,"\0");
-            sscanf(p,"%d",&x);
-            addlast(x);
-        }
-        if(strcmp("DE",p)==0)
-        {
-            p=strtok(NULL,"\0");
-            sscanf(p,"%d",&x);
-            deletegiven(x);
-        }
-        if(strcmp("PRINT_F",p)==0)
-        {
-            p=strtok(NULL,"\0");
-            sscanf(p,"%d",&x);
-            printfirstx(pf,x);
-        }
-        if(strcmp("PRINT_L",p)==0)
-        {
-            p=strtok(NULL,"\0");
-            sscanf(p,"%d",&x);
-            printlastx(pf,x);
-        }
-        p=strtok(s,"\n");
-        if(strcmp("DF",p)==0)
-        {
-            deletefirst();
-        }
-        if(strcmp("DL",p)==0)
-        {
-            deletelast();
-        }
-        if(strcmp("PRINT_ALL",p)==0)
-        {
-            printall(pf);
-        }
-        if(strcmp("DOOM_THE_LIST",p)==0)
-        {
-            doomthelist();
-        }
-    }
-    fclose(pf);
+    nrc=numberofcustomers(f);
+    callqueue(f,pf,nrc);
     fclose(f);
+    fclose(pf);
+    free(sentinel->head);
+    free(sentinel->tail);
+    free(sentinel);
     return 0;
 }
