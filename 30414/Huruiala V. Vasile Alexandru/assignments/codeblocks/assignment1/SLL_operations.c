@@ -32,7 +32,7 @@ void ListInit(List** L)
 
 /*
 Allocates memory for a new node
-returns the adress
+returns the address
 */
 Node* CreateNode(void* data)
 {
