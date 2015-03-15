@@ -1,0 +1,15 @@
+# depslib dependency file v1.0
+1426428721 source:c:\users\alexa\desktop\assign2.1\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"functions.h"
+
+1426428721 source:c:\users\alexa\desktop\assign2.1\functions.c
+	"functions.h"
+
+1426428768 c:\users\alexa\desktop\assign2.1\functions.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
