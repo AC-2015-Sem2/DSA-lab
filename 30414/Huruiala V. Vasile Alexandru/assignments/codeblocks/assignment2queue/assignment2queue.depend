@@ -1,0 +1,37 @@
+# depslib dependency file v1.0
+1426412249 source:c:\users\alexh\desktop\fork\dsa-lab\30414\huruiala v. vasile alexandru\assignments\codeblocks\assignment2queue\main.c
+	"Q.h"
+	<stdio.h>
+
+1426366771 c:\users\alexh\desktop\fork\dsa-lab\30414\huruiala v. vasile alexandru\assignments\codeblocks\assignment2queue\q.h
+	"Q_definition.h"
+	"Q_io.h"
+
+1426411845 c:\users\alexh\desktop\fork\dsa-lab\30414\huruiala v. vasile alexandru\assignments\codeblocks\assignment2queue\q_definition.h
+	<stdlib.h>
+	<stdio.h>
+
+1426412846 source:c:\users\alexh\desktop\fork\dsa-lab\30414\huruiala v. vasile alexandru\assignments\codeblocks\assignment2queue\q_methods.c
+	"Q_methods.h"
+	"Q_solution.h"
+	<stdlib.h>
+	<stdio.h>
+	<string.h>
+
+1426362670 source:c:\users\alexh\desktop\fork\dsa-lab\30414\huruiala v. vasile alexandru\assignments\codeblocks\assignment2queue\q_io.c
+	<stdio.h>
+
+1426362670 c:\users\alexh\desktop\fork\dsa-lab\30414\huruiala v. vasile alexandru\assignments\codeblocks\assignment2queue\q_io.h
+	<stdio.h>
+
+1426374081 c:\users\alexh\desktop\fork\dsa-lab\30414\huruiala v. vasile alexandru\assignments\codeblocks\assignment2queue\q_methods.h
+	"Q_definition.h"
+	<stdio.h>
+
+1426413092 source:c:\users\alexh\desktop\fork\dsa-lab\30414\huruiala v. vasile alexandru\assignments\codeblocks\assignment2queue\q_solution.c
+	"Q_definition.h"
+	<stdio.h>
+
+1426366307 c:\users\alexh\desktop\fork\dsa-lab\30414\huruiala v. vasile alexandru\assignments\codeblocks\assignment2queue\q_solution.h
+	<stdio.h>
+
