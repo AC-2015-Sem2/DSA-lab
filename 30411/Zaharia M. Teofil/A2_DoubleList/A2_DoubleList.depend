@@ -1,0 +1,14 @@
+# depslib dependency file v1.0
+1426413576 source:e:\utcluj\dsa\a2_doublelist\doublelist.c
+	"DoubleList.h"
+	<stdlib.h>
+
+1426413456 e:\utcluj\dsa\a2_doublelist\doublelist.h
+	<stdio.h>
+
+1426412366 source:e:\utcluj\dsa\a2_doublelist\main.c
+	<stdio.h>
+	<string.h>
+	<stdlib.h>
+	"DoubleList.h"
+
