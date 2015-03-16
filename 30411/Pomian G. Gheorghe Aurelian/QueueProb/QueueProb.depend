@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1426533835 source:d:\c\teme\queueprob\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
