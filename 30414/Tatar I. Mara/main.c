@@ -1,221 +1,205 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-typedef struct s_NODE
+
+typedef struct Nod
 {
     int data;
-    struct s_NODE *next;
-} NODE;
-NODE *head,*tail ;
+    struct Nod *next;
+    struct Nod *prev;
+}Node;
 
-void AF(int data) /*addFirst*/
-{
-    NODE *newnode;
-    if (head==NULL)
-    {
-        head= (NODE*)malloc(sizeof(NODE));
-        head->data=data;
-        head->next=NULL;
-        tail=head;
-    }
-    else
-    {
-        newnode=(NODE*)malloc(sizeof(NODE));
-        newnode->data=data;
-        newnode->next=head;
-        head=newnode;
-    }
-}
+ typedef struct Sentinel
+ {
+     Node *head;
+     Node *tail;
+     int count;
+ }sentinel;
+ sentinel *s;
 
-void AL(int data) /*addLast*/
-{
-    NODE *newnode;
-    if(head==NULL)
-    {
-        head=(NODE*)malloc(sizeof(NODE));
-        head->data=data;
-        head->next=NULL;
-        tail=head;
-    }
-    else
-    {
-        newnode=(NODE*)malloc(sizeof(NODE));
-        newnode->data=data;
-        newnode->next=NULL;
-        tail->next=newnode;
-        tail=newnode;
-    }
-}
-void DF()/* delete first*/
-{  if (head==NULL)
-    return;
-  if   (head==tail)
-  {
-      free(head);
-      head=NULL;
-      tail=NULL;
-  }
+ void add_first(int data)
+ { Node *newnode;
+     if (s->head==NULL)
+     {
+         s->head=(Node*)malloc(sizeof(Node));
+         s->head->data=data;
+         s->head->next=NULL;
+         s->head->prev=NULL;
+         s->head=s->tail;
+     }
+     else
+     {   newnode=(Node*)malloc(sizeof(Node));
+         newnode->data=data;
+        newnode->next=s->head;
+        newnode->prev=NULL;
+        s->head->prev=newnode;
+        s->head-=newnode;
+     }
+     }
+     void add_last(int data)
+    {   Node *newnode;
 
-
-    NODE *tmp;
-    tmp=head;
-    head=head->next;
-    free(tmp);
-   }
-
-
-void DL()/*delete last*/
-{
-    if (head==NULL)
-        printf("list is empty");
-   if (head==tail)
-   {
-       free(tail);
-       head=NULL;
-       tail=NULL;
-   }
-
-
-        NODE *curr,*prev;
-        curr=head;
-        while (curr->next != NULL)
-        {   prev=curr;
-            curr=curr->next;
-        }
-        tail=prev;
-        free(curr);
-
-    }
-
-
-void DOOM_THE_LIST()/*deletes all*/
-{
-    NODE *temp;
-    while (head != NULL)
-    {
-        temp = head;
-        head = temp->next;
-        free(temp);
-    }
-}
-
-int DE(int x)
-{
-    NODE *temp, *prev;
-    temp=head;
-    while(temp!=NULL)
-    {
-        if(temp->data==x)
+        if (s->head==NULL)
         {
-            if(temp==head)
-            {
-                head=temp->next;
-                free(temp);
-                return 1;
-            }
-            else
-            {
-                prev->next=temp->next;
-                free(temp);
-                return 1;
-            }
+            s->head=(Node*)malloc(sizeof(Node));
+            s->head->data=data;
+            s->head->next=NULL;
+            s->head->prev=NULL;
+            s->head=s->tail;
+
         }
         else
         {
-            prev=temp;
-            temp= temp->next;
+            newnode=(Node*)malloc(sizeof(Node));
+            newnode->data=data;
+            newnode->next=NULL;
+            newnode->prev=s->tail;
+            s->tail->next=newnode;
+            s->tail=newnode;
         }
     }
-    return 0;
-}
 
+    void delete_first()
+    { Node* temp;
+        if (s->head==NULL)
+            return;
+        else if (s->head==s->tail)
+        {    free(s->head);
+             s->head=NULL;
+             s->tail=NULL;
+        }
+        else
+        {
+            temp=s->head;
+            s->head=s->head->next;
+            s->head->prev=NULL;
+            free(temp);
+        }
+
+    }
+
+ void delete_last()
+    { Node* temp;
+        if (s->head==NULL)
+            return;
+        else if (s->head==s->tail)
+        {    free(s->head);
+             s->head=NULL;
+             s->tail=NULL;
+        }
+        else
+        {
+            temp=s->tail;
+            s->tail=s->tail->prev;
+            s->tail->next=NULL;
+            free(temp);
+
+        }}
+void DOOM_THE_LIST()
+{
+    Node *temp;
+    while (s->head!=NULL)
+    { temp=s->head;
+    s->head=s->head->next;
+    free(temp);
+    }
+    s->head=NULL;
+    s->tail=NULL;
+}
+void DE_x(int data)
+{  Node *temp;
+    temp=s->head;
+    while (temp!=NULL)
+    {
+        if (temp->data==data)
+        {
+                if (temp==s->head)
+                    delete_first();
+                else if (temp==s->tail)
+                    delete_last;
+                else
+                { temp->prev->next=temp->next;
+                  temp->next->prev=temp->prev;
+                  free(temp);
+                }
+          }
+        else
+            temp=temp->next;
+    }
+}
 
 void print_all(FILE *f2)
-{
-    NODE *p;
-    p=head;
-    while(p !=NULL)
     {
-        fprintf(f2,"%d",p->data);
-        p=p->next;
+        Node *temp;
+        temp=s->head;
+        while(temp!=NULL)
+        {
+             fprintf(f2,"%d",temp->data);
+             temp=temp->next;
+        }
+          fprintf(f2,"\n");
     }
-    fprintf(f2,"\n");
-}
 
 void print_x(FILE *f2,int x)
-{
-    int cont;
-    NODE *p;
-    cont=0;
-    p=head;
-    while((p->next !=NULL)&&(cont<x))
-    {
-        fprintf(f2,"%d",p->data);
-        p=p->next;
-        cont++;
-    }
-    fprintf(f2,"\n");
+{Node *temp;
+int i;
+i=1;
+ temp=s->head;
+ while ((temp!=NULL)&&(i<=x))
+ {
+     fprintf(f2,"%d",temp->data);
+     temp=temp->next;
+     i++;
+ }
+ fprintf(f2,"\n");
+}
+void print_last_x(FILE *f2,int  x)
+{Node *temp;
+int i;
+i=1;
+ temp=s->tail;
+ while ((temp!=NULL)&&(i<=x))
+ {
+     fprintf(f2,"%d",temp->data);
+     temp=temp->prev;
+     i++;
+ }
+ fprintf(f2,"\n");
 }
 
-void print_last_x(FILE *f2,int x)
-{
-	int		i;
-	NODE	*curr;
-	NODE	*start;
-
-	curr = head;
-	start = head;
-	i = 0;
-	while (curr != NULL)
-	{
-		if (i >= x)
-			start = start->next;
-		curr= curr->next;
-		++i;
-	}
-	while (start != NULL)
-	{
-		fprintf(f2, "%d ", start->data);
-		start = start->next;
-	}
-	fprintf(f2, "\n");
-}
-int main()
-{   FILE *f1;
+     int main()
+     {
+    FILE *f1;
     FILE *f2;
-    char * str;
     int data;
     f1=fopen("input.txt","r");
     f2=fopen("output.txt","w");
 
-    head=NULL;
-    tail=NULL;
-   str=(char*)malloc(sizeof(char)*20);
-
-    while (fscanf(f1, "%s", str != EOF))
-	{
-		fscanf(f1, "%d", &data);
-		if (strcmp(str, "AF") == 0)
-			AF(data);
-		else if (strcmp(str, "AL") == 0)
-			AL(data);
-		else if (strcmp(str, "DF") == 0)
-			DF();
-		else if (strcmp(str, "DL") == 0)
-			DL();
-		else if (strcmp(str, "DOOM_THE_LIST") == 0)
-			DOOM_THE_LIST();
-		else if (strcmp(str, "DE") == 0)
-			DE(data);
-		else if (strcmp(str, "PRINT_ALL") == 0)
-			print_all(f2);
-		else if (strcmp(str, "PRINT_F") == 0)
-			print_x(f2, data);
-		else if (strcmp(str, "PRINT_L") == 0)
-			print_last_x(f2, data);
-	}
-	fclose(f1);
-	fclose(f2);
-	return (0);
+   s=(sentinel*)malloc(sizeof(sentinel));
+   s->head=NULL;
+   s->tail=NULL;
+    f1=fopen("input.txt","r");
+    if (f1==NULL) perror("File for reading could not be opened\n");
+    f2=fopen("output.txt","w");
+    if (f2==NULL) perror("data out file could not be opened\n");
+    char *str=(char*)malloc(10*sizeof(char));
+    int x;
+    while (fscanf(f1,"%s%d",s,&x)!=-1)
+    {
+        if (strcmp("AF",str)==0) add_first(x);
+        if (strcmp("AL",str)==0) add_last(x);
+        if (strcmp("DF",str)==0) delete_first();
+        if (strcmp("DL",str)==0) delete_last();
+        if (strcmp("DOOM_THE_LIST",str)==0) DOOM_THE_LIST();
+        if (strcmp("DE",str)==0) DE_x(x);
+        if (strcmp("PRINT_ALL",str)==0) print_all(f2);
+        if (strcmp("PRINT_F",str)==0) print_x(f2,x);
+        if (strcmp("PRINT_L",str)==0) print_last_x(f2,x);
+    }
+    fclose(f1);
+    fclose(f2);
+    return 0;
 }
+
+
 
