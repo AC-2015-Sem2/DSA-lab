@@ -65,10 +65,10 @@ void RemoveFirst(void)
         }
         else
         {
-           p = s->head;
-           s->head= s->head->next;
-           s->head->prev=NULL;
-           free(p);
+            p = s->head;
+            s->head= s->head->next;
+            s->head->prev=NULL;
+            free(p);
         }
     }
     s->length--;
@@ -90,10 +90,10 @@ void RemoveLast(void)
         }
         else
         {
-           p = s->tail;
-           s->tail= s->tail->prev;
-           s->tail->next=NULL;
-           free(p);
+            p = s->tail;
+            s->tail= s->tail->prev;
+            s->tail->next=NULL;
+            free(p);
         }
     }
     s->length--;
@@ -102,14 +102,16 @@ void RemoveLast(void)
 void RemoveNodeX(int code)
 {
     NodeT *p;
+    int ok;
 
+    ok=0;
     p = (NodeT *)malloc(sizeof(NodeT));
     p = s->head;
     if (p->data == code)
         RemoveFirst();
     if (s->tail->data == code)
         RemoveLast();
-    while (p->next != s->tail) // last element of the list
+    while (p->next != s->tail && ok == 0) // different from the last element of the list
     {
         if (p->data == code)
         {
@@ -119,10 +121,10 @@ void RemoveNodeX(int code)
             delete_n->next->prev = delete_n->prev;
             delete_n->prev->next = delete_n->next;
             s->length--;
+            ok=1;
             free(delete_n);
         }
-        else
-            p=p->next;
+        p=p->next;
     }
 }
 
@@ -138,6 +140,7 @@ void DeleteList(void)
         free ( p );
     }
     s->tail = NULL;
+    s->head=NULL;
     s->length = 0;
 }
 
@@ -178,21 +181,36 @@ void PrintListFront(FILE *f, int code)
 void PrintListLast(FILE *f, int code)
 {
     NodeT *p;
-    int i;
+    int i,elem;
 
     i = 0;
+    elem=0;
     p = (NodeT *)malloc(sizeof(NodeT));
-    p=s->tail;
+    p=s->head;
+    while (p!= NULL)
+    {
+        elem++;
+        p=p->next;
+    }
+    s->length=elem;
+    p=s->head;
     if (code < s->length)
     {
-        while (i < code && p != NULL)
+        while (p != NULL)
         {
-            fprintf(f, "%d ", p->data);
-            p=p->prev;
-            i++;
+            if (s->length - i > code)
+            {
+                i++;
+                p=p->next;
+            }
+            else
+            {
+                fprintf(f, "%d ", p->data);
+                p=p->next;
+                i++;
+            }
         }
     }
     else
         PrintList(f);
-
 }

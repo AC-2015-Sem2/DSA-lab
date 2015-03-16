@@ -2,7 +2,6 @@
 
 int main(void)
 {
-
     s = (Santinel *)malloc(sizeof(Santinel));
     s->head = NULL;
     s->tail = NULL;
