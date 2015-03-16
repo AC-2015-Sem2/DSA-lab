@@ -1,0 +1,261 @@
+//Asignment 2.1
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+FILE *f, *g;
+typedef struct list
+{
+    int data;
+    struct list *next;
+    struct list *prev;
+}node;
+node *head, *tail, *sentinel=0;
+void sentinelCreate()
+{
+    head=sentinel;
+    tail=sentinel;
+    sentinel->next=head;
+    sentinel->prev=tail;
+}
+void addFirst(int x)
+{
+    if(head==sentinel)
+    {
+        head=(node*)malloc(sizeof(node));
+        head->data=x;
+        head->next=sentinel;
+        head->prev=sentinel;
+        tail=head;
+    }
+    else
+    {
+        node *newnode=(node*)malloc(sizeof(node));
+        newnode->data=x;
+        newnode->next=head;
+        newnode->prev=sentinel;
+        head=newnode;
+    }
+}
+void addLast(int x)
+{
+    if(head==sentinel)
+    {
+        head=(node*)malloc(sizeof(node));
+        head->data=x;
+        head->next=sentinel;
+        head->prev=sentinel;
+        tail=head;
+    }
+    else
+    {
+        node *newnode=(node*)malloc(sizeof(node));
+        newnode->data=x;
+        newnode->next=sentinel;
+        newnode->prev=tail;
+        tail=newnode;
+    }
+}
+void deleteFirst()
+{
+    if(head!=sentinel)
+    {
+        head=head->next;
+        head->prev=sentinel;
+    }
+}
+void deleteLast()
+{
+    if(tail!=sentinel)
+    {
+        tail=tail->prev;
+        tail->next=sentinel;
+    }
+}
+void doomTheList()
+{
+    while(head!=sentinel)
+    {
+        head=head->next;
+        head->prev=sentinel;
+    }
+}
+void deleteElement(int x)
+{
+    node *p;
+    p=head;
+    if(p->data==x)
+    {
+        p->prev->next=p->next;
+        p->next->prev=p->prev;
+    }
+}
+void printAll()
+{
+    while(head!=sentinel)
+    {
+        fprintf(f, "%d", head->data);
+        head=head->next;
+    }
+}
+void printFirst(int x)
+{
+    while(x!=0&&head!=sentinel)
+    {
+        fprintf(f, "%d", head->data);
+        head=head->next;
+        x--;
+    }
+}
+void printLast(int x)
+{
+    while(x!=0&&tail!=sentinel)
+    {
+        fprintf(f, "%d", tail->data);
+        tail=tail->prev;
+        x--;
+    }
+}
+int main()
+{
+    char s[100], c;
+    int i, x;
+    f=fopen("input.dat", "r");
+    g=fopen("output.dat", "w");
+    sentinelCreate();
+    while(!feof(f))
+    {
+        i=0;
+        while(c!=' ')
+        {
+            fscanf(f, "%c", &s[i]);
+            c=s[i];
+            i++;
+        }
+        if(strcmp(s, "AF")==0)
+        {
+            fscanf(f, "%d", &x);
+            addFirst(x);
+        }
+        if(strcmp(s, "AL")==0)
+        {
+            fscanf(f, "%d", &x);
+            addLast(x);
+        }
+        if(strcmp(s, "DF")==0)
+            deleteFirst();
+        if(strcmp(s, "DL")==0)
+            deleteLast();
+        if(strcmp(s, "DOOM_THE_LIST")==0)
+            doomTheList();
+        if(strcmp(s, "DE")==0)
+        {
+            fscanf(f, "%d", &x);
+            deleteElement(x);
+        }
+        if(strcmp(s, "PRINT_ALL")==0)
+            printAll();
+        if(strcmp(s, "PRINT_F")==0)
+        {
+            fscanf(f, "%d", &x);
+            printFirst(x);
+        }
+        if(strcmp(s, "PRINT_L")==0)
+        {
+            fscanf(f, "%d", &x);
+            printLast(x);
+        }
+    }
+    return 0;
+}
+//Assignment 2.2
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+FILE *f, *g;
+typedef struct moneyQueue
+{
+    int money;
+    struct moneyQueue *next;
+}node;
+node *head;
+typedef struct timeQueue
+{
+    int time;
+    struct timeQueue *next;
+}node1;
+node1 *head1;
+int peekMoney()
+{
+    return head->money;
+}
+int peekTime()
+{
+    return head1->time;
+}
+void enqueue(int money, int time)
+{
+    if(head==NULL)
+    {
+        head=(node*)malloc(sizeof(node));
+        head->money=money;
+        head->next=NULL;
+        head1=(node1*)malloc(sizeof(node1));
+        head1->time=time;
+        head1->next=NULL;
+    }
+    else
+    {
+        node *newData=(node*)malloc(sizeof(node));
+        newData->money=money;
+        newData->next=head;
+        head=newData;
+        node1 *newData1=(node1*)malloc(sizeof(node1));
+        newData1->time=time;
+        newData1->next=head1;
+        head1=newData1;
+    }
+}
+void dequeue()
+{
+    if(head!=NULL)
+    {
+        head=head->next;
+        head1=head1->next;
+    }
+}
+int main ()
+{
+    int i, x, y, totalMoney=0, totalTime=0, a=0;
+    int *t;
+    char s[20];
+    f=fopen("input.dat", "r");
+    g=fopen("output.dat", "w");
+    t=malloc(sizeof(int));
+    for(i=0;i<6;i++)
+    {
+        fscanf(f, "%d", t+i);
+    }
+    while(!feof(f))
+    {
+        fscanf(f, "%s", s);
+        fscanf(f, "%d %d", &x, &y);
+        enqueue(x, y);
+    }
+    dequeue();
+    for(i=0;i<5;i++)
+    {
+        x=peekMoney();
+        y=peekTime();
+        totalTime+=y;
+        totalMoney+=x;
+        if(*(t+i)>=totalTime)
+        {
+            fprintf(g, "After %d seconds: %d\n", *(t+i), totalMoney);
+            a=totalMoney;
+        }
+        else
+            fprintf(g, "After %d seconds: %d\n", *(t+i), a);
+        dequeue();
+    }
+    return 0;
+}
