@@ -40,51 +40,46 @@ void enqueue(int x,int y)
         p->time=y;
         p->next=NULL;
         p->previous=sentinel->tail;
+        sentinel->tail->next=p;
         sentinel->tail=p;
         (sentinel->length)++;
     }
 }
-
-int moneycustomer(int t)
-{
-    nodeT *q;
-    q=sentinel->head;
-    int nr,t1;
-    nr=0;
-    t1=0;
-    while(t-(q->time+t1)>=0)
-    {
-        if(q==NULL)
-        {
-            break;
-        }
-        else
-        {
-            nr+=q->money;
-            t1=q->time;
-            q=q->next;
-        }
-    }
-    return nr;
-}
-
 void callqueue(FILE *f,FILE *pf,int nrc)
 {
     char tab[50];
-    int x,y,t,i,nr;
+    int x,y,t,i,nr,t1;
     char c;
     nr=0;
+    t1=0;
     fseek(f,0L,SEEK_SET);
+    fgets(tab,sizeof(tab),f);
     for(i=0; i<nrc; i++)
     {
         fgets(tab,sizeof(tab),f);
         sscanf(tab,"%*s %d %d",&x,&y);
         enqueue(x,y);
     }
+    fseek(f,0L,SEEK_SET);
+    nodeT *q=sentinel->head;
     do
     {
         fscanf(f,"%d%c",&t,&c);
-        nr=moneycustomer(t);
+
+        while(q!=NULL)
+        {
+            if(t-(q->time+t1)<0)
+            {
+                break;
+            }
+            else
+            {
+                nr+=q->money;
+                t1=q->time;
+                q=q->next;
+            }
+        }
+
         fprintf(pf,"After %d seconds: %d\n",t,nr);
     }
     while(c==' ');
