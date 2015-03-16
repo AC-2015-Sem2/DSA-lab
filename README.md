@@ -117,7 +117,9 @@ Lab 13: Exam problem practice
 
 ### Catalysts Coding Contest
 
-* Anyone who chooses to participate in the [Catalysts Coding Contest](https://www.facebook.com/events/397457320436013/) will be awarded 0.5 points to the final mark
+* Anyone who chooses to participate in the [Catalysts Coding Contest](https://www.facebook.com/events/397457320436013/) (<-- LINK) will be awarded 0.3 points to the final mark
 * For every level successfully completed (with or without a team) an additional 0.1 points will be added to everyone in the team (or to the solo participant) up to a total of 0.7 points if you somehow manage to complete all 7 levels
 * If you manage to be in the top 10 contestants you will get an additional 1 point to the final grade
 * Don't forget - free pizza and drinks at the end!
+* Helpful hint #1: the first two levels are terribly simple most of the times
+* Helpful hint #2: you sample a few problems [here](http://contest.catalysts.cc/en/) (<-- LINK) 
