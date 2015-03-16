@@ -113,3 +113,11 @@ Lab 13: Exam problem practice
 * [Generic Lists](https://github.com/AC-2015-Sem2/DSA-lab/tree/master/Interesting%20Stuff/GenericLists) more exactly, how to create a (reusable) node which can remain the same for most of the functionality of the list regardless of the problem to be solved?
 * [Pointers to functions](https://github.com/AC-2015-Sem2/DSA-lab/tree/master/Interesting%20Stuff/PointersToFunctions) a cute example of how you can use a structure to simulate OOP behaviour.
 
+
+
+### Catalysts Coding Contest
+
+* Anyone who chooses to participate in the [Catalysts Coding Contest](https://www.facebook.com/events/397457320436013/) will be awarded 0.5 points to the final mark
+* For every level successfully completed (with or without a team) an additional 0.1 points will be added to everyone in the team (or to the solo participant) up to a total of 0.7 points if you somehow manage to complete all 7 levels
+* If you manage to be in the top 10 contestants you will get an additional 1 point to the final grade
+* Don't forget - free pizza and drinks at the end!
