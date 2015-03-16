@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1426540426 source:c:\users\alex\desktop\materiale facultate\dsa\teme\tema2.1\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
