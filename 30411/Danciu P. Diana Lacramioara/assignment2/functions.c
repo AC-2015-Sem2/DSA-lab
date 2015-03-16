@@ -55,14 +55,23 @@ void RemoveFirst(void)
     NodeT *p;
 
     p = (NodeT *)malloc(sizeof(NodeT));
-    p = s->head ;
-    s->head = s->head->next ; //nonempty list assumed
-    free(p); // release memory taken by node
+    if (s->head != NULL)
+    {
+        if (s->head == s->tail)
+        {
+            free(s->head);
+            s->head = NULL;
+            s->tail = NULL;
+        }
+        else
+        {
+           p = s->head;
+           s->head= s->head->next;
+           s->head->prev=NULL;
+           free(p);
+        }
+    }
     s->length--;
-    if (s->head == NULL )
-        s->tail = NULL; // list became empty
-    else
-        s->head->prev = NULL;
 }
 
 void RemoveLast(void)
@@ -70,14 +79,24 @@ void RemoveLast(void)
     NodeT *p;
 
     p = (NodeT *)malloc(sizeof(NodeT));
-    s->tail = s->tail->prev; // nonempty list assumed
-    s->length--;
-    if ( s->tail == NULL )
-        s->head = NULL; // list became empty
-    else
-        s->tail->next = NULL;
-    free ( p ) ; // release memory taken by node
 
+    if (s->head != NULL)
+    {
+        if (s->head == s->tail)
+        {
+            free(s->head);
+            s->head = NULL;
+            s->tail = NULL;
+        }
+        else
+        {
+           p = s->tail;
+           s->tail= s->tail->prev;
+           s->tail->next=NULL;
+           free(p);
+        }
+    }
+    s->length--;
 }
 
 void RemoveNodeX(int code)
@@ -86,27 +105,25 @@ void RemoveNodeX(int code)
 
     p = (NodeT *)malloc(sizeof(NodeT));
     p = s->head;
-    while (s->head->data == code)
-    {
+    if (p->data == code)
         RemoveFirst();
-    }
-    while (p != s->tail) // last element of the list
+    if (s->tail->data == code)
+        RemoveLast();
+    while (p->next != s->tail) // last element of the list
     {
         if (p->data == code)
         {
-            p->next->prev = p->prev;
-            p->prev->next = p->next;
+            NodeT *delete_n;
+            delete_n = (NodeT *)malloc(sizeof(NodeT));
+            delete_n = p;
+            delete_n->next->prev = delete_n->prev;
+            delete_n->prev->next = delete_n->next;
             s->length--;
-            free(p);
+            free(delete_n);
         }
         else
             p=p->next;
     }
-    if (s->tail->data == code)
-    {
-        RemoveLast();
-    }
-
 }
 
 void DeleteList(void)
@@ -132,7 +149,7 @@ void PrintList(FILE *f)
     p=s->head;
     while (p != NULL )
     {
-        fprintf(f, "%d", p->data);
+        fprintf(f, "%d ", p->data);
         p=p->next;
     }
 }
@@ -149,7 +166,7 @@ void PrintListFront(FILE *f, int code)
     {
         while (p != NULL && i < code)
         {
-            fprintf(f, "%d", p->data);
+            fprintf(f, "%d ", p->data);
             p=p->next;
             i++;
         }
@@ -168,9 +185,9 @@ void PrintListLast(FILE *f, int code)
     p=s->tail;
     if (code < s->length)
     {
-        while (i <= code && p != NULL)
+        while (i < code && p != NULL)
         {
-            fprintf(f, "%d", p->data);
+            fprintf(f, "%d ", p->data);
             p=p->prev;
             i++;
         }
