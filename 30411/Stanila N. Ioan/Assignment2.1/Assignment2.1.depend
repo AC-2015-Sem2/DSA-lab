@@ -1,0 +1,20 @@
+# depslib dependency file v1.0
+1426533122 source:c:\users\johns\documents\programming\assignment2.1\list.c
+	"list.h"
+	<stdlib.h>
+
+1426532133 c:\users\johns\documents\programming\assignment2.1\list.h
+	<stdio.h>
+
+1426533464 source:c:\users\johns\documents\programming\assignment2.1\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"sentinel.h"
+
+1426533494 c:\users\johns\documents\programming\assignment2.1\sentinel.h
+	"list.h"
+
+1426533504 source:c:\users\johns\documents\programming\assignment2.1\sentinel.c
+	"sentinel.h"
+
