@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1426536254 source:c:\users\alexa\desktop\assignment2.2\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
