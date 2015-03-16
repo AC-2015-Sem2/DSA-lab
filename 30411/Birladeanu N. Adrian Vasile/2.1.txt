@@ -1,0 +1,247 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+//nu toate functiile functioneaza corect
+FILE *fin, *fout;
+
+typedef struct nodetype
+{
+    int code;
+    struct nodetype *next;
+    struct nodetype *prev;
+} NodeT;
+NodeT *head, *tail;
+
+int length;
+
+void add_first(int nod) //functioneaza corect
+{
+    if(head==NULL)
+    {
+        head=(NodeT*)(malloc(sizeof(NodeT*)));
+        head->code=nod;
+        head->next=NULL;
+        head->prev=NULL;
+        tail=head;
+    }
+    else
+    {
+        NodeT *now;
+        now=(NodeT*)malloc(sizeof(NodeT*));
+        now->next=head;
+        now->prev=NULL;
+        now->code=nod;
+        head=now;
+    }
+    length++;
+}
+
+void add_last(int nod) // functioneaza doar daca lista e goala
+{
+    if(head==NULL)
+    {
+        head=(NodeT*)malloc(sizeof(NodeT*));
+        head->code=nod;
+        head->next=NULL;
+        head->prev=NULL;
+        tail=head;
+    }
+    else
+    {
+        NodeT *now;
+        now=(NodeT*)calloc(1, sizeof(NodeT*));
+        tail->next=now;
+        now->code=nod;
+        now->next=NULL;
+        now->prev=tail;
+        tail=now;
+    }
+    length++;
+}
+
+void print_all() // functioneaza corect
+{
+    NodeT *aux=head;
+    while(aux!=NULL)
+    {
+        fprintf(fout, "%d ", aux->code);
+        aux=aux->next;
+    }
+    fprintf(fout, "\n");
+}
+
+int delete_first() // functioneaza corect doar daca lista are 2 sau mmai multe elemente
+{
+    if(head==NULL)return 0;
+    if(tail==head)
+    {
+        free(head);
+        head=NULL;
+        tail=NULL;
+        return 0;
+    }
+    NodeT *aux;
+    aux=head;
+    head=aux->next;
+    free(aux);
+    if(length!=0)length--;
+    return 0;
+}
+
+int delete_last() // nu functioneaza
+{
+    if(tail==head)
+    {
+        if(head==NULL)return 0;
+        free(head);
+        head=NULL;
+        return 0;
+    }
+    NodeT *aux=tail;
+    tail=tail->prev;
+    tail->next=NULL;
+    free(aux);
+    if(length!=0)length--;
+    return 0;
+}
+
+void doom() // functioneaza corect
+{
+    NodeT *aux=head;
+    while(aux->next!=NULL)
+    {
+        head=aux->next;
+        free(aux);
+        aux=head;
+    }
+    free(aux);
+    head=NULL;
+    tail=NULL;
+    length=0;
+}
+
+int delete_nod(int nod) // nu functioneaza corect
+{
+    if(head->code==nod)
+    {
+        delete_first();
+        return 0;
+    }
+    if(tail->code==nod)
+    {
+        delete_last();
+        return 0;
+    }
+    NodeT *aux;
+    aux=head->next;
+    while(aux->code!=nod)aux=aux->next;
+    aux->prev->next=aux->next;
+    free(aux);
+    length--;
+    return 0;
+}
+
+void print_first(int nod) // nu functioneaza
+{
+    int i=1;
+    NodeT *aux=head;
+    if(nod>=length)print_all();
+    else for(i=1; i<=nod; i++)
+        {
+            fprintf(fout, "%d ", aux->code);
+            aux=aux->next;
+        }
+    fprintf(fout, "\n");
+}
+
+void print_last(nod) // mu functioneaza
+{
+    if(nod>=length)print_all();
+    else
+    {
+        if(nod==1)fprintf(fout, "%d ", tail->code);
+        else
+        {
+            int i;
+            NodeT *aux=tail;
+            for(i=1; i<nod; i++)aux=aux->prev;
+            while(aux!=NULL)
+            {
+                fprintf(fout, "%d ", aux->code);
+                aux=aux->next;
+            }
+        }
+        fprintf(fout, "\n");
+    }
+}
+
+
+int decide(char a[], int nod) // functioneaza corect
+{
+    if(strcmp(a, "AF")==0)
+    {
+        add_first(nod);
+        return 0;
+    }
+    if(strcmp(a, "AL")==0)
+    {
+        add_last(nod);
+        return 0;
+    }
+    if(strcmp(a, "DF")==0)
+    {
+        delete_first();
+        return 0;
+    }
+    if(strcmp(a, "DL")==0)
+    {
+        delete_last();
+        return 0;
+    }
+    if(strcmp(a, "DOOM_THE_LIST")==0)
+    {
+        doom();
+        return 0;
+    }
+    if(strcmp(a, "DE")==0)
+    {
+        delete_nod(nod);
+        return 0;
+    }
+    if(strcmp(a, "PRINT_ALL")==0)
+    {
+        print_all();
+        return 0;
+    }
+    if(strcmp(a, "PRINT_F")==0)
+    {
+        print_first(nod);
+        return 0;
+    }
+    if(strcmp(a, "PRINT_L")==0)
+    {
+        print_last(nod);
+        return 0;
+    }
+    printf("Comanda \" %s \" nerecunoscuta! \n", a);
+    return 0;
+}
+
+
+
+int main()
+{
+    char a[14];
+    int b=1, nod;
+    fin=fopen("input.dat", "r");
+    if(fin==NULL)perror("Error 404: file not found");
+    fout=fopen("output.dat", "w");
+    while(b!=-1)
+    {
+        b=fscanf(fin, "%s %d", a, &nod);
+        if(b!=-1)decide(a, nod);
+    }
+    fclose(fin);
+    fclose(fout);
+    return 0;
+}
