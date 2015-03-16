@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1426537276 source:d:\facultate\semestrul 2\structuri de date si algoritmi\probleme\tema2\main.c
+	<string.h>
+	<stdio.h>
+	<stdlib.h>
+

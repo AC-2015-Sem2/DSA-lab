@@ -1,0 +1,11 @@
+# depslib dependency file v1.0
+1426537683 source:d:\facultate\semestrul 2\structuri de date si algoritmi\probleme\problab2\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1426541674 source:c:\users\user\desktop\queue\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
