@@ -9,11 +9,21 @@ typedef struct node
     struct node *prev;
 } NODE;
 
-NODE *head, *tail;
-
-void print_all(FILE *g)
+typedef struct  santinel
 {
-    NODE* x=head;
+    NODE *head;
+    NODE *tail;
+}san;
+
+ void init(san *s)
+ {
+     s->head=NULL;
+     s->tail=NULL;
+ }
+
+void print_all(san *s,FILE *g)
+{
+    NODE* x=s->head;
     while(x!=NULL)
     {
         fprintf(g,"%d ", x->data);
@@ -22,34 +32,34 @@ void print_all(FILE *g)
     fprintf(g, "\n");
 }
 
-void Add_first(int data)
+void Add_first(san *s,int data)
 {
-    if(head == NULL)
+    if(s->head == NULL)
     {
-        head = (NODE*)malloc(sizeof(NODE));
-        head->data = data;
-        head->next = NULL;
-        tail = head;
+        s->head = (NODE*)malloc(sizeof(NODE));
+        s->head->data = data;
+        s->head->next = NULL;
+        s->tail = s->head;
     }
     else
     {
         NODE *new;
         new = (NODE*)malloc(sizeof(NODE));
         new->data = data;
-        new->next = head;
-        head->prev = new;
-        head = new;
+        new->next = s->head;
+        s->head->prev = new;
+        s->head = new;
     }
 }
 
-void Add_last(int data)
+void Add_last(san *s,int data)
 {
-    if(head == NULL)
+    if(s->head == NULL)
     {
-        head = (NODE*)malloc(sizeof(NODE));
-        head->data = data;
-        head->next = NULL;
-        tail = head;
+        s->head = (NODE*)malloc(sizeof(NODE));
+        s->head->data = data;
+        s->head->next = NULL;
+        s->tail = s->head;
     }
     else
     {
@@ -57,47 +67,47 @@ void Add_last(int data)
         new = (NODE*)malloc(sizeof(NODE));
         new->data=data;
         new->next = NULL;
-        tail->next = new;
-        new -> prev = tail;
-        tail = new;
+        s->tail->next = new;
+        new -> prev = s->tail;
+        s->tail = new;
     }
 }
 
-void Delete_first()
+void Delete_first(san *s)
 {
     NODE *new;
-    new = head->next;
-    free(head);
-    head = new;
+    new = s->head->next;
+    free(s->head);
+    s->head = new;
 }
 
-void Delete_last()
+void Delete_last(san *s)
 {
-    NODE *x=tail;
+    NODE *x=s->tail;
     x->prev->next=NULL;
-    tail = x->prev;
+    s->tail = x->prev;
 }
 
-void Doom_list()
+void Doom_list(san *s)
 {
-    NODE *x=head;
-    if(head==NULL)
+    NODE *x=s->head;
+    if(s->head==NULL)
         return;
     else
     {
         while(x!=NULL)
         {
-            head = x->next;
+            s->head = x->next;
             free(x);
-            x=head;
+            x=s->head;
         }
-        tail=NULL;
+        s->tail=NULL;
     }
 }
-void Delete_x(int data)
+void Delete_x(san *s,int data)
 {
-    NODE *x=head;
-    if(head==NULL)
+    NODE *x=s->head;
+    if(s->head==NULL)
         return ;
     else
     {
@@ -105,8 +115,8 @@ void Delete_x(int data)
         {
             if(x->data==data)
             {
-                x->prev->next=x->next;
-                x->next->prev= x->prev;
+                (x->prev)->next=x->next;
+                (x->next)->prev= x->prev;
                 free(x);
             }
             else
@@ -115,9 +125,9 @@ void Delete_x(int data)
     }
 }
 
-void print_f(FILE *g,int data)
+void print_f(san *s,FILE *g,int data)
 {
-    NODE *x=head;
+    NODE *x=s->head;
     while(x!=NULL && data!=0)
     {
         fprintf(g,"%d ",x->data);
@@ -128,9 +138,9 @@ void print_f(FILE *g,int data)
 
 }
 
-void print_l(FILE *g, int data)
+void print_l(san *s,FILE *g, int data)
 {
-    NODE *x=tail;
+    NODE *x=s->tail;
     int i;
     for(i=data; i>0; i--)
     {
@@ -143,6 +153,9 @@ int main()
     FILE	*f, *g;
     char	*wtd; //what to do
     int		data;
+    san *s;
+    s=(san*)malloc(sizeof(san));
+    init(s);
     f = fopen("input.txt", "r");
     g = fopen("output.txt", "w");
     if(f==NULL)
@@ -151,27 +164,27 @@ int main()
         perror("File error");
     wtd = (char *)malloc(sizeof(char) * 20);
 
-    while (fscanf(f, "%s", wtd) != EOF)
+    while (fscanf(f, "%s", wtd) == 1)
     {
         fscanf(f, "%d", &data);
         if (strcmp(wtd, "AF") == 0)
-            Add_first(data);
+            Add_first(s,data);
         else if (strcmp(wtd, "AL") == 0)
-            Add_last(data);
+            Add_last(s,data);
         else if (strcmp(wtd, "DF") == 0)
-            Delete_first();
+            Delete_first(s);
         else if (strcmp(wtd, "DL") == 0)
-            Delete_last();
+            Delete_last(s);
         else if (strcmp(wtd, "DOOM_THE_LIST") == 0)
-            Doom_list();
+            Doom_list(s);
         else if (strcmp(wtd, "DE") == 0)
-            Delete_x(data);
+            Delete_x(s,data);
         else if (strcmp(wtd, "PRINT_ALL") == 0)
-            print_all(g);
+            print_all(s,g);
         else if (strcmp(wtd, "PRINT_F") == 0)
-            print_f(g, data);
+            print_f(s,g, data);
         else if (strcmp(wtd, "PRINT_L") == 0)
-            print_l(g, data);
+            print_l(s,g, data);
     }
     fclose(f);
     fclose(g);
