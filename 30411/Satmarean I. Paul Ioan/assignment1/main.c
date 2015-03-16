@@ -211,7 +211,7 @@ void PRINT_L (int x)
             while(aux!=NULL)
             {if(i>=((ne-x)+1))
                 fprintf(pf2,"%d ",aux->code);
-                
+
                 aux=aux->next;
                 i++;
             }
