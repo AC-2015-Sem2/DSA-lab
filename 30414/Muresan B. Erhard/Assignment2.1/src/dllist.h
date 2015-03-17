@@ -31,6 +31,7 @@ typedef struct
 {
   NodeD *head; /* pointer to first node of the list */
   NodeD *tail; /* pointer to last node of the list */
+  int size; /* current size of the list */
 }ListD;
 
 NodeD *createNode(int);

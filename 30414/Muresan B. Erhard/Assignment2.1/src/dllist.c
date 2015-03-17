@@ -243,7 +243,7 @@ void printNLast(ListD *L, int n)
       if (pNode == L->tail)
 	fprintf(fpOut, "%d", pNode->data);
       else
-	fprint(fpOut, "%d ", pNode->data);
+	fprintf(fpOut, "%d ", pNode->data);
       pNode = pNode->prev;
       n--;
     }
