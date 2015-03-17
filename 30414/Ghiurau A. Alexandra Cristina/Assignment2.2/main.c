@@ -11,57 +11,51 @@ typedef struct node
     struct node* next;
 } node;
 
-
-typedef struct sant
+typedef struct listT
 {
-    node* head;
-    node* tail;
-    node* front;
-    node* rear;
-    int nrOfPeople; //n people/ n elements
-
-} santinel;
-
-santinel* s;
+    struct node *head;
+    struct node *tail;
+} listT;
+listT *firstList;
+listT *secondList;
 
 
-/* I am adding the seconds from ths first line of the input file into a singly linked list */
+/* I am adding the seconds from this first line of the input file into a singly linked list */
 void addLast(int seconds)
 {
 
     node *newNode = (node*)malloc(sizeof(node));
     newNode->seconds = seconds;
     newNode->next=NULL;
-    if (s->front==NULL)
+    if (firstList->head==NULL)
     {
-        s->front=newNode;
-        s->rear=newNode;
+        firstList->head=newNode;
+        firstList->tail=newNode;
     }
     else
     {
-        s->rear->next=newNode;
-        s->rear=newNode;
+        firstList->tail->next=newNode;
+        firstList->tail=newNode;
     }
 }
 
 void deleteFirst()
 {
-    if(s->front==NULL)
+    if(firstList->head==NULL)
     {
         printf("The list is already empty!");
     }
     else
     {
-        if  (s->front==s->rear)
+        if  (firstList->head==firstList->tail)
         {
-            free(s->front);
-            s->front= NULL;
+            free(firstList->head);
+            firstList->head= NULL;
         }
         else
         {
-            node *auxNode;
-            auxNode = s->front;
-            s->front = s->front->next;
+            node *auxNode= firstList->head;
+            firstList->head = firstList->head->next;
             free(auxNode);
         }
     }
@@ -73,35 +67,50 @@ void enqueue(int x, int y) //this adds last
     temp->money = x;
     temp->time = y;
     temp->next = NULL;
-    if((s->head == NULL) && (s->tail == NULL))
+    if((secondList->head == NULL) && (secondList->tail == NULL))
     {
-        s->head = s->tail = temp;
+        secondList->head = secondList->tail = temp;
         return;
     }
-    s->tail->next = temp;
-    s->tail = temp;
-    s->nrOfPeople ++;
+    secondList->tail->next = temp;
+    secondList->tail = temp;
 }
 
 void dequeue()
 {
-    struct node* temp = s->head;
-    if(s->head == NULL)
+    /*if(secondList->head == NULL)
+    {
+        printf("Queue is Empty\n");
+    }
+    if(secondList->head == secondList->tail)
+    {
+        free(secondList->head);
+        secondList->head= NULL;
+    }
+    else
+    {
+        node* temp = secondList->head;
+        secondList->head = secondList->head->next;
+        free(temp);
+    }*/
+
+    node* temp = secondList->head;
+    if(secondList->head == NULL)
     {
         printf("Queue is Empty\n");
         return;
     }
-    if(s->head == s->tail)
+    if(secondList->head == secondList->tail)
     {
-        s->head = s->tail = NULL;
+        secondList->head = secondList->tail = NULL;
     }
     else
     {
-        s->head = s->head->next;
+        secondList->head = secondList->head->next;
     }
     free(temp);
-}
 
+}
 
 void readFromFile(FILE *file, FILE *fileOutput)
 {
@@ -126,29 +135,32 @@ void readFromFile(FILE *file, FILE *fileOutput)
     char *name;
     name = (char*)malloc(sizeof(char));
 
-    int cashiersMoney = 0;
-    int aux = 0;
 
     while(fscanf(file,"%s %d %d \n", name, &money, &time)!=EOF)
     {
         enqueue(money, time);
     }
 
-    while((s->head != NULL) && (s->front !=NULL ))
+    int cashiersMoney = 0;
+    int timeLeft = 0;
+    int timePassed = 0;
+
+    while (firstList->head != NULL)
     {
-        node *temp = s->head;
-        node *temp2 = s->front;
+        int sec2 = firstList->head->seconds;
+        timeLeft = firstList->head->seconds - timePassed ;
 
-        int sec = temp2->seconds;
-
-        if(temp2->seconds >= temp->time)
+        while ((secondList->head != NULL) && ( firstList->head->seconds  >= secondList->head->time))
         {
-            cashiersMoney = cashiersMoney + temp->money;
-            temp2 = temp2 +temp->money;
-            deleteFirst();
+            cashiersMoney = cashiersMoney + secondList->head->money;
+            timeLeft = timeLeft - secondList->head->time;
+            timePassed  = timePassed  + secondList->head->time;
+            break;
+            dequeue();
         }
-        fprintf(fileOutput,"\nAfter %d seconds: %d", sec, cashiersMoney);
-        dequeue();
+    deleteFirst();
+    printf("\nAfter %d seconds: %d", sec2, cashiersMoney);
+    fprintf(fileOutput,"\nAfter %d seconds: %d", sec2, cashiersMoney);
     }
 
 }
@@ -167,11 +179,12 @@ int main()
     }
     fileOutput= fopen("output.dat","w");
 
-    s = (santinel*)malloc(sizeof(santinel));
-    s->head = NULL;
-    s->tail = NULL;
-    s->front = NULL;
-    s->rear = NULL;
+    firstList = (listT*)malloc(sizeof(listT));
+    secondList = (listT*)malloc(sizeof(listT));
+    firstList->head = NULL;
+    firstList->tail = NULL;
+    secondList->head = NULL;
+    secondList->tail = NULL;
 
     readFromFile(file, fileOutput);
 
