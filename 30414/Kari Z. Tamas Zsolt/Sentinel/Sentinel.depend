@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1426612440 source:c:\users\tamas\desktop\codeblocks\myrep\dsa-lab\30414\kari z. tamas zsolt\sentinel\main.cpp
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
