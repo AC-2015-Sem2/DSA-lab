@@ -14,7 +14,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#idndef DLLIST_H_INCLUDED
+#ifndef DLLIST_H_INCLUDED
 #define DLLIST_H_INCLUDED
 
 #include <stdio.h>
@@ -35,5 +35,7 @@ typedef struct
 
 NodeD *createNode(int);
 ListD *createList();
+void addAtFirst(ListD *, NodeD *);
+void addAtLast(ListD *, NodeD *);
 
 #endif // DLLIST_H_INCLUDED
