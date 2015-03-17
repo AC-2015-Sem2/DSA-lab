@@ -1,0 +1,39 @@
+/* Copyright 2015 Erhard Muresan.
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ */
+
+#idndef DLLIST_H_INCLUDED
+#define DLLIST_H_INCLUDED
+
+#include <stdio.h>
+#include <stdlib.h>
+
+typedef struct _node
+{
+  int data; /* the value it holds */
+  struct _node *next; /* pointer to the next node */
+  struct _node *prev; /* pointer to the previous node */
+}NodeD;
+
+typedef struct
+{
+  NodeD *head; /* pointer to first node of the list */
+  NodeD *tail; /* pointer to last node of the list */
+}ListD;
+
+NodeD *createNode(int);
+ListD *createList();
+
+#endif // DLLIST_H_INCLUDED
