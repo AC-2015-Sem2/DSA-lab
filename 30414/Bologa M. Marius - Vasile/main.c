@@ -7,14 +7,14 @@ typedef struct st_node
     int data;
     struct st_node* next;
     struct st_node* prev;
-}node;
+} node;
 
 typedef struct sentinel
 {
     node* head;
     node* tail;
     int len;
-}list;
+} list;
 
 list *sent;
 
@@ -74,34 +74,39 @@ void printLastX(int x)
 void addFirst(int data)
 {
     if(sent->head==NULL)
-        {sent->head=(node*)malloc(sizeof(node));
+    {
+        sent->head=(node*)malloc(sizeof(node));
         sent->head->data=data;
-         sent->tail=sent->head;
-         sent->len++;}
-         else{
-            node *curr=(node*)malloc(sizeof(node));
-            curr->data=data;
-            curr->next=sent->head;
-            sent->head->prev=curr;
-            sent->head=curr;
-            sent->len++;
-}
+        sent->tail=sent->head;
+    }
+    else
+    {
+        node *curr=(node*)malloc(sizeof(node));
+        curr->data=data;
+        curr->next=sent->head;
+        sent->head->prev=curr;
+        sent->head=curr;
+    }
+    sent->len++;
 }
 void addLast(int data)
 {
     if(sent->tail==NULL)
-    {sent->tail=(node*)malloc(sizeof(node));
-      sent->tail->data=data;
-      sent->head=sent->tail;
-      sent->len++;}
-      else{
-            node *curr=(node*)malloc(sizeof(node));
-           curr->data=data;
-           sent->tail->next=curr;
-           curr->prev=sent->tail;
-           sent->tail=curr;
-           sent->len++;
-           }
+    {
+        sent->tail=(node*)malloc(sizeof(node));
+        sent->tail->data=data;
+        sent->head=sent->tail;
+
+    }
+    else
+    {
+        node *curr=(node*)malloc(sizeof(node));
+        curr->data=data;
+        sent->tail->next=curr;
+        curr->prev=sent->tail;
+        sent->tail=curr;
+    }
+    sent->len++;
 }
 void deleteFirst()
 {
@@ -112,32 +117,38 @@ void deleteFirst()
         sent->tail=NULL;
         sent->len=0;
     }
-else{node *curr=(node*)malloc(sizeof(node));
-    curr=sent->head;
-    sent->head=sent->head->next;
-    free(curr);
-    sent->len--;
-}
+    else
+    {
+        node *curr=(node*)malloc(sizeof(node));
+        curr=sent->head;
+        sent->head=sent->head->next;
+        free(curr);
+        sent->len--;
+    }
 }
 void deleteLast()
-{if(sent->head==sent->tail)
+{
+    if(sent->head==sent->tail)
     {
         free(sent->tail);
         sent->head=NULL;
         sent->tail=NULL;
         sent->len=0;
     }
-    else{
+    else
+    {
         node* curr=(node*)malloc(sizeof(node));
         curr=sent->tail;
         sent->tail=sent->tail->prev;
-        free(curr);sent->len--;
+        free(curr);
+        sent->len--;
     }
 
 }
 void doomTheList()
-{node* curr=(node*)malloc(sizeof(node));
-node* aux=(node*)malloc(sizeof(node));
+{
+    node* curr=(node*)malloc(sizeof(node));
+    node* aux=(node*)malloc(sizeof(node));
     curr=sent->head;
     aux=curr;
     while(curr!=NULL)
@@ -158,14 +169,15 @@ void deleteX(int x)
     if(sent->tail->data==x)
         deleteLast();
     if(sent->tail==sent->head && sent->head->data==x)
-       {
+    {
 
-       free(sent->head);
+        free(sent->head);
         sent->tail=NULL;
-        sent->head=NULL;}
+        sent->head=NULL;
+    }
     curr=sent->head;
     int i;
-    for(i=0;i<sent->len;i++)
+    for(i=0; i<sent->len; i++)
     {
         curr=curr->next;
         if(curr->data==x)
@@ -185,7 +197,7 @@ void deleteX(int x)
 int main()
 {
 
-sent = (list*)malloc(sizeof(list));
+    sent = (list*)malloc(sizeof(list));
     sent->head = NULL;
     sent->tail = NULL;
     sent->len = 0;
@@ -196,7 +208,7 @@ sent = (list*)malloc(sizeof(list));
     char caz[20];
     int n;
 
-   while(fscanf(fin, "%s", caz)>0)
+    while(fscanf(fin, "%s", caz)>0)
     {
         if(strcmp(caz, "AF")==0)
         {
@@ -212,14 +224,14 @@ sent = (list*)malloc(sizeof(list));
             deleteFirst();
         else if(strcmp(caz, "DL")==0)
             deleteLast();
-      else if(strcmp(caz, "DOOM_THE_LIST")==0)
+        else if(strcmp(caz, "DOOM_THE_LIST")==0)
             doomTheList();
         else if(strcmp(caz, "DE")==0)
         {
             fscanf(fin, "%d", &n);
             deleteX(n);
         }
-         if(strcmp(caz, "PRINT_ALL")==0)
+        if(strcmp(caz, "PRINT_ALL")==0)
             printList();
         else if(strcmp(caz, "PRINT_F")==0)
         {
