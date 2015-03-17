@@ -134,3 +134,60 @@ void deleteLast(ListD *L)
       free(pNode);
     }
 }
+
+/* remove node from list */
+void deleteNodeByValue(ListD *L, int data)
+{
+  if (L == NULL)
+    {
+      perror("Invalid list or node");
+      return;
+    }
+  if (L->head == NULL)
+    { /* list is empty */
+      perror("List is empty!");
+      return;
+    }
+
+  NodeD *pNode = L->head;
+  while (pNode != NULL)
+    {
+      if (pNode->data == data)
+	break;
+      pNode = pNode->next;
+    }
+  if (pNode != NULL)
+    {
+      if (pNode == L->head)
+	{ /* first in the list */
+	  L->head = L->head->next;
+	  pNode->next->prev = NULL;
+	  free(pNode);
+	  if (L->head == NULL) /* list is empty */
+	    L->tail = NULL;
+	}
+      else
+	{
+	  pNode->prev->next = pNode->next;
+	  pNode->next->prev = pNode->prev;
+	  if (pNode == L->tail)
+	    L->tail = pNode->prev;
+	  free(pNode);
+	}
+    }
+}
+
+/* remove all elements from list */
+void deleteAll(ListD *L)
+{
+  if (L == NULL)
+    {
+      perror("Invalid list!");
+      return;
+    }
+
+  while (L->head != NULL)
+    {
+      deleteFirst(L);
+    }
+}

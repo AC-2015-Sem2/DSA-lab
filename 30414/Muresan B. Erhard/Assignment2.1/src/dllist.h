@@ -39,5 +39,7 @@ void addAtFirst(ListD *, NodeD *);
 void addAtLast(ListD *, NodeD *);
 void deleteFirst(ListD *);
 void deleteLast(ListD *);
+void deleteNodeByValue(ListD *, int);
+void deleteAll(ListD *);
 
 #endif // DLLIST_H_INCLUDED
