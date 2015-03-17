@@ -4,6 +4,8 @@ typedef struct nod
 {
     int data;
     struct nod *next;
+    struct nod *previous;
+
 }NODE;
 
 NODE *head, *tail;
@@ -62,6 +64,7 @@ void AF(int data)
         head=(NODE*) malloc(sizeof(NODE));
         head->data=data;
         head->next=NULL;
+        head->previous=NULL;
         tail=head;
     }
 
@@ -70,6 +73,7 @@ void AF(int data)
         newnode=(NODE*) malloc(sizeof(NODE));
         newnode->data=data;
         newnode->next=head;
+        newnode->previous=NULL;
         head=newnode;
     }
 }
@@ -81,6 +85,7 @@ void AL(int data)
         head=(NODE*) malloc(sizeof(NODE));
         head->data=data;
         head->next=NULL;
+        head->previous=NULL;
         tail=head;
 
     }
@@ -90,6 +95,7 @@ void AL(int data)
         newnode=(NODE*) malloc(sizeof(NODE));
         tail->next=newnode;
         newnode->next=NULL;
+        newnode->previous=tail;
         newnode->data=data;
         tail=newnode;
     }
@@ -101,34 +107,35 @@ void DF()
     if(head!=NULL)
     {
         head=head->next;
+        head->previous=NULL;
         free(position);
     }
 }
 
 void DL()
 {   NODE *position;
-    position=head;
+    position=tail;
     if(tail!=NULL)
     {
-        while(position->next!=tail)
-            position=position->next;
-
-        tail=position;
-        position=position->next;
+        tail=tail->previous;
         tail->next=NULL;
         free(position);
     }
+
 }
 
 void DOOM_THE_LIST()
-{   NODE *p,*position;
-    p=position=head;
-    head=tail=NULL;
-    while(p!=NULL)
-    {   p=p->next;
-        free(position);
-        position=p;
+{
+    while(head->next!=NULL)
+    {
+        head=head->next;
+        free(head->previous);
+         head->previous=NULL;
+
     }
+    free(head);
+    tail=head=NULL;
+
 }
 
 void DE(int x)
@@ -144,13 +151,12 @@ void DE(int x)
         {
             while(p!=NULL&&p->data==x)
             {
-                position->next=p->next;
-                obliterate=p;
+                position=p;
+                p->previous->next=p->next;
+                p->next->previous=p->previous;
                 p=p->next;
-                free(obliterate);
+                free(position);
             }
-
-            position=p;
             p=p->next;
         }
 
