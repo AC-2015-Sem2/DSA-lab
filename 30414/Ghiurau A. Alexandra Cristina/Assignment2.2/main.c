@@ -15,7 +15,7 @@ typedef struct listT
 {
     struct node *head;
     struct node *tail;
-} listT;
+} listT;,
 listT *firstList;
 listT *secondList;
 
@@ -150,17 +150,16 @@ void readFromFile(FILE *file, FILE *fileOutput)
         int sec2 = firstList->head->seconds;
         timeLeft = firstList->head->seconds - timePassed ;
 
-        while ((secondList->head != NULL) && ( firstList->head->seconds  >= secondList->head->time))
+        while ((secondList->head != NULL) && ( timeLeft  >= secondList->head->time))
         {
             cashiersMoney = cashiersMoney + secondList->head->money;
-            timeLeft = timeLeft - secondList->head->time;
-            timePassed  = timePassed  + secondList->head->time;
-            break;
+            timePassed  += secondList->head->time;
+            timeLeft -= timePassed;
             dequeue();
         }
-    deleteFirst();
-    printf("\nAfter %d seconds: %d", sec2, cashiersMoney);
-    fprintf(fileOutput,"\nAfter %d seconds: %d", sec2, cashiersMoney);
+        deleteFirst();
+        printf("\nAfter %d seconds: %d", sec2, cashiersMoney);
+        fprintf(fileOutput,"\nAfter %d seconds: %d", sec2, cashiersMoney);
     }
 
 }
@@ -188,6 +187,7 @@ int main()
 
     readFromFile(file, fileOutput);
 
+     printf("Done\n");
     fclose(fileOutput);
     return 0;
 }
