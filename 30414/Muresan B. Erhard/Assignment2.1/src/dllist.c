@@ -191,3 +191,60 @@ void deleteAll(ListD *L)
       deleteFirst(L);
     }
 }
+
+/* print all elements of the list */
+void printList(ListD *L)
+{
+  if (L == NULL)
+    {
+      perror("Invalid list!");
+      return;
+    }
+  NodeD *pNode = L->head;
+  while (pNode != NULL)
+    {
+      if (pNode == L->tail)
+	fprintf(fpOut, "%d", pNode->data);
+      else
+	fprintf(fpOut, "%d ", pNode->data);
+      pNode = pNode->next;
+    }
+}
+
+/* print N first elements from list */
+void printNFirst(ListD *L, int n)
+{
+  if (L == NULL)
+    return;
+  if (n <= 0)
+    return;
+  NodeD *pNode = L->head;
+  while (n > 0 || pNode != NULL)
+    {
+      if (pNode == L->tail)
+	fprintf(fpOut, "%d", pNode->data);
+      else
+	fprintf(fpOut, "%d ", pNode->data);
+      pNode = pNode->next;
+      n--;
+    }
+}
+
+/* print N last elements from list */
+void printNLast(ListD *L, int n)
+{
+  if (L == NULL)
+    return;
+  if (n <= 0)
+    return;
+  NodeD *pNode = L->tail;
+  while (n > 0 || pNode != NULL)
+    {
+      if (pNode == L->tail)
+	fprintf(fpOut, "%d", pNode->data);
+      else
+	fprint(fpOut, "%d ", pNode->data);
+      pNode = pNode->prev;
+      n--;
+    }
+}

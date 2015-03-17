@@ -41,5 +41,10 @@ void deleteFirst(ListD *);
 void deleteLast(ListD *);
 void deleteNodeByValue(ListD *, int);
 void deleteAll(ListD *);
+void printList(ListD *);
+void printNFirst(ListD *, int);
+void printNLast(ListD *, int);
+
+extern FILE *fpOut;
 
 #endif // DLLIST_H_INCLUDED
