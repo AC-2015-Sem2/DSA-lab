@@ -34,14 +34,14 @@ void DeleteFirst()
 void DeleteLast()
 {
     node *p;
-    if (list->head==list->tail) free(list->head);
+    if ((list->head==list->tail) && (list->head!=NULL)) free(list->head);
     else
     {
-        p=list->head;
-        while (p->next!=list->tail) p=p->next;
-        p->next=NULL;
-        free(list->tail);
-        list->tail=p;
+        p=list->tail;
+        list->tail=list->tail->prev;
+        list->tail->next=NULL;
+        p=NULL;
+        free(p);
     }
 }
 void DoomTheListt()
@@ -76,8 +76,11 @@ void DeleteElement(int x)
         }
         else if (list->tail->data==x)
         {
-            p->prev->next=NULL;
-            free(list->tail);
+            p=list->tail;
+            list->tail=list->tail->prev;
+            list->tail->next=NULL;
+            p=NULL;
+            free(p);
         }
     }
 }
