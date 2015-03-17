@@ -40,13 +40,25 @@ void addFirst(int data)
 
 void addLast(int data)
 {
-    node *a;
+   node *a;
+    if(S->head==NULL)
+    {
+        S->head=(node*)malloc(sizeof(node));
+        S->tail=S->head;
+        S->head->data=data;
+        S->head->next=NULL;
+        S->head->prev=NULL;
+    }
+    else
+    {
     a=(node*)malloc(sizeof(node));
     a->data=data;
     a->next=NULL;
     a->prev=S->tail;
     S->tail->next=a;
     S->tail=a;
+    }
+
 }
 
 void deleteFirst()
@@ -56,6 +68,7 @@ void deleteFirst()
     else
     {
         aux=S->head;
+        if(S->head==S->tail) {S->tail->next=NULL; S->tail->prev=NULL;}
         S->head=S->head->next;
         S->head->prev=NULL;
         free(aux);
@@ -69,6 +82,7 @@ void deleteLast()
     {
     node *aux;
     aux=S->tail;
+    if(S->tail==S->head) {S->head->next=NULL; S->head->prev=NULL;}
     S->tail=S->tail->prev;
     S->tail->next=NULL;
     free(aux);
@@ -94,8 +108,7 @@ void deleteElement(int x)
         }
         else if (S->tail->data==x)
         {
-            aux->prev->next=NULL;
-            free(S->tail);
+            deleteLast();
         }
     }
 }
@@ -130,6 +143,19 @@ void printAll()
     fclose(g);
 }
 
+void print()
+{
+    node *aux;
+    {
+    aux=S->head;
+    while (aux!=NULL)
+    {
+        printf("%d ",aux->data);
+        aux=aux->next;
+    }
+    printf("\n");}
+}
+
 void printFirst(int x)
 {
     g=fopen("output.dat", "a");
@@ -146,6 +172,30 @@ void printFirst(int x)
     fclose(g);
 }
 
+/*void printLast(int data)
+{
+    g=fopen("output.dat", "a");
+    node *a,*aux;
+    a=S->head;
+    aux=S->head;
+    int c=0;
+    while (aux!=NULL)
+    {
+        c=c+1;
+        aux=aux->next;
+    }
+    if (c<=data) printAll();
+    else
+    {
+        while(a!=NULL)
+        {
+        if (c>data) {c=c-1;a=a->next;}
+            else
+                if (c<=data) {c=c-1;fprintf(g,"%d ",a->data);a=a->next;}
+    }
+    fprintf(g,"\n");
+    }
+}*/
 void printLast(int data)
 {
     g=fopen("output.dat","a");
@@ -157,15 +207,15 @@ void printLast(int data)
         c=c+1;
         aux=aux->prev;
     }
-    /*if (aux->prev==NULL) printAll();
+    if (aux->prev==NULL) printAll();
     else
-    {*/
+    {
         while(aux!=NULL)
         {   printf("%d",aux->data);
             fprintf(g,"%d ",aux->data);aux=aux->next;
         }
     fprintf(g,"\n");
-    //}
+    }
 }
 
 
@@ -192,7 +242,7 @@ int main()
         if (strcmp(s, "DL")==0) {deleteLast();}
         if (strcmp(s, "DE")==0) {deleteElement(x);}
         if (strcmp(s, "DOOM_THE_LIST")==0) {doomTheList();}
-        if (strcmp(s, "PRINT_ALL")==0) {printAll();}
+        if (strcmp(s, "PRINT_ALL")==0) {printAll();print();}
         if (strcmp(s, "PRINT_F")==0) {printFirst(x);}
         if (strcmp(s, "PRINT_L")==0) {printLast(x);}
         s[0]='\0';
