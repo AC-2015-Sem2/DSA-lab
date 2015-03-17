@@ -76,3 +76,61 @@ void addAtLast(ListD *L, NodeD *pNode)
       L->tail = pNode;
     }
 }
+
+/* remove first node from list */
+void deleteFirst(ListD *L)
+{
+  if (L == NULL)
+    {
+      perror("Invalid list!");
+      return;
+    }
+  if (L->head == NULL)
+    { /* list is empty */
+      perror("List is empty!");
+      return;
+    }
+  if (L->head == L->tail)
+    { /* list has only one element */
+      NodeD *pNode = L->head;
+      L->head = NULL;
+      L->tail = NULL;
+      free(pNode);
+    }
+  else
+    {
+      NodeD *pNode = L->head;
+      L->head = pNode->next;
+      pNode->next->prev = NULL;
+      free(pNode);
+    }
+}
+
+/* remove last node from list */
+void deleteLast(ListD *L)
+{
+  if (L == NULL)
+    {
+      perror("Invalid list!");
+      return;
+    }
+  if (L->head == NULL)
+    { /* list is empty */
+      perror("List is empty!");
+      return;
+    }
+  if (L->head == L->tail)
+    { /* list has only one element */
+      NodeD *pNode = L->head;
+      L->head = NULL;
+      L->tail = NULL;
+      free(pNode);
+    }
+  else
+    {
+      NodeD *pNode = L->tail;
+      L->tail = pNode->prev;
+      pNode->prev->next = NULL;
+      free(pNode);
+    }
+}
