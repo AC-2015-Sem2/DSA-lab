@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 typedef struct s_customer
 {
     char name[15];
@@ -59,6 +60,7 @@ void delete_first(t_list **head, t_list **tail)
 int main()
 {
     FILE *f=fopen("customers.txt","r");
+    FILE *g=fopen("output.txt","w");
     t_customer *p;
     char name[30];
     if(f==NULL)
@@ -69,9 +71,15 @@ int main()
     int t[10];
     int ti[10];
     int i;
-    for(i=0; i<6; i++)
-        fscanf(f,"%d ",&t[i]);
-    for(i=0; i<6; i++)
+    char sir[150];
+    fgets(sir,150,f);
+    int n=0;
+    for(i=0;i<strlen(sir);i++)
+   {    t[n] = atoi(sir + i);
+        i = strchr(sir + i, ' ') - sir;
+        n++;
+   }
+    for(i=0; i<n; i++)
         ti[i]=t[i];
     while(fscanf(f,"%s", name) == 1)
     {
@@ -83,7 +91,7 @@ int main()
     int s[10]= {0,0,0,0,0,0,0,0,0,0};
     while(queue->head != NULL)
     {
-        for(i=0;i<6;i++)
+        for(i=0;i<n;i++)
         {
             if(t[i]>=queue->head->data->time)
                 {
@@ -95,7 +103,7 @@ int main()
         }
         delete_first(&(queue->head),&(queue->tail));
     }
-    for(i=0;i<6;i++)
-        printf(" After %d seconds: %d\n", ti[i], s[i]);
+    for(i=0;i<n;i++)
+        fprintf(g, " After %d seconds: %d\n", ti[i], s[i]);
     return 0;
 }
