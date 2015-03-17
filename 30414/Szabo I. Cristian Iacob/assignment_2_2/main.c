@@ -75,10 +75,10 @@ int main()
     fgets(sir,150,f);
     int n=0;
     for(i=0;i<strlen(sir);i++)
-   {    t[n] = atoi(sir + i);
-        i = strchr(sir + i, ' ') - sir;
-        n++;
-   }
+    {    t[n] = atoi(sir + i);
+         i = strchr(sir + i, ' ') - sir;
+         n++;
+    }
     for(i=0; i<n; i++)
         ti[i]=t[i];
     while(fscanf(f,"%s", name) == 1)
