@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1426605045 source:c:\codeblocks\dari\assignment2\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
