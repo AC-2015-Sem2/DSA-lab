@@ -204,7 +204,7 @@ void printList(ListD *L)
   while (pNode != NULL)
     {
       if (pNode == L->tail)
-	fprintf(fpOut, "%d", pNode->data);
+	fprintf(fpOut, "%d\n", pNode->data);
       else
 	fprintf(fpOut, "%d ", pNode->data);
       pNode = pNode->next;
@@ -222,7 +222,7 @@ void printNFirst(ListD *L, int n)
   while (n > 0 || pNode != NULL)
     {
       if (pNode == L->tail)
-	fprintf(fpOut, "%d", pNode->data);
+	fprintf(fpOut, "%d\n", pNode->data);
       else
 	fprintf(fpOut, "%d ", pNode->data);
       pNode = pNode->next;
@@ -241,10 +241,11 @@ void printNLast(ListD *L, int n)
   while (n > 0 || pNode != NULL)
     {
       if (pNode == L->tail)
-	fprintf(fpOut, "%d", pNode->data);
+	fprintf(fpOut, "%d\n", pNode->data);
       else
 	fprintf(fpOut, "%d ", pNode->data);
       pNode = pNode->prev;
       n--;
     }
+  fprintf(fpOut, "\n");
 }
