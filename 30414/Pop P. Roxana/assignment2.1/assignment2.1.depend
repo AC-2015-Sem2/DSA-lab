@@ -1,0 +1,19 @@
+# depslib dependency file v1.0
+1426360851 source:d:\faculta\an1\sem_2\dsa\laborator\lab2\assignment2.1\addfunctions.c
+	"list_h.h"
+	<stdio.h>
+
+1426361919 source:d:\faculta\an1\sem_2\dsa\laborator\lab2\assignment2.1\main.c
+	<string.h>
+	"list_h.h"
+
+1426360388 d:\faculta\an1\sem_2\dsa\laborator\lab2\assignment2.1\list_h.h
+	<stdlib.h>
+	<stdio.h>
+
+1426361438 source:d:\faculta\an1\sem_2\dsa\laborator\lab2\assignment2.1\printingfunctions.c
+	"list_h.h"
+
+1426361030 source:d:\faculta\an1\sem_2\dsa\laborator\lab2\assignment2.1\deletefunctions.c
+	"list_h.h"
+
