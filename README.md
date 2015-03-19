@@ -22,7 +22,7 @@ Lab 2: Circular Linked Lists and Doubly Linked Lists (+ Introduction to complexi
 ```
 Lab 3: Test 1 - Lists
 ```
-* Assignments: none
+* Statistics - [problems, some good solutions and grades distributions] (https://github.com/AC-2015-Sem2/DSA-lab/tree/master/Tests/T1%20-%20Lists)
 
 ```
 Lab 4: Trees - more precisely, Binary Trees, Balanced Binary Trees
