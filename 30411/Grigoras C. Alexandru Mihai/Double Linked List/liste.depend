@@ -1,0 +1,16 @@
+# depslib dependency file v1.0
+1425926793 source:d:\programare semii\liste\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1426535043 source:d:\all\dsa-lab\30411\grigoras c. alexandru mihai\double linked list\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1426535043 source:d:\double linked list\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
