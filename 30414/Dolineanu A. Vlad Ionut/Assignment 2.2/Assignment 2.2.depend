@@ -1,0 +1,37 @@
+# depslib dependency file v1.0
+1426511946 source:d:\other\cpp\assignment 2 - extra\main.c
+	<stdio.h>
+	<stdlib.h>
+	"queueFunctions.h"
+	"listFunctions.h"
+
+1426511252 d:\other\cpp\assignment 2 - extra\queuefunctions.h
+	<stdlib.h>
+
+1426512238 source:d:\other\cpp\assignment 2 - extra\queuefunctions.c
+	"queueFunctions.h"
+
+1426509800 source:d:\other\cpp\assignment 2 - extra\listfunctions.c
+	"listFunctions.h"
+
+1426444961 d:\other\cpp\assignment 2 - extra\listfunctions.h
+	<stdlib.h>
+
+1426513552 source:d:\other\cpp\assignment 2.2\listfunctions.c
+	"listFunctions.h"
+
+1426444961 d:\other\cpp\assignment 2.2\listfunctions.h
+	<stdlib.h>
+
+1426513636 source:d:\other\cpp\assignment 2.2\main.c
+	<stdio.h>
+	<stdlib.h>
+	"queueFunctions.h"
+	"listFunctions.h"
+
+1426513587 d:\other\cpp\assignment 2.2\queuefunctions.h
+	<stdlib.h>
+
+1426513581 source:d:\other\cpp\assignment 2.2\queuefunctions.c
+	"queueFunctions.h"
+
