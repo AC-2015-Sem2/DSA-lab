@@ -1,0 +1,25 @@
+# depslib dependency file v1.0
+1426007192 source:d:\facultate\anul 1\semestrul 2\data structures and algorithms\workspace\tema1\main.c
+	"liste.h"
+	"functii.c"
+
+1426006638 d:\facultate\anul 1\semestrul 2\data structures and algorithms\workspace\tema1\liste.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1426007378 d:\facultate\anul 1\semestrul 2\data structures and algorithms\workspace\tema1\functii.c
+	"liste.h"
+
+1426020976 source:d:\facultate\anul 1\semestrul 2\data structures and algorithms\my repository\dsa-lab\30414\bucur e. beniamin eugen\assignment 1\main.c
+	"liste.h"
+	"functii.c"
+
+1426006638 d:\facultate\anul 1\semestrul 2\data structures and algorithms\my repository\dsa-lab\30414\bucur e. beniamin eugen\assignment 1\liste.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1426007378 d:\facultate\anul 1\semestrul 2\data structures and algorithms\my repository\dsa-lab\30414\bucur e. beniamin eugen\assignment 1\functii.c
+	"liste.h"
+
