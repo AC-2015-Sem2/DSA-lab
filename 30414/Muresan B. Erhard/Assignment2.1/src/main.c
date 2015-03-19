@@ -31,12 +31,12 @@ int main()
   NodeD *pNode;
 
   List = createList();
-  if ((fopen("input.dat", "r")) == NULL)
+  if ((fpIn = fopen("input.dat", "r")) == NULL)
     {
       perror("error opening input file!");
       return -1;
     }
-  if ((fopen("output.dat", "w")) == NULL)
+  if ((fpOut = fopen("output.dat", "w")) == NULL)
     {
       perror("error opening output file!");
       return -1;
