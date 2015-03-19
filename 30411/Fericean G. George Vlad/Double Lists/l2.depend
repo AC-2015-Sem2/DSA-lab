@@ -1,0 +1,11 @@
+# depslib dependency file v1.0
+1426528819 source:c:\users\george\desktop\l2\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1426538421 source:c:\users\george\desktop\dsa-lab\dsa-lab-1\30411\fericean g. george vlad\double lists\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
