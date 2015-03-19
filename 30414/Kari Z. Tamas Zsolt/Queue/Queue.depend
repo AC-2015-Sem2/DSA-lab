@@ -1,0 +1,7 @@
+# depslib dependency file v1.0
+1426354977 source:c:\users\tamas\desktop\codeblocks\myrep\dsa-lab\30414\kari z. tamas zsolt\queue\main.cpp
+	<iostream>
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
