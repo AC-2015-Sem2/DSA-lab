@@ -1,0 +1,11 @@
+# depslib dependency file v1.0
+1426438510 source:c:\users\alex\desktop\doubly linked list\main.c
+	<stdio.h>
+	<stdlib.h>
+
+1426618704 source:c:\users\alex\desktop\dgp dsa\dsa-lab\30414\popescu p. diana gabriela\assignment2.1\doubly linked list\main.c
+	<stdio.h>
+	<stdlib.h>
+	<conio.h>
+	<string.h>
+

@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1426612748 source:d:\suli\dsa\dimlist2\main.c
+	<stdlib.h>
+	<stdio.h>
+
