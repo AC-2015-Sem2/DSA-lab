@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1426602922 source:c:\users\tars\desktop\git\30414\fejer k. alpar\sem2assignment2\main.c
+	<string.h>
+	<stdlib.h>
+	<stdio.h>
+
