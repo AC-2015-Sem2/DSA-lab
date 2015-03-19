@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1426621812 source:c:\sergiu\sem2\auchan\main.cpp
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+

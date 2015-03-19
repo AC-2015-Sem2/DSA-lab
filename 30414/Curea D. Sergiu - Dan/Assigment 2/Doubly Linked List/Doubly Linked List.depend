@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1426561260 source:c:\sergiu\sem2\doubly linked list\main.c
+	<stdio.h>
+	<stdlib.h>
+
