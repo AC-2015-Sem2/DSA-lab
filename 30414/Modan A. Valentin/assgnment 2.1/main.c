@@ -7,12 +7,17 @@ typedef struct nod
     struct nod *previous;
 
 }NODE;
+typedef struct node
+{
+    NODE *head,*tail;
+}SENTINEL;
 
-NODE *head, *tail;
-
+SENTINEL *lista;
 void PRINT_ALL(FILE *output)
 {   NODE *p;
-    p=head;
+    //p=lista->lista->head;
+    p=lista->head;
+    //p=lista->head;
 
     while(p!=NULL)
     {
@@ -26,7 +31,7 @@ void PRINT_L(int nr,FILE *output)
 {
     int aux=nr;
     NODE *p,*position;
-    p=position=head;
+    p=position=lista->head;
     while(p!=NULL&&aux>0)
     {
         p=p->next;
@@ -46,7 +51,7 @@ void PRINT_L(int nr,FILE *output)
 }
 void PRINT_F(int nr,FILE *output)
 {
-    NODE *p=head;
+    NODE *p=lista->head;
     while(nr>0&&p!=NULL)
     {
         fprintf(output,"%d ",p->data);
@@ -59,66 +64,66 @@ void PRINT_F(int nr,FILE *output)
 void AF(int data)
 {
        NODE *newnode;
-    if(head==NULL)
+    if(lista->head==NULL)
     {
-        head=(NODE*) malloc(sizeof(NODE));
-        head->data=data;
-        head->next=NULL;
-        head->previous=NULL;
-        tail=head;
+        lista->head=(NODE*) malloc(sizeof(NODE));
+        lista->head->data=data;
+        lista->head->next=NULL;
+        lista->head->previous=NULL;
+        lista->tail=lista->head;
     }
 
     else
     {
         newnode=(NODE*) malloc(sizeof(NODE));
         newnode->data=data;
-        newnode->next=head;
+        newnode->next=lista->head;
         newnode->previous=NULL;
-        head=newnode;
+        lista->head=newnode;
     }
 }
 
 void AL(int data)
 {    NODE *newnode;
-    if(head==NULL)
+    if(lista->head==NULL)
     {
-        head=(NODE*) malloc(sizeof(NODE));
-        head->data=data;
-        head->next=NULL;
-        head->previous=NULL;
-        tail=head;
+        lista->head=(NODE*) malloc(sizeof(NODE));
+        lista->head->data=data;
+        lista->head->next=NULL;
+        lista->head->previous=NULL;
+        lista->tail=lista->head;
 
     }
 
     else
     {
         newnode=(NODE*) malloc(sizeof(NODE));
-        tail->next=newnode;
+        lista->tail->next=newnode;
         newnode->next=NULL;
-        newnode->previous=tail;
+        newnode->previous=lista->tail;
         newnode->data=data;
-        tail=newnode;
+        lista->tail=newnode;
     }
 }
 
 void DF()
 {   NODE *position;
-    position=head;
-    if(head!=NULL)
+    position=lista->head;
+    if(lista->head!=NULL)
     {
-        head=head->next;
-        head->previous=NULL;
+        lista->head=lista->head->next;
+        lista->head->previous=NULL;
         free(position);
     }
 }
 
 void DL()
 {   NODE *position;
-    position=tail;
-    if(tail!=NULL)
+    position=lista->tail;
+    if(lista->tail!=NULL)
     {
-        tail=tail->previous;
-        tail->next=NULL;
+        lista->tail=lista->tail->previous;
+        lista->tail->next=NULL;
         free(position);
     }
 
@@ -126,26 +131,26 @@ void DL()
 
 void DOOM_THE_LIST()
 {
-    while(head->next!=NULL)
+    while(lista->head->next!=NULL)
     {
-        head=head->next;
-        free(head->previous);
-         head->previous=NULL;
+        lista->head=lista->head->next;
+        free(lista->head->previous);
+         lista->head->previous=NULL;
 
     }
-    free(head);
-    tail=head=NULL;
+    free(lista->head);
+    lista->tail=lista->head=NULL;
 
 }
 
 void DE(int x)
 {
     NODE *p, *position,*obliterate;
-    while(head!=NULL&&head->data==x)
+    while(lista->head!=NULL&&lista->head->data==x)
         DF();
-    while(tail!=NULL&&tail->data==x)
+    while(lista->tail!=NULL&&lista->tail->data==x)
         DL();
-        position=p=head;
+        position=p=lista->head;
         p=p->next;
         while(p!=NULL)
         {
@@ -170,6 +175,9 @@ int main()
     int x;
     char c[1024];
 
+lista = (SENTINEL*) malloc(sizeof(SENTINEL));
+    lista->head=0;
+    lista->tail=0;
     while(fscanf(input,"%s",c)!=EOF)
     {
         if(strcmp(c,"PRINT_ALL")==0)
