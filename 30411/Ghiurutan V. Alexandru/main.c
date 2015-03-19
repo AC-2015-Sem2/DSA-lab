@@ -1,277 +1,127 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include "customer.h"
 
 typedef struct node
 {
-    int code;
+    int money;
+    int time;
     struct node *next;
+    struct node *previous;
 } nodeT;
 
-nodeT *head;
-nodeT *tail;
+typedef struct s
+{
+    nodeT *head;
+    nodeT *tail;
+    int length;
+} SENTINEL;
 
-void addfirst(int givencode)
+SENTINEL *sentinel;
+
+void enqueue(int x,int y)
 {
-    if(head==NULL)
+    if(sentinel==NULL)
     {
-        head=(nodeT *)malloc(sizeof(nodeT));
-        head->next=NULL;
-        head->code=givencode;
-        tail=head;
+        sentinel=(SENTINEL *)malloc(sizeof(SENTINEL));
+        sentinel->head=(nodeT *)malloc(sizeof(nodeT));
+        sentinel->head->money=x;
+        sentinel->head->time=y;
+        sentinel->head->next=NULL;
+        sentinel->head->previous=NULL;
+        sentinel->tail=sentinel->head;
+        (sentinel->length)++;
     }
     else
     {
         nodeT *p=(nodeT *)malloc(sizeof(nodeT));
-        p->code=givencode;
-        p->next=head;
-        head=p;
-    }
-}
-void addlast(int givencode)
-{
-    if(head==NULL)
-    {
-        head=(nodeT *)malloc(sizeof(nodeT));
-        head->code=givencode;
-        head->next=NULL;
-        tail=head;
-    }
-    else
-    {
-        nodeT *p=(nodeT *)malloc(sizeof(nodeT));
-        p->code=givencode;
+        p->money=x;
+        p->time=y;
         p->next=NULL;
-        tail->next=p;
-        tail=p;
+        p->previous=sentinel->tail;
+        sentinel->tail->next=p;
+        sentinel->tail=p;
+        (sentinel->length)++;
     }
 }
-void deletelast()
+void callqueue(FILE *f,FILE *pf,int nrc)
 {
-    nodeT *q,*q1;
-    q=head;
-    q1=NULL;
-    if(q!=NULL)
+    char tab[50];
+    int x,y,t,i,nr,t1;
+    char c;
+    nr=0;
+    t1=0;
+    fseek(f,0L,SEEK_SET);
+    fgets(tab,sizeof(tab),f);
+    for(i=0; i<nrc; i++)
     {
-        while(q!=tail)
-        {
-            q1=q;
-            q=q->next;
-        }
-        if(q==head)
-        {
-            //One node.
-            head=tail=NULL;
-            free(q);
-        }
-        else
-        {
-            q1->next=NULL;
-            tail=q1;
-            free(q);
-        }
+        fgets(tab,sizeof(tab),f);
+        sscanf(tab,"%*s %d %d",&x,&y);
+        enqueue(x,y);
     }
-}
-void deletefirst()
-{
-    nodeT *q;
-    if(head!=NULL)
+    fseek(f,0L,SEEK_SET);
+    nodeT *q=sentinel->head;
+    do
     {
-        q=head;
-        head=head->next;
-        free(q);
-        if(head==NULL)
-        {
-            tail=NULL;
-        }
-    }
-}
-void doomthelist()
-{
-    nodeT *q;
-    while(head!=NULL)
-    {
-        q=head;
-        head=q->next;
-        free(q);
-    }
-    tail=NULL;
-}
-void removegiven(int givenkey)
-{
-    nodeT *q,*q1;
-    q=head;
-    q1=NULL;
-    while(q!=NULL)
-    {
-        if(q->code==givenkey)
-        {
-            break;
-        }
-        q1=q;
-        q=q->next;
-    }
-    if(q!=NULL)
-    {
-        if(q==head)
-        {
-            head=head->next;
-            free(q);
-            if(head==NULL)
-            {
-                tail=NULL;
-            }
-        }
-        else
-        {
-            q1->next=q->next;
-            if(q==tail)
-            {
-                tail=q1;
-            }
-            free(q);
-        }
-    }
-}
-void printall(FILE *pf)
-{
-    nodeT *q;
-    q=head;
-    while(q!=NULL)
-    {
-        fprintf(pf,"%d ",q->code);
-        q=q->next;
-    }
-    if(head!=NULL)
-    {
-        fprintf(pf,"\n");
-    }
-}
-void printfirstx(FILE *pf,int x)
-{
-    nodeT *q;
-    int nr=0;
-    q=head;
-    while(q!=NULL)
-    {
-        if(nr==x)
-        {
-            break;
-        }
-        fprintf(pf,"%d ",q->code);
-        q=q->next;
-        nr++;
-    }
-    if(head!=NULL)
-    {
-        fprintf(pf,"\n");
-    }
-}
-void printlastx(FILE *pf,int x)
-{
-    nodeT *q;
-    int nr=0;
-    q=head;
-    if(q!=NULL)
-    {
+        fscanf(f,"%d%c",&t,&c);
+
         while(q!=NULL)
         {
-            q=q->next;
-            nr++;
-        }
-        if(x>=nr)
-        {
-            printall(pf);
-        }
-        else
-        {
-            int p=nr-x;
-            int y=0;
-            q=head;
-            while(y!=p)
+            if(t-(q->time+t1)<0)
             {
-                q=q->next;
-                y++;
+                break;
             }
-            while(q!=NULL)
+            else
             {
-                fprintf(pf,"%d ",q->code);
+                nr+=q->money;
+                t1=q->time;
                 q=q->next;
             }
-            fprintf(pf,"\n");
         }
+
+        fprintf(pf,"After %d seconds: %d\n",t,nr);
     }
+    while(c==' ');
 }
 
-int main()
+int main(int argc,char *argv[])
 {
-    FILE *f=fopen("input.txt","r");
+    int nrc;
+    if(argc!=3)
+    {
+        perror("Incorrect number of arguments!\n");
+        return -1;
+    }
+    if(strcmp(argv[1],"input.txt")!=0)
+    {
+        printf("Incorrect argument \"%s\".",argv[1]);
+        return -2;
+    }
+    if(strcmp(argv[2],"output.txt")!=0)
+    {
+        printf("Incorrect argument \"%s\".",argv[2]);
+        return -3;
+    }
+    FILE *pf,*f;
+    f=fopen(argv[1],"r");
     if(f==NULL)
     {
-        perror("Can't open file.");
-        exit(1);
+        perror("Can't open file!\n");
+        return -4;
     }
-    FILE *pf=fopen("output.txt","w");
+    pf=fopen(argv[2],"w");
     if(pf==NULL)
     {
-        perror("Can't open file.");
-        exit(1);
+        perror("Can't create file!");
+        return -5;
     }
-    char s[20];
-    fseek(f,0L,SEEK_SET);
-    while(fgets(s,sizeof(s),f)!=NULL)
-    {
-        int x;
-        char *p=strtok(s," ");
-        if(strcmp(p,"AF")==0)
-        {
-            p=strtok(NULL,"\n");
-            sscanf(p,"%d",&x);
-            addfirst(x);
-        }
-        if(strcmp(p,"AL")==0)
-        {
-            p=strtok(NULL,"\n");
-            sscanf(p,"%d",&x);
-            addlast(x);
-        }
-        if(strcmp(p,"DE")==0)
-        {
-            p=strtok(NULL,"\n");
-            sscanf(p,"%d",&x);
-            removegiven(x);
-        }
-        if(strcmp(p,"PRINT_F")==0)
-        {
-            p=strtok(NULL,"\n");
-            sscanf(p,"%d",&x);
-            printfirstx(pf,x);
-        }
-        if(strcmp(p,"PRINT_L")==0)
-        {
-            p=strtok(NULL,"\n");
-            sscanf(p,"%d",&x);
-            printlastx(pf,x);
-        }
-        p=strtok(s,"\n");
-        if(strcmp(p,"DF")==0)
-        {
-            deletefirst();
-        }
-        if(strcmp(p,"DL")==0)
-        {
-            deletelast();
-        }
-        if(strcmp(p,"DOOM_THE_LIST")==0)
-        {
-            doomthelist();
-        }
-        if(strcmp(p,"PRINT_ALL")==0)
-        {
-            printall(pf);
-        }
-    }
+    nrc=numberofcustomers(f);
+    callqueue(f,pf,nrc);
     fclose(f);
     fclose(pf);
+    free(sentinel->head);
+    free(sentinel->tail);
+    free(sentinel);
     return 0;
 }
