@@ -1,0 +1,19 @@
+# depslib dependency file v1.0
+1426421373 source:e:\dropbox\utcn\dsa-lab\30411\papp - szentannai g. gergo\assignment 2.1\dll.c
+	"DLL.h"
+	<stdio.h>
+	<stdlib.h>
+	"DLL_TYPES.h"
+
+1426421373 e:\dropbox\utcn\dsa-lab\30411\papp - szentannai g. gergo\assignment 2.1\dll.h
+	"DLL_TYPES.h"
+
+1426421373 e:\dropbox\utcn\dsa-lab\30411\papp - szentannai g. gergo\assignment 2.1\dll_types.h
+
+1426421373 source:e:\dropbox\utcn\dsa-lab\30411\papp - szentannai g. gergo\assignment 2.1\main.c
+	<stdio.h>
+	<stdlib.h>
+	"DLL.h"
+	<string.h>
+	"DLL_TYPES.h"
+

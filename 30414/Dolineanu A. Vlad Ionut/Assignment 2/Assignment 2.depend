@@ -1,0 +1,15 @@
+# depslib dependency file v1.0
+1426357866 source:d:\other\cpp\assignment 2\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"functions.h"
+
+1426358460 source:d:\other\cpp\assignment 2\functions.c
+	"functions.h"
+	<string.h>
+
+1426441765 d:\other\cpp\assignment 2\functions.h
+	<stdio.h>
+	<stdlib.h>
+

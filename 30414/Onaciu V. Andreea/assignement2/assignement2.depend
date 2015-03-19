@@ -1,0 +1,13 @@
+# depslib dependency file v1.0
+1426448708 source:c:\users\andreea\desktop\dsa-andreea\30414\onaciu v. andreea\assignement2\dllfunctions.c
+	<stdio.h>
+	<stdlib.h>
+
+1426370592 source:c:\users\andreea\desktop\dsa-andreea\30414\onaciu v. andreea\assignement2\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"DLLfunctionsh.h"
+
+1426368470 c:\users\andreea\desktop\dsa-andreea\30414\onaciu v. andreea\assignement2\dllfunctionsh.h
+

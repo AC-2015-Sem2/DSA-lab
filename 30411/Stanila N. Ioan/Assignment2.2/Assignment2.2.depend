@@ -1,0 +1,14 @@
+# depslib dependency file v1.0
+1425913162 source:c:\users\johns\documents\programming\assignment2.2\list.c
+	"list.h"
+	<stdlib.h>
+
+1425729301 c:\users\johns\documents\programming\assignment2.2\list.h
+	<stdio.h>
+
+1426536819 source:c:\users\johns\documents\programming\assignment2.2\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"list.h"
+

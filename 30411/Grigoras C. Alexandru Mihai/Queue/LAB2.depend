@@ -1,0 +1,11 @@
+# depslib dependency file v1.0
+1426453069 source:d:\programare semii\lab2\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1426455615 source:d:\all\dsa-lab\30411\grigoras c. alexandru mihai\queue\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+

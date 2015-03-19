@@ -1,0 +1,267 @@
+#include<stdio.h>
+#include<stdlib.h>
+#include<conio.h>
+#include<string.h>
+
+typedefstructnode
+{
+	int val;
+	structnode *next;
+}	NodeT;
+
+NodeT *head,*tail,*list;
+FILE *infile;
+FILE *outfile;
+
+void addFirst(intval)
+{
+	if(head==NULL)
+    {
+        head=(NodeT*)malloc(sizeof(NodeT));
+        head->val=val;
+        head->next=NULL;
+		tail=head;
+    }
+	else
+	{
+		NodeT *p = (NodeT*)malloc(sizeof(NodeT));
+		p->val=val;
+		p->next=head;
+		head=p;
+	}
+}
+
+
+
+void addLast(intval)
+{
+	if(head==NULL)
+    {
+		head=(NodeT*)malloc(sizeof(NodeT));
+		head->val=val;
+        head->next=NULL;
+		tail=head;
+	}
+	else
+	{
+		NodeT*p=(NodeT*)malloc(sizeof(NodeT));
+		p->val=val;
+		p->next=NULL;
+        tail->next=p;
+		tail=p;
+	}
+}
+
+void removeFirst()
+{
+	if(head->next==NULL)
+	{
+		free(head);
+	}
+	else
+	{
+		NodeT *p=(NodeT*)malloc(sizeof(NodeT));
+		p=head;
+		head=head->next;
+		free(p);
+	}
+}
+
+void removeLast()
+{
+	NodeT*p=(NodeT*)malloc(sizeof(NodeT));
+	p=head;
+	if (p!=tail)
+	{
+		while(p->next!=tail)
+		{
+			p=p->next;
+		}
+		p->next=NULL;
+		free(tail);
+		tail=p;
+		
+	}
+	else
+	{
+		free(tail);
+	}
+}
+
+void deleteList()
+{
+	NodeT *p = (NodeT*) malloc(sizeof(NodeT));
+	if (head!=NULL)
+	{
+		while(head->next!=NULL)
+		{
+			p=head;
+			head=head->next;
+			free(p);
+		}
+		free(head);
+	}
+}
+
+void deleteVal(intx)
+{
+NodeT *p=(NodeT*)malloc(sizeof(NodeT));
+	NodeT *r=(NodeT*)malloc(sizeof(NodeT));
+	p=head;
+	if (head!=NULL)
+	{
+		if(head->val == x)
+		{
+			removeFirst();
+		}
+		else
+		{
+			while(p->next!=NULL)
+			{
+				if(p->next->val==x)
+				{
+					if (p->next==tail)
+					{
+						removeLast();
+					}
+					else
+					{
+						r=p->next;
+						p->next=r->next;
+						free(r);
+					}
+				}
+				p=p->next;
+			}
+		}
+	}
+
+}
+
+void printAll()
+{
+NodeT *p = (NodeT*)malloc(sizeof(NodeT));
+	p=head;
+	if (p!=NULL)
+	{
+		while(p!=NULL)
+		{
+			fprintf(outfile,"%d ",p->val);
+			p=p->next;
+		}
+		fprintf(outfile,"\n");
+	}
+	else printf("List is empty\n");
+}
+
+void printFirst(intx)
+{
+	NodeT *p = (NodeT*)malloc(sizeof(NodeT));
+	p=head;
+	for(int i=0;i<x;i++)
+	{
+		fprintf(outfile,"%d ",p->val);
+		if(p->next==NULL)
+			break;
+		else
+			p=p->next;
+	}
+	fprintf(outfile,"\n");
+}
+
+void printLast(intx)
+{
+	int length=0;
+	NodeT *p = (NodeT*)malloc(sizeof(NodeT));
+	p=head;
+	while(p!=NULL)
+	{
+		length++;
+		p=p->next;
+	}
+	p=head;
+	if (x>length)
+		printAll();
+	else
+	{
+		for(int i=0;i<length-x;i++)
+		{
+			p=p->next;
+		}
+		for(int i=length-x;i<length;i++)
+		{
+			fprintf(outfile,"%d ",p->val);
+			p=p->next;
+		}
+	}
+	fprintf(outfile,"\n");
+}
+
+int main()
+{
+	infile = fopen("input.txt", "r");       
+	if (infile == NULL) 
+	{
+		printf("Unable to open input file");
+	}
+	outfile = fopen("output.txt", "w");
+	if (outfile == NULL) 
+	{ 
+		printf("Unable to open output file.");
+	}
+	
+	NodeT *head=(NodeT*)malloc(sizeof(NodeT));
+
+	
+	char line[80];
+	char *tok;
+	int param;
+	while(fgets(line, 80, infile) != NULL)
+	{
+		sscanf ("%s",line);
+		if (strncmp (line,"AF",2) == 0)
+		{
+			tok=strtok(line," ");
+			tok=strtok(NULL," ");
+			param=atoi(tok);
+			addFirst(param);
+		}
+		if (strncmp (line,"AL",2) == 0)
+		{
+			tok=strtok(line," ");
+			tok=strtok(NULL," ");
+			param=atoi(tok);
+			addLast(param);
+		}
+		if (strncmp (line,"DF",2) == 0)
+		{
+			removeFirst();
+		}
+		if (strncmp (line,"DL",2) == 0)
+		{
+			removeLast();
+		}
+		if (strncmp (line,"DE",2) == 0)
+		{
+			tok=strtok(line," ");
+			tok=strtok(NULL," ");
+			param=atoi(tok);
+			deleteVal(param);
+		}
+		if (strncmp (line,"PRINT_ALL",9) == 0)
+		{
+			printAll();
+		}
+		if (strncmp (line,"PRINT_F",7) == 0)
+		{
+			tok=strtok(line," ");
+			tok=strtok(NULL," ");
+			param=atoi(tok);
+			printLast(param);
+		}
+	}
+	fclose(outfile);
+	fclose(infile);
+	getch();
+}
+

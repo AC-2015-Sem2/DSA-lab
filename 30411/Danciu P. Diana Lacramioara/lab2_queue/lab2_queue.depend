@@ -1,0 +1,12 @@
+# depslib dependency file v1.0
+1426409032 source:d:\codeblocks\lab2_queue\main.c
+	"file.h"
+
+1426409106 source:d:\codeblocks\lab2_queue\functions.c
+	"file.h"
+
+1426409106 d:\codeblocks\lab2_queue\file.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+

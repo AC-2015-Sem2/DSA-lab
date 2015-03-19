@@ -1,0 +1,12 @@
+# depslib dependency file v1.0
+1426530354 source:d:\codeblocks\assignment2\main.c
+	"header.h"
+
+1426530354 source:d:\codeblocks\assignment2\functions.c
+	"header.h"
+
+1426412644 d:\codeblocks\assignment2\header.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+

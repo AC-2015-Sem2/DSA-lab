@@ -9,8 +9,8 @@ A string will always be present but in the case
 #include<stdio.h>
 #define OUTPUT_FILE "output.dat"
 #define INPUT_FILE "input.dat"
-#define MAX_LENGTH 14
-//DOOM_THE_LIST is the longest - 13 characters
+#define MAX_LENGTH 100
+
 
 int openFiles(FILE** I, FILE** O)
 {

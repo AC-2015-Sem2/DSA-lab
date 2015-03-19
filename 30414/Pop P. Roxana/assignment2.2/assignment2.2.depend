@@ -1,0 +1,17 @@
+# depslib dependency file v1.0
+1426369244 source:d:\faculta\an1\sem_2\dsa\laborator\lab2\assignment2.2\functionsforthequeue.c
+	"list_h.h"
+
+1426369229 d:\faculta\an1\sem_2\dsa\laborator\lab2\assignment2.2\list_h.h
+	<stdio.h>
+	<stdlib.h>
+
+1426369277 source:d:\faculta\an1\sem_2\dsa\laborator\lab2\assignment2.2\functionsfortheseconds.c
+	"list_h.h"
+
+1426372581 source:d:\faculta\an1\sem_2\dsa\laborator\lab2\assignment2.2\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"list_h.h"
+

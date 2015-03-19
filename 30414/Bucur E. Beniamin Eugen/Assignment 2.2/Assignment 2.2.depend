@@ -1,0 +1,23 @@
+# depslib dependency file v1.0
+1426552856 source:d:\facultate\anul 1\semestrul 2\data structures and algorithms\workspace\assignment 2.2\main.c
+	"header.h"
+
+1426553614 d:\facultate\anul 1\semestrul 2\data structures and algorithms\workspace\assignment 2.2\header.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1426300267 d:\facultate\anul 1\semestrul 2\data structures and algorithms\workspace\assignment 2.2\functii.c
+	"header.h"
+
+1426553604 source:d:\facultate\anul 1\semestrul 2\data structures and algorithms\workspace\assignment 2.2\functii.c
+	"header.h"
+
+1426553650 source:d:\facultate\anul 1\semestrul 2\data structures and algorithms\my repository\dsa-lab\30414\bucur e. beniamin eugen\assignment 2.2\main.c
+	"header.h"
+
+1426553614 d:\facultate\anul 1\semestrul 2\data structures and algorithms\my repository\dsa-lab\30414\bucur e. beniamin eugen\assignment 2.2\header.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+

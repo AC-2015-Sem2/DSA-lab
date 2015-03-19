@@ -1,0 +1,13 @@
+# depslib dependency file v1.0
+1426416022 source:e:\utcluj\dsa\a2_queue\main.c
+	"Queue.h"
+	<stdio.h>
+	<string.h>
+
+1426415343 e:\utcluj\dsa\a2_queue\queue.h
+
+1426415694 source:e:\utcluj\dsa\a2_queue\queue.c
+	"Queue.h"
+	<stdio.h>
+	<stdlib.h>
+

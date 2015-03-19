@@ -1,0 +1,40 @@
+# depslib dependency file v1.0
+1426347289 source:c:\users\alexh\desktop\fork\dsa-lab\30414\huruiala v. vasile alexandru\assignments\codeblocks\assignment2\main.c
+	"DLL.h"
+	<stdio.h>
+	<stdlib.h>
+
+1426347289 c:\users\alexh\desktop\fork\dsa-lab\30414\huruiala v. vasile alexandru\assignments\codeblocks\assignment2\dll.h
+	"DLL_definition.h"
+	"DLL_io.h"
+	"DLL_solution.h"
+
+1426347015 c:\users\alexh\desktop\fork\dsa-lab\30414\huruiala v. vasile alexandru\assignments\codeblocks\assignment2\dll_definition.h
+	<stdio.h>
+
+1426347701 source:c:\users\alexh\desktop\fork\dsa-lab\30414\huruiala v. vasile alexandru\assignments\codeblocks\assignment2\dll_io.c
+	<stdio.h>
+
+1426349099 source:c:\users\alexh\desktop\fork\dsa-lab\30414\huruiala v. vasile alexandru\assignments\codeblocks\assignment2\dll_methods.c
+	"DLL_definition.h"
+	"DLL_methods.h"
+	"DLL_solution.h"
+	<stdlib.h>
+	<stdio.h>
+
+1426340210 c:\users\alexh\desktop\fork\dsa-lab\30414\huruiala v. vasile alexandru\assignments\codeblocks\assignment2\dll_io.h
+	<stdio.h>
+
+1426347117 c:\users\alexh\desktop\fork\dsa-lab\30414\huruiala v. vasile alexandru\assignments\codeblocks\assignment2\dll_methods.h
+	<stdio.h>
+
+1426347054 c:\users\alexh\desktop\fork\dsa-lab\30414\huruiala v. vasile alexandru\assignments\codeblocks\assignment2\dll_solution.h
+	<stdio.h>
+
+1426347015 source:c:\users\alexh\desktop\fork\dsa-lab\30414\huruiala v. vasile alexandru\assignments\codeblocks\assignment2\dll_solution.c
+	"DLL_definition.h"
+	"DLL_io.h"
+	"DLL_methods.h"
+	<stdio.h>
+	<string.h>
+
