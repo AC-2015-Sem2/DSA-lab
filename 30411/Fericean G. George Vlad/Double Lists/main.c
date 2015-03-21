@@ -69,7 +69,9 @@ void delfirst(sant *s)
     }
 }
 void dellast(sant *s)
-{
+{  if(s->head==NULL)
+        return;
+   else
     s->tail->prev->next=NULL;
     s->tail=s->tail->prev;
 }
@@ -84,7 +86,7 @@ void doom(sant *s)
     }
     s->tail=NULL;
 }
-void delelem(sant *s,int data)
+void delelem(sant *s,int data)geo
 {
     NodeT *x=s->head, *previous=s->head;
     while(x!=NULL)
@@ -149,7 +151,7 @@ int main()
     int x=0;
     f=fopen("input.dat","r");
     g=fopen("output.dat","w");
-    char string[30]="";
+    char string[30];
 
 
     while(fscanf(f,"%s ",string)==1)

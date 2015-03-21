@@ -21,14 +21,7 @@ void addFirst(int code)
         head=(NodeT*)malloc(sizeof(NodeT));
         head->code=code;
         head->next=NULL;
-    }
-    else if (tail==NULL)
-    {
-        tail=head;
-        NodeT* p=(NodeT*)malloc(sizeof(NodeT));
-        p->code=code;
-        p->next=tail;
-        head=p;
+       tail=head;
     }
     else
     {
@@ -44,22 +37,14 @@ void addLast(int code)
 {
     if(head==NULL)
     {
-        head=(NodeT*)malloc(sizeof(NodeT));
+        head=(NodeT *)malloc(sizeof(NodeT));
         head->code=code;
         head->next=NULL;
         tail=head;
     }
-    else if (tail==NULL)
-    {
-        NodeT* p=(NodeT*)malloc(sizeof(NodeT));
-        p->code=code;
-        p->next=NULL;
-        tail=p;
-        head->next=tail;
-    }
     else
     {
-        NodeT* p=(NodeT*)malloc(sizeof(NodeT));
+        NodeT *p=(NodeT *)malloc(sizeof(NodeT));
         p->code=code;
         p->next=NULL;
         tail->next=p;
