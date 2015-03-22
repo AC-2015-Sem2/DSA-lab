@@ -222,7 +222,7 @@ void printNFirst(ListD *L, int n)
   while (pNode != NULL)
     {
       if (pNode == L->tail)
-	fprintf(fpOut, "%d\n", pNode->data);
+	fprintf(fpOut, "%d", pNode->data);
       else
 	fprintf(fpOut, "%d ", pNode->data);
       pNode = pNode->next;
