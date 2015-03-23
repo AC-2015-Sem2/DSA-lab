@@ -25,9 +25,11 @@ Lab 3: Test 1 - Lists
 * Statistics - [problems, some good solutions and grades distributions] (https://github.com/AC-2015-Sem2/DSA-lab/tree/master/Tests/T1%20-%20Lists)
 
 ```
-Lab 4: Trees - more precisely, Binary Trees, Balanced Binary Trees
+Lab 4: Trees - more precisely, Binary Trees, Balanced Binary Trees (the theory)
 ```
-* Assignments 3: TBA
+* Assignments 3: 
+	- 3.1 [Trees to list and back again] (https://github.com/AC-2015-Sem2/DSA-lab/tree/master/Assignments/Assignment%203%20-%20Tree%20to%20list%20and%20back%20again)
+	- 3.2 [Parse trees] (https://github.com/AC-2015-Sem2/DSA-lab/tree/master/Assignments/Assignment%203%20-%20extra%20credit%20(parse%20tree)) (extra credit!)
 
 ```
 Lab 5: Binary Search Trees
