@@ -112,12 +112,12 @@ void traverseList(NodeL* head)
 void prettyPrint(NodeT* root, int x)
 {
     if (root==NULL) return;
-    prettyPrint(root->right, x+3);
+    prettyPrint(root->right, x+1);
     int i;
     for (i=0; i<x; i++)
     {
-        printf(" ");
+        printf("   ");
     }
     printf("%s\n", root->data);
-    prettyPrint(root->left, x+3);
+    prettyPrint(root->left, x+1);
 };
