@@ -85,6 +85,7 @@ NodeT* getTreeFromList(NodeL** head)
     if (!strcmp((*head)->data, "*"))
     {
         *head = (*head)->next;
+        free((*head)->prev);
         return NULL;
     }
     else
