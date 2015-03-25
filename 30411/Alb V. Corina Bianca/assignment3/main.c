@@ -76,11 +76,14 @@ nodeT *getTree(nodeL *first){
     return p;
 }
 
-void prettyPrint(nodeT *root){
+void prettyPrint(nodeT *root,int level){
+    int i;
     if(root!=NULL){
+        for(i=0;i<=level; i++)
+            printf(" ");
         printf("%d ",root->date);
-        prettyPrint(root->left);
-        prettyPrint(root->right);
+        prettyPrint(root->left,level+1);
+        prettyPrint(root->right,level+1);
     }
 }
 
@@ -90,6 +93,6 @@ int main()
     nodeL *first=getListFromTree(root);
     printList(first);
     root=getTree(first);
-    prettyPrint(root);
+    prettyPrint(root,0);
     return 0;
 }
