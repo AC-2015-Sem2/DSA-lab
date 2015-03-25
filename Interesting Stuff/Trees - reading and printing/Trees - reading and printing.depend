@@ -1,0 +1,9 @@
+# depslib dependency file v1.0
+1427262125 source:c:\users\alex\desktop\predare\2014-2015 - sem2\dsa-lab\interesting stuff\trees - reading and printing\tree.c
+	"tree.h"
+
+1426954045 c:\users\alex\desktop\predare\2014-2015 - sem2\dsa-lab\interesting stuff\trees - reading and printing\tree.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
