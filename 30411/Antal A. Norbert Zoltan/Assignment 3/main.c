@@ -27,6 +27,7 @@ int main()
 {
     f = fopen("inp.txt", "r");
     NodeT* root = createBinTree();
+    fclose(f);
     NodeL* firstFromList = getListFromTree(root);
     traverseList(firstFromList);
     root = getTreeFromList(&firstFromList);
