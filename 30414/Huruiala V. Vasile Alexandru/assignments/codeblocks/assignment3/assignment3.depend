@@ -1,0 +1,26 @@
+# depslib dependency file v1.0
+1427409171 source:c:\users\alexh\desktop\fork\dsa-lab\30414\huruiala v. vasile alexandru\assignments\codeblocks\assignment3\main.c
+	"mainheader.h"
+
+1427408882 source:c:\users\alexh\desktop\fork\dsa-lab\30414\huruiala v. vasile alexandru\assignments\codeblocks\assignment3\io.c
+	<stdio.h>
+	"definition.h"
+
+1427408882 c:\users\alexh\desktop\fork\dsa-lab\30414\huruiala v. vasile alexandru\assignments\codeblocks\assignment3\io.h
+
+1427391524 c:\users\alexh\desktop\fork\dsa-lab\30414\huruiala v. vasile alexandru\assignments\codeblocks\assignment3\definition.h
+
+1427409046 c:\users\alexh\desktop\fork\dsa-lab\30414\huruiala v. vasile alexandru\assignments\codeblocks\assignment3\operations.h
+
+1427409129 source:c:\users\alexh\desktop\fork\dsa-lab\30414\huruiala v. vasile alexandru\assignments\codeblocks\assignment3\operations.c
+	<stdio.h>
+	<stdlib.h>
+	"definition.h"
+
+1427390050 c:\users\alexh\desktop\fork\dsa-lab\30414\huruiala v. vasile alexandru\assignments\codeblocks\assignment3\mainheader.h
+	<stdio.h>
+	<stdlib.h>
+	"definition.h"
+	"operations.h"
+	"io.h"
+

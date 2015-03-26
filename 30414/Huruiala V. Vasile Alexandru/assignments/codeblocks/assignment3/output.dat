@@ -1,0 +1,22 @@
+Before:
+          8
+     7
+1
+               6
+          5
+     2
+          3
+                    5
+               4
+The list obtained form the tree:
+1 2 3 4 * 5 * * * 5 * 6 * * 7 * 8 * * 
+After:
+          8
+     7
+1
+               6
+          5
+     2
+          3
+                    5
+               4
