@@ -1,0 +1,28 @@
+# depslib dependency file v1.0
+1427556313 source:c:\users\andreea\desktop\dsa-andreea\30414\onaciu v. andreea\assignement3\treefunctions.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"structDef.h"
+
+1427556343 source:c:\users\andreea\desktop\dsa-andreea\30414\onaciu v. andreea\assignement3\main.c
+	<stdio.h>
+	<stdlib.h>
+	"functions.h"
+
+1427554068 c:\users\andreea\desktop\dsa-andreea\30414\onaciu v. andreea\assignement3\treefunctionsh.h
+	"structuresDefinitions.h"
+
+1427553496 c:\users\andreea\desktop\dsa-andreea\30414\onaciu v. andreea\assignement3\structuresdefinitions.h
+
+1427556292 c:\users\andreea\desktop\dsa-andreea\30414\onaciu v. andreea\assignement3\functions.h
+	"structDef.h"
+
+1427555923 source:c:\users\andreea\desktop\dsa-andreea\30414\onaciu v. andreea\assignement3\listfunct.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"structDef.h"
+
+1427554807 c:\users\andreea\desktop\dsa-andreea\30414\onaciu v. andreea\assignement3\structdef.h
+
