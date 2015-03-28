@@ -1,0 +1,15 @@
+# depslib dependency file v1.0
+1427551251 source:c:\users\alexa\desktop\assgn3\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"treeAndList.h"
+
+1427551256 c:\users\alexa\desktop\assgn3\treeandlist.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1427551175 source:c:\users\alexa\desktop\assgn3\treeandlist.c
+	"treeAndList.h"
+
