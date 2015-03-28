@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1427572099 source:d:\programok\codeblocks\prog(sem ii)\l04\trees\main.c
+	<string.h>
+	<stdio.h>
+	<stdlib.h>
+
