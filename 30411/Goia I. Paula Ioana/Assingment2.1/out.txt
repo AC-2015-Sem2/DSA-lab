@@ -1,0 +1,6 @@
+At the time 10 I have: 5 rubles
+At the time 20 I have: 10005 rubles
+At the time 50 I have: 10015 rubles
+At the time 100 I have: 10065 rubles
+At the time 200 I have: 10085 rubles
+At the time 400 I have: 10085 rubles
