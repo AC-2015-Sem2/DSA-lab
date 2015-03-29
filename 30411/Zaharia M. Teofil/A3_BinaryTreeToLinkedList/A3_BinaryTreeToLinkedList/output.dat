@@ -1,0 +1,8 @@
+       1                
+   2        5        
+ 3    4    6    7    
+
+Initial list (from input.dat):
+1 2 3 * * 4 * * 5 6 * * 7 * * 
+Final list (from the binary tree):
+1 2 3 * * 4 * * 5 6 * * 7 * * 
