@@ -70,7 +70,7 @@ NodeL *getListFromTree(NodeT *root)
 
 void *getIntegerContent(char *content)
 {
-    return (void *)content;
+    return (void *)atoi(content);
 }
 
 void fatalError()
