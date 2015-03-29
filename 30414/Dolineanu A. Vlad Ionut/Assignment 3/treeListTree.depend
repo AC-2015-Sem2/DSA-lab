@@ -1,0 +1,23 @@
+# depslib dependency file v1.0
+1427658310 source:d:\other\cpp\treelisttree\listfunctions.c
+	"listFunctions.h"
+
+1427660873 d:\other\cpp\treelisttree\listfunctions.h
+	<stdlib.h>
+	<stdio.h>
+
+1427660834 source:d:\other\cpp\treelisttree\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"listFunctions.h"
+	"treeFunctions.h"
+
+1427660714 d:\other\cpp\treelisttree\treefunctions.h
+	<stdio.h>
+	<string.h>
+	"listFunctions.h"
+
+1427660613 source:d:\other\cpp\treelisttree\treefunctions.c
+	"treeFunctions.h"
+
