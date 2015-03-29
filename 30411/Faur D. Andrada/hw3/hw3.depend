@@ -1,0 +1,7 @@
+# depslib dependency file v1.0
+1427642300 source:d:\school\projects\hw3\main.c
+	<stdio.h>
+	<conio.h>
+	<stdlib.h>
+	<string.h>
+
