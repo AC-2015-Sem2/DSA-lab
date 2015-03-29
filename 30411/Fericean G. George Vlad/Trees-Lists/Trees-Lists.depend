@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1427664474 source:c:\users\george\downloads\trees-lists\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
