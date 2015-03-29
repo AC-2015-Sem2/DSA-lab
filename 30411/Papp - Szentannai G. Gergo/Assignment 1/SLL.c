@@ -80,6 +80,7 @@ void DF()  // Delete First
         NodeT*p=(NodeT*)malloc(sizeof(NodeT*));
         p=head;
         head=head->next;
+        free(p);
     }
 }
 
@@ -100,8 +101,7 @@ void DL()  // Delete Last
         }
         tail=aux;
         tail->next=NULL;
-
-
+        free(p);
     }
 }
 
