@@ -53,16 +53,16 @@ void PRINT_ALL(NodeL* head)  // As in SLL assignment
 }
 
 
-
-void preorder(NodeT * root, NodeL** head, NodeL** tail)
+// I used the logic of preorder function:
+void tree_to_list(NodeT * root, NodeL** head, NodeL** tail)
 {
     if (root == NULL)
         AL(head, tail,"*");  // mark children with '*'
     else if ( root != NULL )
     {
         AL(head, tail, root->str);  // Add nodes
-        preorder( root->left, head, tail) ;
-        preorder( root->right, head, tail) ;
+        tree_to_list( root->left, head, tail) ;
+        tree_to_list( root->right, head, tail) ;
     }
 }
 
@@ -123,9 +123,8 @@ NodeL * getListFromTree(NodeT* root)
     NodeL **tail=(NodeL**)malloc(sizeof(NodeL**));
     *head=*tail=NULL;
 
-
-    // I used the preorder function, but inorder and postorder would also do it (it would give different structure/same result)
-    preorder(root, head, tail);   // Reads the list and uses the Add Last function to generate list
+    // Recurrence function: (based on preorder function):
+    tree_to_list(root, head, tail);   // Reads the list and uses the Add Last function to generate list
 
     return *head;
 }
@@ -143,11 +142,11 @@ NodeT * getTreeFromList(NodeL** list)
     char *content = (char*)malloc(sizeof(char)*MAX_SIZE_OF_CONTENT);
 
     strcpy(content,(*list)->str);
-    DF(list);
+    DF(list);  // After using an element, I delete it (globally, using pointers) -> same list at each level of recurrence
 
-    if ( strcmp(content,"*")==0 )
+    if ( strcmp(content,"*")==0 )  // Adding children
         return NULL;
-    else
+    else  // Adding nodes
     {
         char * cont = content;
         p = ( NodeT *) malloc( sizeof( NodeT ) ) ;

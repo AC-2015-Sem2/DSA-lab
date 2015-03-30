@@ -2,6 +2,7 @@
 #define TREE_H_INCLUDED
 
 #define MAX_SIZE_OF_CONTENT 100
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -24,9 +25,11 @@ typedef struct nodel {
 // SLL Functions:
 void AL(NodeL**, NodeL**, char*);
 
+void DF(NodeL**);  // Delete First
+
 void PRINT_ALL(NodeL*);
 
-void DF(NodeL**);  // Delete First
+
 
 
 //
