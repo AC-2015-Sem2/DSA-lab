@@ -1,0 +1,11 @@
+# depslib dependency file v1.0
+1427498242 source:c:\users\cori\desktop\tree-list-tree\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1427621630 source:h:\sem 2\dsa\problems\tree-list-tree\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
