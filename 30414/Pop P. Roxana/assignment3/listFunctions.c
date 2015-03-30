@@ -6,7 +6,8 @@ nodeL * createNodeL(char * data)
     nodeL *p=(nodeL*)malloc(sizeof(nodeL));
     p->next=NULL;
     p->prev=NULL;
-    p->data=data;
+    p->data=(char*)malloc(10*sizeof(char));
+    strcpy(p->data,data);
     return p;
 }
 
@@ -37,7 +38,7 @@ nodeL * getListFromTree(nodeT * root)
     if (root==NULL)
     {
         char * data=malloc(sizeof(char)*10);
-        data="*";
+        strcpy(data,"*");
         addLast(&headG,data);
         return 0;
     }
