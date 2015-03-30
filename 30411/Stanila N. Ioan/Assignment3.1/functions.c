@@ -27,21 +27,15 @@ Queue* createQueue(FILE* f) {
 
 Tree* buildBinaryTree(Queue** q) {
     Tree* t = NULL;
-    if (*q != NULL) {
-        if (!strcmp((*q)->val, "!")) {
-            dequeue(q);
-            return NULL;
-        } else if (strcmp((*q)->val, "+") && strcmp((*q)->val, "-") && strcmp((*q)->val, "*") && strcmp((*q)->val, "/")) {
+    if (strcmp((*q)->val, "+") && strcmp((*q)->val, "-") && strcmp((*q)->val, "*") && strcmp((*q)->val, "/")) {
             t = createNode((*q)->val);
-            strcpy((*q)->val, "!");
-            t->left = buildBinaryTree(q);
-            t->right = buildBinaryTree(q);
-        } else {
+            dequeue(q);
+            return t;
+    } else {
             t = createNode((*q)->val);
             dequeue(q);
             t->left = buildBinaryTree(q);
             t->right = buildBinaryTree(q);
-        }
     }
     return t;
 }
