@@ -101,37 +101,25 @@ NodeT* getTreeFromList(NodeL **firstFList)
     }
 
 }
-void deleteTree(NodeT *root)
-{
-    if(root==NULL)
-        return;
-    deleteTree(root->left);
-    deleteTree(root->right);
-    free(root);
-}
-void prettyPrint(NodeT *root,int recLevel) //! root, index, length, reccurence level
+
+void prettyPrint(NodeT *root,int recLevel)
 {
     if(root==NULL)
     {
-        recLevel--; //! reached leaf, must decrement recurence level
+        recLevel--;
         return;
     }
-    recLevel++; //! otherwise increment it
-    prettyPrint(root->right,recLevel); //! keep going right in the tree
+    recLevel++;
+    prettyPrint(root->right,recLevel);
     int j=0;
 
-    //! print spaces for the appropriate recurence level
     for(j=0; j<recLevel-1; j++)
     {
         printf("     ");
     }
-    //! then print value
-    //printElement(root);
-
-    //! print  a new line
     printf("\n");
-
-    prettyPrint(root->left,recLevel); //! keep going left in the tree
+    printf("%s ",root->c);
+    prettyPrint(root->left,recLevel);
 }
 int main()
 {
