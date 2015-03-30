@@ -1,19 +1,19 @@
 #include <stdio.h>
 #include <stdlib.h>
-
+#include <string.h>
 typedef struct node
 {
-    int * content;
+    int  content;
     struct node *left, *right;
 } NodeT;
 
 typedef struct nodel
 {
-    int *x;
+    int x;
     struct nodel *next;
 }NodeL;
 NodeL *Qhead,*Qtail;
-NodeT *createNode(int *content)
+NodeT *createNode(int content)
 {
     NodeT* newNode = (NodeT*)malloc(sizeof(NodeT));
     newNode->content = content;
@@ -39,6 +39,25 @@ NodeT *createBinTREE(FILE *pf)
         p->right=createBinTREE(pf);
     }
     return p;
+}
+void enqueue(int x)
+{
+    if (Qhead==NULL)
+    {
+        Qhead=(NodeL*)malloc(sizeof(NodeL));
+        Qhead->x=x;
+        Qhead->next=NULL;
+        Qtail=Qhead;
+    }
+    else
+    {
+
+        NodeL *p=(NodeL*)malloc(sizeof(NodeL));
+        p->x=x;
+        p->next=NULL;
+        Qtail->next=p;
+        Qtail=p;
+    }
 }
 
 void preorder(NodeT * root)
@@ -79,25 +98,6 @@ void prettyPrint(NodeT *root,int recLevel) //! root, index, length, reccurence l
 
     prettyPrint(root->left,recLevel); //! keep going left in the tree
 }
-void enqueue(int x)
-{
-    if (Qhead==NULL)
-    {
-        Qhead=(NodeL*)malloc(sizeof(NodeL));
-        Qhead->x=x;
-        Qhead->next=NULL;
-        Qtail=Qhead;
-    }
-    else
-    {
-
-        NodeL *p=(NodeL*)malloc(sizeof(NodeL));
-        p->x=x;
-        p->next=NULL;
-        Qtail->next=p;
-        Qtail=p;
-    }
-}
 void dequeue()
 {
     if (Qhead!=NULL)
@@ -112,7 +112,7 @@ NodeT *listotree()
 {
 
     NodeT *p;
-    char *content=(char*)malloc(sizeof(char));
+    int content;
     content=Qhead->x;
     Qhead=Qhead->next;
     if (content==0)
