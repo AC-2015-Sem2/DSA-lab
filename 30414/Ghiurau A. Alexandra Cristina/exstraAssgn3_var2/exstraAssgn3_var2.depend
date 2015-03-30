@@ -1,0 +1,12 @@
+# depslib dependency file v1.0
+1427719039 source:c:\users\alexa\desktop\exstraassgn3_var2\main.c
+	"functions.h"
+
+1427719052 source:c:\users\alexa\desktop\exstraassgn3_var2\functions.c
+	"functions.h"
+
+1427719088 c:\users\alexa\desktop\exstraassgn3_var2\functions.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
