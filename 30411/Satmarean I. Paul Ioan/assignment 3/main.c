@@ -2,12 +2,15 @@
 #include <stdlib.h>
 #include <string.h>
 
+//tree node
 typedef struct node{
     struct node * left;
     struct node * right;
     int data;
 }NodeT;
 
+
+//list node
 typedef struct NodeL{
     struct NodeL * prev;
     struct NodeL * next;
@@ -15,6 +18,7 @@ typedef struct NodeL{
     char leaf;
 }NodeL;
 
+//creates a tree node
 NodeT * createNode(int x)
 {
     NodeT *p;
@@ -24,16 +28,21 @@ NodeT * createNode(int x)
     return p;
 }
 
+//prints value of a tree element
 void printElement(NodeT * node)
 {
     printf("%d ",node->data);
 }
 
+//creates a binary tree recursively
 NodeT * createBinTree()
 {
     char* content=(char*)malloc(sizeof(char)*20);
+
     NodeT*p;
+
     scanf("%s",content);
+
     if(strcmp(content,"*")==0)
         return NULL;
     else{
@@ -41,49 +50,61 @@ NodeT * createBinTree()
         p->left=createBinTree();
         p->right=createBinTree();
     }
+
     return p;
 }
 NodeL * aux;
 
+//makes a binary tree based on a aux var
+//for the record i hate globals but couldnt figure out how to
+//do it without them so if you know please give me a hint
 NodeT * maketree()
 {
     NodeT*p=NULL;
+
     if(aux!=NULL)
     {
-    p=createNode(aux->code);
-    if(aux->leaf=='*')
-    {
-       /* if(aux->next!=NULL)
+
+        p=createNode(aux->code);
+        if(aux->leaf=='*')
         {
-            aux=aux->next;
+        /* if(aux->next!=NULL)
+            {
+                aux=aux->next;
         }*/
         return p;
 
-    }else
-    {
+        }else
+        {
 
-        if(aux->next!=NULL)
-        {
-            aux=aux->next;
-            p->left=maketree();
+            if(aux->next!=NULL)
+            {
+                aux=aux->next;
+                p->left=maketree();
+            }
+            if(aux->next!=NULL)
+            {
+                aux=aux->next;
+                p->right=maketree();
+            }
         }
-        if(aux->next!=NULL)
-        {
-            aux=aux->next;
-            p->right=maketree();
-        }
-    }
     }
     return p;
 }
 
 NodeT * getTreeFromList(NodeL * list)
 {
-    aux=NULL;
-    aux=list;
-    NodeT * root;
-    root= maketree();
-    return root;
+    if(list!=NULL)
+    {
+        aux=NULL;
+        aux=list;
+
+        NodeT * root;
+        root= maketree();
+
+        return root;
+    }
+    return NULL;
 }
 
 void prettyPrint(NodeT *root,int recLevel) //! root, index, length, reccurence level
@@ -143,6 +164,7 @@ void createlist(NodeT * current)
 
 NodeL * getListFromTree(NodeT *root)
 {
+    if(root!=NULL){
     head=NULL;
     last=NULL;
 
@@ -156,6 +178,8 @@ NodeL * getListFromTree(NodeT *root)
         createlist(root->right);
 
     return head;
+    }
+    return NULL;
 }
 
 void printList(NodeL * a)
