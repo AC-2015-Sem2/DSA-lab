@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1427740755 source:c:\multimedia\utcn\an 1- sem. ii\dsa\treeshome\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
