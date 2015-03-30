@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 
+
 typedef struct node1
 {
     char *c;
@@ -132,7 +133,6 @@ void prettyPrint(NodeT *root,int recLevel) //! root, index, length, reccurence l
 
     prettyPrint(root->left,recLevel); //! keep going left in the tree
 }
-
 int main()
 {
         NodeT *root=createBinTree();
