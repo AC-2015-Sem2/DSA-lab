@@ -14,7 +14,33 @@ typedef struct nod2
     struct nod2 *next, *prev;
 } NodeL;
 
+NodeL* findLast(NodeL* head)
+{
+    while(head->next!=NULL)
+        head=head->next;
+    return head;
+}
+
 void addLastL(NodeL** head, char* data)
+{
+    if((*head)==NULL)
+    {
+        (*head)=(NodeL*)malloc(sizeof(NodeL));
+        (*head)->data=data;
+        (*head)->next=NULL;
+        (*head)->prev=NULL;
+    }
+    else
+    {
+        NodeL* nnew=(NodeL*)malloc(sizeof(NodeL));
+        nnew->data=data;
+        nnew->next=NULL;
+        NodeL* tail=findLast(*head);
+        nnew->prev=tail;
+        tail->next=nnew;
+    }
+}
+/*void addLastL(NodeL** head, char* data)
 {
     static NodeL* tail=NULL;
     if((*head)==NULL)
@@ -35,7 +61,7 @@ void addLastL(NodeL** head, char* data)
         tail=nnew;
     }
 }
-
+*/
 NodeT* createNodeT(int data)
 {
     NodeT* nnew=(NodeT*)malloc(sizeof(NodeT));
@@ -88,6 +114,15 @@ void prettyPrint(NodeT *root,int recLevel) //! root, index, length, reccurence l
 
 void printList(NodeL* head)
 {
+    while(head!=NULL)
+        {
+            printf("%s ", head->data);
+            head=head->next;
+        }
+    printf("\n");
+}
+/*void printList(NodeL* head)
+{
     NodeL* t = head;
     while (t != NULL)
     {
@@ -96,7 +131,9 @@ void printList(NodeL* head)
     }
     printf("\n");
 }
+*/
 //List/Tree functions:
+/*
 NodeL* ListFromTree(NodeT* root)//all elem of the list will have char type data //algorithm very similar to preorderPrint or createBinaryTree
 {
     static NodeL* head=NULL;//for the first and only initialization
@@ -138,7 +175,57 @@ NodeT* TreeFromList(NodeL* head)
     }
     return p;
 }
+*/
+void ListTree(NodeT* root, NodeL** head)
+{
+    if(root==NULL)
+        {
+            addLastL(head, "*");
+        }
+    else
+    {
+        char* str=(char*)malloc(sizeof(char)*100);
+        itoa(root->data, str, 10);
+        addLastL(head, str);
+        ListTree(root->left, head);
+        ListTree(root->right, head);
+    }
+}
 
+NodeL* ListFromTree(NodeT* root)
+{
+    NodeL* head=NULL;
+    ListTree(root, &head);
+    return head;
+}
+
+void deleteFirst(NodeL** head)
+{
+    if (*head != NULL)
+    {
+        NodeL* t = (*head)->next;
+        free(*head);
+        *head = t;
+    }
+}
+
+NodeT* TreeFromList(NodeL** head)
+{
+    NodeT* p;
+    if(strcmp((*head)->data, "*")==0)
+        {
+            deleteFirst(head);
+            return NULL;
+        }
+    else
+    {
+        p=createNodeT(atoi((*head)->data));
+        deleteFirst(head);
+        p->left=TreeFromList(head);
+        p->right=TreeFromList(head);
+    }
+    return p;
+}
 int main()
 {
     FILE* f=fopen("input.txt", "r");
@@ -155,7 +242,7 @@ int main()
 
     printf("\nFinal tree:\n");
 
-    root=TreeFromList(head);
+    root=TreeFromList(&head);
     prettyPrint(root, 0);
 
     fclose(f);
