@@ -44,24 +44,25 @@ Lab 6: Test 2 - Trees
 * Assignments: none
 
 ```
-Lab 7: Hash Tables - introduction, collision detection, usages
+Lab 7: Graphs - representation and traversals
 ```
 * Assignments 5: TBA
 
 ```
-Lab 8: Graphs - representation and traversals
+Lab 8: Graphs - Graph Processing Algorithms (Dijkstra, Prim, Kursal, Floyd etc.)
 ```
 * Assignments 6: TBA
 
 ```
-Lab 9: Graphs - Graph Processing Algorithms (Dijkstra, Prim, Kursal, Floyd etc.)
+Lab 9: Test 3 - Graphs
+```
+* Assignments: none
+
+```
+Lab 10: Hash Tables - introduction, collision detection, usages
 ```
 * Assignments 7: TBA
 
-```
-Lab 10: Test 3 - Graphs
-```
-* Assignments: none
 
 ```
 Lab 11: Sorting Algorithms - Bubble, Insertion, Selection, Merge, Quick, Radix.
