@@ -36,7 +36,7 @@ Lab 5: Binary Search Trees
 ```
 * Assignments 4: 
 	- 4.1 [Insertion in a AVL (Perfectly Balanced BST)] (https://github.com/AC-2015-Sem2/DSA-lab/tree/master/Assignments/Assignment%204/Assignment%204%20-%20Insertion%20in%20AVL%20Trees%20(Perfectly%20Balanced%20BST))
-	- 4.2 [Deletion in an AVL (Perfectly Balanced BST)] (https://github.com/AC-2015-Sem2/DSA-lab/tree/master/Assignments/Assignment%204/Assignment%204%20-%20Deletion%20in%20AVL%20Trees%20(extra%20credit))
+	- 4.2 [Deletion in an AVL (Perfectly Balanced BST)] (https://github.com/AC-2015-Sem2/DSA-lab/tree/master/Assignments/Assignment%204/Assignment%204%20-%20Deletion%20in%20AVL%20Trees%20(extra%20credit)) (extra credit!)
 
 ```
 Lab 6: Test 2 - Trees
