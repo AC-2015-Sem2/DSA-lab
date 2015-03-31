@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <strings.h> // strcmp, strcpy, atof
 #include <ctype.h> // isdigit
+#include <conio.h> // getch
 
 typedef struct  node
 {
@@ -58,12 +59,39 @@ float compute(NodeT *n)
         return (atof(n->data));
 }
 
+void prettyPrint(NodeT *root,int recLevel) //! root, index, length, reccurence level
+{
+    if(root==NULL)
+    {
+        recLevel--; //! reached leaf, must decrement recurence level
+        return;
+    }
+    recLevel++; //! otherwise increment it
+    prettyPrint(root->right,recLevel); //! keep going right in the tree
+    int j=0;
+
+    //! print spaces for the appropriate recurence level
+    for(j=0; j<recLevel-1; j++)
+    {
+        printf("     ");
+    }
+    //! then print value
+    printf("%s", root->data);
+
+    //! print  a new line
+    printf("\n");
+
+    prettyPrint(root->left,recLevel); //! keep going left in the tree
+}
+
 int main()
 {
     FILE    *in;
 
     in = fopen ("input.dat", "r");
     radacina = createBinTree(in);
-    printf ("%f", compute(radacina));
+    prettyPrint(radacina, 0);
+    printf ("\nThe value of the expression is %f", compute(radacina));
+    getch();
     return 0;
 }
