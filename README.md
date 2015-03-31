@@ -9,15 +9,15 @@ Data Structures and Algorithms lab repository
 Lab 1: Introduction to GIT and the work-flow of the lab + starting with Singly Linked Lists
 ```
 * Assignments 1:
-	- 1.1 [Basic Operations on a Singly Linked List](https://github.com/AC-2015-Sem2/DSA-lab/tree/master/Assignments/Assignment%201) 
-	- 1.2 [Wanted: Jim Kong-nu](https://github.com/AC-2015-Sem2/DSA-lab/tree/master/Assignments/Assignment%201%20-%20extra%20credit) (extra credit!)
+	- 1.1 [Basic Operations on a Singly Linked List](https://github.com/AC-2015-Sem2/DSA-lab/tree/master/Assignments/Assignment%201/Assignment%201) 
+	- 1.2 [Wanted: Jim Kong-nu](https://github.com/AC-2015-Sem2/DSA-lab/tree/master/Assignments/Assignment%201/Assignment%201%20-%20extra%20credit) (extra credit!)
 
 ```
 Lab 2: Circular Linked Lists and Doubly Linked Lists (+ Introduction to complexity)
 ```
 * Assignments 2:
-	- 2.1 [Basic Operations on Doubly Linked Lists with Santinel](https://github.com/AC-2015-Sem2/DSA-lab/tree/master/Assignments/Assignment%202.1%20-%20doubly%20linked%20lists)
-	- 2.2 [Queue (or qwewe)](https://github.com/AC-2015-Sem2/DSA-lab/tree/master/Assignments/Assignment%202.2%20-%20queue)
+	- 2.1 [Basic Operations on Doubly Linked Lists with Santinel](https://github.com/AC-2015-Sem2/DSA-lab/tree/master/Assignments/Assignment%202/Assignment%202.1%20-%20doubly%20linked%20lists)
+	- 2.2 [Queue (or qwewe)](https://github.com/AC-2015-Sem2/DSA-lab/tree/master/Assignments/Assignment%202/Assignment%202.2%20-%20queue)
 
 ```
 Lab 3: Test 1 - Lists
@@ -28,13 +28,15 @@ Lab 3: Test 1 - Lists
 Lab 4: Trees - more precisely, Binary Trees, Balanced Binary Trees (the theory)
 ```
 * Assignments 3: 
-	- 3.1 [Trees to list and back again] (https://github.com/AC-2015-Sem2/DSA-lab/tree/master/Assignments/Assignment%203%20-%20Tree%20to%20list%20and%20back%20again)
-	- 3.2 [Parse trees] (https://github.com/AC-2015-Sem2/DSA-lab/tree/master/Assignments/Assignment%203%20-%20extra%20credit%20(parse%20tree)) (extra credit!)
+	- 3.1 [Trees to list and back again] (https://github.com/AC-2015-Sem2/DSA-lab/tree/master/Assignments/Assignment%203/Assignment%203%20-%20Tree%20to%20list%20and%20back%20again)
+	- 3.2 [Parse trees] (https://github.com/AC-2015-Sem2/DSA-lab/tree/master/Assignments/Assignment%203/Assignment%203%20-%20extra%20credit%20(parse%20tree)) (extra credit!)
 
 ```
 Lab 5: Binary Search Trees
 ```
-* Assignments 4: TBA
+* Assignments 4: 
+	- 4.1 [Insertion in a AVL (Perfectly Balanced BST)] (https://github.com/AC-2015-Sem2/DSA-lab/tree/master/Assignments/Assignment%204/Assignment%204%20-%20Insertion%20in%20AVL%20Trees%20(Perfectly%20Balanced%20BST))
+	- 4.2 [Deletion in an AVL (Perfectly Balanced BST)] (https://github.com/AC-2015-Sem2/DSA-lab/tree/master/Assignments/Assignment%204/Assignment%204%20-%20Deletion%20in%20AVL%20Trees%20(extra%20credit))
 
 ```
 Lab 6: Test 2 - Trees
