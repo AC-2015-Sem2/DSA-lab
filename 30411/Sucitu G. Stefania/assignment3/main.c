@@ -14,7 +14,6 @@ typedef struct queue
     struct queue *next;
     struct queue *previous;
 } node;
-
 node *head,*tail;
 
 nodet*createnode(int data)
@@ -60,47 +59,6 @@ nodet* createbintree2( )
     return p;
 }
 
-void preorder(nodet* root)
-{
-    if (root!=NULL)
-    {
-        AL(root->data);
-        preorder(root->left);
-        preorder(root->right);
-    }
-    else
-    {
-        AL(8);
-    }
-}
-
-void (*printElement)(nodet*);
-void printIntegerElement(nodet * node);
-
-void printIntegerElement(nodet * node)
-{
-    printf ( "%d " ,(int) node->data );
-}
-
-void prettyPrint(nodet *root,int recLevel)
-{
-    if(root==NULL)
-    {
-        recLevel--;
-        return;
-    }
-    recLevel++;
-    prettyPrint(root->right,recLevel);
-    int j=0;
-    for(j=0; j<recLevel-1; j++)
-    {
-        printf("     ");
-    }
-    printElement(root);
-    printf("\n");
-    prettyPrint(root->left,recLevel);
-}
-
 void AL(int x)
 {
     if (head==NULL)
@@ -122,21 +80,62 @@ void AL(int x)
     }
 }
 
-int main()
+void addlist(nodet* root)
 {
-    nodet* root=createbintree();
-    printElement = &printIntegerElement;
-    prettyPrint(root,0);
-    preorder(root);
-    node *t=head;
+    if (root!=NULL)
+    {
+        AL(root->data);
+        addlist(root->left);
+        addlist(root->right);
+    }
+    else
+    {
+        AL(8);
+    }
+}
+
+void printElement(nodet * node)
+{
+    printf ( "%d " ,(int) node->data );
+}
+
+void prettyPrint(nodet *root,int recLevel)
+{
+    if(root==NULL)
+    {
+        recLevel--;
+        return;
+    }
+    recLevel++;
+    prettyPrint(root->right,recLevel);
+    int j=0;
+    for(j=0; j<recLevel-1; j++)
+    {
+        printf("     ");
+    }
+    printElement(root);
+    printf("\n");
+    prettyPrint(root->left,recLevel);
+    printf("\n");
+}
+void printlist()
+{
+    node* t=head;
     while (t!=NULL)
     {
         printf("%d ",t->dat);
         t=t->next;
-    }
-    printf("\n");
+    }  printf("\n");
+}
+
+
+int main()
+{
+    nodet* root=createbintree();
+    prettyPrint(root,0);
+    addlist(root);
+    printlist();
     createbintree2();
     prettyPrint(root,0);
-    printf("\n");
     return 0;
 }
