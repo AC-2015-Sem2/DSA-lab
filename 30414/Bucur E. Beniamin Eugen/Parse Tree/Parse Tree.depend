@@ -1,0 +1,7 @@
+# depslib dependency file v1.0
+1427629576 source:d:\facultate\anul 1\semestrul 2\data structures and algorithms\workspace\parse tree\main.c
+	<stdio.h>
+	<stdlib.h>
+	<strings.h>
+	<ctype.h>
+
