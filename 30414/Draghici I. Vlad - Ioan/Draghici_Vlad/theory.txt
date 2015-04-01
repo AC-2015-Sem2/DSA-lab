@@ -1,0 +1,2 @@
+stack and queues operations are :adding(first/last), deleting(first/last) ; the working mode is viewing one by one,
+in this way you can't reach directly at any element, this being its limitation
