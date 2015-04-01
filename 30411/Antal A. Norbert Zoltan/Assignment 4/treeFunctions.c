@@ -13,13 +13,19 @@ NodeT* createNode(int data)
 
 int getHeight(NodeT* node)
 {
-    if (node==NULL) return 0;
+    if (node==NULL)
+    {
+        return 0;
+    }
     return node->height;
 }
 
 int heightDiff(NodeT* node)
 {
-    if (node==NULL) return 0;
+    if (node==NULL)
+    {
+        return 0;
+    }
     return getHeight(node->left) - getHeight(node->right);
 }
 
