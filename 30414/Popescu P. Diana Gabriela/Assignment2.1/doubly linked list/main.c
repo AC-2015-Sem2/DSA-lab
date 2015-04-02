@@ -92,7 +92,16 @@ void doomTheList()
     sentinel->head=NULL;
     sentinel->tail=NULL;
 }
-
+/*
+void doomTheList()
+{
+while(sentinel->head!=sentinel->tail)
+    delFirst();
+delFirst();//the last element is being deleted
+sentinel->head=NULL;
+sentinel->tail=NULL;
+}
+*/
 void delX(int x)
 {
     if(sentinel->head->val==x)
