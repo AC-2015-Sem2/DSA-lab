@@ -1,0 +1,27 @@
+# depslib dependency file v1.0
+1427714518 source:d:\faculta\an1\sem_2\dsa\interestingstuff\assignment3extra\main.c
+	<stdio.h>
+	<stdlib.h>
+	"tree.h"
+
+1427714489 source:d:\faculta\an1\sem_2\dsa\interestingstuff\assignment3extra\tree.c
+	"tree.h"
+
+1427658213 d:\faculta\an1\sem_2\dsa\interestingstuff\assignment3extra\tree.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1427714518 source:c:\users\rana\desktop\myfork\dsa-lab\30414\pop p. roxana\assignment3extra\main.c
+	<stdio.h>
+	<stdlib.h>
+	"tree.h"
+
+1427658213 c:\users\rana\desktop\myfork\dsa-lab\30414\pop p. roxana\assignment3extra\tree.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1427714489 source:c:\users\rana\desktop\myfork\dsa-lab\30414\pop p. roxana\assignment3extra\tree.c
+	"tree.h"
+
