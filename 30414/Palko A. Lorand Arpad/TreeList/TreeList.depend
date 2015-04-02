@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1427831872 source:d:\suli\dsa\laboratorytasks\hw\treelist\main.cpp
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+

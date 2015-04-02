@@ -1,0 +1,7 @@
+# depslib dependency file v1.0
+1427753108 source:f:\facultyprogramming\data structure and algorithms\assignment 3\main.cpp
+	<iostream>
+	<stdlib.h>
+	<stdio.h>
+	<string.h>
+
