@@ -1,0 +1,12 @@
+# depslib dependency file v1.0
+1427723216 source:f:\anul1sem2\dsa\laboratorul4\epressiontree\epressiontree_hw\main.c
+	"binaryTree.h"
+
+1427723341 f:\anul1sem2\dsa\laboratorul4\epressiontree\epressiontree_hw\binarytree.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1427723284 source:f:\anul1sem2\dsa\laboratorul4\epressiontree\epressiontree_hw\treesource.c
+	"binaryTree.h"
+
