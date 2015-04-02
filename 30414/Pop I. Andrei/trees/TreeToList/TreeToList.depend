@@ -1,0 +1,12 @@
+# depslib dependency file v1.0
+1427806590 source:c:\users\andrei\desktop\dsa\dsa-lab\30414\pop i. andrei\trees\treetolist\main.c
+	"tree.h"
+
+1427806367 c:\users\andrei\desktop\dsa\dsa-lab\30414\pop i. andrei\trees\treetolist\tree.h
+	<stdio.h>
+	<stdlib.h>
+
+1427806880 source:c:\users\andrei\desktop\dsa\dsa-lab\30414\pop i. andrei\trees\treetolist\tree.c
+	"tree.h"
+	<string.h>
+
