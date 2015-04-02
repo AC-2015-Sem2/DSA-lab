@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1427731588 source:d:\programare semii\parse tree\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
