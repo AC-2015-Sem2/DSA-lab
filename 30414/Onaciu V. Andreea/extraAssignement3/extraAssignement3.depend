@@ -1,0 +1,18 @@
+# depslib dependency file v1.0
+1427563728 source:c:\users\andreea\desktop\dsa-andreea\30414\onaciu v. andreea\extraassignement3\functions.c
+	<stdio.h>
+	<stdlib.h>
+	"structuresDef.h"
+	<string.h>
+
+1427561866 c:\users\andreea\desktop\dsa-andreea\30414\onaciu v. andreea\extraassignement3\structuresdef.h
+
+1427563657 source:c:\users\andreea\desktop\dsa-andreea\30414\onaciu v. andreea\extraassignement3\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"functions.h"
+
+1427563657 c:\users\andreea\desktop\dsa-andreea\30414\onaciu v. andreea\extraassignement3\functions.h
+	"structuresDef.h"
+

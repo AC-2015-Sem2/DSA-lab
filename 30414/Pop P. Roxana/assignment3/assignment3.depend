@@ -1,0 +1,28 @@
+# depslib dependency file v1.0
+1427580778 source:c:\users\rana\desktop\myfork\dsa-lab\30414\pop p. roxana\assignment3\main.c
+	<stdio.h>
+	<stdlib.h>
+	"header.h"
+
+1427659477 source:c:\users\rana\desktop\myfork\dsa-lab\30414\pop p. roxana\assignment3\treefunctions.c
+	"header.h"
+
+1427712263 source:c:\users\rana\desktop\myfork\dsa-lab\30414\pop p. roxana\assignment3\listfunctions.c
+	"header.h"
+
+1427565895 c:\users\rana\desktop\myfork\dsa-lab\30414\pop p. roxana\assignment3\list.h
+	<stdio.h>
+	<stdlib.h>
+	"tree.h"
+
+1427565895 c:\users\rana\desktop\myfork\dsa-lab\30414\pop p. roxana\assignment3\tree.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"list.h"
+
+1427580035 c:\users\rana\desktop\myfork\dsa-lab\30414\pop p. roxana\assignment3\header.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
