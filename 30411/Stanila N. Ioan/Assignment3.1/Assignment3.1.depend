@@ -1,0 +1,45 @@
+# depslib dependency file v1.0
+1427650979 source:c:\users\johns\documents\programming\assignment3.1\main.c
+	<stdio.h>
+	<stdlib.h>
+	"Queue.h"
+	"Tree.h"
+	"prettyPrint.h"
+	"functions.h"
+
+1427646158 c:\users\johns\documents\programming\assignment3.1\queue.h
+
+1427651208 source:c:\users\johns\documents\programming\assignment3.1\prettyprint.c
+	"prettyPrint.h"
+	<stdio.h>
+
+1427651220 c:\users\johns\documents\programming\assignment3.1\prettyprint.h
+	"Tree.h"
+
+1427648513 c:\users\johns\documents\programming\assignment3.1\tree.h
+	<stdio.h>
+	<stdlib.h>
+	"Queue.h"
+
+1427646375 source:c:\users\johns\documents\programming\assignment3.1\queue.c
+	"Queue.h"
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1427651706 source:c:\users\johns\documents\programming\assignment3.1\functions.c
+	"functions.h"
+	<stdlib.h>
+	<string.h>
+
+1427651028 c:\users\johns\documents\programming\assignment3.1\functions.h
+	"Queue.h"
+	"Tree.h"
+	<stdio.h>
+
+1427648501 source:c:\users\johns\documents\programming\assignment3.1\tree.c
+	"Tree.h"
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
