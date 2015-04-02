@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1427749877 source:d:\utcn\an.1-sem.2\dsa-alex  cosma\tema3\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
