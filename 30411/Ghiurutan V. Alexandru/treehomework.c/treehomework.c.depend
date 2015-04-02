@@ -1,0 +1,12 @@
+# depslib dependency file v1.0
+1427744443 source:d:\aplicatii\dsa\treehomework.c\headers.c
+	"Header.h"
+
+1427744526 d:\aplicatii\dsa\treehomework.c\header.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1427744443 source:d:\aplicatii\dsa\treehomework.c\main.c
+	"Header.h"
+
