@@ -1,0 +1,19 @@
+# depslib dependency file v1.0
+1427828757 source:d:\programok\codeblocks\prog(sem ii)\l04\extra\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	"def.h"
+	"Treefunctions.h"
+	"Listfunctions.h"
+	"conversions.h"
+
+1427827483 d:\programok\codeblocks\prog(sem ii)\l04\extra\def.h
+
+1427828732 d:\programok\codeblocks\prog(sem ii)\l04\extra\treefunctions.h
+
+1427827664 d:\programok\codeblocks\prog(sem ii)\l04\extra\listfunctions.h
+
+1427817513 d:\programok\codeblocks\prog(sem ii)\l04\extra\conversions.h
+
