@@ -12,6 +12,8 @@ NodeT* rotate_right(NodeT*);
 NodeT* balanceF(NodeT*);
 NodeT* insertUTIL(NodeT*, int);
 NodeT* insertF(NodeT*, int);
+NodeT* deleteUTIL(NodeT*, NodeT*);
+NodeT* deleteF(NodeT*, int);
 void prettyPrint(NodeT*, int, FILE*);
 
 #endif // TREEFUNCTIONS_H_INCLUDED

@@ -31,9 +31,14 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
+		<Unit filename="AVL_Def.h" />
 		<Unit filename="main.c">
 			<Option compilerVar="CC" />
 		</Unit>
+		<Unit filename="treeFunctions.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="treeFunctions.h" />
 		<Extensions>
 			<code_completion />
 			<envvars />
