@@ -1,0 +1,8 @@
+# depslib dependency file v1.0
+1427764554 source:d:\facultate\anul 1\semestrul 2\data structures and algorithms\workspace\assignment 3\functii.c
+
+1427768608 source:d:\facultate\anul 1\semestrul 2\data structures and algorithms\workspace\assignment 3\main.c
+	<stdio.h>
+	<stdlib.h>
+	<strings.h>
+
