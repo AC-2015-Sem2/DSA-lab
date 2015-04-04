@@ -100,8 +100,8 @@ BTree* BSTRotate(BTree* root)
                 BTree* aux = root->left;
                 //the right child of the left child becomes the new left child of the root(1st step of the swap)
                 root->left = root->left->right;
-                //remove the link to complete child transfer
-                aux->right = NULL;
+                //child transfer
+                aux->right = root->left->left;
                 //the child becomes the parent(to finalize the swap)
                 root->left->left = aux;
                 //it is a zig-zig now
@@ -147,8 +147,8 @@ BTree* BSTRotate(BTree* root)
                 BTree* aux = root->right;
                 //the left child of the right child becomes the new left child of the root(1st step of the swap)
                 root->right = root->right->left;
-                //remove the link to complete child transfer
-                aux->left = NULL;
+                //child transfer
+                aux->left = root->right->right;
                 //the child becomes the parent(to finalize the swap)
                 root->right->right = aux;
                 //it is a zig-zig now
@@ -220,12 +220,9 @@ void AVLInsert(BTree** root, void* data)
     //step 3: if it is imba nerf it
     *root = BSTBallance(*root);
 
-    int i = 0;
-    for(i = 0; i < 50; i++)
-    {
-        getWeight(*root);
-        *root = BSTBallance(*root);
-    }
+    getWeight(*root);
+    *root = BSTBallance(*root);
+
 }
 
 BTree* createAVLFromFile(FILE* I)
