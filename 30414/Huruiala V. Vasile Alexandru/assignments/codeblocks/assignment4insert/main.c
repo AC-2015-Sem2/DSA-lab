@@ -12,7 +12,7 @@ int main()
     prettyPrint(O, root, 0);
 
     printf("\nIs balanced(0 - no, 1 - yes, 2 - obviously): %d\n", isBST(root));
-    fprintf(O, "\nIs balanced(0 - no, 1 - yes, - obviously): %d\n", isBST(root));
+    fprintf(O, "\nIs balanced(0 - no, 1 - yes, 2 - obviously): %d\n", isBST(root));
     printf("\nInorder print:\n");
     fprintf(O, "\nInorder print:\n");
     inorderPrint(O, root);
