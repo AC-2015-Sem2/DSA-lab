@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1427884206 source:c:\users\alexh\desktop\fork\dsa-lab\30414\huruiala v. vasile alexandru\assignments\codeblocks\labtrees2\main.c
+	<stdio.h>
+	<stdlib.h>
+	<limits.h>
+
