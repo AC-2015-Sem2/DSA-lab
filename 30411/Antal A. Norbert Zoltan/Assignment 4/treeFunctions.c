@@ -109,6 +109,42 @@ NodeT* insertF(NodeT* node, int data)
     return isPresent(node, data) ? node : insertUTIL(node, data);
 }
 
+NodeT* deleteUTIL(NodeT* node1, NodeT* node2)
+{
+    if (node1==NULL)
+    {
+        return node2;
+    }
+    else
+    {
+        node1->right = deleteUTIL(node1->right, node2);
+        return balanceF(node1);
+    }
+}
+
+NodeT* deleteF(NodeT* node, int data)
+{
+    if (node==NULL)
+    {
+        return NULL;
+    }
+    else if (node->data==data)
+    {
+        NodeT* toRet = deleteUTIL(node->left, node->right);
+        free(node);
+        return toRet;
+    }
+    else if (node->data<data)
+    {
+        node->right = deleteF(node->right, data);
+    }
+    else
+    {
+        node->left = deleteF(node->left, data);
+    }
+    return balanceF(node);
+}
+
 void prettyPrint(NodeT* root, int x, FILE* file)
 {
     if (root==NULL) return;
