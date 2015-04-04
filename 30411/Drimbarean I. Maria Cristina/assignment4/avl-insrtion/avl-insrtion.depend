@@ -1,0 +1,11 @@
+# depslib dependency file v1.0
+1428156677 source:d:\workspace c2\lab5\avl-insrtion\main.c
+	"tree.h"
+
+1428156316 d:\workspace c2\lab5\avl-insrtion\tree.h
+	<stdlib.h>
+	<stdio.h>
+
+1428156168 source:d:\workspace c2\lab5\avl-insrtion\tree.c
+	"tree.h"
+
