@@ -120,7 +120,10 @@ t_btree* erase(t_btree *node, int data)
 	{
 		if (node->left == NIL || node->right == NIL)
 		{
-			t = node->left == NIL ? node->right : node->left;
+			if (node->left == NIL)
+				t = node->right;
+			else
+				t = node->left;
 			free(node); 
 			return t;
 		}
