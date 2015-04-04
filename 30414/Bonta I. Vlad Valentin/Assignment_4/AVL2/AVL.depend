@@ -1,0 +1,15 @@
+# depslib dependency file v1.0
+1428156270 source:/home/vladms/Data_Structures/AVL/AVL_insert.c
+	<stdio.h>
+	<math.h>
+	<stdlib.h>
+	<string.h>
+	<limits.h>
+
+1428156500 source:/home/vladms/Data_Structures/AVL/AVL_erase.c
+	<stdio.h>
+	<math.h>
+	<stdlib.h>
+	<string.h>
+	<limits.h>
+
