@@ -129,9 +129,16 @@ t_btree* erase(t_btree *node, int data)
 		}
 		else
 		{
-			for (t = node->right; t->left != NIL; t = t->left);
+			/*Take the most left leave of the right son of the node*/
+			if (node->right->h > node->left->h)
+				for (t = node->right; t->left != NIL; t = t->left);
+			else
+				for (t = node->left; t->right != NIL; t = t->right);
 			node->data = t->data;
-			node->right = erase(node->right, t->data);
+			if (node->right->h > node->left->h)
+				node->right = erase(node->right, t->data);
+			else
+				node->left = erase(node->left, t->data);
 			return balance_Tree(node);
 		}
 	}
@@ -149,7 +156,7 @@ t_btree*	createNode(int data)
 	tmp->data = data;
 	tmp->left = NIL;
 	tmp->right = NIL;
-	tmp-> h =0;
+	tmp-> h =seth(tmp);
 	return (tmp);
 }
 
@@ -203,13 +210,14 @@ int	main(void)
 	init();
 	R = createBinTree();
 	prettyPrint(R, 0);
+	printf("\n\n\n\n\n\n");
 	int x = 0;
 	scanf("%d", &x);
-	while (x != 0)
+	while (x != 0 && R !=NIL)
 	{
-		R = insert(R, x);
+		R = erase(R, x);
 		prettyPrint(R, 0);
-		printf("\n\n");
+		printf("\n\n\n\n\n\n\n\n");
 		scanf("%d", &x);
 	}
 	return (0);

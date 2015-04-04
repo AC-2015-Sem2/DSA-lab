@@ -119,7 +119,7 @@ t_btree*	createNode(int data)
 	tmp->data = data;
 	tmp->left = NIL;
 	tmp->right = NIL;
-	tmp-> h =0;
+	tmp-> h = seth(tmp);
 	return (tmp);
 }
 
@@ -179,7 +179,7 @@ int	main(void)
 	{
 		R = insert(R, x);
 		prettyPrint(R, 0);
-		printf("\n\n");
+		printf("\n\n\n\n\n\n");
 		scanf("%d", &x);
 	}
 	return (0);
