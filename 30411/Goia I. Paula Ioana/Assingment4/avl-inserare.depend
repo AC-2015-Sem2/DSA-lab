@@ -1,0 +1,14 @@
+# depslib dependency file v1.0
+1428156898 source:d:\probleme codeblocks\avl-inserare\avl.c
+	<stdio.h>
+	<stdlib.h>
+	"AVL.h"
+
+1428155188 d:\probleme codeblocks\avl-inserare\avl.h
+
+1428142415 source:d:\probleme codeblocks\avl-inserare\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"AVL.h"
+
