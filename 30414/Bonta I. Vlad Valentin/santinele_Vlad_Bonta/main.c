@@ -43,5 +43,7 @@ int main()
 		}while (data != -1);
 	}
 	kill_jim_kong_nu(info);
+	fclose(f);
+	fclose(g);
 	return (0);
 }
