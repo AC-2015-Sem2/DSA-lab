@@ -1,0 +1,9 @@
+# depslib dependency file v1.0
+1428103371 source:d:\other\cpp\avltrees\main.c
+	<stdio.h>
+	<stdlib.h>
+
+1428105990 source:d:\other\cpp\assignment 4\main.c
+	<stdio.h>
+	<stdlib.h>
+
