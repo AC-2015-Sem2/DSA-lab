@@ -219,10 +219,6 @@ void AVLInsert(BTree** root, void* data)
     getWeight(*root);
     //step 3: if it is imba nerf it
     *root = BSTBallance(*root);
-
-    getWeight(*root);
-    *root = BSTBallance(*root);
-
 }
 
 BTree* createAVLFromFile(FILE* I)

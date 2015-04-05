@@ -45,6 +45,7 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="mainheader.h" />
+		<Unit filename="output.dat" />
 		<Extensions>
 			<code_completion />
 			<envvars />
