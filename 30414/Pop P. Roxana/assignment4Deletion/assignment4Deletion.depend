@@ -1,0 +1,18 @@
+# depslib dependency file v1.0
+1428234536 source:c:\users\rana\desktop\myfork\dsa-lab\30414\pop p. roxana\assignment4deletion\deletionfunction.c
+	"tree.h"
+
+1428233573 c:\users\rana\desktop\myfork\dsa-lab\30414\pop p. roxana\assignment4deletion\tree.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1428233573 source:c:\users\rana\desktop\myfork\dsa-lab\30414\pop p. roxana\assignment4deletion\necessaryfunctions.c
+	"tree.h"
+
+1428222825 source:c:\users\rana\desktop\myfork\dsa-lab\30414\pop p. roxana\assignment4deletion\rotationfunctions.c
+	"tree.h"
+
+1428237968 source:c:\users\rana\desktop\myfork\dsa-lab\30414\pop p. roxana\assignment4deletion\main.c
+	"tree.h"
+
