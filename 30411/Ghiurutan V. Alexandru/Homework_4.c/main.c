@@ -11,8 +11,10 @@ int main()
     NodeT *root=createBinTree(f);
     AVLTree(root);
     root=insertNode(root,11);
-    root=deleteNode(root,11);
+    root=insertNode(root,12);
+    root=deleteNode(root,12);
     prettyPrint(root,0);
 
     return 0;
 }
+

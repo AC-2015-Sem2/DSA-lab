@@ -56,6 +56,9 @@ NodeT *deleteNode(NodeT *root,int x)
         }
     }
     if (root!=NULL)
+    {
+        calculEchilibru(root);
         root = balancing(root);
+    }
     return root;
 }
