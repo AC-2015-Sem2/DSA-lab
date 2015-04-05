@@ -120,7 +120,7 @@ node * Delete(node *T,int x){
     else
         if(x > T->data){                // insert in right subtree
             T->right=Delete(T->right,x);
-            if(BF(T)==2){
+            if(BF(T)==2){//rebalance
                 if(BF(T->left)>=0)
                     T=LL(T);
                     else
@@ -128,9 +128,9 @@ node * Delete(node *T,int x){
             }
         }
     else
-        if(x<T->data){
+        if(x<T->data){ //insert in left subtree
             T->left=Delete(T->left,x);
-            if(BF(T)==-2){//Rebalance during windup
+            if(BF(T)==-2){//Rebalance
                 if(BF(T->right)<=0)
                     T=RR(T);
                     else
@@ -144,7 +144,7 @@ node * Delete(node *T,int x){
                 p=p->left;
             T->data=p->data;
             T->right=Delete(T->right,p->data);
-            if(BF(T)==2){//Rebalance during windup
+            if(BF(T)==2){//Rebalance
                 if(BF(T->left)>=0)
                     T=LL(T);
                     else
@@ -162,7 +162,74 @@ int isBST(node *root, int min, int max){
     if (root==NULL) return 1;
     if(root->data<min || root->data>max)
         return 0;
-    else return isBST(root->right, root->data, max) && isBST(root->left, min,root->data);
+    else return (isBST(root->right, root->data, max) && isBST(root->left, min,root->data));
+}
+
+int maximum(int a, int b){
+    return (a>=b) ? a : b;
+}
+
+int height_rec(node *root){
+    if (root==NULL) return 0;
+    return (1+maximum(height_rec(root->left),height_rec(root->right)));
+}
+
+int isAVL(node *root){//is balanced
+    int lh,rh;
+    if (root==NULL) return 1;
+    rh=height_rec(root->left);
+    lh=height_rec(root->right);
+    if((isAVL(root->left)) && (isAVL(root->right)) && (abs(rh-lh)<=1)) return 1;
+    return 0;
+}
+
+node *createAVL(node *root){
+    if(isAVL(root->right)!=1)
+        {
+        root->right=createAVL(root->right);
+        if (BF(root)==-2)
+            {
+            if (BF(root->right)==-1){
+                root=RR(root);
+                return root;
+            }
+            else
+            if (BF(root->right)==1){
+                root=RL(root);
+                return root;
+            }
+            }
+        else
+        if(isAVL(root->right)==1 && isAVL(root)!=1)//the possibility that the subtree is AVL, yet the tree is not
+            {
+            root=rotateleft(root);//rotate left because the value of the root is the smallest
+            root->left=createAVL(root->left);//make sure the subtree is AVL
+            return root;
+            }
+        }
+    if(isAVL(root->left)!=1)
+        {
+            root->left=createAVL(root->left);
+            if (BF(root)==2)
+            {
+            if (BF(root->left)==1){
+                root=LL(root);
+                return root;
+            }
+            else{
+                root=LR(root);
+                return root;
+            }
+            }
+        }
+        else
+        if(isAVL(root->left)==1)//the possibility that the subtree is AVL, yet the tree is not
+        {
+            root=rotateright(root);//rotate the tree right because the value of the root is the greatest
+            root->right=createAVL(root->right);//make sure the subtree is AVL
+            return root;
+        }
+    return root;
 }
 
 void prettyPrint(node *root,int recLevel) //! root, index, length, reccurence level
@@ -194,18 +261,36 @@ int main(){
     printf("root : ");
     node *root=createBinaryTree();
     while(isBST(root,INT_MIN,INT_MAX)==0){
+        if (isBST(root,INT_MIN,INT_MAX)==0)
+            printf("The tree is not a Binary Search Tree ! \n input again : \n");
         printf("root : ");
         node *root=createBinaryTree();
-        isBST(root,INT_MIN,INT_MAX);
         prettyPrint(root,0);
-        if (isBST(root,INT_MIN,INT_MAX)==0)
-            printf("the tree is not a Binary Search Tree ! \n input again : \n");
     }
     prettyPrint(root,0);
-    printf("give the node you want to delete : \n");
-    int x;
-    scanf("%d",&x);
-    Delete(root,x);
-    prettyPrint(root,0);
+    printf("Give the node you want to delete : \n");
+    int y=1;
+    while(y==1){
+        int x;
+        scanf("%d",&x);
+        if(root==NULL) {
+            printf("There is no node in the tree");
+            return 0;
+        }
+        root=Delete(root,x);
+        prettyPrint(root,0);
+        if (isAVL(root)!=1){
+                printf("The tree is not an AVL tree\n");
+                printf("Do you want to create the corresponding AVL tree? ? (yes-1, no-0) : ");
+                scanf("%d",&x);
+                if(x==1) {
+                    printf("The corresponding AVL tree is : \n" );
+                    root=createAVL(root);
+                }
+            }
+        prettyPrint(root,0);
+        printf("Do you want to delete another node? (1=yes, 0=no) \n");
+        scanf("%d", &y);
+    }
     return 0;
 }

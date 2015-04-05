@@ -110,7 +110,7 @@ node * RL(node *T)
                return(T);
 }
 
-int BF(node *root){
+int BF(node *root){ //binary tree node hight
     int lh,rh;
     if(root==NULL)
         return(0);
@@ -153,6 +153,10 @@ node *insertNode(node *root, int cont){
                   root=LR(root);
         }
     }
+    /*else{
+        if(cont==root->data) printf("the node %d already exists in the tree",cont);
+        return root;
+    }*/
     root->ht=height(root);
     return(root);
 }
@@ -163,6 +167,16 @@ int isBST(node *root, int min, int max){
         return 0;
     else return isBST(root->right, root->data, max) && isBST(root->left, min,root->data);
 }
+
+/*node *AVL(node *rootl, node *rootr){
+    rootl->ht=height(rootl);
+    rootr->ht=height(rootr);
+    if(abs(rootl->ht-rootr->ht)>1) {
+        printf("the tree is not an AVL tree \n The corresponding AVL tree is : ");
+
+    }
+
+}*/
 
 void prettyPrint(node *root,int recLevel) //! root, index, length, reccurence level
 {
@@ -193,19 +207,21 @@ int main()
     printf("root : ");
     node *root=createBinaryTree();
     while(isBST(root,INT_MIN,INT_MAX)==0){
+        if (isBST(root,INT_MIN,INT_MAX)==0)
+            printf("the tree is not a Binary Search Tree ! \n input again : \n");
+        prettyPrint(root,0);
+        printf("\n");
         printf("root : ");
         node *root=createBinaryTree();
         isBST(root,INT_MIN,INT_MAX);
-        prettyPrint(root,0);
-        if (isBST(root,INT_MIN,INT_MAX)==0)
-            printf("the tree is not a Binary Search Tree ! \n input again : \n");
     }
     prettyPrint(root,0);
+    //root=AVL(root);
     int x=1,i;
     while(x==1){
         printf("give the node you want to insert : ");
         scanf("%d",&i);
-        insertNode(root,i);
+        root=insertNode(root,i);
         prettyPrint(root,0);
         printf("do you want to insert another node? (1=yes, 0=no) \n");
         scanf("%d",&x);
