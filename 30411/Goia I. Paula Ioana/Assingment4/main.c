@@ -1,39 +1,31 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include<string.h>
-#include "AVL.h"
+#include "avlins.h"
 
 int main()
 {
-    NodeT *q=0;
-    float key,nod1=0;
-    FILE *f;
-    f=fopen("in.txt","r");
-    while(!feof(f))
+    FILE *fin;
+    fin=fopen("in.txt","r");
+    if (fin==NULL)
     {
-        fscanf(f,"%f",&key);
-        q=creare(q,key);
+        perror("Error\n");
+        exit(1);
     }
-    printf("\n In preorder:");
-    preorder(q);
-    printf("\n In postorder:");
-    postorder(q);
-    printf("\n In inorder:");
-    inorder(q);
-    printf("\n \n\n");
-    prettyPrint(q,0);
-    printf("\n\nThe node you want to be inserted:\n");
-    scanf("%f",&nod1);
-    printf("\n\n ");
-    inserare(q,nod1);
-    printf("\n In preorder:");
-    preorder(q);
-    printf("\n In postorder:");
-    postorder(q);
-    printf("\n In inorder:");
-    inorder(q);
-    printf("\n\n \n");
-    prettyPrint(q,0);
+    int nr;
+    NodeT *root=NULL;
 
+    while((fscanf(fin,"%d",&nr))==1)
+    {
+        root=insert(root,nr);
+    }
+    prettyPrint(root,0);
+    printf("\n\n\n");
+    int k,k1,k2;
+    printf("Insert the following 3 nodes:");
+    scanf("%d %d %d",&k,&k1,&k2);
+    insert(root,k);
+    insert(root,k1);
+    insert(root,k2);
+    prettyPrint(root,0);
     return 0;
 }

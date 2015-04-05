@@ -1,0 +1,13 @@
+# depslib dependency file v1.0
+1428263606 source:d:\probleme codeblocks\avlinsert\avlins.c
+	<stdio.h>
+	<stdlib.h>
+	"avlins.h"
+
+1428263605 d:\probleme codeblocks\avlinsert\avlins.h
+
+1428263938 source:d:\probleme codeblocks\avlinsert\main.c
+	<stdio.h>
+	<stdlib.h>
+	"avlins.h"
+
