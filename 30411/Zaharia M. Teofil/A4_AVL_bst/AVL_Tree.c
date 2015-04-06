@@ -146,7 +146,6 @@ NodeT* rotR(NodeT* root) {
 
     updateHeight(root);
     updateHeight(leftChild);
-
     return leftChild;
 }
 
@@ -238,9 +237,13 @@ NodeT* remFrom(NodeT* root, NodeT* toDel) {
             // left < root < right
             // need the smallest node, larger than left
             //  = the farthest on the left of root->right
+
+            // mistake, need to reconnect accordingly
+            // or just copy the value to the root
             NodeT* temp = minNode(root->right);
-            free(root);
-            root = temp;
+            root->content = temp->content;
+            free(temp);
+            temp = NULL;
         }
     }
 
