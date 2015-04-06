@@ -1,0 +1,41 @@
+# depslib dependency file v1.0
+1428276092 source:e:\utcluj\dsa\avl_bst\avl_tree.c
+	"AVL_Tree.h"
+
+1428273185 e:\utcluj\dsa\avl_bst\avl_tree.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"NodeT.h"
+
+1428271089 source:e:\utcluj\dsa\avl_bst\main.c
+	"AVL_tree.h"
+
+1428269949 e:\utcluj\dsa\avl_bst\nodet.h
+
+1428270990 source:e:\utcluj\dsa\avl_bst\nodet.c
+	<stdio.h>
+	<string.h>
+	<stdlib.h>
+	"NodeT.h"
+
+1428270990 source:e:\utcluj\dsa\a4_avl_bst\nodet.c
+	<stdio.h>
+	<string.h>
+	<stdlib.h>
+	"NodeT.h"
+
+1428269949 e:\utcluj\dsa\a4_avl_bst\nodet.h
+
+1428311633 source:e:\utcluj\dsa\a4_avl_bst\avl_tree.c
+	"AVL_Tree.h"
+
+1428273185 e:\utcluj\dsa\a4_avl_bst\avl_tree.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"NodeT.h"
+
+1428311492 source:e:\utcluj\dsa\a4_avl_bst\main.c
+	"AVL_tree.h"
+
