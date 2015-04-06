@@ -9,6 +9,7 @@ typedef struct nodeBT{
     struct nodeBT *left, *right;
 }node;
 
+static node *rootAVL=NULL;
 void prettyPrint(node *root,int recLevel);
 
 node *createNode(int x){
@@ -19,38 +20,6 @@ node *createNode(int x){
     return p;
 }
 
-node *createBinaryTree(){
-    char *content=(char*)malloc(sizeof(char)*3);
-    scanf("%s",content);
-    node *p=createNode(atoi(content));
-    if(strcmp(content,"*")==0)
-        return NULL;
-    else {
-        printf("left child of %d parent : ",atoi(content));
-        p->left=createBinaryTree();
-        printf("right child of %d parent : ",atoi(content));
-        p->right=createBinaryTree();
-    }
-    return p;
-}
-
-int height(node *T)
-{
-               int lh,rh;
-               if(T==NULL)
-                              return(0);
-               if(T->left==NULL)
-                              lh=0;
-               else
-                              lh=1+T->left->ht;
-               if(T->right==NULL)
-                              rh=0;
-               else
-                              rh=1+T->right->ht;
-               if(lh>rh)
-                              return(lh);
-               return(rh);
-}
 node * rotateright(node *x)
 {
                node *y;
@@ -111,6 +80,73 @@ int BF(node *T)
             rh=1+T->right->ht;
         }
     return(lh-rh);
+}
+
+
+node *insertNode(node *root, int cont){
+    if(root==NULL){
+        return createNode(cont);
+    }
+    else
+    if(cont>root->data) {
+        root->right=insertNode(root->right,cont);
+        if(BF(root)==-2){
+            if(cont>root->right->data)
+                root=RR(root);
+                else
+                    root=RL(root);
+        }
+    }
+    else
+    if(cont<root->data) {
+        root->left=insertNode(root->left,cont);
+        if(BF(root)==2){
+            if(cont < root->left->data)
+                root=LL(root);
+                else
+                  root=LR(root);
+        }
+    }
+    /*else{
+        if(cont==root->data) printf("the node %d already exists in the tree",cont);
+        return root;
+    }*/
+    root->ht=height(root);
+    return(root);
+}
+
+node *createBinaryTree(){
+    char *content=(char*)malloc(sizeof(char)*3);
+    scanf("%s",content);
+    node *p=createNode(atoi(content));
+    if(strcmp(content,"*")==0)
+        return NULL;
+    else {
+        rootAVL=insertNode(rootAVL,atoi(content));
+        printf("left child of %d parent : ",atoi(content));
+        p->left=createBinaryTree();
+        printf("right child of %d parent : ",atoi(content));
+        p->right=createBinaryTree();
+    }
+    return p;
+}
+
+int height(node *T)
+{
+               int lh,rh;
+               if(T==NULL)
+                              return(0);
+               if(T->left==NULL)
+                              lh=0;
+               else
+                              lh=1+T->left->ht;
+               if(T->right==NULL)
+                              rh=0;
+               else
+                              rh=1+T->right->ht;
+               if(lh>rh)
+                              return(lh);
+               return(rh);
 }
 
 node * Delete(node *T,int x){
@@ -183,55 +219,6 @@ int isAVL(node *root){//is balanced
     return 0;
 }
 
-node *createAVL(node *root){
-    if(isAVL(root->right)!=1)
-        {
-        root->right=createAVL(root->right);
-        if (BF(root)==-2)
-            {
-            if (BF(root->right)==-1){
-                root=RR(root);
-                return root;
-            }
-            else
-            if (BF(root->right)==1){
-                root=RL(root);
-                return root;
-            }
-            }
-        else
-        if(isAVL(root->right)==1 && isAVL(root)!=1)//the possibility that the subtree is AVL, yet the tree is not
-            {
-            root=rotateleft(root);//rotate left because the value of the root is the smallest
-            root->left=createAVL(root->left);//make sure the subtree is AVL
-            return root;
-            }
-        }
-    if(isAVL(root->left)!=1)
-        {
-            root->left=createAVL(root->left);
-            if (BF(root)==2)
-            {
-            if (BF(root->left)==1){
-                root=LL(root);
-                return root;
-            }
-            else{
-                root=LR(root);
-                return root;
-            }
-            }
-        }
-        else
-        if(isAVL(root->left)==1)//the possibility that the subtree is AVL, yet the tree is not
-        {
-            root=rotateright(root);//rotate the tree right because the value of the root is the greatest
-            root->right=createAVL(root->right);//make sure the subtree is AVL
-            return root;
-        }
-    return root;
-}
-
 void prettyPrint(node *root,int recLevel) //! root, index, length, reccurence level
 {
     if(root==NULL)
@@ -259,7 +246,8 @@ void prettyPrint(node *root,int recLevel) //! root, index, length, reccurence le
 
 int main(){
     printf("root : ");
-    node *root=createBinaryTree();
+    node *root=NULL;
+    root=createBinaryTree();
     while(isBST(root,INT_MIN,INT_MAX)==0){
         if (isBST(root,INT_MIN,INT_MAX)==0)
             printf("The tree is not a Binary Search Tree ! \n input again : \n");
@@ -267,7 +255,10 @@ int main(){
         node *root=createBinaryTree();
         prettyPrint(root,0);
     }
+    printf("the binary search tree is : \n");
     prettyPrint(root,0);
+    printf("the corresponding AVL tree is : ");
+    prettyPrint(rootAVL,0);
     printf("Give the node you want to delete : \n");
     int y=1;
     while(y==1){
@@ -278,16 +269,6 @@ int main(){
             return 0;
         }
         root=Delete(root,x);
-        prettyPrint(root,0);
-        if (isAVL(root)!=1){
-                printf("The tree is not an AVL tree\n");
-                printf("Do you want to create the corresponding AVL tree? ? (yes-1, no-0) : ");
-                scanf("%d",&x);
-                if(x==1) {
-                    printf("The corresponding AVL tree is : \n" );
-                    root=createAVL(root);
-                }
-            }
         prettyPrint(root,0);
         printf("Do you want to delete another node? (1=yes, 0=no) \n");
         scanf("%d", &y);

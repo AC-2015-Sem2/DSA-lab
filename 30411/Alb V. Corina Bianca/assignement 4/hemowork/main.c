@@ -202,6 +202,26 @@ void prettyPrint(node *root,int recLevel) //! root, index, length, reccurence le
 
     prettyPrint(root->left,recLevel); //! keep going left in the tree
 }
+
+/*node *delete(node *root){
+    if (root->left!=NULL) {
+        while(root->left != NULL){
+            root=root->left;
+            free(root);
+        }}
+    else if (root->right !=NULL)
+    {
+        while(root->right !=NULL){
+            root=root->right;
+            free(root);
+        }
+    }
+    root=NULL;
+    root->left=NULL;
+    root->right=NULL;
+    return root;
+}*/
+
 int main()
 {
     printf("root : ");
@@ -211,10 +231,12 @@ int main()
             printf("the tree is not a Binary Search Tree ! \n input again : \n");
         prettyPrint(root,0);
         printf("\n");
+        //root=delete(root);
         printf("root : ");
         node *root=createBinaryTree();
         isBST(root,INT_MIN,INT_MAX);
     }
+
     prettyPrint(root,0);
     //root=AVL(root);
     int x=1,i;
