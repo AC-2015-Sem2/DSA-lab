@@ -32,12 +32,15 @@ NodeT *  createBinTree(FILE* in)  // Read from input.txt - Ordered as in the tex
 }
 NodeT *  createAVL_BST(FILE* in)  // Read from input.txt - NO '*'-s required - ORDER does NOT matter
 {
-    NodeT *p = ( NodeT *) malloc( sizeof( NodeT ) );
+    NodeT **p = ( NodeT **) malloc( sizeof( NodeT** ) );
+    *p = ( NodeT *) malloc( sizeof( NodeT* ) );
+    (*p)->left=(*p)->right=NULL; // initializing node
+    (*p)->value=INT_MIN;
     int content;
 
-    while (fscanf(in, "%d " ,&content )!=0)
+    while (fscanf(in, "%d " ,&content )==1)
         insert_balanced(p,content);
-    return p;
+    return *p;
 }
 
 void prettyPrint(NodeT *root,int recLevel) //! root, index, length, reccurence level
@@ -67,10 +70,13 @@ void prettyPrint(NodeT *root,int recLevel) //! root, index, length, reccurence l
 
 NodeT* insert (NodeT* root, int value)
 {
+
     if (root == NULL)
     {
         return createNode(value);
     }
+    else if ((root->value)==INT_MIN)
+        root->value=value; //
     else if (value < root->value )
         root->left=insert(root->left,value);
     else if (value > root->value )
@@ -80,22 +86,27 @@ NodeT* insert (NodeT* root, int value)
     return root;
 }
 
-NodeT* insert_balanced (NodeT* root, int value)
+NodeT* insert_balanced (NodeT** root, int value)
 {
-    insert (root, value);  // simple inserting
+    insert ((*root), value);  // simple inserting
 
 
     printf("\nThe new tree (possibly unbalanced, but BST):\n\n");
-    prettyPrint(root,0);  // Print the new tree
+    prettyPrint((*root),0);  // Print the new tree
 
-    NodeT *n=search(root, value);
+    if (((*root)->right==NULL)&&((*root)->left==NULL))
+        return (*root);
+    NodeT *n=search((*root), value);
     // n is the inserted node
-    NodeT *p=parent(root,n->value);
+    NodeT *p=parent((*root),n->value);
     // p is the parent of n (n's height might be incremented - its parents might also become unbalanced)
 
     // I go one level higher, because the newly introduced node is surely balanced
-    n=parent(root,n->value);
-    p=parent(root,p->value);
+
+    // unless tree is small -> reached top:
+
+    if (n!=NULL) n=parent((*root),n->value);
+    if (p!=NULL) p=parent((*root),p->value);
 
     while (p!=NULL)
     {
@@ -114,14 +125,24 @@ NodeT* insert_balanced (NodeT* root, int value)
 
         // Going up with one level:
         n=p;
-        p=parent(root,n->value);
+        p=parent((*root),n->value);
+        //printf("\nTree after rotation:\n\n");
+        //prettyPrint((*root),0);
     }
-    return root;
+    return (*root);
 }
 
-void rotate_left(NodeT **p, NodeT *root)
+void rotate_left(NodeT **p, NodeT **root)
 {
-    NodeT *PP=parent(root, (*p)->value);  // Parent of p // We do not know if p is on the left or right child
+    NodeT *PP=parent((*root), (*p)->value);  // Parent of p // We do not know if p is on the left or right child
+    if (PP==NULL)
+    {
+        PP=(*p)->right;
+        (*p)->right=PP->left;
+        PP->left=(*p);
+        (*root)=PP;
+        return;
+    }
     if ((PP->left)==(*p))  // LR case
     {
         PP->left=(*p)->right;
@@ -140,9 +161,17 @@ void rotate_left(NodeT **p, NodeT *root)
     }
 }
 
-void rotate_right(NodeT **p, NodeT *root)
+void rotate_right(NodeT **p, NodeT **root)
 {
-    NodeT *PP=parent(root, (*p)->value);  // Parent of p // We do not know if p is on the left or right child
+    NodeT *PP=parent((*root), (*p)->value);  // Parent of p // We do not know if p is on the left or right child
+    if (PP==NULL) // in this case we need to change the root!
+    {
+        PP=(*p)->left;
+        (*p)->left=PP->right;
+        PP->right=(*p);
+        (*root)=PP;
+        return;
+    }
     if ((PP->left)==(*p))  // LL case
     {
         PP->left=(*p)->left;

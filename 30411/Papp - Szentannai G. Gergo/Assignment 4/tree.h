@@ -20,7 +20,7 @@ NodeT *  createAVL_BST(FILE*);
 void prettyPrint(NodeT*,int);
 
 NodeT* insert (NodeT* root, int value);
-NodeT* insert_balanced (NodeT* root, int value);
+NodeT* insert_balanced (NodeT** root, int value);
 
 NodeT* search (NodeT* root, int value);
 
@@ -40,8 +40,8 @@ int balanceFactor (NodeT* p);
 
 NodeT* parent(NodeT* root, int value);
 
-void rotate_left(NodeT **p, NodeT *root);
+void rotate_left(NodeT **p, NodeT **root);
 
-void rotate_right(NodeT **p, NodeT *root);
+void rotate_right(NodeT **p, NodeT **root);
 
 #endif // TREE_H_INCLUDED
