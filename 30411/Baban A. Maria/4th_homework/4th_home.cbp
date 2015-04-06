@@ -31,9 +31,23 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
+		<Unit filename="create.h" />
+		<Unit filename="e.h" />
+		<Unit filename="echilibrum.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="echilibrum.h" />
+		<Unit filename="insert.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="insert.h" />
 		<Unit filename="main.c">
 			<Option compilerVar="CC" />
 		</Unit>
+		<Unit filename="print.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="print.h" />
 		<Extensions>
 			<code_completion />
 			<envvars />
