@@ -26,15 +26,15 @@ Tree* insertLeaf(Tree* t, int value) {
 
     int delta = getDelta(t);
 
-    if (delta > 1 && t->left->val > value)
+    if (delta == 2 && t->left != NULL)
         return rotRight(t);
-    if (delta < -1 && t->right->val < value)
+    if (delta == -2 && t->right != NULL)
         return rotLeft(t);
-    if (delta > 1 && t->left->val < value) {
+    if (delta == 2 && t->left == NULL) {
         t->left = rotLeft(t->left);
         return rotRight(t);
     }
-    if (delta < -1 && t->right->val > value) {
+    if (delta == -2 && t->right == NULL) {
         t->right = rotRight(t->right);
         return rotLeft(t);
     }
@@ -132,15 +132,15 @@ Tree* deleteNode(Tree* t, int value) {
     t->height = maxEl(uHeight(t->left), uHeight(t->right)) + 1;
     int delta = getDelta(t);
 
-    if (delta > 1 && t->left->val > value)
+    if (delta == 2 && t->left != NULL)
         return rotRight(t);
-    if (delta < -1 && t->right->val < value)
+    if (delta == -2 && t->right != NULL)
         return rotLeft(t);
-    if (delta > 1 && t->left->val < value) {
+    if (delta == 2 && t->left == NULL) {
         t->left = rotLeft(t->left);
         return rotRight(t);
     }
-    if (delta < -1 && t->right->val > value) {
+    if (delta == -2 && t->right == NULL) {
         t->right = rotRight(t->right);
         return rotLeft(t);
     }

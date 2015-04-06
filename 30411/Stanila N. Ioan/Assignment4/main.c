@@ -24,9 +24,17 @@ Tree* buildTree() {
 int main()
 {
     Tree* newT = buildTree();
-    prettyPrint(newT, 0);
+    //prettyPrint(newT, 0);
     printf("\n\n\n");
-    deleteNode(newT, 9);
-    prettyPrint(newT, 0);
+    int i=0;
+    for(i=12;i<60;i++)
+        newT = insertLeaf(newT, i);
+    newT = deleteNode(newT, 27);
+
+    for(i=0; i<12;i++) {
+        newT = deleteNode(newT, i);
+        prettyPrint(newT, 0);
+        printf("\n\n\n");
+    }
     return 0;
 }
