@@ -18,7 +18,7 @@ int main()
     printf("\nData to insert: ");
     scanf("%d",&data);
     insert_balanced(root, data);
-    printf("\nTree after adding new element:\n");
+    printf("\nTree after balancing:\n");
     prettyPrint(root,0);  // Print the new tree
 /*
     printf("\nData to delete: ");

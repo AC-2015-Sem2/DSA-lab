@@ -82,7 +82,13 @@ NodeT* insert (NodeT* root, int value)
 
 NodeT* insert_balanced (NodeT* root, int value)
 {
-    NodeT *n=insert (root, value);  // simple inserting
+    insert (root, value);  // simple inserting
+
+
+    printf("\nThe new tree (possibly unbalanced, but BST):\n\n");
+    prettyPrint(root,0);  // Print the new tree
+
+    NodeT *n=search(root, value);
     // n is the inserted node
     NodeT *p=parent(root,n->value);
     // p is the parent of n (n's height might be incremented - its parents might also become unbalanced)
@@ -163,15 +169,34 @@ int balanceFactor (NodeT* p)
         return height(p->left) - height(p->right);
 }
 
-NodeT* parent(NodeT* root, int value)
+NodeT* parent(NodeT* root, int value)  // I discussed many cases, but otherwise it gave me errors/warnings
 {
-    if (root==NULL) return NULL;
+    if (root==NULL)
+        return NULL;
+    else if ((root->left==NULL)&&(root->right!=NULL))
+    {
+        if (root->right->value==value)
+            return(root);
+        else
+            return parent(root->right,value);
+    }
+    else if ((root->left!=NULL)&&(root->right==NULL))
+    {
+        if (root->left->value==value)
+            return (root);
+        else
+            return parent(root->left,value);
+    }
+    else if ((root->left==NULL)&&(root->right==NULL))
+    {
+        return NULL;
+    }
     else if ((root->left->value == value)||(root->right->value == value))
         return(root);
     else if (root->value < value)
-        return search (root->right, value);
+        return parent (root->right, value);
     else
-        return search(root->left, value);
+        return parent(root->left, value);
 }
 
 int height (NodeT* p)
