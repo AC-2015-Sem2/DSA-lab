@@ -20,9 +20,10 @@ NodeT *insertNode(NodeT *p,int x)
         {
             printf("The node already exists!\n");
         }
-        p=balancing(p);
-        return p;
     }
+    calculEchilibru(p);
+    p=balancing(p);
+    return p;
 }
 
 NodeT *simpleRotationRight(NodeT *p)
@@ -30,6 +31,7 @@ NodeT *simpleRotationRight(NodeT *p)
     NodeT *q;
     q=p->left;
     p->left=q->right;
+    q->right=p;
     calculEchilibru(p);
     calculEchilibru(q);
     p=q;
@@ -79,7 +81,6 @@ NodeT *createNode(int x)
 }
 NodeT *balancing(NodeT *p)
 {
-    preorderEchilibru(p);
     NodeT *w;
     if(p->ech==-2)
     {
