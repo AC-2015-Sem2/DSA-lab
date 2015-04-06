@@ -82,7 +82,7 @@ NodeT *  createBinTree(FILE* in)  // Read from input.txt
     else
     {
         char * cont = content;
-        p = ( NodeT *) malloc( sizeof( NodeT ) ) ;
+        p = ( NodeT *) malloc( sizeof( NodeT *) ) ;
         p->str = cont;
         p->left = createBinTree(in) ;
         p->right = createBinTree(in) ;
