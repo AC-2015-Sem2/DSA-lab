@@ -1,0 +1,21 @@
+# depslib dependency file v1.0
+1428415922 source:c:\users\alexa\desktop\assgn4\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"functions.h"
+
+1428415708 source:c:\users\alexa\desktop\assgn4\helperfunctions.c
+	"functions.h"
+
+1428415840 c:\users\alexa\desktop\assgn4\functions.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1428415708 source:c:\users\alexa\desktop\assgn4\rotationfunctions.c
+	"functions.h"
+
+1428415840 source:c:\users\alexa\desktop\assgn4\treesfunctions.c
+	"functions.h"
+
