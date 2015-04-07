@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1428438314 source:c:\users\tamas\desktop\codeblocks\myrep\dsa-lab\30414\kari z. tamas zsolt\assign3\main.cpp
+	<stdlib.h>
+	<stdio.h>
+	<string.h>
+
