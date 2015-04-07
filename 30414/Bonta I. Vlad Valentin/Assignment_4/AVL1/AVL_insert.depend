@@ -1,0 +1,8 @@
+# depslib dependency file v1.0
+1428414016 source:/home/vladms/Data_Structures/myGitRep/30414/Bonta I. Vlad Valentin/Assignment_4/AVL1/AVL_insert/main.c
+	<stdio.h>
+	<math.h>
+	<stdlib.h>
+	<string.h>
+	<limits.h>
+
