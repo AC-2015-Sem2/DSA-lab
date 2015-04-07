@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1428342204 source:c:\multimedia\utcn\an 1- sem. ii\dsa\acasa4\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
