@@ -18,6 +18,7 @@ NodeT* createNode(int data)
     return root;
 }
 
+
 int length(NodeT *root)
 {
     if (root==NULL)
