@@ -140,17 +140,17 @@ NodeT *RL(NodeT *T)
 
 int Balance(NodeT *root)
 {
-    int lefth,righth;
+    //int lefth,righth;
     if(root==NULL)
         return 0;
-    if(root->left==NULL)
-        lefth=0;
-    else
-        lefth=1+root->left->height;
-    if(root->right==NULL)
-        righth=0;
-    else
-        return(heigh(root->left)-heigh(root->right));
+//    if(root->left==NULL)
+//        lefth=0;
+//    else
+//        lefth=1+root->left->height;
+//    if(root->right==NULL)
+//        righth=0;
+//    else
+    return(heigh(root->left)-heigh(root->right));
 }
 
 NodeT* insert(NodeT *root,int data)
@@ -180,59 +180,77 @@ NodeT* insert(NodeT *root,int data)
 
 
 }
-
-NodeT * Delete(NodeT *T,int x)
+//the left most node
+NodeT *leftmost(NodeT *root)
 {
-    NodeT *p;
+    NodeT *a=root;
 
-    if(T==NULL)
-    {
-        return NULL;
-    }
+    while (a->left!=NULL)
+        a=a->left;
+
+    return a;
+}
+
+NodeT* deletion(NodeT* root, int data)
+{
+    if (root==NULL)
+        return root;
+    if (data<root->data)
+        root->left=deletion(root->left,data);
+    else if( data>root->data )
+        root->right=deletion(root->right,data);
     else
+    {
+        if((root->left==NULL)||(root->right == NULL))
+        {
+            NodeT *a;
+            if(root->left!=NULL)
+                a=root->left;
+            else
+                a=root->right;
 
-        if(x > T->data)                // insert in right subtree
-        {
-            T->right=Delete(T->right,x);
-            if(Balance(T)==2)
-                if(Balance(T->left)>=0)
-                    T=LL(T);
-                else
-                    T=LR(T);
-        }
-        else if(x<T->data)
-        {
-            T->left=Delete(T->left,x);
-            if(Balance(T)==-2)//Rebalance during windup
-                if(Balance(T->right)<=0)
-                    T=RR(T);
-                else
-                    T=RL(T);
+            if(a==NULL)
+            {
+                a=root;
+                root=NULL;
+            }
+            else
+                *root = *a;
+            free(a);
         }
         else
         {
-            //data to be deleted is found
-            if(T->right !=NULL)
-            {
-                //delete its inorder succesor
-                p=T->right;
-                while(p->left != NULL)
-                    p=p->left;
-
-                T->data=p->data;
-                T->right=Delete(T->right,p->data);
-                if(Balance(T)==2)//Rebalance during windup
-                    if(Balance(T->left)>=0)
-                        T=LL(T);
-                    else
-                        T=LR(T);
-            }
-            else
-                return(T->left);
-
+            NodeT *a=leftmost(root->right);
+            root->data=a->data;
+            root->right=deletion(root->right,a->data);
         }
-    T->height=heigh(T);
-    return(T);
+    }
+
+    if (root==NULL)
+        return root;
+    root->height=maximum(heigh(root->left),heigh(root->right))+1;
+    int balance=Balance(root);
+
+    // Left Left case
+    if (balance>1 && Balance(root->left)>=0)
+        return rotateright(root);
+    // Right Right
+    if (balance<-1 && Balance(root->right) <= 0)
+        return rotateleft(root);
+    // Left Right
+    if (balance>1 && Balance(root->left)<0)
+    {
+        root->left=rotateleft(root->left);
+        return rotateright(root);
+    }
+    // Right Left
+    if (balance<-1 && Balance(root->right) > 0)
+    {
+        root->right = rotateright(root->right);
+        return rotateleft(root);
+    }
+
+    return root;
 }
 
 int isBSTUtil(NodeT *root,int min,int max)
