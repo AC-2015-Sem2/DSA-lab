@@ -5,20 +5,17 @@
 
 int main()
 {
-    NodeT *root = createBinTree();
-    postOrder(root);
-    printf("\n");
-    root = insert(root, 17);
-    prettyPrint(root,0);
+    NodeT *root = NULL;
+    root = createBinTree();
     //testing out
-    root = insert(root, 17);
-    root = insert(root, 18);
-    root = insert(root, 19);
-    root = insert(root, 20);
-    root = insert(root, 21);
-    root = insert(root, 22);
-    root = insert(root, 23);
-    root = insert(root, 24);
+    int i;
+    for(i=0;i<150;i++)
+        root = insert(root, i);
+
+
+    prettyPrint(root,0);
+    return 0;
+
 
     prettyPrint(root,0);
     return 0;
