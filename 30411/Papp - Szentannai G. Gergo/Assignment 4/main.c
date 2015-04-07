@@ -3,10 +3,19 @@
 
 #include "tree.h"
 
+
 int main()
 {
     FILE* in;
     in=fopen("input.txt","r");
+    if (in==NULL)
+    {
+        printf("Cannot open file!");
+        getch();
+        return -1;
+    }
+
+
     NodeT *root=(NodeT*)malloc(sizeof(NodeT*));
 
     //root = createBinTree(in);  // Construct binary tree from a .txt file
@@ -30,5 +39,6 @@ int main()
     printf("\nTree after deleting element:\n");
     prettyPrint(root,0);  // Print the new tree
 */
+    getch();
     return 0;
 }

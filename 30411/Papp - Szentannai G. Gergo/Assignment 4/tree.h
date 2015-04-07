@@ -5,6 +5,7 @@
 #include <limits.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include <conio.h>
 
 typedef struct node {
     int value;

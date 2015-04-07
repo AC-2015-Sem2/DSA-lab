@@ -32,40 +32,22 @@ NodeT *  createBinTree(FILE* in)  // Read from input.txt - Ordered as in the tex
 }
 NodeT *  createAVL_BST(FILE* in)  // Read from input.txt - NO '*'-s required - ORDER does NOT matter
 {
+
     NodeT **p = ( NodeT **) malloc( sizeof( NodeT** ) );
+
     *p = ( NodeT *) malloc( sizeof( NodeT* ) );
+
     (*p)->left=(*p)->right=NULL; // initializing node
+
     (*p)->value=INT_MIN;
     int content;
 
     while (fscanf(in, "%d " ,&content )==1)
+    {
+
         insert_balanced(p,content);
+    }
     return *p;
-}
-
-void prettyPrint(NodeT *root,int recLevel) //! root, index, length, reccurence level
-{
-    if(root==NULL)
-    {
-        recLevel--; //! reached leaf, must decrement recurence level
-        return;
-    }
-    recLevel++; //! otherwise increment it
-    prettyPrint(root->right,recLevel); //! keep going right in the tree
-    int j=0;
-
-    //! print spaces for the appropriate recurence level
-    for(j=0; j<recLevel-1; j++)
-    {
-        printf("     ");
-    }
-    //! then print value
-    printf("%d",root->value);
-
-    //! print  a new line
-    printf("\n");
-
-    prettyPrint(root->left,recLevel); //! keep going left in the tree
 }
 
 NodeT* insert (NodeT* root, int value)
@@ -73,25 +55,38 @@ NodeT* insert (NodeT* root, int value)
 
     if (root == NULL)
     {
+
         return createNode(value);
     }
+
     else if ((root->value)==INT_MIN)
-        root->value=value; //
+    {
+
+        root->value=value;
+    }
+         //
     else if (value < root->value )
+    {
+
         root->left=insert(root->left,value);
+    }
     else if (value > root->value )
     {
+
         root->right=insert(root->right,value);
     }
+
     return root;
 }
 
 NodeT* insert_balanced (NodeT** root, int value)
 {
+
     insert ((*root), value);  // simple inserting
 
 
     printf("\nThe new tree (possibly unbalanced, but BST):\n\n");
+
     prettyPrint((*root),0);  // Print the new tree
 
     if (((*root)->right==NULL)&&((*root)->left==NULL))
@@ -126,10 +121,39 @@ NodeT* insert_balanced (NodeT** root, int value)
         // Going up with one level:
         n=p;
         p=parent((*root),n->value);
-        //printf("\nTree after rotation:\n\n");
-        //prettyPrint((*root),0);
+ //       printf("\nTree after rotation:\n\n");
+//        prettyPrint((*root),0);
     }
     return (*root);
+}
+
+void prettyPrint(NodeT *root,int recLevel) //! root, index, length, reccurence level
+{
+    if(root==NULL)
+    {
+        recLevel--; //! reached leaf, must decrement recurence level
+
+        return;
+    }
+
+    recLevel++; //! otherwise increment it
+
+    prettyPrint(root->right,recLevel); //! keep going right in the tree
+    int j=0;
+
+    //! print spaces for the appropriate recurence level
+    for(j=0; j<recLevel-1; j++)
+    {
+        printf("     ");
+    }
+    //! then print value
+
+    printf("%d",root->value);
+
+    //! print  a new line
+    printf("\n");
+
+    prettyPrint(root->left,recLevel); //! keep going left in the tree
 }
 
 void rotate_left(NodeT **p, NodeT **root)
@@ -243,7 +267,7 @@ int max(int a, int b)
     else return a;
 }
 
-NodeT* search (NodeT* root, int value)
+NodeT* search(NodeT *root, int value)
 {
     if (root==NULL) return NULL;
     else if (root->value == value)
