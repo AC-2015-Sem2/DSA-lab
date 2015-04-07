@@ -1,5 +1,10 @@
 #include"header.h"
 
+int maximum(int a,int b)
+{
+    if(a>b) return a;
+    else return b;
+}
 int heigh(NodeT *T)
 {
     int Lheight,Rheight;
@@ -49,6 +54,7 @@ NodeT* createNode(int d)
     p->left=NULL;
     p->right=NULL;
     p->data=d;
+    p->height=1;
     return p;
 }
 
@@ -144,39 +150,36 @@ int Balance(NodeT *root)
     if(root->right==NULL)
         righth=0;
     else
-        righth=1+root->right->height;
-    return(lefth-righth);
+        return(heigh(root->left)-heigh(root->right));
 }
 
-NodeT* insert(NodeT* T, int value)  //! inserts a node
+NodeT* insert(NodeT *root,int data)
 {
-    if(T==NULL) return createNode(value);
-    else if(value > T->data)
-    {
-        T->right=insert(T->right,value);
-        if ( Balance( T ) == -2 )
-        {
-            if ( value > T->right->data )
-                T=RR( T );
-            else
-                T=RL( T );
-        }
-    }
-    else if(value < T->data)
-    {
-        T->left=insert(T->left,value);
-        if( Balance( T ) == 2 )
-        {
-            if(value < T->left->data)
-                T=LL(T);
-            else
-                T=LR(T);
-        }
-    }
-    T->height=heigh(T);
-    return T;
-}
+    if(root==NULL) return (createNode(data));
+    if(data< root->data) root->left=insert(root->left,data);
+    else root->right=insert(root->right,data);
+    root->height=maximum(heigh(root->left),heigh(root->right))+1;
+    int balan=Balance(root);
 
+    if (balan>1 && data<root->left->data) return rotateright(root);
+
+    if (balan<-1 && data>root->right->data) return rotateleft(root);
+
+    if (balan>1 && data>root->left->data)
+    {
+        root->left=rotateleft(root->left);
+        return(rotateright(root));
+    }
+
+    if (balan<-1 && data<root->right->data)
+    {
+        root->right=rotateright(root->right);
+        return(rotateleft(root));
+    }
+    return root;
+
+
+}
 
 NodeT * Delete(NodeT *T,int x)
 {
