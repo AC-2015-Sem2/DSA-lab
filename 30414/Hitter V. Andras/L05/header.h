@@ -13,6 +13,7 @@ typedef struct nodet
     struct nodet *right;
 } NodeT;
 
+
 int maxDepth(NodeT* root);
 void preorder(NodeT *root);
 NodeT* createNode(int d);
