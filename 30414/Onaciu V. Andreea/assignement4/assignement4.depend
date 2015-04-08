@@ -1,0 +1,13 @@
+# depslib dependency file v1.0
+1428151260 source:c:\users\andreea\desktop\dsa-andreea\30414\onaciu v. andreea\assignement4\functionsfortreeinsert.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1428151260 source:c:\users\andreea\desktop\dsa-andreea\30414\onaciu v. andreea\assignement4\main.c
+	<stdio.h>
+	<stdlib.h>
+	"funstionsTree.h"
+
+1428151260 c:\users\andreea\desktop\dsa-andreea\30414\onaciu v. andreea\assignement4\funstionstree.h
+

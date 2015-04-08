@@ -1,0 +1,25 @@
+# depslib dependency file v1.0
+1428341574 source:c:\users\andreea\desktop\dsa-andreea\30414\onaciu v. andreea\extra-assignement\functionsfordelete.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1428341586 source:c:\users\andreea\desktop\dsa-andreea\30414\onaciu v. andreea\extra-assignement\main.c
+	<stdio.h>
+	<stdlib.h>
+	"functionsForDelete.h"
+
+1428341574 c:\users\andreea\desktop\dsa-andreea\30414\onaciu v. andreea\extra-assignement\functionsfordelete.h
+
+1428341694 source:c:\users\andreea\desktop\dsa-andreea\30414\onaciu v. andreea\extra-assignement4\functionsfordelete.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1428341586 source:c:\users\andreea\desktop\dsa-andreea\30414\onaciu v. andreea\extra-assignement4\main.c
+	<stdio.h>
+	<stdlib.h>
+	"functionsForDelete.h"
+
+1428341574 c:\users\andreea\desktop\dsa-andreea\30414\onaciu v. andreea\extra-assignement4\functionsfordelete.h
+
