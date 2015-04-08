@@ -18,11 +18,22 @@ NodeT* create_node(int data)
     p->left=p->right=NULL;
     return p;
 }
-int height (NodeT *root)
+int height(NodeT *root)
 {
+    int lh,rh;
     if(root==NULL)
         return 0;
-    return root->height;
+    if(root->left==NULL)
+        lh=0;
+    else
+        lh=1+root->left->height;
+    if(root->right==NULL)
+        rh=0;
+    else
+        rh=1+root->right->height;
+    if(lh>rh)
+        return lh;
+    return rh;
 }
 int Balance_factor(NodeT *root)
 {
@@ -85,38 +96,7 @@ NodeT* left_rotate(NodeT *root)
     p->height=max(height(p->left),height(p->right))+1;
     return p;
 }
-/*NodeT* Left_rotation(NodeT *root)
-{
-    NodeT *p=root;
-    root=root->right;
-    root->left=p;
-    p->right=NULL;
 
-    return root;
-}
-NodeT* Right_Rotation(NodeT *root)
-{
-    NodeT *p=root;
-    root=root->left;
-    root->right=p;
-    p->left=NULL;
-    return root;
-}
-NodeT* double_left(NodeT *root)
-{
-    NodeT *p=Right_Rotation(root->right);
-    root->right=p;
-    root=Left_rotation(root);
-    return root;
-}
-NodeT* double_right(NodeT *root)
-{
-    NodeT *p=Left_rotation(root->left);
-    root->left=p;
-    root=Right_Rotation(root);
-    return root;
-}
-*/
 void prettyPrint(NodeT *root,int recLevel)
 {
     if(root==NULL)
@@ -166,11 +146,77 @@ NodeT* insert(NodeT *root,int data)
     return root;
 }
 
+NodeT* deletion(NodeT *root, int data)
+{
+    NodeT *p;
+    if(root==NULL)
+        return NULL;
+    else
+        if(data>root->data)
+        {
+            root->right=deletion(root->right,data);
+            if(Balance_factor(root)==2)
+            {
+                if(Balance_factor(root->left)>=0)
+                {
+                    right_rotate(root);
+                }
+                else
+                {
+                    root->left=left_rotate(root->left);
+                    root=right_rotate(root);
+                    return root;
+                }
+            }
+
+
+        }
+        else
+            if(data<root->data)
+            {
+                root->left=deletion(root->left,data);
+                if(Balance_factor(root)==-2)
+                {
+                    if(Balance_factor(root->right)<=0)
+                        root=left_rotate(root);
+                    else
+                    {
+                        root->right=right_rotate(root->right);
+                        root=left_rotate(root);
+                        return root;
+                    }
+                }
+                else
+                    if(root->right!=NULL)
+                    {
+
+                        p=root->right;
+                        while(root->left!=NULL)
+                            p=p->left;
+                        root->data=p->data;
+                        root->right=deletion(root->right,p->data);
+                        if(Balance_factor(root)==2)
+                        {
+                            if(Balance_factor(root->left)>=0)
+                                root=right_rotate(root);
+                            else
+                            {
+                                root->left=left_rotate(root->left);
+                                root=right_rotate(root);
+                                return root;
+                            }
+                        }
+                    }
+            }
+            root->height=height(root);
+            return root;
+}
 int main()
 {   FILE *in=fopen("input.dat","r");
 
     NodeT *root=create_tree(in);
-
+    insert(root,16);
+    //root=deletion(root,2);
     prettyPrint(root,0);
     return 0;
 }
