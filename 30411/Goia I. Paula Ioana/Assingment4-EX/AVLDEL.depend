@@ -1,0 +1,13 @@
+# depslib dependency file v1.0
+1428263861 source:d:\probleme codeblocks\avldel\avldel.c
+	<stdio.h>
+	<stdlib.h>
+	"avldel.h"
+
+1428263861 d:\probleme codeblocks\avldel\avldel.h
+
+1428263861 source:d:\probleme codeblocks\avldel\main.c
+	<stdio.h>
+	<stdlib.h>
+	"avldel.h"
+
