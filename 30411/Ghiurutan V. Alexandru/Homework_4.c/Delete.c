@@ -62,3 +62,4 @@ NodeT *deleteNode(NodeT *root,int x)
     }
     return root;
 }
+

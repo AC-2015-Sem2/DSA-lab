@@ -14,7 +14,6 @@ int main()
     root=insertNode(root,12);
     root=deleteNode(root,12);
     prettyPrint(root,0);
-
     return 0;
 }
 
