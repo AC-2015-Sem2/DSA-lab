@@ -3,7 +3,7 @@
 NodeT* createNode(int data){
     NodeT* newNode = (NodeT*) malloc(sizeof(NodeT));
     newNode->data = data;
-    newNode->weight = 0;
+    newNode->weight = 1;
     newNode->left = NULL;
     newNode->right = NULL;
     return newNode;
@@ -49,6 +49,7 @@ NodeT* rotateLeft(struct Node* root){
     return root;
 }
 NodeT* balanceTree(struct Node* root){
+    CalculateWeight(root);
     if(root == NULL) return 0;
     if(root != NULL){
             if(root->weight > 1){
@@ -80,18 +81,17 @@ NodeT* balanceTree(struct Node* root){
 NodeT* insertNodeUtil(struct Node* root, int data){
     if(root == NULL){
         root = createNode(data);
-        return root;
     }
     else{
         if(data < root->data) root->left = insertNodeUtil(root->left, data);
         else root->right = insertNodeUtil(root->right, data);
     }
-    return root;
+    return balanceTree(root);
 }
 NodeT* insertNode(struct Node* root, int data){
     root = insertNodeUtil(root, data);
     CalculateWeight(root);
-    root = balanceTree(root);
+//    root = balanceTree(root);
     return root;
 }
 NodeT* minValueNode(struct Node* root){
@@ -99,17 +99,17 @@ NodeT* minValueNode(struct Node* root){
     while(currentNode->left != NULL) currentNode = currentNode->left;
     return currentNode;
 }
-NodeT* deleteNode(struct Node* root, int data){
-    if (root == NULL) return root;
-    // Search for the key
+NodeT* deleteNode(struct Node *root, int data){
+    if(root == NULL) return root;
+//     Search for the key
     if(data < root->data) root->left = deleteNode(root->left, data);
     else if(data > root->data) root->right = deleteNode(root->right, data);
-    // Once found, delete it
+//     Once found, delete it
     else{
         // One child or no child
         if ((root->left == NULL) || (root->right == NULL)){
             NodeT* tempNode;
-            if(root->left == NULL) tempNode = root->right;
+            if(root->left == NULL && root->right != NULL) tempNode = root->right;
             else tempNode = root->left;
             if(tempNode == NULL){
                 tempNode = root;
@@ -125,5 +125,5 @@ NodeT* deleteNode(struct Node* root, int data){
             root->right = deleteNode(root->right, tempNode->data);
         }
     }
-    return root;
+    return balanceTree(root);
 }

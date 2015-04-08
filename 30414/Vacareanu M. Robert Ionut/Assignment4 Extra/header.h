@@ -20,5 +20,4 @@ NodeT* insertNode(struct Node* , int );
 NodeT* minValueNode(struct Node* );
 NodeT* deleteNode(struct Node* , int );
 
-
 #endif // HEADER_H_INCLUDED
