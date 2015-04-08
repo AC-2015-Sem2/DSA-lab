@@ -1,0 +1,19 @@
+# depslib dependency file v1.0
+1428150765 source:c:\users\cori\desktop\homework-extra\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<limits.h>
+
+1428175321 source:c:\users\cori\desktop\assignement 4\homework-extra\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<limits.h>
+
+1428326828 source:h:\sem 2\dsa\problems\assignement 4\homework-extra\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<limits.h>
+
