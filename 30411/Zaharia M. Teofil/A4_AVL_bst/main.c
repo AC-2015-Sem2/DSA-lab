@@ -13,10 +13,10 @@ int main()
     // NodeT * root = createBinTree();
     //NodeT * root = createStaticBinTree();
 
-    int a[] = {1, 2, 3, 7, 12, 14}, i;
+    int a[] = {1, 2, 3, 7, 12, 14, 90}, i;
     NodeT *newNode, *root = NULL;
 
-    for (i = 0; i < 6; i++) {
+    for (i = 0; i < 7; i++) {
         printf("insert: %d\n", *(a+i));
         newNode = createNode((void*)(*(a+i)));
         root = insertIn(root, newNode);
