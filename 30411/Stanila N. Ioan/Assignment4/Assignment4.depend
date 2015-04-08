@@ -1,11 +1,11 @@
 # depslib dependency file v1.0
-1428270071 source:c:\users\johns\documents\programming\assignment4\main.c
+1428325656 source:c:\users\johns\documents\programming\assignment4\main.c
 	<stdio.h>
 	<stdlib.h>
 	"Tree.h"
 	"prettyPrint.h"
 
-1428267800 source:c:\users\johns\documents\programming\assignment4\prettyprint.c
+1428324889 source:c:\users\johns\documents\programming\assignment4\prettyprint.c
 	"prettyPrint.h"
 	<stdio.h>
 
@@ -20,7 +20,7 @@
 	<stdio.h>
 	<stdlib.h>
 
-1428270017 source:c:\users\johns\documents\programming\assignment4\tree.c
+1428326333 source:c:\users\johns\documents\programming\assignment4\tree.c
 	"Tree.h"
 	<stdio.h>
 	<stdlib.h>

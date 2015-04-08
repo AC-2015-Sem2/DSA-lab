@@ -1,0 +1,8 @@
+# depslib dependency file v1.0
+1428354470 source:c:\users\valentin\desktop\assigment4\main.c
+	<stdio.h>
+	<stdlib.h>
+	<limits.h>
+	<math.h>
+	<string.h>
+

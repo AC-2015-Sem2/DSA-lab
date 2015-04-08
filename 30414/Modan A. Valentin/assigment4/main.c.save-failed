@@ -69,19 +69,7 @@ int Search(NODET* root, int value)
         return Search(root->left,value);
 }
 
-NODET* insert(NODET* root,int value)
-{
-    if(root==NULL)
-        return createNODE(value);
-    else
-    {
-        if(root->data<value)
-            root->right=insert(root->right,value);
-        else
-            root->left=insert(root->left,value);
-        return root;
-    }
-}
+
 
 int isBSTUtil(NODET* root, int a,int b)
 {
@@ -101,21 +89,21 @@ int isBST(NODET* root)
 {
     return isBSTUtil(root,INT_MIN,INT_MAX);
 }
-NODET* shiftright(NODET* root)
+NODET* shiftright(NODET* nod)
 {
     NODET *aux;
-    aux=root->left;
-    root->left=aux->right;
-    aux->right=root;
+    aux=nod->left;
+    nod->left=aux->right;
+    aux->right=nod;
     return aux;
 
 }
-NODET* shiftleft(NODET* root)
+NODET* shiftleft(NODET* nod)
 {
     NODET *aux;
-    aux=root->right;
-    root->right=aux->left;
-    aux->left=root;
+    aux=nod->right;
+    nod->right=aux->left;
+    aux->left=nod;
     return aux;
     }
 int compare_height(NODET *root)
@@ -137,6 +125,40 @@ NODET* switch_root(NODET *root)
     }
     return root;
 }
+NODET* double_left_right(NODET* root)
+{
+    root->left==shiftleft(root->left);
+    return shiftright(root);
+}
+NODET* double_right_left(NODET* root)
+{
+    root->right=shiftright(root->right);
+    return shiftleft(root);
+}
+NODET* insert(NODET* root,int value)
+{
+    if(root==NULL)
+        return createNODE(value);
+    if(root->data<value)
+        root->right=insert(root->right,value);
+    else
+        root->left=insert(root->left,value);
+     //  root=switch_root(root);
+
+    int aux=compare_height(root->left)-compare_height(root->right);
+    if(aux>1&&value<root->left->data)
+        return  shiftright(root);
+    if(aux<-1&&value>root->right->data)
+        return shiftleft(root);
+    if(aux>1&&value>root->left->data)
+        return double_left_right(root);
+    if(aux<-1&&value<root->right->data)
+        return double_right_left(root);
+
+
+        return root;
+
+}
 int main()
 {
     NODET *root;
@@ -145,12 +167,12 @@ int main()
     root=createBinTree();
     fprintf(output,"%d \n",Search(root,1));
     insert(root,10);
-    insert(root,11);
-    insert(root,12);
-    insert(root,13);
-    insert(root,14);
+     insert(root,11);
+     insert(root,12);
+     insert(root,13);
+
     insert(root,15);
-    root=switch_root(root);
+
     prettyPrint(root,0);
     fprintf(output,"\n");
     fprintf(output,"%d",compare_height(root));
