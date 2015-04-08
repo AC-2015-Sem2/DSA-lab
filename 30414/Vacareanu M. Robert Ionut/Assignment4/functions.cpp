@@ -27,12 +27,11 @@ int calculateWeight(struct Node* root){
         return 0;
     }
     else{
-//        p->height = leftHeight - rightHeight;
         leftWeight = calculateWeight(root->left) + 1;
         rightWeight = calculateWeight(root->right) + 1;
         p->weight = leftWeight-rightWeight;
-        return (leftWeight>rightWeight)? leftWeight:rightWeight;
     }
+    return (leftWeight>rightWeight)? leftWeight:rightWeight;
 }
 void prettyPrint(NodeT *root, int recLevel){
 
@@ -74,6 +73,7 @@ void preOrder(NodeT* root){
     }
 }
 NodeT* balanceTree(struct Node* root){
+    calculateWeight(root);
     if(root == NULL) return 0;
     if(root != NULL){
             if(root->weight > 1){
@@ -104,18 +104,17 @@ NodeT* balanceTree(struct Node* root){
 }
 NodeT* insertNodeUtil(struct Node* root, int data){
     if (root == NULL){
-        NodeT* root = createNode(data);
-        return root;
+        root = createNode(data);
     }
     else{
         if(data < root->data) root->left=insertNodeUtil(root->left, data);
         else root->right=insertNodeUtil(root->right, data);
-        return root;
     }
+    return balanceTree(root);
 }
 NodeT* insertNode(struct Node* root, int data){
     root = insertNodeUtil(root, data);
     calculateWeight(root);
-    root = balanceTree(root);
+//    root = balanceTree(root);
     return root;
 }
