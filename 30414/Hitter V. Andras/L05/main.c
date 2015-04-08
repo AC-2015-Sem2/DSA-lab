@@ -20,5 +20,15 @@ int main()
         root=insert(root,x);
     }
     prettyPrint(root,0);
+
+    printf("\nEnter no.of elements :");
+    scanf("%d",&n);
+    printf("\n Enter data for deletion:");
+    for(i=0; i<n; i++)
+    {
+        scanf("%d",&x);
+        root=deletion(root,x);
+    }
+    prettyPrint(root,0);
     return 0;
 }
