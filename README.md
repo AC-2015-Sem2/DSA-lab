@@ -41,7 +41,7 @@ Lab 5: Binary Search Trees
 ```
 Lab 6: Test 2 - Trees
 ```
-* Assignments: none
+* Statistics - [problems, almost minimal solutions and grades distributions] (https://github.com/AC-2015-Sem2/DSA-lab/tree/master/Tests/T2%20-%20Trees)
 
 ```
 Lab 7: Graphs - representation and traversals
