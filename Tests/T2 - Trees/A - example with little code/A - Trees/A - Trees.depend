@@ -1,0 +1,13 @@
+# depslib dependency file v1.0
+1428618694 source:c:\users\alex\desktop\predare\2014-2015 - sem2\dsa-lab\tests\t2 - trees\a - minimal code example\a - trees\main.c
+	"tree.h"
+
+1428619121 c:\users\alex\desktop\predare\2014-2015 - sem2\dsa-lab\tests\t2 - trees\a - minimal code example\a - trees\tree.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<limits.h>
+
+1428619085 source:c:\users\alex\desktop\predare\2014-2015 - sem2\dsa-lab\tests\t2 - trees\a - minimal code example\a - trees\tree.c
+	"tree.h"
+
