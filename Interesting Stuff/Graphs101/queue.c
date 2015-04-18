@@ -22,6 +22,10 @@ NodeT * peekQueue(){
     return queue;
 }
 
+int isEmptyQueue(){
+    return queue == NULL;
+}
+
 
 //! auxiliary
 void printQueue(){

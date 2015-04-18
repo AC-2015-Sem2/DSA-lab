@@ -19,6 +19,9 @@ NodeT * peekStack()
     return stack;
 }
 
+int isEmptyStack(){
+    return stack == NULL;
+}
 
 //! auxiliary
 void printStack()

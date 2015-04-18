@@ -31,9 +31,25 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
+		<Unit filename="graph.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="graph.h" />
 		<Unit filename="main.c">
 			<Option compilerVar="CC" />
 		</Unit>
+		<Unit filename="node.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="node.h" />
+		<Unit filename="queue.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="queue.h" />
+		<Unit filename="stack.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="stack.h" />
 		<Extensions>
 			<code_completion />
 			<envvars />
