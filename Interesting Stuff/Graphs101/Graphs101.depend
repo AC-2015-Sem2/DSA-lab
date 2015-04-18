@@ -1,0 +1,24 @@
+# depslib dependency file v1.0
+1429357703 source:c:\users\alex\desktop\predare\2014-2015 - sem2\dsa-lab\interesting stuff\graphs101\main.c
+	"queue.h"
+	"stack.h"
+
+1429357212 source:c:\users\alex\desktop\predare\2014-2015 - sem2\dsa-lab\interesting stuff\graphs101\node.c
+	"node.h"
+
+1429357788 c:\users\alex\desktop\predare\2014-2015 - sem2\dsa-lab\interesting stuff\graphs101\node.h
+	<stdio.h>
+	<stdlib.h>
+
+1429357674 source:c:\users\alex\desktop\predare\2014-2015 - sem2\dsa-lab\interesting stuff\graphs101\queue.c
+	"queue.h"
+
+1429356505 c:\users\alex\desktop\predare\2014-2015 - sem2\dsa-lab\interesting stuff\graphs101\queue.h
+	"node.h"
+
+1429357692 source:c:\users\alex\desktop\predare\2014-2015 - sem2\dsa-lab\interesting stuff\graphs101\stack.c
+	"stack.h"
+
+1429356728 c:\users\alex\desktop\predare\2014-2015 - sem2\dsa-lab\interesting stuff\graphs101\stack.h
+	"node.h"
+
