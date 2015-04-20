@@ -46,7 +46,9 @@ Lab 6: Test 2 - Trees
 ```
 Lab 7: Graphs - representation and traversals
 ```
-* Assignments 5: TBA
+* Assignments 5:
+	- 5.1 [Adjacency List] (https://github.com/AC-2015-Sem2/DSA-lab/tree/master/Assignments/Assignment%205/Assignment%205.1%20-%20Adjacency%20List)
+	- 5.2 [Longest Simple Path] (https://github.com/AC-2015-Sem2/DSA-lab/tree/master/Assignments/Assignment%205/Assignment%205.2%20-%20Longest%20Simple%20Path%20-%20extra%20credit) (extra credit!)
 
 ```
 Lab 8: Graphs - Graph Processing Algorithms (Dijkstra, Prim, Kursal, Floyd etc.)
