@@ -25,15 +25,3 @@ NodeT * peekQueue(){
 int isEmptyQueue(){
     return queue == NULL;
 }
-
-
-//! auxiliary
-void printQueue(){
-    NodeT * aux=queue;
-    while(aux!=NULL){
-        printf("%d ",aux->content );
-        aux=aux->next;
-    }
-    printf("\n");
-}
-

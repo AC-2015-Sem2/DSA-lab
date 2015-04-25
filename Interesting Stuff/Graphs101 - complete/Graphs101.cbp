@@ -31,13 +31,26 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
-		<Unit filename="graph.c">
+		<Unit filename="edge.h" />
+		<Unit filename="graph.h" />
+		<Unit filename="graphAlgorithms.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="graph.h" />
+		<Unit filename="graphAlgorithms.h" />
+		<Unit filename="graphRepresentation.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="graphRepresentation.h" />
+		<Unit filename="graphTraversals.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="graphTraversals.h" />
 		<Unit filename="main.c">
 			<Option compilerVar="CC" />
 		</Unit>
+		<Unit filename="matrix.txt" />
+		<Unit filename="matrix1.txt" />
+		<Unit filename="matrix2.txt" />
 		<Unit filename="node.c">
 			<Option compilerVar="CC" />
 		</Unit>

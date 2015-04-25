@@ -5,7 +5,4 @@ void dequeue();
 NodeT * peekQueue();
 int isEmptyQueue();
 
-//! auxiliary
-void printQueue();
-
 NodeT * queue;

@@ -22,15 +22,3 @@ NodeT * peekStack()
 int isEmptyStack(){
     return stack == NULL;
 }
-
-//! auxiliary
-void printStack()
-{
-    NodeT * aux=stack;
-    while(aux!=NULL)
-    {
-        printf("%d ",aux->content );
-        aux=aux->next;
-    }
-    printf("\n");
-}

@@ -1,6 +1,6 @@
-#include "queue.h"
-#include "stack.h"
-#include "graph.h"
+#include "graphRepresentation.h"
+#include "graphTraversals.h"
+#include "graphAlgorithms.h"
 
 int main()
 {
@@ -9,7 +9,10 @@ int main()
     printAdjMatrix();
     bfs(0);
     dfs(0);
-
     dfsRecurs(0);
+    prim(0);
+    kruskal();
+    dijkstra(0);
+
     return 0;
 }
