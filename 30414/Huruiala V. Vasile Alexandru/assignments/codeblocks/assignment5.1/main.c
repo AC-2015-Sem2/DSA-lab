@@ -22,10 +22,16 @@ int main()
     printf("DFS for the 2 matrices(original and the one converted form matrix to list and back)\n");
     dfsMat(0, adjMat, nrVert);
     dfsMat(0, adjMat1, nrVert);
+    printf("DFS recursive for the 2 matrices(original and the one converted form matrix to list and back)\n");
+    dfsRecursiveMat(0, adjMat, nrVert);
+    dfsRecursiveMat(0, adjMat1, nrVert);
     printf("BFS for the list converted form the matrix\n");
     bfsLst(0, adjList, nrVert);
     printf("DFS for the list converted form the matrix\n");
     dfsLst(0, adjList, nrVert);
+    printf("DFS recursive for the list converted form the matrix\n");
+    dfsRecursiveLst(0, adjList, nrVert);
+
 
     return 0;
 }

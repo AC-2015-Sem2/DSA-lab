@@ -17,4 +17,5 @@ void dfsMat(int startingNode, int** mat, int size);
 void bfsLst(int startingNode, node** lst, int size);
 void dfsLst(int startingNode, node** lst, int size);
 
-void dfsRecurs(int startnigNode);
+void dfsRecursiveMat(int startingNode, int** mat, int size);
+void dfsRecursiveLst(int startingNode, node** lst, int size);

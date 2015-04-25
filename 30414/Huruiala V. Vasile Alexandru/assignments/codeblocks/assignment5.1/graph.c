@@ -273,3 +273,59 @@ void dfsLst(int startingNode, node** lst, int size)
     }
     printf("\n");
 }
+
+void dfsMatRec(int v, int* visited, int** mat, int size)
+{
+    if(visited[v] == UNVISITED)
+    {
+        printf("%d ", v);
+
+        visited[v] = VISITED;
+
+        int i;
+        for(i = 0; i < size; i++)
+        {
+            if(mat[v][i] == 1)
+                dfsMatRec(i, visited, mat, size);
+        }
+    }
+}
+
+void dfsRecursiveMat(int startingNode, int** mat, int size)
+{
+    int* visited = (int*)malloc(sizeof(int) * size);
+    int i;
+    for(i = 0; i < size; i++)
+        visited[i] = UNVISITED;
+
+    dfsMatRec(startingNode, visited, mat, size);
+    printf("\n");
+}
+
+void dfsLstRec(int v, int* visited, node** lst, int size)
+{
+    if(visited[v] == UNVISITED)
+    {
+        printf("%d ", v);
+
+        visited[v] = VISITED;
+
+        node* aux = lst[v];
+        while(aux != NULL)
+        {
+            dfsLstRec(aux->data, visited, lst, size);
+            aux = aux->next;
+        }
+    }
+}
+
+void dfsRecursiveLst(int startingNode, node** lst, int size)
+{
+    int* visited = (int*)malloc(sizeof(int) * size);
+    int i;
+    for(i = 0; i < size; i++)
+        visited[i] = UNVISITED;
+
+    dfsLstRec(startingNode, visited, lst, size);
+    printf("\n");
+}
