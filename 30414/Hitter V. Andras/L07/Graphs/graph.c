@@ -266,7 +266,7 @@ void ListToMatrix(NodeT *L,FILE *f)
     }
     while(aux!=NULL)//!the next step is to put 1 in every row where we have adjacency
     {
-        if(aux->content==-1)
+        if(aux->content!=-1)
         {
             adjMatrix2[i][aux->content]=1;
             aux=aux->next;
