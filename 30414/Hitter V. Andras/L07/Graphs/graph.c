@@ -257,13 +257,14 @@ void ListToMatrix(NodeT *L,FILE *f)
             adjMatrix2[i][j]=0;
         }
     }//! the new adjacency matrix is allocated and filled with 0
-    printNEWAdjMatrix();
 
     if(L==NULL)
     {
         printf("NO LIST");
         return;
     }
+
+    i=0;
     while(aux!=NULL)//!the next step is to put 1 in every row where we have adjacency
     {
         if(aux->content!=-1)
