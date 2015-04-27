@@ -1,0 +1,103 @@
+# depslib dependency file v1.0
+1430149119 source:d:\facultate\semestrul 2\dsa\graph\graph.c
+	<stdio.h>
+	<stdlib.h>
+	"graph.h"
+	"stack.h"
+	"queue.h"
+
+1429567524 d:\facultate\semestrul 2\dsa\graph\graph.h
+	<stdio.h>
+
+1429567416 d:\facultate\semestrul 2\dsa\graph\stack.h
+	"node.h"
+
+1429567193 d:\facultate\semestrul 2\dsa\graph\node.h
+	<stdio.h>
+	<stdlib.h>
+
+1429567318 d:\facultate\semestrul 2\dsa\graph\queue.h
+	"node.h"
+
+1429567453 source:d:\facultate\semestrul 2\dsa\graph\main.c
+	"queue.h"
+	"stack.h"
+	"graph.h"
+
+1429567116 source:d:\facultate\semestrul 2\dsa\graph\node.c
+	"node.h"
+
+1429567252 source:d:\facultate\semestrul 2\dsa\graph\queue.c
+	"queue.h"
+
+1429567368 source:d:\facultate\semestrul 2\dsa\graph\stack.c
+	"stack.h"
+
+1430168999 source:c:\users\user\desktop\graph_1\graph.c
+	<stdio.h>
+	<stdlib.h>
+	"graph.h"
+	"stack.h"
+	"queue.h"
+
+1430163371 c:\users\user\desktop\graph_1\graph.h
+	<stdio.h>
+
+1429567416 c:\users\user\desktop\graph_1\stack.h
+	"node.h"
+
+1429567193 c:\users\user\desktop\graph_1\node.h
+	<stdio.h>
+	<stdlib.h>
+
+1429567318 c:\users\user\desktop\graph_1\queue.h
+	"node.h"
+
+1430168959 source:c:\users\user\desktop\graph_1\main.c
+	"queue.h"
+	"stack.h"
+	"graph.h"
+
+1429567116 source:c:\users\user\desktop\graph_1\node.c
+	"node.h"
+
+1429567252 source:c:\users\user\desktop\graph_1\queue.c
+	"queue.h"
+
+1429567368 source:c:\users\user\desktop\graph_1\stack.c
+	"stack.h"
+
+1430168999 source:c:\users\user\desktop\extrapoints_graphs - copy\graph.c
+	<stdio.h>
+	<stdlib.h>
+	"graph.h"
+	"stack.h"
+	"queue.h"
+
+1430163371 c:\users\user\desktop\extrapoints_graphs - copy\graph.h
+	<stdio.h>
+
+1429567416 c:\users\user\desktop\extrapoints_graphs - copy\stack.h
+	"node.h"
+
+1429567193 c:\users\user\desktop\extrapoints_graphs - copy\node.h
+	<stdio.h>
+	<stdlib.h>
+
+1429567318 c:\users\user\desktop\extrapoints_graphs - copy\queue.h
+	"node.h"
+
+1430169176 source:c:\users\user\desktop\extrapoints_graphs - copy\main.c
+	"queue.h"
+	"stack.h"
+	"graph.h"
+
+1429567116 source:c:\users\user\desktop\extrapoints_graphs - copy\node.c
+	"node.h"
+
+1429567252 source:c:\users\user\desktop\extrapoints_graphs - copy\queue.c
+	"queue.h"
+
+1429567368 source:c:\users\user\desktop\extrapoints_graphs - copy\stack.c
+	"stack.h"
+
