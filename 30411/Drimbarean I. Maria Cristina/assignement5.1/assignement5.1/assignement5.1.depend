@@ -1,0 +1,69 @@
+# depslib dependency file v1.0
+1429877880 source:d:\workspace c2\lab7\assignement5.1\graph.c
+	<stdio.h>
+	<stdlib.h>
+	"graph.h"
+	"stack.h"
+	"queue.h"
+
+1429877699 d:\workspace c2\lab7\assignement5.1\graph.h
+	<stdio.h>
+
+1429877290 d:\workspace c2\lab7\assignement5.1\stack.h
+	"node.h"
+
+1429877166 d:\workspace c2\lab7\assignement5.1\node.h
+	<stdio.h>
+	<stdlib.h>
+
+1429877107 d:\workspace c2\lab7\assignement5.1\queue.h
+	"node.h"
+
+1429883149 source:d:\workspace c2\lab7\assignement5.1\main.c
+	"queue.h"
+	"stack.h"
+	"graph.h"
+
+1429878027 source:d:\workspace c2\lab7\assignement5.1\node.c
+	"node.h"
+
+1429877833 source:d:\workspace c2\lab7\assignement5.1\queue.c
+	"queue.h"
+
+1429877778 source:d:\workspace c2\lab7\assignement5.1\stack.c
+	"stack.h"
+
+1429877880 source:c:\users\chiti\desktop\assignement5.1\graph.c
+	<stdio.h>
+	<stdlib.h>
+	"graph.h"
+	"stack.h"
+	"queue.h"
+
+1429883224 c:\users\chiti\desktop\assignement5.1\graph.h
+	<stdio.h>
+
+1429883252 c:\users\chiti\desktop\assignement5.1\stack.h
+	"node.h"
+
+1429877166 c:\users\chiti\desktop\assignement5.1\node.h
+	<stdio.h>
+	<stdlib.h>
+
+1429883237 c:\users\chiti\desktop\assignement5.1\queue.h
+	"node.h"
+
+1429883149 source:c:\users\chiti\desktop\assignement5.1\main.c
+	"queue.h"
+	"stack.h"
+	"graph.h"
+
+1429878027 source:c:\users\chiti\desktop\assignement5.1\node.c
+	"node.h"
+
+1429877833 source:c:\users\chiti\desktop\assignement5.1\queue.c
+	"queue.h"
+
+1429877778 source:c:\users\chiti\desktop\assignement5.1\stack.c
+	"stack.h"
+
