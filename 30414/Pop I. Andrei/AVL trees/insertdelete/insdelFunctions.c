@@ -130,14 +130,16 @@ NodeT *deleteNode(NodeT *root, int value)
             {
                 if(root->left == NULL)
                 {
+                        minNode = root;
                         root = root->right;
-                        free(root);
+                        free(minNode);
                 }
                 else
                     if(root->right == NULL)
                     {
+                        minNode = root;
                         root = root->left;
-                        free(root);
+                        free(minNode);
                     }
                     else
                     {
