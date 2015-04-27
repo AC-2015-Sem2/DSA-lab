@@ -1,0 +1,23 @@
+# depslib dependency file v1.0
+1430148560 source:d:\code blocks\sem 2\tema\main.c
+	"queue.h"
+	"stack.h"
+	"graph.h"
+
+1430148134 d:\code blocks\sem 2\tema\queue.h
+	"node.h"
+
+1430148134 d:\code blocks\sem 2\tema\node.h
+	<stdio.h>
+	<stdlib.h>
+
+1430148134 d:\code blocks\sem 2\tema\stack.h
+	"node.h"
+
+1430148609 d:\code blocks\sem 2\tema\graph.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"stack.h"
+	"queue.h"
+
