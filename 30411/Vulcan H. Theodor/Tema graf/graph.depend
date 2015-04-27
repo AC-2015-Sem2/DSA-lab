@@ -1,0 +1,96 @@
+# depslib dependency file v1.0
+1429566907 source:d:\facultate\semestrul 2\dsa\graph\graph.c
+	<stdio.h>
+	<stdlib.h>
+	"graph.h"
+	"stack.h"
+	"queue.h"
+
+1429567524 d:\facultate\semestrul 2\dsa\graph\graph.h
+	<stdio.h>
+
+1429567416 d:\facultate\semestrul 2\dsa\graph\stack.h
+	"node.h"
+
+1429567193 d:\facultate\semestrul 2\dsa\graph\node.h
+	<stdio.h>
+	<stdlib.h>
+
+1429567318 d:\facultate\semestrul 2\dsa\graph\queue.h
+	"node.h"
+
+1429567453 source:d:\facultate\semestrul 2\dsa\graph\main.c
+	"queue.h"
+	"stack.h"
+	"graph.h"
+
+1429567116 source:d:\facultate\semestrul 2\dsa\graph\node.c
+	"node.h"
+
+1429567252 source:d:\facultate\semestrul 2\dsa\graph\queue.c
+	"queue.h"
+
+1429567368 source:d:\facultate\semestrul 2\dsa\graph\stack.c
+	"stack.h"
+
+1429603800 source:c:\users\zuklar\desktop\new folder\main.c
+	"queue.h"
+	"stack.h"
+	"graph.h"
+
+1429603800 c:\users\zuklar\desktop\new folder\queue.h
+	"node.h"
+
+1429603800 c:\users\zuklar\desktop\new folder\node.h
+	<stdio.h>
+	<stdlib.h>
+
+1429603800 c:\users\zuklar\desktop\new folder\stack.h
+	"node.h"
+
+1429603800 c:\users\zuklar\desktop\new folder\graph.h
+	<stdio.h>
+
+1429603800 source:c:\users\zuklar\desktop\new folder\node.c
+	"node.h"
+
+1429603800 source:c:\users\zuklar\desktop\new folder\queue.c
+	"queue.h"
+
+1429603800 source:c:\users\zuklar\desktop\new folder\stack.c
+	"stack.h"
+
+1430143863 source:c:\users\alex\desktop\materiale facultate\dsa\new folder\main.c
+	"queue.h"
+	"stack.h"
+	"graph.h"
+
+1429564200 c:\users\alex\desktop\materiale facultate\dsa\new folder\queue.h
+	"node.h"
+
+1430139840 c:\users\alex\desktop\materiale facultate\dsa\new folder\node.h
+	<stdio.h>
+	<stdlib.h>
+
+1429564200 c:\users\alex\desktop\materiale facultate\dsa\new folder\stack.h
+	"node.h"
+
+1429564200 c:\users\alex\desktop\materiale facultate\dsa\new folder\graph.h
+	<stdio.h>
+
+1429564200 source:c:\users\alex\desktop\materiale facultate\dsa\new folder\node.c
+	"node.h"
+
+1429564200 source:c:\users\alex\desktop\materiale facultate\dsa\new folder\queue.c
+	"queue.h"
+
+1429564200 source:c:\users\alex\desktop\materiale facultate\dsa\new folder\stack.c
+	"stack.h"
+
+1430145595 source:c:\users\alex\desktop\materiale facultate\dsa\new folder\graph.c
+	<stdio.h>
+	<stdlib.h>
+	"graph.h"
+	"stack.h"
+	"queue.h"
+
