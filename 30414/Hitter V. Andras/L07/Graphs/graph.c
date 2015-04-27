@@ -169,8 +169,8 @@ void dfs(int searchNode)
         if(mark[v] == UNVISITED)
         {
             mark[v] = VISITED;
-            int nrOfNeighbors = getNumberOfNeighborsOfVertex(v);
-            int * neighbors = getAllNeighborsOfVertex(v);
+            int nrOfNeighbors = getNumberOfNeighborsOfVertex1(v);
+            int * neighbors = getAllNeighborsOfVertex1(v);
             for(i=nrOfNeighbors-1; i>=0; i--)
             {
                 int w = neighbors[i];
@@ -234,6 +234,48 @@ NodeT* MatrixToList(int** adjMatrix)
         printf("\n");
     }
     return L;
+}
+
+int getNumberOfNeighborsOfVertex1(int v)
+{
+    int counter=0, serialofvertex=0;
+    NodeT *aux=L;
+    while(aux!=NULL)
+    {
+        if(serialofvertex==v) counter++;
+
+        if(aux->content==-1)
+        {
+            serialofvertex++;aux=aux->next;
+        }
+        else
+        {
+            aux=aux->next;
+        }
+    }
+return counter;
+}
+
+int getAllNeighborsOfVertex1(int v)
+{
+    int count=0, serialofvertex=0;
+    int x=getNumberOfNeighborsOfVertex(v);
+    int * neighbors = (int*)malloc(sizeof(int)*x);
+    NodeT *aux=L;
+    while(aux!=NULL)
+    {
+        if(serialofvertex==v) {neighbors[count]=aux->content;count++;}
+
+        if(aux->content==-1)
+        {
+            serialofvertex++;aux=aux->next;
+        }
+        else
+        {
+            aux=aux->next;
+        }
+    }
+return neighbors;
 }
 
 void ListToMatrix(NodeT *L,FILE *f)
