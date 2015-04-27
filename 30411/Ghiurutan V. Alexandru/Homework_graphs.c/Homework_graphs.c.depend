@@ -1,0 +1,42 @@
+# depslib dependency file v1.0
+1430160417 source:d:\aplicatii\dsa\homework_graphs.c\main.c
+	"adjListFromMatrix.h"
+
+1430139347 d:\aplicatii\dsa\homework_graphs.c\traversalsmatrix.h
+	"stack.h"
+
+1430135896 d:\aplicatii\dsa\homework_graphs.c\stack.h
+	"queue.h"
+
+1430135896 d:\aplicatii\dsa\homework_graphs.c\queue.h
+	"readAdjMatrix.h"
+
+1430140640 d:\aplicatii\dsa\homework_graphs.c\readadjmatrix.h
+	"node.h"
+
+1430135896 d:\aplicatii\dsa\homework_graphs.c\node.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1430135896 source:d:\aplicatii\dsa\homework_graphs.c\node.c
+	"node.h"
+
+1430150283 source:d:\aplicatii\dsa\homework_graphs.c\queue.c
+	"queue.h"
+
+1430140662 source:d:\aplicatii\dsa\homework_graphs.c\readadjmatrix.c
+	"readAdjMatrix.h"
+
+1430139355 source:d:\aplicatii\dsa\homework_graphs.c\stack.c
+	"stack.h"
+
+1430150195 source:d:\aplicatii\dsa\homework_graphs.c\traversalsmatrix.c
+	"traversalsMatrix.h"
+
+1430160588 source:d:\aplicatii\dsa\homework_graphs.c\adjlistfrommatrix.c
+	"adjListFromMatrix.h"
+
+1430160417 d:\aplicatii\dsa\homework_graphs.c\adjlistfrommatrix.h
+	"traversalsMatrix.h"
+
