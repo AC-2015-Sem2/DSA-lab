@@ -1,0 +1,17 @@
+# depslib dependency file v1.0
+1430156794 source:c:\users\rana\desktop\myfork\dsa-lab\30414\pop p. roxana\assignment5.2\main.c
+	"graph.h"
+
+1430152275 c:\users\rana\desktop\myfork\dsa-lab\30414\pop p. roxana\assignment5.2\node.h
+	<stdio.h>
+	<stdlib.h>
+
+1430156838 c:\users\rana\desktop\myfork\dsa-lab\30414\pop p. roxana\assignment5.2\graph.h
+	<string.h>
+	<stdio.h>
+	<stdlib.h>
+	"node.h"
+
+1430156794 source:c:\users\rana\desktop\myfork\dsa-lab\30414\pop p. roxana\assignment5.2\graph.c
+	"graph.h"
+
