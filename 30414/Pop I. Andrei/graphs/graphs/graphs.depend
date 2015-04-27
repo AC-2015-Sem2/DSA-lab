@@ -1,0 +1,34 @@
+# depslib dependency file v1.0
+1430138284 source:c:\users\andrei\desktop\myfolder\dsa-lab\30414\pop i. andrei\graphs\graphs\functions.c
+	"functions.h"
+	"stack.h"
+	"queue.h"
+
+1430136478 c:\users\andrei\desktop\myfolder\dsa-lab\30414\pop i. andrei\graphs\graphs\functions.h
+	<stdlib.h>
+	<stdio.h>
+	<string.h>
+	"node.h"
+
+1430137517 source:c:\users\andrei\desktop\myfolder\dsa-lab\30414\pop i. andrei\graphs\graphs\main.c
+	"functions.h"
+
+1429604862 c:\users\andrei\desktop\myfolder\dsa-lab\30414\pop i. andrei\graphs\graphs\stack.h
+	"node.h"
+
+1429604862 c:\users\andrei\desktop\myfolder\dsa-lab\30414\pop i. andrei\graphs\graphs\node.h
+	<stdio.h>
+	<stdlib.h>
+
+1429604862 c:\users\andrei\desktop\myfolder\dsa-lab\30414\pop i. andrei\graphs\graphs\queue.h
+	"node.h"
+
+1429604862 source:c:\users\andrei\desktop\myfolder\dsa-lab\30414\pop i. andrei\graphs\graphs\node.c
+	"node.h"
+
+1429604862 source:c:\users\andrei\desktop\myfolder\dsa-lab\30414\pop i. andrei\graphs\graphs\queue.c
+	"queue.h"
+
+1429604862 source:c:\users\andrei\desktop\myfolder\dsa-lab\30414\pop i. andrei\graphs\graphs\stack.c
+	"stack.h"
+
