@@ -1,0 +1,47 @@
+# depslib dependency file v1.0
+1430072988 source:d:\probleme codeblocks\hwgraph\adjlist.c
+	<stdio.h>
+	<stdlib.h>
+	"AdjList.h"
+
+1430071366 d:\probleme codeblocks\hwgraph\adjlist.h
+
+1430073215 source:d:\probleme codeblocks\hwgraph\main.c
+	<stdio.h>
+	<stdlib.h>
+	<stdio.h>
+	"AdjList.h"
+	"graph.h"
+	"stack.h"
+	"queue.h"
+
+1430071366 source:d:\probleme codeblocks\hwgraph\node.c
+	"node.h"
+
+1430071366 d:\probleme codeblocks\hwgraph\node.h
+	<stdio.h>
+	<stdlib.h>
+
+1430071366 source:d:\probleme codeblocks\hwgraph\queue.c
+	"queue.h"
+
+1430071366 d:\probleme codeblocks\hwgraph\queue.h
+	"node.h"
+
+1430071366 source:d:\probleme codeblocks\hwgraph\stack.c
+	"stack.h"
+
+1430071366 d:\probleme codeblocks\hwgraph\stack.h
+	"node.h"
+
+1430071374 d:\probleme codeblocks\hwgraph\graph.h
+	<stdio.h>
+
+1430073304 source:d:\probleme codeblocks\hwgraph\graph.c
+	<stdio.h>
+	<stdlib.h>
+	"AdjList.h"
+	"graph.h"
+	"stack.h"
+	"queue.h"
+
