@@ -9,6 +9,8 @@ void readFromAdjMatrix(FILE * f);
 int ** adjMatrix;
 int ** adjMatrix2;
 int nrOfVerteces;
+int getNumberOfNeighborsOfVertex1(int v);
+int getAllNeighborsOfVertex1(int v);
 
 void printAdjMatrix();
 void printNEWAdjMatrix();
