@@ -1,0 +1,50 @@
+# depslib dependency file v1.0
+1429977054 source:c:\users\rana\desktop\myfork\dsa-lab\30414\pop p. roxana\assignment5.1\graph.c
+	<stdio.h>
+	<stdlib.h>
+	"graph.h"
+	"stack.h"
+	"queue.h"
+
+1429978788 c:\users\rana\desktop\myfork\dsa-lab\30414\pop p. roxana\assignment5.1\graph.h
+	<stdio.h>
+	"node.h"
+
+1429976286 c:\users\rana\desktop\myfork\dsa-lab\30414\pop p. roxana\assignment5.1\stack.h
+	"node.h"
+
+1429978839 c:\users\rana\desktop\myfork\dsa-lab\30414\pop p. roxana\assignment5.1\node.h
+	<stdio.h>
+	<stdlib.h>
+
+1429969194 c:\users\rana\desktop\myfork\dsa-lab\30414\pop p. roxana\assignment5.1\queue.h
+	"node.h"
+
+1429978533 source:c:\users\rana\desktop\myfork\dsa-lab\30414\pop p. roxana\assignment5.1\main.c
+	"queue.h"
+	"stack.h"
+	"graph.h"
+
+1429965990 source:c:\users\rana\desktop\myfork\dsa-lab\30414\pop p. roxana\assignment5.1\node.c
+	"node.h"
+
+1429965990 source:c:\users\rana\desktop\myfork\dsa-lab\30414\pop p. roxana\assignment5.1\queue.c
+	"queue.h"
+
+1429965990 source:c:\users\rana\desktop\myfork\dsa-lab\30414\pop p. roxana\assignment5.1\stack.c
+	"stack.h"
+
+1429969262 source:c:\users\rana\desktop\myfork\dsa-lab\30414\pop p. roxana\assignment5.1\matrix.c
+	<stdio.h>
+	<stdlib.h>
+	"graph.h"
+	"stack.h"
+	"queue.h"
+
+1429978788 source:c:\users\rana\desktop\myfork\dsa-lab\30414\pop p. roxana\assignment5.1\adjlist.c
+	<stdio.h>
+	<stdlib.h>
+	"graph.h"
+	"stack.h"
+	"queue.h"
+
