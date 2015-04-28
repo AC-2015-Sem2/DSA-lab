@@ -101,7 +101,7 @@
 1429898123 source:d:\programok\codeblocks\prog(sem ii)\l07\graphs101 - complete\stack.c
 	"stack.h"
 
-1430050791 source:d:\programok\codeblocks\prog(sem ii)\l07\graphs\main.c
+1430163547 source:d:\programok\codeblocks\prog(sem ii)\l07\graphs\main.c
 	"queue.h"
 	"stack.h"
 	"graph.h"
@@ -116,7 +116,7 @@
 1429898123 d:\programok\codeblocks\prog(sem ii)\l07\graphs\stack.h
 	"node.h"
 
-1430051021 d:\programok\codeblocks\prog(sem ii)\l07\graphs\graph.h
+1430164035 d:\programok\codeblocks\prog(sem ii)\l07\graphs\graph.h
 	<stdio.h>
 
 1430044019 source:d:\programok\codeblocks\prog(sem ii)\l07\graphs\node.c
@@ -128,7 +128,7 @@
 1429898123 source:d:\programok\codeblocks\prog(sem ii)\l07\graphs\stack.c
 	"stack.h"
 
-1430055374 source:d:\programok\codeblocks\prog(sem ii)\l07\graphs\graph.c
+1430164086 source:d:\programok\codeblocks\prog(sem ii)\l07\graphs\graph.c
 	<stdio.h>
 	<stdlib.h>
 	"graph.h"

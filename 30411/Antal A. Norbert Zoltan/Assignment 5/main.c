@@ -7,14 +7,16 @@ int main()
     FILE * f = fopen("matrix.txt","r");
     readFromAdjMatrix(f);
     printAdjMatrix();
-
-    MatrixToList(adjMatrix);
-    printList();
     bfs(0);
     dfs(0);
-
     dfsRecurs(0);
-    ListToMatrix(L,f);
-    printNEWAdjMatrix();
+    toList();
+    bfs(0);
+    dfs(0);
+    dfsRecurs(0);
+    toMatrix();
+    bfs(0);
+    dfs(0);
+    dfsRecurs(0);
     return 0;
 }

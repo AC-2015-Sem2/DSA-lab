@@ -13,16 +13,17 @@ void readFromAdjMatrix(FILE * f)
     fscanf(f,"%d",&n);
     nrOfVerteces=n;
     int i,j;
-    adjMatrix=(int**)malloc(n*sizeof(int*));
+    adjHolder=(int**)malloc(n*sizeof(int*));
     for (i=0; i<n; i++)
     {
-        *(adjMatrix+i)=(int*)malloc(n*sizeof(int));
+        *(adjHolder+i)=(int*)malloc(n*sizeof(int));
     }
 
     for (i=0; i<n; i++)
         for (j=0; j<n; j++)
-            fscanf(f,"%d",&adjMatrix[i][j]);
+            fscanf(f,"%d",&adjHolder[i][j]);
     fclose(f);
+    isM = 1;
 }
 
 void printAdjMatrix()
@@ -40,28 +41,7 @@ void printAdjMatrix()
     {
         printf("%c ",65+i);
         for (j=0; j<nrOfVerteces; j++)
-            printf("%3d ",adjMatrix[i][j]);
-        printf("\n");
-    }
-    printf("\n");
-}
-
-void printNEWAdjMatrix()
-{
-    int i,j;
-
-    printf("\nThe NEW matrix is:\n");
-    printf("    ");
-    for (i=0; i<nrOfVerteces; i++)
-    {
-        printf("%c   ",65+i);
-    }
-    printf("\n");
-    for (i=0; i<nrOfVerteces; i++)
-    {
-        printf("%c ",65+i);
-        for (j=0; j<nrOfVerteces; j++)
-            printf("%3d ",adjMatrix2[i][j]);
+            printf("%3d ",adjHolder[i][j]);
         printf("\n");
     }
     printf("\n");
@@ -71,16 +51,23 @@ int getNumberOfNeighborsOfVertex(int v)
 {
     if(v<nrOfVerteces)
     {
-        int nrOfNeighbors=0;
-        int i;
-        for(i=0; i< nrOfVerteces; i++)
+        if (isM)
         {
-            if(adjMatrix[v][i]>0 && i!=v)
+            int nrOfNeighbors=0;
+            int i;
+            for(i=0; i< nrOfVerteces; i++)
             {
-                nrOfNeighbors++;
+                if(adjHolder[v][i]>0 && i!=v)
+                {
+                    nrOfNeighbors++;
+                }
             }
+            return nrOfNeighbors;
         }
-        return nrOfNeighbors;
+        else
+        {
+            return nrNeighbors[v];
+        }
     }
     else
     {
@@ -92,18 +79,25 @@ int * getAllNeighborsOfVertex(int v)
 {
     if(v<nrOfVerteces)
     {
-        int nrOfNeighbors = getNumberOfNeighborsOfVertex(v);
-        int * neighbors = (int*)malloc(sizeof(int) * nrOfNeighbors);
-        int i,j=0;
-        for(i=0; i<nrOfVerteces; i++)
+        if (isM)
         {
-            if(adjMatrix[v][i]>0 && i!=v)
+            int nrOfNeighbors = getNumberOfNeighborsOfVertex(v);
+            int * neighbors = (int*)malloc(sizeof(int) * nrOfNeighbors);
+            int i,j=0;
+            for(i=0; i<nrOfVerteces; i++)
             {
-                neighbors[j]=i;
-                j++;
+                if(adjHolder[v][i]>0 && i!=v)
+                {
+                    neighbors[j]=i;
+                    j++;
+                }
             }
+            return neighbors;
         }
-        return neighbors;
+        else
+        {
+            return adjHolder[v];
+        }
     }
     else
     {
@@ -169,8 +163,8 @@ void dfs(int searchNode)
         if(mark[v] == UNVISITED)
         {
             mark[v] = VISITED;
-            int nrOfNeighbors = getNumberOfNeighborsOfVertex1(v);
-            int * neighbors = getAllNeighborsOfVertex1(v);
+            int nrOfNeighbors = getNumberOfNeighborsOfVertex(v);
+            int * neighbors = getAllNeighborsOfVertex(v);
             for(i=nrOfNeighbors-1; i>=0; i--)
             {
                 int w = neighbors[i];
@@ -216,108 +210,52 @@ void dfsRecurs(int v)
     printf("\nDFS recursive ended\n\n");
 }
 
-NodeT* MatrixToList(int** adjMatrix)
+void toList()
 {
-    int i,j;
-    for(i=0; i<nrOfVerteces; i++)
+    if (adjHolder == NULL) return;
+    int i;
+    free(nrNeighbors);
+    nrNeighbors = (int*)malloc(nrOfVerteces*sizeof(int));
+    for (i=0; i<nrOfVerteces; i++)
     {
-        printf("%d:",i);
-        for(j=0; j<nrOfVerteces; j++)
+        int nrOfNeighbors = getNumberOfNeighborsOfVertex(i);
+        int* adjVerteces = (int*)malloc(nrOfNeighbors*sizeof(int));
+        int r, s = 0;
+        for (r=0; r<nrOfVerteces; r++)
         {
-            if(adjMatrix[i][j]==1)
+            if (adjHolder[i][r]==1)
             {
-                AddLast(j);
-                printf("%d ",j);
+                adjVerteces[s] = r;
+                s++;
             }
         }
-        AddLast(-1);//! adding to the list -1 to mark the end of a line in the adjMatrix
-        printf("\n");
+        nrNeighbors[i] = s;
+        free(adjHolder[i]);
+        adjHolder[i] = adjVerteces;
     }
-    return L;
+    printf("Converted to list.\n\n");
+    isM = 0;
 }
 
-int getNumberOfNeighborsOfVertex1(int v)
+void toMatrix()
 {
-    int counter=0, serialofvertex=0;
-    NodeT *aux=L;
-    while(aux!=NULL)
+    if (adjHolder == NULL) return;
+    int i;
+    for (i=0; i<nrOfVerteces; i++)
     {
-        if(serialofvertex==v) counter++;
-
-        if(aux->content==-1)
+        int* adjMRow = (int*)malloc(nrOfVerteces*sizeof(int));
+        int r;
+        for (r=0; r < nrOfVerteces; r++)
         {
-            serialofvertex++;aux=aux->next;
+            adjMRow[r] = 0;
         }
-        else
+        for(r=0; r < nrNeighbors[i]; r++)
         {
-            aux=aux->next;
+            adjMRow[adjHolder[i][r]]++;
         }
+        free(adjHolder[i]);
+        adjHolder[i] = adjMRow;
     }
-return counter;
-}
-
-int getAllNeighborsOfVertex1(int v)
-{
-    int count=0, serialofvertex=0;
-    int x=getNumberOfNeighborsOfVertex(v);
-    int * neighbors = (int*)malloc(sizeof(int)*x);
-    NodeT *aux=L;
-    while(aux!=NULL)
-    {
-        if(serialofvertex==v) {neighbors[count]=aux->content;count++;}
-
-        if(aux->content==-1)
-        {
-            serialofvertex++;aux=aux->next;
-        }
-        else
-        {
-            aux=aux->next;
-        }
-    }
-return neighbors;
-}
-
-void ListToMatrix(NodeT *L,FILE *f)
-{
-    int n;
-    f=fopen("matrix.txt","r");
-    fscanf(f,"%d",&n);
-    int i=0,j=0;
-    NodeT* aux;
-    aux=L;
-    adjMatrix2=(int**)malloc(n*sizeof(int*));
-    for (i=0; i<n; i++)
-    {
-        *(adjMatrix2+i)=(int*)malloc(n*sizeof(int));
-    }
-
-    for(i=0; i<n;i++)
-    {
-        for(j=0; j<n; j++)
-        {
-            adjMatrix2[i][j]=0;
-        }
-    }//! the new adjacency matrix is allocated and filled with 0
-
-    if(L==NULL)
-    {
-        printf("NO LIST");
-        return;
-    }
-
-    i=0;
-    while(aux!=NULL)//!the next step is to put 1 in every row where we have adjacency
-    {
-        if(aux->content!=-1)
-        {
-            adjMatrix2[i][aux->content]=1;
-            aux=aux->next;
-        }
-        else
-        {
-            i++;
-            aux=aux->next;
-        }
-    }
+    printf("Converted to matrix.\n\n");
+    isM = 1;
 }
