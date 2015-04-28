@@ -1,0 +1,46 @@
+# depslib dependency file v1.0
+1430196601 source:c:\users\george\desktop\my repository\dsa-lab-1\30411\fericean g. george vlad\assignment5\main.c
+	<stdio.h>
+	<stdlib.h>
+	"graph.h"
+	"matrix.h"
+	"list.h"
+
+1430196885 c:\users\george\desktop\my repository\dsa-lab-1\30411\fericean g. george vlad\assignment5\graph.h
+	<stdio.h>
+	<stdlib.h>
+	"list.h"
+
+1430196773 c:\users\george\desktop\my repository\dsa-lab-1\30411\fericean g. george vlad\assignment5\list.h
+	<stdio.h>
+	<stdlib.h>
+
+1430196277 c:\users\george\desktop\my repository\dsa-lab-1\30411\fericean g. george vlad\assignment5\matrix.h
+	<stdio.h>
+	<stdlib.h>
+	"list.h"
+
+1430197283 source:c:\users\george\desktop\my repository\dsa-lab-1\30411\fericean g. george vlad\assignment5\graph.c
+	"graph.h"
+	"queue.h"
+	"matrix.h"
+	"stack.h"
+
+1430195570 c:\users\george\desktop\my repository\dsa-lab-1\30411\fericean g. george vlad\assignment5\queue.h
+	"list.h"
+
+1430195532 c:\users\george\desktop\my repository\dsa-lab-1\30411\fericean g. george vlad\assignment5\stack.h
+	"list.h"
+
+1430196819 source:c:\users\george\desktop\my repository\dsa-lab-1\30411\fericean g. george vlad\assignment5\list.c
+	"list.h"
+
+1430196457 source:c:\users\george\desktop\my repository\dsa-lab-1\30411\fericean g. george vlad\assignment5\matrix.c
+	"matrix.h"
+
+1430195598 source:c:\users\george\desktop\my repository\dsa-lab-1\30411\fericean g. george vlad\assignment5\queue.c
+	"queue.h"
+
+1430197913 source:c:\users\george\desktop\my repository\dsa-lab-1\30411\fericean g. george vlad\assignment5\stack.c
+	"stack.h"
+
