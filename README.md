@@ -60,7 +60,7 @@ Lab 8: Graphs - Graph Processing Algorithms (Dijkstra, Prim, Kursal, Floyd etc.)
 ```
 Lab 9: Test 3 - Graphs
 ```
-* Assignments: none
+* [Test Skeleton project] (https://github.com/AC-2015-Sem2/DSA-lab/tree/master/Interesting%20Stuff/Graphs101%20-%20test%20skeleton)
 
 ```
 Lab 10: Hash Tables - introduction, collision detection, usages
