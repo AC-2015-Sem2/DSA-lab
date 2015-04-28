@@ -1,0 +1,103 @@
+# depslib dependency file v1.0
+1430149119 source:d:\facultate\semestrul 2\dsa\graph\graph.c
+	<stdio.h>
+	<stdlib.h>
+	"graph.h"
+	"stack.h"
+	"queue.h"
+
+1429567524 d:\facultate\semestrul 2\dsa\graph\graph.h
+	<stdio.h>
+
+1429567416 d:\facultate\semestrul 2\dsa\graph\stack.h
+	"node.h"
+
+1429567193 d:\facultate\semestrul 2\dsa\graph\node.h
+	<stdio.h>
+	<stdlib.h>
+
+1429567318 d:\facultate\semestrul 2\dsa\graph\queue.h
+	"node.h"
+
+1429567453 source:d:\facultate\semestrul 2\dsa\graph\main.c
+	"queue.h"
+	"stack.h"
+	"graph.h"
+
+1429567116 source:d:\facultate\semestrul 2\dsa\graph\node.c
+	"node.h"
+
+1429567252 source:d:\facultate\semestrul 2\dsa\graph\queue.c
+	"queue.h"
+
+1429567368 source:d:\facultate\semestrul 2\dsa\graph\stack.c
+	"stack.h"
+
+1430157358 source:d:\facultate\semestrul 2\dsa\graph - copy\graph.c
+	<stdio.h>
+	<stdlib.h>
+	"graph.h"
+	"stack.h"
+	"queue.h"
+
+1430156984 d:\facultate\semestrul 2\dsa\graph - copy\graph.h
+	<stdio.h>
+
+1429567416 d:\facultate\semestrul 2\dsa\graph - copy\stack.h
+	"node.h"
+
+1429567193 d:\facultate\semestrul 2\dsa\graph - copy\node.h
+	<stdio.h>
+	<stdlib.h>
+
+1429567318 d:\facultate\semestrul 2\dsa\graph - copy\queue.h
+	"node.h"
+
+1430158037 source:d:\facultate\semestrul 2\dsa\graph - copy\main.c
+	<stdio.h>
+	<stdlib.h>
+	"graph.h"
+
+1429567116 source:d:\facultate\semestrul 2\dsa\graph - copy\node.c
+	"node.h"
+
+1429567252 source:d:\facultate\semestrul 2\dsa\graph - copy\queue.c
+	"queue.h"
+
+1429567368 source:d:\facultate\semestrul 2\dsa\graph - copy\stack.c
+	"stack.h"
+
+1430157358 source:c:\users\user\desktop\tema_1_grafuri\graph.c
+	<stdio.h>
+	<stdlib.h>
+	"graph.h"
+	"stack.h"
+	"queue.h"
+
+1430156984 c:\users\user\desktop\tema_1_grafuri\graph.h
+	<stdio.h>
+
+1429567416 c:\users\user\desktop\tema_1_grafuri\stack.h
+	"node.h"
+
+1429567193 c:\users\user\desktop\tema_1_grafuri\node.h
+	<stdio.h>
+	<stdlib.h>
+
+1429567318 c:\users\user\desktop\tema_1_grafuri\queue.h
+	"node.h"
+
+1430158037 source:c:\users\user\desktop\tema_1_grafuri\main.c
+	<stdio.h>
+	<stdlib.h>
+	"graph.h"
+
+1429567116 source:c:\users\user\desktop\tema_1_grafuri\node.c
+	"node.h"
+
+1429567252 source:c:\users\user\desktop\tema_1_grafuri\queue.c
+	"queue.h"
+
+1429567368 source:c:\users\user\desktop\tema_1_grafuri\stack.c
+	"stack.h"
+
