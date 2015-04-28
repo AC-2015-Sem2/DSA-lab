@@ -1,0 +1,37 @@
+# depslib dependency file v1.0
+1430023945 source:c:\users\cori\desktop\graph\graph.c
+	<stdio.h>
+	<stdlib.h>
+	"graph.h"
+	"stack.h"
+	"queue.h"
+
+1429365343 c:\users\cori\desktop\graph\graph.h
+	<stdio.h>
+
+1429365342 c:\users\cori\desktop\graph\stack.h
+	"node.h"
+
+1429365340 c:\users\cori\desktop\graph\node.h
+	<stdio.h>
+	<stdlib.h>
+
+1429365341 c:\users\cori\desktop\graph\queue.h
+	"node.h"
+
+1430023962 source:c:\users\cori\desktop\graph\main.c
+	<stdio.h>
+	<stdlib.h>
+	"queue.h"
+	"stack.h"
+	"graph.h"
+
+1429365336 source:c:\users\cori\desktop\graph\node.c
+	"node.h"
+
+1429365340 source:c:\users\cori\desktop\graph\queue.c
+	"queue.h"
+
+1429365341 source:c:\users\cori\desktop\graph\stack.c
+	"stack.h"
+
