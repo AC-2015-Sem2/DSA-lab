@@ -1,0 +1,65 @@
+# depslib dependency file v1.0
+1430243816 source:/home/vladms/Data_Structures/myGitRep/30414/Bonta I. Vlad Valentin/Assignment5/HW/adjacencyList.c
+	"adjacencyList.h"
+
+1430243816 /home/vladms/Data_Structures/myGitRep/30414/Bonta I. Vlad Valentin/Assignment5/HW/adjacencyList.h
+	"graphRepresentation.h"
+	"graphTraversals.h"
+	"graphAlgorithms.h"
+
+1430243816 /home/vladms/Data_Structures/myGitRep/30414/Bonta I. Vlad Valentin/Assignment5/HW/graphRepresentation.h
+	"graph.h"
+
+1430243816 /home/vladms/Data_Structures/myGitRep/30414/Bonta I. Vlad Valentin/Assignment5/HW/graph.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"stack.h"
+	"queue.h"
+	"edge.h"
+
+1430243816 /home/vladms/Data_Structures/myGitRep/30414/Bonta I. Vlad Valentin/Assignment5/HW/stack.h
+	"node.h"
+
+1430243816 /home/vladms/Data_Structures/myGitRep/30414/Bonta I. Vlad Valentin/Assignment5/HW/node.h
+	<stdio.h>
+	<stdlib.h>
+
+1430243816 /home/vladms/Data_Structures/myGitRep/30414/Bonta I. Vlad Valentin/Assignment5/HW/queue.h
+	"node.h"
+
+1430243816 /home/vladms/Data_Structures/myGitRep/30414/Bonta I. Vlad Valentin/Assignment5/HW/edge.h
+
+1430243816 /home/vladms/Data_Structures/myGitRep/30414/Bonta I. Vlad Valentin/Assignment5/HW/graphTraversals.h
+	"graph.h"
+
+1430243816 /home/vladms/Data_Structures/myGitRep/30414/Bonta I. Vlad Valentin/Assignment5/HW/graphAlgorithms.h
+	"graph.h"
+
+1430243816 source:/home/vladms/Data_Structures/myGitRep/30414/Bonta I. Vlad Valentin/Assignment5/HW/graphAlgorithms.c
+	"graph.h"
+	"graphRepresentation.h"
+
+1430243816 source:/home/vladms/Data_Structures/myGitRep/30414/Bonta I. Vlad Valentin/Assignment5/HW/graphRepresentation.c
+	<stdlib.h>
+	"graphRepresentation.h"
+
+1430243816 source:/home/vladms/Data_Structures/myGitRep/30414/Bonta I. Vlad Valentin/Assignment5/HW/graphTraversals.c
+	"graphTraversals.h"
+	"graphRepresentation.h"
+
+1430243816 source:/home/vladms/Data_Structures/myGitRep/30414/Bonta I. Vlad Valentin/Assignment5/HW/main.c
+	"graphRepresentation.h"
+	"graphTraversals.h"
+	"graphAlgorithms.h"
+	"adjacencyList.h"
+
+1430243816 source:/home/vladms/Data_Structures/myGitRep/30414/Bonta I. Vlad Valentin/Assignment5/HW/node.c
+	"node.h"
+
+1430243816 source:/home/vladms/Data_Structures/myGitRep/30414/Bonta I. Vlad Valentin/Assignment5/HW/queue.c
+	"queue.h"
+
+1430243816 source:/home/vladms/Data_Structures/myGitRep/30414/Bonta I. Vlad Valentin/Assignment5/HW/stack.c
+	"stack.h"
+
