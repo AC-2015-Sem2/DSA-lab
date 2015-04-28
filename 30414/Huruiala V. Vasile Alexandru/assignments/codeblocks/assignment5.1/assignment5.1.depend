@@ -1,0 +1,33 @@
+# depslib dependency file v1.0
+1429983327 source:c:\users\alexh\desktop\fork\dsa-lab\30414\huruiala v. vasile alexandru\assignments\codeblocks\assignment5.1\graph.c
+	"graph.h"
+	"stack.h"
+
+1429982684 c:\users\alexh\desktop\fork\dsa-lab\30414\huruiala v. vasile alexandru\assignments\codeblocks\assignment5.1\graph.h
+	<stdio.h>
+	<stdlib.h>
+	"queue.h"
+
+1429977259 c:\users\alexh\desktop\fork\dsa-lab\30414\huruiala v. vasile alexandru\assignments\codeblocks\assignment5.1\queue.h
+	"node.h"
+	<stdio.h>
+
+1429967941 c:\users\alexh\desktop\fork\dsa-lab\30414\huruiala v. vasile alexandru\assignments\codeblocks\assignment5.1\node.h
+	<stdlib.h>
+
+1429983347 source:c:\users\alexh\desktop\fork\dsa-lab\30414\huruiala v. vasile alexandru\assignments\codeblocks\assignment5.1\main.c
+	<stdio.h>
+	<stdlib.h>
+	"graph.h"
+
+1429967950 source:c:\users\alexh\desktop\fork\dsa-lab\30414\huruiala v. vasile alexandru\assignments\codeblocks\assignment5.1\node.c
+	"node.h"
+
+1429977259 source:c:\users\alexh\desktop\fork\dsa-lab\30414\huruiala v. vasile alexandru\assignments\codeblocks\assignment5.1\queue.c
+	"queue.h"
+
+1429977183 c:\users\alexh\desktop\fork\dsa-lab\30414\huruiala v. vasile alexandru\assignments\codeblocks\assignment5.1\stack.h
+
+1429977183 source:c:\users\alexh\desktop\fork\dsa-lab\30414\huruiala v. vasile alexandru\assignments\codeblocks\assignment5.1\stack.c
+	"node.h"
+
