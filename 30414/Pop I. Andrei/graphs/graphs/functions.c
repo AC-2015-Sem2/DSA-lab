@@ -37,17 +37,17 @@ void printList()
     printf("\n");
 }
 
-void addToList(int x, int y)
+void addToList(int where, int node)
 {
-    NodeT * head = listAdr[x];
+    NodeT * head = listAdr[where];
 
     NodeT *p = (NodeT*) malloc (sizeof(NodeT));
-    p->content = y;
+    p->content = node;
 
     if(head == NULL)
     {
         p->next = NULL;
-        listAdr[x] = p;
+        listAdr[where] = p;
     }
     else
     {
