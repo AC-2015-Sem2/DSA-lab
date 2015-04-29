@@ -53,6 +53,13 @@ int searchNode(NodeT* root, int value)
   }
 }
 
+NodeT* minNode(NodeT* root)
+{
+    while(root->left!=NULL)
+        root=root->left;
+    return root;
+}
+
 NodeT* createBinaryTree(FILE* f)
 {
     NodeT* p;
@@ -160,6 +167,69 @@ NodeT* insertNodeAVLtree(NodeT* root, int data)
     return root;
 }
 
+/*
+//delete function:
+NodeT* deleteNodeAVLtree(NodeT* root, int value)
+{
+    if(root==NULL)
+        return root;
+    else
+    {
+        if(root->data > value)
+            root->left=deleteNodeAVLtree(root->left, value);
+        else if(root->data < value)
+            root->right=deleteNodeAVLtree(root->right, value);
+        else //!
+        {
+            if(root->left==NULL || root->right==NULL)
+            {
+                NodeT* aux;
+                if(root->left!=NULL)
+                    aux=root->left;
+                else
+                    aux=root->right;
+
+                if(aux==NULL)
+                {
+                    aux=root;
+                    //root==NULL;
+                }
+                else
+                    *root=*aux;
+                free(aux);
+            }
+            else
+            {
+                NodeT* aux=minNode(root->right);
+                root->data=aux->data;
+                root->right=deleteNodeAVLtree(root->right, aux->data);
+            }
+        }
+
+    if(root==NULL)
+        return root;
+
+    root->height=maxx(height(root->left), height(root->right))+1;
+    int auxx=balanceFactor(root);
+
+    if(auxx>1)
+    {
+        if(root->left!=NULL)//RR
+            rightRotation(&root);
+        else//LR
+            LeftRight(&root);
+    }
+    else if(auxx<-1)
+    {
+        if(root->right!=NULL)//LL
+            leftRotation(&root);
+        else//RL
+            RightLeft(&root);
+
+    }
+    return root;
+}
+*/
 int main()
 {
     NodeT* root=NULL;
