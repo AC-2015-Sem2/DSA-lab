@@ -1,9 +1,9 @@
 #ifndef TREES_H
-#define TREES_H
+# define TREES_H
 
-#include <stdio.h>
-#include <stdlib.h>
-#include <strings.h>
+# include <stdio.h>
+# include <stdlib.h>
+# include <strings.h>
 
 typedef struct  node
 {
