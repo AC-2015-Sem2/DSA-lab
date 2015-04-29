@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1428415465 source:d:\codeblocks\test1\mirror\main.c
+	<stdio.h>
+	<string.h>
+	<stdlib.h>
+
