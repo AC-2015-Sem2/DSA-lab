@@ -1,0 +1,61 @@
+# depslib dependency file v1.0
+1430253737 source:c:\users\gabriel\desktop\assignment5.1\node.c
+	"node.h"
+
+1430171115 c:\users\gabriel\desktop\assignment5.1\node.h
+	<stdio.h>
+	<stdlib.h>
+
+1430253737 source:c:\users\gabriel\desktop\assignment5.1\queue.c
+	"queue.h"
+
+1430171115 c:\users\gabriel\desktop\assignment5.1\queue.h
+	"node.h"
+
+1430253737 source:c:\users\gabriel\desktop\assignment5.1\stack.c
+	"stack.h"
+
+1430171115 c:\users\gabriel\desktop\assignment5.1\stack.h
+	"node.h"
+
+1430253737 source:c:\users\gabriel\desktop\assignment5.1\graph.c
+	<stdio.h>
+	<stdlib.h>
+	"graph.h"
+	"stack.h"
+	"queue.h"
+	"list.h"
+	"matrix.h"
+
+1430253737 c:\users\gabriel\desktop\assignment5.1\graph.h
+	<stdio.h>
+	"node.h"
+
+1430253737 source:c:\users\gabriel\desktop\assignment5.1\main.c
+	"queue.h"
+	"stack.h"
+	"graph.h"
+	"list.h"
+	"matrix.h"
+
+1430253737 source:c:\users\gabriel\desktop\assignment5.1\matrix.c
+	<stdio.h>
+	<stdlib.h>
+	"graph.h"
+	"stack.h"
+	"queue.h"
+	"matrix.h"
+
+1430253474 c:\users\gabriel\desktop\assignment5.1\list.h
+	"node.h"
+
+1430251904 c:\users\gabriel\desktop\assignment5.1\matrix.h
+
+1430253737 source:c:\users\gabriel\desktop\assignment5.1\list.c
+	<stdio.h>
+	<stdlib.h>
+	"graph.h"
+	"stack.h"
+	"queue.h"
+	"list.h"
+
