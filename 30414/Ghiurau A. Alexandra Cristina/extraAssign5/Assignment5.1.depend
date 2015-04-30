@@ -1,0 +1,59 @@
+# depslib dependency file v1.0
+1430143505 source:c:\users\alexa\desktop\assignment5.1\graph.c
+	<stdio.h>
+	<stdlib.h>
+	"graph.h"
+	"stack.h"
+	"queue.h"
+	"list.h"
+
+1430143740 c:\users\alexa\desktop\assignment5.1\graph.h
+	<stdio.h>
+	"node.h"
+
+1430137291 c:\users\alexa\desktop\assignment5.1\stack.h
+	"node.h"
+
+1430142811 c:\users\alexa\desktop\assignment5.1\node.h
+	<stdio.h>
+	<stdlib.h>
+
+1430137295 c:\users\alexa\desktop\assignment5.1\queue.h
+	"node.h"
+
+1430138104 c:\users\alexa\desktop\assignment5.1\list.h
+
+1430143603 source:c:\users\alexa\desktop\assignment5.1\list.c
+	"node.h"
+	"graph.h"
+	"stack.h"
+	"queue.h"
+
+1430143993 source:c:\users\alexa\desktop\assignment5.1\main.c
+	"queue.h"
+	"stack.h"
+	"graph.h"
+	"list.h"
+	"algorithms.h"
+
+1430137331 source:c:\users\alexa\desktop\assignment5.1\node.c
+	"node.h"
+
+1430137281 source:c:\users\alexa\desktop\assignment5.1\queue.c
+	"queue.h"
+
+1430137284 source:c:\users\alexa\desktop\assignment5.1\stack.c
+	"stack.h"
+
+1430141688 c:\users\alexa\desktop\assignment5.1\algorithms.h
+	<stdio.h>
+
+1430143943 source:c:\users\alexa\desktop\assignment5.1\algorithms.c
+	<stdio.h>
+	<stdlib.h>
+	"graph.h"
+	"stack.h"
+	"queue.h"
+	"list.h"
+	"algorithms.h"
+

@@ -1,0 +1,117 @@
+# depslib dependency file v1.0
+1430143505 source:c:\users\alexa\desktop\extraassign5\graph.c
+	<stdio.h>
+	<stdlib.h>
+	"graph.h"
+	"stack.h"
+	"queue.h"
+	"list.h"
+
+1430250587 c:\users\alexa\desktop\extraassign5\graph.h
+	<stdio.h>
+	"node.h"
+
+1430248604 c:\users\alexa\desktop\extraassign5\node.h
+	<stdio.h>
+	<stdlib.h>
+
+1430137291 c:\users\alexa\desktop\extraassign5\stack.h
+	"node.h"
+
+1430137295 c:\users\alexa\desktop\extraassign5\queue.h
+	"node.h"
+
+1430138104 c:\users\alexa\desktop\extraassign5\list.h
+
+1430143603 source:c:\users\alexa\desktop\extraassign5\list.c
+	"node.h"
+	"graph.h"
+	"stack.h"
+	"queue.h"
+
+1430137331 source:c:\users\alexa\desktop\extraassign5\node.c
+	"node.h"
+
+1430137281 source:c:\users\alexa\desktop\extraassign5\queue.c
+	"queue.h"
+
+1430137284 source:c:\users\alexa\desktop\extraassign5\stack.c
+	"stack.h"
+
+1430257207 source:c:\users\alexa\desktop\extraassign5\algorithms.c
+	<stdio.h>
+	<stdlib.h>
+	"graph.h"
+	"stack.h"
+	"queue.h"
+	"list.h"
+	"algorithms.h"
+
+1430141688 c:\users\alexa\desktop\extraassign5\algorithms.h
+	<stdio.h>
+
+1430257111 source:c:\users\alexa\desktop\extraassign5\main.c
+	"queue.h"
+	"stack.h"
+	"graph.h"
+	"list.h"
+	"algorithms.h"
+
+1430143505 source:c:\users\alexa\desktop\facultate eu\semestrul ii\data structures and algorithms\myownrepository\dsa-lab\30414\ghiurau a. alexandra cristina\extraassign5\graph.c
+	<stdio.h>
+	<stdlib.h>
+	"graph.h"
+	"stack.h"
+	"queue.h"
+	"list.h"
+
+1430258776 c:\users\alexa\desktop\facultate eu\semestrul ii\data structures and algorithms\myownrepository\dsa-lab\30414\ghiurau a. alexandra cristina\extraassign5\graph.h
+	<stdio.h>
+	"node.h"
+
+1430248604 c:\users\alexa\desktop\facultate eu\semestrul ii\data structures and algorithms\myownrepository\dsa-lab\30414\ghiurau a. alexandra cristina\extraassign5\node.h
+	<stdio.h>
+	<stdlib.h>
+
+1430137291 c:\users\alexa\desktop\facultate eu\semestrul ii\data structures and algorithms\myownrepository\dsa-lab\30414\ghiurau a. alexandra cristina\extraassign5\stack.h
+	"node.h"
+
+1430137295 c:\users\alexa\desktop\facultate eu\semestrul ii\data structures and algorithms\myownrepository\dsa-lab\30414\ghiurau a. alexandra cristina\extraassign5\queue.h
+	"node.h"
+
+1430138104 c:\users\alexa\desktop\facultate eu\semestrul ii\data structures and algorithms\myownrepository\dsa-lab\30414\ghiurau a. alexandra cristina\extraassign5\list.h
+
+1430143603 source:c:\users\alexa\desktop\facultate eu\semestrul ii\data structures and algorithms\myownrepository\dsa-lab\30414\ghiurau a. alexandra cristina\extraassign5\list.c
+	"node.h"
+	"graph.h"
+	"stack.h"
+	"queue.h"
+
+1430260127 source:c:\users\alexa\desktop\facultate eu\semestrul ii\data structures and algorithms\myownrepository\dsa-lab\30414\ghiurau a. alexandra cristina\extraassign5\main.c
+	"queue.h"
+	"stack.h"
+	"graph.h"
+	"list.h"
+	"algorithms.h"
+
+1430141688 c:\users\alexa\desktop\facultate eu\semestrul ii\data structures and algorithms\myownrepository\dsa-lab\30414\ghiurau a. alexandra cristina\extraassign5\algorithms.h
+	<stdio.h>
+
+1430137331 source:c:\users\alexa\desktop\facultate eu\semestrul ii\data structures and algorithms\myownrepository\dsa-lab\30414\ghiurau a. alexandra cristina\extraassign5\node.c
+	"node.h"
+
+1430137281 source:c:\users\alexa\desktop\facultate eu\semestrul ii\data structures and algorithms\myownrepository\dsa-lab\30414\ghiurau a. alexandra cristina\extraassign5\queue.c
+	"queue.h"
+
+1430137284 source:c:\users\alexa\desktop\facultate eu\semestrul ii\data structures and algorithms\myownrepository\dsa-lab\30414\ghiurau a. alexandra cristina\extraassign5\stack.c
+	"stack.h"
+
+1430260063 source:c:\users\alexa\desktop\facultate eu\semestrul ii\data structures and algorithms\myownrepository\dsa-lab\30414\ghiurau a. alexandra cristina\extraassign5\algorithms.c
+	<stdio.h>
+	<stdlib.h>
+	"graph.h"
+	"stack.h"
+	"queue.h"
+	"list.h"
+	"algorithms.h"
+
