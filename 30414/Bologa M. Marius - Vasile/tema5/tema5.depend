@@ -1,0 +1,65 @@
+# depslib dependency file v1.0
+1430148575 source:c:\users\bolo\desktop\tema5\graphalgorithms.c
+	"graph.h"
+	"graphRepresentation.h"
+
+1430148575 c:\users\bolo\desktop\tema5\graph.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"stack.h"
+	"queue.h"
+	"edge.h"
+
+1430148575 c:\users\bolo\desktop\tema5\stack.h
+	"node.h"
+
+1430161250 c:\users\bolo\desktop\tema5\node.h
+	<stdio.h>
+	<stdlib.h>
+
+1430148575 c:\users\bolo\desktop\tema5\queue.h
+	"node.h"
+
+1430148575 c:\users\bolo\desktop\tema5\edge.h
+
+1430251934 c:\users\bolo\desktop\tema5\graphrepresentation.h
+	"graph.h"
+
+1430252080 source:c:\users\bolo\desktop\tema5\graphrepresentation.c
+	<stdlib.h>
+	"graphRepresentation.h"
+
+1430148575 source:c:\users\bolo\desktop\tema5\graphtraversals.c
+	"graphTraversals.h"
+	"graphRepresentation.h"
+
+1430148575 c:\users\bolo\desktop\tema5\graphtraversals.h
+	"graph.h"
+
+1430253869 source:c:\users\bolo\desktop\tema5\main.c
+	"graphRepresentation.h"
+	"graphTraversals.h"
+	"graphAlgorithms.h"
+	"matrixtolistandviceversa.h"
+
+1430148575 c:\users\bolo\desktop\tema5\graphalgorithms.h
+	"graph.h"
+
+1430254009 c:\users\bolo\desktop\tema5\matrixtolistandviceversa.h
+	"graphRepresentation.h"
+	"graphTraversals.h"
+	"graphAlgorithms.h"
+
+1430253962 source:c:\users\bolo\desktop\tema5\matrixtolistandviceversa.c
+	"matrixtolistandviceversa.h"
+
+1430161250 source:c:\users\bolo\desktop\tema5\node.c
+	"node.h"
+
+1430148575 source:c:\users\bolo\desktop\tema5\queue.c
+	"queue.h"
+
+1430148575 source:c:\users\bolo\desktop\tema5\stack.c
+	"stack.h"
+
