@@ -1,0 +1,12 @@
+# depslib dependency file v1.0
+1430486897 source:c:\users\andrei\desktop\myfolder\dsa-lab\30414\pop i. andrei\graphs -algorithms\vertexcover\main.c
+	"functions.h"
+
+1430486897 c:\users\andrei\desktop\myfolder\dsa-lab\30414\pop i. andrei\graphs -algorithms\vertexcover\functions.h
+	<stdio.h>
+	<stdlib.h>
+	<limits.h>
+
+1430491642 source:c:\users\andrei\desktop\myfolder\dsa-lab\30414\pop i. andrei\graphs -algorithms\vertexcover\functions.c
+	"functions.h"
+
