@@ -126,7 +126,7 @@ int uni(int * parent, int i,int j)
 
 void kruskal()
 {
-    printf("Kruskal Algorithm started\n");
+    printf("\nKruskal Algorithm started\n");
     int nrOfEdges=0,i,s,b;
     edgeT minEdge;
     int **matrix=getCopyOfAdjecencyMatrix();
@@ -311,6 +311,11 @@ void BellmanFord(int startNode)
                     {
                         dist[v]=dist[u]+adjMatrix[u][v];
                         parent[v]=u;
+                    }
+                    if(dist[u]+adjMatrix[u][v]<dist[v])
+                    {
+                        dist[v]=dist[u]+adjMatrix[u][v];
+                        printf("error: Graph contains a negative-weight cycle");
                     }
                 }
             }
