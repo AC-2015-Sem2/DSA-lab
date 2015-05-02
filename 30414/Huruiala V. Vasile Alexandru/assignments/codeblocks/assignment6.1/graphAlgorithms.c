@@ -102,7 +102,7 @@ void kruskal(int** adjMat, int size)
 
 void bellman_ford(int** adjMat, int size, int startingNode)
 {
-    int i;
+    int i, j;
     int minCost = 0;
     int* weight = (int*)malloc(sizeof(int) * size);
     int* parent = (int*)malloc(sizeof(int) * size);
@@ -138,6 +138,20 @@ void bellman_ford(int** adjMat, int size, int startingNode)
                         weight[j1] = weight[i1] + adjMat[i1][j1];
                         parent[j1] = i1;
                     }
+                }
+            }
+        }
+    }
+    ///Check for negative-weight cycles
+    for(i = 0; i < size; i++)
+    {
+        for(j = 0; j < size; j++)
+        {
+            if(adjMat[i][j] > 0)
+            {
+                if(weight[i] + adjMat[i][j] < weight[j])
+                {
+                    printf("\nError: graph contains a negative weight cycle\n");
                 }
             }
         }
