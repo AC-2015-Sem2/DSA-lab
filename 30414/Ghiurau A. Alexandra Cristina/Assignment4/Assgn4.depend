@@ -1,0 +1,41 @@
+# depslib dependency file v1.0
+1428415922 source:c:\users\alexa\desktop\assgn4\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"functions.h"
+
+1428415708 source:c:\users\alexa\desktop\assgn4\helperfunctions.c
+	"functions.h"
+
+1428415840 c:\users\alexa\desktop\assgn4\functions.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1428415708 source:c:\users\alexa\desktop\assgn4\rotationfunctions.c
+	"functions.h"
+
+1428415840 source:c:\users\alexa\desktop\assgn4\treesfunctions.c
+	"functions.h"
+
+1428415708 source:c:\users\alexa\desktop\facultate eu\semestrul ii\data structures and algorithms\myownrepository\dsa-lab\30414\ghiurau a. alexandra cristina\assignment4\helperfunctions.c
+	"functions.h"
+
+1428415840 c:\users\alexa\desktop\facultate eu\semestrul ii\data structures and algorithms\myownrepository\dsa-lab\30414\ghiurau a. alexandra cristina\assignment4\functions.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1428415708 source:c:\users\alexa\desktop\facultate eu\semestrul ii\data structures and algorithms\myownrepository\dsa-lab\30414\ghiurau a. alexandra cristina\assignment4\rotationfunctions.c
+	"functions.h"
+
+1428415840 source:c:\users\alexa\desktop\facultate eu\semestrul ii\data structures and algorithms\myownrepository\dsa-lab\30414\ghiurau a. alexandra cristina\assignment4\treesfunctions.c
+	"functions.h"
+
+1428417753 source:c:\users\alexa\desktop\facultate eu\semestrul ii\data structures and algorithms\myownrepository\dsa-lab\30414\ghiurau a. alexandra cristina\assignment4\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"functions.h"
+

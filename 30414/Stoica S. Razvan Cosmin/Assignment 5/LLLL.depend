@@ -1,0 +1,102 @@
+# depslib dependency file v1.0
+1430160421 source:c:\users\razvan-pc\documents\c++\llll\graph.c
+	<stdio.h>
+	<stdlib.h>
+	"graph.h"
+	"stack.h"
+	"queue.h"
+	"list.h"
+
+1430158285 c:\users\razvan-pc\documents\c++\llll\graph.h
+	<stdio.h>
+
+1430158347 c:\users\razvan-pc\documents\c++\llll\stack.h
+	"node.h"
+
+1430158285 c:\users\razvan-pc\documents\c++\llll\node.h
+	<stdio.h>
+	<stdlib.h>
+
+1430158285 c:\users\razvan-pc\documents\c++\llll\queue.h
+	"node.h"
+
+1430160421 source:c:\users\razvan-pc\documents\c++\llll\list.c
+	<stdio.h>
+	<stdlib.h>
+	"node.h"
+	"graph.h"
+	"stack.h"
+	"queue.h"
+
+1430158430 c:\users\razvan-pc\documents\c++\llll\list.h
+	<stdio.h>
+
+1430160215 source:c:\users\razvan-pc\documents\c++\llll\main.c
+	"queue.h"
+	"stack.h"
+	"graph.h"
+	"list.h"
+
+1430157531 source:c:\users\razvan-pc\documents\c++\llll\node.c
+	"node.h"
+
+1430160262 source:c:\users\razvan-pc\documents\c++\llll\queue.c
+	"queue.h"
+
+1430158306 source:c:\users\razvan-pc\documents\c++\llll\stack.c
+	"stack.h"
+
+1430158654 c:\users\razvan-pc\documents\c++\llll\graph.c
+	<stdio.h>
+	<stdlib.h>
+	"graph.h"
+	"stack.h"
+	"queue.h"
+
+1430160421 source:c:\users\razvan-pc\documents\c++\assignment 5\list.c
+	<stdio.h>
+	<stdlib.h>
+	"node.h"
+	"graph.h"
+	"stack.h"
+	"queue.h"
+
+1430158285 c:\users\razvan-pc\documents\c++\assignment 5\node.h
+	<stdio.h>
+	<stdlib.h>
+
+1430158285 c:\users\razvan-pc\documents\c++\assignment 5\graph.h
+	<stdio.h>
+
+1430158347 c:\users\razvan-pc\documents\c++\assignment 5\stack.h
+	"node.h"
+
+1430158285 c:\users\razvan-pc\documents\c++\assignment 5\queue.h
+	"node.h"
+
+1430160215 source:c:\users\razvan-pc\documents\c++\assignment 5\main.c
+	"queue.h"
+	"stack.h"
+	"graph.h"
+	"list.h"
+
+1430158430 c:\users\razvan-pc\documents\c++\assignment 5\list.h
+	<stdio.h>
+
+1430157531 source:c:\users\razvan-pc\documents\c++\assignment 5\node.c
+	"node.h"
+
+1430160262 source:c:\users\razvan-pc\documents\c++\assignment 5\queue.c
+	"queue.h"
+
+1430158306 source:c:\users\razvan-pc\documents\c++\assignment 5\stack.c
+	"stack.h"
+
+1430160783 source:c:\users\razvan-pc\documents\c++\assignment 5\graph.c
+	<stdio.h>
+	<stdlib.h>
+	"graph.h"
+	"stack.h"
+	"queue.h"
+	"list.h"
+

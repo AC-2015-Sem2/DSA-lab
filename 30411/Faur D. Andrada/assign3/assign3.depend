@@ -1,0 +1,7 @@
+# depslib dependency file v1.0
+1427647411 source:d:\school\projects\assign3\asg3.c
+	<stdio.h>
+	<conio.h>
+	<stdlib.h>
+	<string.h>
+

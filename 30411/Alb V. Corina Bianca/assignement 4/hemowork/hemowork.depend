@@ -1,0 +1,19 @@
+# depslib dependency file v1.0
+1428148346 source:c:\users\cori\desktop\hemowork\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<limits.h>
+
+1428172085 source:c:\users\cori\desktop\assignement 4\hemowork\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<limits.h>
+
+1428327418 source:h:\sem 2\dsa\problems\assignement 4\hemowork\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<limits.h>
+

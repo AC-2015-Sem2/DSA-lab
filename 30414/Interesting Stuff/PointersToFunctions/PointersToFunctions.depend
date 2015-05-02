@@ -1,0 +1,14 @@
+# depslib dependency file v1.0
+1425229034 source:c:\users\alex\desktop\predare\2014-2015 - sem2\dsa-lab\interestingstuff\pointerstofunctions\main.c
+	"list.h"
+
+1425229485 source:c:\users\alex\desktop\predare\2014-2015 - sem2\dsa-lab\interestingstuff\pointerstofunctions\list.c
+	"list.h"
+
+1425229818 c:\users\alex\desktop\predare\2014-2015 - sem2\dsa-lab\interestingstuff\pointerstofunctions\list.h
+	"node.h"
+
+1425228423 c:\users\alex\desktop\predare\2014-2015 - sem2\dsa-lab\interestingstuff\pointerstofunctions\node.h
+	<stdio.h>
+	<stdlib.h>
+

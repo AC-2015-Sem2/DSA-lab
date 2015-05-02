@@ -1,0 +1,49 @@
+# depslib dependency file v1.0
+1428328408 source:c:\users\andrei\desktop\dsa\dsa-lab\30414\pop i. andrei\balacedtrees\insert-delete\insdelfunctions.c
+	"insdelHeader.h"
+
+1428328353 source:c:\users\andrei\desktop\dsa\dsa-lab\30414\pop i. andrei\balacedtrees\insert-delete\main.c
+	"insdelHeader.h"
+
+1428328289 c:\users\andrei\desktop\dsa\dsa-lab\30414\pop i. andrei\balacedtrees\insert-delete\insdelheader.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<limits.h>
+
+1428328450 source:c:\users\andrei\desktop\dsa\dsa-lab\30414\pop i. andrei\avl trees\insert-delete\main.c
+	"insdelHeader.h"
+
+1428328289 c:\users\andrei\desktop\dsa\dsa-lab\30414\pop i. andrei\avl trees\insert-delete\insdelheader.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<limits.h>
+
+1428328408 source:c:\users\andrei\desktop\dsa\dsa-lab\30414\pop i. andrei\avl trees\insert-delete\insdelfunctions.c
+	"insdelHeader.h"
+
+1428386441 source:c:\users\andrei\desktop\myfolder\dsa-lab\30414\pop i. andrei\avl trees\insert-delete\main.c
+	"insdelHeader.h"
+
+1428386324 c:\users\andrei\desktop\myfolder\dsa-lab\30414\pop i. andrei\avl trees\insert-delete\insdelheader.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<limits.h>
+
+1428386324 source:c:\users\andrei\desktop\myfolder\dsa-lab\30414\pop i. andrei\avl trees\insert-delete\insdelfunctions.c
+	"insdelHeader.h"
+
+1428386441 source:c:\users\andrei\desktop\myfolder\dsa-lab\30414\pop i. andrei\avl trees\insertdelete\main.c
+	"insdelHeader.h"
+
+1428386324 c:\users\andrei\desktop\myfolder\dsa-lab\30414\pop i. andrei\avl trees\insertdelete\insdelheader.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<limits.h>
+
+1429302435 source:c:\users\andrei\desktop\myfolder\dsa-lab\30414\pop i. andrei\avl trees\insertdelete\insdelfunctions.c
+	"insdelHeader.h"
+

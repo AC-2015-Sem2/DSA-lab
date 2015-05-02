@@ -1,0 +1,25 @@
+# depslib dependency file v1.0
+1428137179 source:c:\users\alex\desktop\predare\2014-2015 - sem2\dsa-lab\interesting stuff\trees102\main.c
+	"tree.h"
+
+1427729030 c:\users\alex\desktop\predare\2014-2015 - sem2\dsa-lab\interesting stuff\trees102\tree.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<limits.h>
+
+1428137161 source:c:\users\alex\desktop\predare\2014-2015 - sem2\dsa-lab\interesting stuff\trees102\tree.c
+	"tree.h"
+
+1428137161 source:c:\users\alex\desktop\predare\2014-2015 - sem2\dsa-lab\interesting stuff\trees101\tree.c
+	"tree.h"
+
+1427729030 c:\users\alex\desktop\predare\2014-2015 - sem2\dsa-lab\interesting stuff\trees101\tree.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<limits.h>
+
+1429720178 source:c:\users\alex\desktop\predare\2014-2015 - sem2\dsa-lab\interesting stuff\trees101\main.c
+	"tree.h"
+

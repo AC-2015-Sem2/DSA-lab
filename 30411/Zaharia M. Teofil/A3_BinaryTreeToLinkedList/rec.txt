@@ -1,0 +1,32 @@
+pretty print
+
+
+                   * k = 1
+        *                   *      // offset = offset(k+1) + spacing(k+1)/2, spacing(k) = 2 * spacing(k+1);
+   *         *         *        *  // offset = 0 + spacing(k+1)/2, spacing(k) = 2 * spacing(k+1);
+*    *    *    *    *    *    *    * // offset = 0, spacing = user_set
+
+offset(k) = offset(k+1) + spacing(k+1)/2
+spacing(k) = 2 * spacing(k+1);
+
+// recurrence relations
+
+spacing(k) = (user_set) * 2 ^ (height-k);
+
+offset(1) = offset(2) + spacing(2)/2
+offset(2) = offset(3) + spacing(3)/2
+...
+offset(k) = offset(k+1) + spacing(k+1)/2
+offset(k+1) = offset(k+2) + spacing(k+2)/2
+...
+offset(height-1) = offset(height) + spacing(height) = user_set
+offset(height) = 0 
+
+// sum over downwards
+offset(k) = 1/2 (spacing(k+1) + spacing(k+2) + ... + spacing (height))
+offset(k) = user_set * (2^height-k-2 + 2^height-k-3 + ... + 2^height-height-1 )
+offset(k) = 1/2 * user_set * (2^0 + 2^1 + ... 2^height-k-1)
+		  = 1/2 * user_set * (2^height-k - 1)
+
+
+

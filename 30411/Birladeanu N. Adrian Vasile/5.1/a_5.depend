@@ -1,0 +1,46 @@
+# depslib dependency file v1.0
+1430049804 source:c:\users\adrian\desktop\cp\sem 2\labs\5\a_5\main.c
+	<stdio.h>
+	<stdlib.h>
+	"matrix.h"
+	"list.h"
+	"graph.h"
+
+1429955793 c:\users\adrian\desktop\cp\sem 2\labs\5\a_5\matrix.h
+	<stdio.h>
+	<stdlib.h>
+	"list.h"
+
+1430049814 source:c:\users\adrian\desktop\cp\sem 2\labs\5\a_5\matrix.c
+	"matrix.h"
+
+1429636892 c:\users\adrian\desktop\cp\sem 2\labs\5\a_5\list.h
+	<stdio.h>
+	<stdlib.h>
+
+1429955841 source:c:\users\adrian\desktop\cp\sem 2\labs\5\a_5\graph.c
+	"graph.h"
+	"queue.h"
+	"matrix.h"
+	"stack.h"
+
+1429955657 c:\users\adrian\desktop\cp\sem 2\labs\5\a_5\graph.h
+	<stdio.h>
+	<stdlib.h>
+	"list.h"
+
+1429640906 c:\users\adrian\desktop\cp\sem 2\labs\5\a_5\queue.h
+	"list.h"
+
+1429640895 source:c:\users\adrian\desktop\cp\sem 2\labs\5\a_5\list.c
+	"list.h"
+
+1429641251 source:c:\users\adrian\desktop\cp\sem 2\labs\5\a_5\queue.c
+	"queue.h"
+
+1429952807 c:\users\adrian\desktop\cp\sem 2\labs\5\a_5\stack.h
+	"list.h"
+
+1429952988 source:c:\users\adrian\desktop\cp\sem 2\labs\5\a_5\stack.c
+	"stack.h"
+

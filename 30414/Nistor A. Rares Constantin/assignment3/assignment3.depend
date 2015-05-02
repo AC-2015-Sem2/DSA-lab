@@ -1,0 +1,11 @@
+# depslib dependency file v1.0
+1427814125 source:d:\facultate\dsa\cod\assignment3\main.c
+	<stdlib.h>
+	<stdio.h>
+	<string.h>
+
+1427814125 source:d:\facultate\dsa\myownrepository\dsa-lab\30414\nistor a. rares constantin\assignment3\main.c
+	<stdlib.h>
+	<stdio.h>
+	<string.h>
+

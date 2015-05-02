@@ -1,0 +1,28 @@
+# depslib dependency file v1.0
+1428174512 source:c:\users\alexh\desktop\fork\dsa-lab\30414\huruiala v. vasile alexandru\assignments\codeblocks\assignment4insert\io.c
+	<stdio.h>
+	"definition.h"
+
+1428177467 source:c:\users\alexh\desktop\fork\dsa-lab\30414\huruiala v. vasile alexandru\assignments\codeblocks\assignment4insert\main.c
+	"mainheader.h"
+
+1428151804 c:\users\alexh\desktop\fork\dsa-lab\30414\huruiala v. vasile alexandru\assignments\codeblocks\assignment4insert\mainheader.h
+	<stdio.h>
+	<stdlib.h>
+	"definition.h"
+	"io.h"
+	"functions.h"
+
+1428173006 c:\users\alexh\desktop\fork\dsa-lab\30414\huruiala v. vasile alexandru\assignments\codeblocks\assignment4insert\definition.h
+
+1428174122 c:\users\alexh\desktop\fork\dsa-lab\30414\huruiala v. vasile alexandru\assignments\codeblocks\assignment4insert\io.h
+
+1428240089 source:c:\users\alexh\desktop\fork\dsa-lab\30414\huruiala v. vasile alexandru\assignments\codeblocks\assignment4insert\functions.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<limits.h>
+	"definition.h"
+
+1428173917 c:\users\alexh\desktop\fork\dsa-lab\30414\huruiala v. vasile alexandru\assignments\codeblocks\assignment4insert\functions.h
+

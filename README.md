@@ -41,22 +41,26 @@ Lab 5: Binary Search Trees
 ```
 Lab 6: Test 2 - Trees
 ```
-* Assignments: none
+* Statistics - [problems, almost minimal solutions and grades distributions] (https://github.com/AC-2015-Sem2/DSA-lab/tree/master/Tests/T2%20-%20Trees)
 
 ```
 Lab 7: Graphs - representation and traversals
 ```
-* Assignments 5: TBA
+* Assignments 5:
+	- 5.1 [Adjacency List] (https://github.com/AC-2015-Sem2/DSA-lab/tree/master/Assignments/Assignment%205/Assignment%205.1%20-%20Adjacency%20List)
+	- 5.2 [Longest Simple Path] (https://github.com/AC-2015-Sem2/DSA-lab/tree/master/Assignments/Assignment%205/Assignment%205.2%20-%20Longest%20Simple%20Path%20-%20extra%20credit) (extra credit!)
 
 ```
 Lab 8: Graphs - Graph Processing Algorithms (Dijkstra, Prim, Kursal, Floyd etc.)
 ```
-* Assignments 6: TBA
+* Assignments 6: 
+	- 6.1 [Kruskal and Bellman Ford] (https://github.com/AC-2015-Sem2/DSA-lab/tree/master/Assignments/Assignment%206/Assignment%206.1%20-%20Kruskal%20and%20Bellman%20Ford)
+	- 6.2 [Vertex Cover Approximation] (https://github.com/AC-2015-Sem2/DSA-lab/tree/master/Assignments/Assignment%206/Assignment%206.2%20-%20Vertex%20Cover%20Approximation%20-%20extra%20credit) (extra credit!)
 
 ```
 Lab 9: Test 3 - Graphs
 ```
-* Assignments: none
+* [Test Skeleton project] (https://github.com/AC-2015-Sem2/DSA-lab/tree/master/Interesting%20Stuff/Graphs101%20-%20test%20skeleton)
 
 ```
 Lab 10: Hash Tables - introduction, collision detection, usages

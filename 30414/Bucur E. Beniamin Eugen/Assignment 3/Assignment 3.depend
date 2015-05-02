@@ -1,0 +1,19 @@
+# depslib dependency file v1.0
+1427764554 source:d:\facultate\anul 1\semestrul 2\data structures and algorithms\workspace\assignment 3\functii.c
+
+1427768608 source:d:\facultate\anul 1\semestrul 2\data structures and algorithms\workspace\assignment 3\main.c
+	<stdio.h>
+	<stdlib.h>
+	<strings.h>
+
+1427769355 source:d:\facultate\anul 1\semestrul 2\data structures and algorithms\my repository\dsa-lab\30414\bucur e. beniamin eugen\assignment 3\functii.c
+	"trees.h"
+
+1427970055 d:\facultate\anul 1\semestrul 2\data structures and algorithms\my repository\dsa-lab\30414\bucur e. beniamin eugen\assignment 3\trees.h
+	<stdio.h>
+	<stdlib.h>
+	<strings.h>
+
+1427769355 source:d:\facultate\anul 1\semestrul 2\data structures and algorithms\my repository\dsa-lab\30414\bucur e. beniamin eugen\assignment 3\main.c
+	"trees.h"
+

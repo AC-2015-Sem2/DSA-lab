@@ -1,0 +1,12 @@
+# depslib dependency file v1.0
+1427807594 source:c:\users\andrei\desktop\dsa\dsa-lab\30414\pop i. andrei\trees\parsetree\main.c
+	"parsetree.h"
+
+1427807614 c:\users\andrei\desktop\dsa\dsa-lab\30414\pop i. andrei\trees\parsetree\parsetree.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1427808010 source:c:\users\andrei\desktop\dsa\dsa-lab\30414\pop i. andrei\trees\parsetree\treefunctions.c
+	"parsetree.h"
+

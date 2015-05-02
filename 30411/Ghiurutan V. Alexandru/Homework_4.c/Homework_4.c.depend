@@ -1,0 +1,36 @@
+# depslib dependency file v1.0
+1428001331 source:d:\aplicatii\dsa\homework_4.c\create.c
+	"Create.h"
+
+1427999766 d:\aplicatii\dsa\homework_4.c\create.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1428136019 source:d:\aplicatii\dsa\homework_4.c\echilibru.c
+	"Echilibru.h"
+
+1428136019 d:\aplicatii\dsa\homework_4.c\echilibru.h
+	"Create.h"
+
+1428247741 source:d:\aplicatii\dsa\homework_4.c\insert.c
+	"Insert.h"
+
+1428134474 d:\aplicatii\dsa\homework_4.c\insert.h
+	"Echilibru.h"
+
+1428256531 source:d:\aplicatii\dsa\homework_4.c\main.c
+	"Print.h"
+
+1428167026 d:\aplicatii\dsa\homework_4.c\print.h
+	"Delete.h"
+
+1428256558 source:d:\aplicatii\dsa\homework_4.c\print.c
+	"Print.h"
+
+1428256469 source:d:\aplicatii\dsa\homework_4.c\delete.c
+	"Delete.h"
+
+1428167060 d:\aplicatii\dsa\homework_4.c\delete.h
+	"Insert.h"
+

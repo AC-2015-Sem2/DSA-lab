@@ -1,0 +1,13 @@
+# depslib dependency file v1.0
+1428346066 source:c:\users\bolo\documents\assignment4+extra\functions.c
+	"functions.h"
+
+1428346066 c:\users\bolo\documents\assignment4+extra\functions.h
+	<stdio.h>
+	<stdlib.h>
+
+1428346121 source:c:\users\bolo\documents\assignment4+extra\main.c
+	<stdio.h>
+	<stdlib.h>
+	"functions.h"
+

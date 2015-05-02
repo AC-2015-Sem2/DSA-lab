@@ -1,0 +1,43 @@
+# depslib dependency file v1.0
+1428236717 source:c:\users\maria\desktop\lab\4th_home\main.c
+	<stdio.h>
+	<stdlib.h>
+
+1428325037 source:c:\users\maria\desktop\lab\4th_homework\main.c
+	"print.h"
+	"create.h"
+	<stdio.h>
+	<stdlib.h>
+
+1428324509 source:c:\users\maria\desktop\lab\4th_homework\echilibrum.c
+	"echilibrum.h"
+
+1428324870 c:\users\maria\desktop\lab\4th_homework\echilibrum.h
+	"print.h"
+	"create.h"
+	<stdio.h>
+	<stdlib.h>
+
+1428324910 c:\users\maria\desktop\lab\4th_homework\print.h
+	"insert.h"
+	"echilibrum.h"
+	"create.h"
+
+1428325037 c:\users\maria\desktop\lab\4th_homework\insert.h
+	"echilibrum.h"
+	"print.h"
+	"create.h"
+	<stdio.h>
+	<stdlib.h>
+
+1428324833 c:\users\maria\desktop\lab\4th_homework\create.h
+	<stdio.h>
+	<stdlib.h>
+
+1428325184 source:c:\users\maria\desktop\lab\4th_homework\insert.c
+	"insert.h"
+	"create.h"
+
+1428324525 source:c:\users\maria\desktop\lab\4th_homework\print.c
+	"print.h"
+

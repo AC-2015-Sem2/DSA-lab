@@ -1,0 +1,70 @@
+# depslib dependency file v1.0
+1429364634 source:c:\users\alex\desktop\predare\2014-2015 - sem2\dsa-lab\interesting stuff\graphs101\main.c
+	"queue.h"
+	"stack.h"
+	"graph.h"
+
+1429357212 source:c:\users\alex\desktop\predare\2014-2015 - sem2\dsa-lab\interesting stuff\graphs101\node.c
+	"node.h"
+
+1429357788 c:\users\alex\desktop\predare\2014-2015 - sem2\dsa-lab\interesting stuff\graphs101\node.h
+	<stdio.h>
+	<stdlib.h>
+
+1429360788 source:c:\users\alex\desktop\predare\2014-2015 - sem2\dsa-lab\interesting stuff\graphs101\queue.c
+	"queue.h"
+
+1429360761 c:\users\alex\desktop\predare\2014-2015 - sem2\dsa-lab\interesting stuff\graphs101\queue.h
+	"node.h"
+
+1429360830 source:c:\users\alex\desktop\predare\2014-2015 - sem2\dsa-lab\interesting stuff\graphs101\stack.c
+	"stack.h"
+
+1429360815 c:\users\alex\desktop\predare\2014-2015 - sem2\dsa-lab\interesting stuff\graphs101\stack.h
+	"node.h"
+
+1429364802 source:c:\users\alex\desktop\predare\2014-2015 - sem2\dsa-lab\interesting stuff\graphs101\graph.c
+	<stdio.h>
+	<stdlib.h>
+	"graph.h"
+	"stack.h"
+	"queue.h"
+
+1429364595 c:\users\alex\desktop\predare\2014-2015 - sem2\dsa-lab\interesting stuff\graphs101\graph.h
+	<stdio.h>
+
+1429660054 source:d:\facultate\anul 1\semestrul 2\data structures and algorithms\in lab\graphs101\node.c
+	"node.h"
+
+1429660054 d:\facultate\anul 1\semestrul 2\data structures and algorithms\in lab\graphs101\node.h
+	<stdio.h>
+	<stdlib.h>
+
+1430243333 source:d:\facultate\anul 1\semestrul 2\data structures and algorithms\in lab\graphs101\queue.c
+	"queue.h"
+
+1430243362 d:\facultate\anul 1\semestrul 2\data structures and algorithms\in lab\graphs101\queue.h
+	"node.h"
+
+1430243426 source:d:\facultate\anul 1\semestrul 2\data structures and algorithms\in lab\graphs101\stack.c
+	"stack.h"
+
+1430243426 d:\facultate\anul 1\semestrul 2\data structures and algorithms\in lab\graphs101\stack.h
+	"node.h"
+
+1430256430 source:d:\facultate\anul 1\semestrul 2\data structures and algorithms\in lab\graphs101\main.c
+	"queue.h"
+	"stack.h"
+	"graph.h"
+
+1430256167 d:\facultate\anul 1\semestrul 2\data structures and algorithms\in lab\graphs101\graph.h
+	<stdio.h>
+	"node.h"
+
+1430256468 source:d:\facultate\anul 1\semestrul 2\data structures and algorithms\in lab\graphs101\graph.c
+	<stdio.h>
+	<stdlib.h>
+	"graph.h"
+	"stack.h"
+	"queue.h"
+

@@ -1,0 +1,46 @@
+# depslib dependency file v1.0
+1430154913 source:f:\anul1sem2\dsa\laboratorul7\homework\third\main.c
+	<stdio.h>
+	<stdlib.h>
+	"representation.h"
+	"list.h"
+	"graphAlgorithms.h"
+
+1430148501 source:f:\anul1sem2\dsa\laboratorul7\homework\third\list.c
+	"list.h"
+
+1430148517 f:\anul1sem2\dsa\laboratorul7\homework\third\list.h
+	<stdio.h>
+	<stdlib.h>
+
+1430154842 source:f:\anul1sem2\dsa\laboratorul7\homework\third\representation.c
+	"representation.h"
+
+1430154888 f:\anul1sem2\dsa\laboratorul7\homework\third\representation.h
+	<stdio.h>
+	<stdlib.h>
+	"list.h"
+
+1430151661 source:f:\anul1sem2\dsa\laboratorul7\homework\third\graphalgorithms.c
+	"graphAlgorithms.h"
+	"queue.h"
+	"representation.h"
+	"stack.h"
+
+1430151661 f:\anul1sem2\dsa\laboratorul7\homework\third\graphalgorithms.h
+	<stdio.h>
+	<stdlib.h>
+	"list.h"
+
+1430148148 f:\anul1sem2\dsa\laboratorul7\homework\third\queue.h
+	"list.h"
+
+1430148251 f:\anul1sem2\dsa\laboratorul7\homework\third\stack.h
+	"list.h"
+
+1430148421 source:f:\anul1sem2\dsa\laboratorul7\homework\third\queue.c
+	"queue.h"
+
+1430148221 source:f:\anul1sem2\dsa\laboratorul7\homework\third\stack.c
+	"stack.h"
+

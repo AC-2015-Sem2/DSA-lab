@@ -43,7 +43,12 @@ int main()
 		}while (data != -1);
 	}
 	kill_jim_kong_nu(info);
+<<<<<<< .mine
+	fclose(f);
+	fclose(g);
+=======
 	fclose(info.f);
 	fclose(info.g);
+>>>>>>> .theirs
 	return (0);
 }

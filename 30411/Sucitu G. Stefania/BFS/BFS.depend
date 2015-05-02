@@ -1,0 +1,7 @@
+# depslib dependency file v1.0
+1428352012 source:c:\users\user\desktop\new folder (2)\bfs\main.c
+	<stdio.h>
+	<stdlib.h>
+	<limits.h>
+	<string.h>
+

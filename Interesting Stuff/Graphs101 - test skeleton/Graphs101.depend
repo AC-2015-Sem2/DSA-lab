@@ -1,0 +1,56 @@
+# depslib dependency file v1.0
+1430249515 source:c:\users\alex\desktop\predare\2014-2015 - sem2\dsa-lab\interesting stuff\graphs101 - complete\graphalgorithms.c
+	"graph.h"
+	"graphRepresentation.h"
+
+1429965536 c:\users\alex\desktop\predare\2014-2015 - sem2\dsa-lab\interesting stuff\graphs101 - complete\graph.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"stack.h"
+	"queue.h"
+	"edge.h"
+
+1429963444 c:\users\alex\desktop\predare\2014-2015 - sem2\dsa-lab\interesting stuff\graphs101 - complete\stack.h
+	"node.h"
+
+1429357788 c:\users\alex\desktop\predare\2014-2015 - sem2\dsa-lab\interesting stuff\graphs101 - complete\node.h
+	<stdio.h>
+	<stdlib.h>
+
+1429963437 c:\users\alex\desktop\predare\2014-2015 - sem2\dsa-lab\interesting stuff\graphs101 - complete\queue.h
+	"node.h"
+
+1429963176 c:\users\alex\desktop\predare\2014-2015 - sem2\dsa-lab\interesting stuff\graphs101 - complete\edge.h
+
+1429965239 source:c:\users\alex\desktop\predare\2014-2015 - sem2\dsa-lab\interesting stuff\graphs101 - complete\graphrepresentation.c
+	<stdlib.h>
+	"graphRepresentation.h"
+
+1429965257 c:\users\alex\desktop\predare\2014-2015 - sem2\dsa-lab\interesting stuff\graphs101 - complete\graphrepresentation.h
+	"graph.h"
+
+1429965266 source:c:\users\alex\desktop\predare\2014-2015 - sem2\dsa-lab\interesting stuff\graphs101 - complete\graphtraversals.c
+	"graphTraversals.h"
+	"graphRepresentation.h"
+
+1429962848 c:\users\alex\desktop\predare\2014-2015 - sem2\dsa-lab\interesting stuff\graphs101 - complete\graphtraversals.h
+	"graph.h"
+
+1429966419 source:c:\users\alex\desktop\predare\2014-2015 - sem2\dsa-lab\interesting stuff\graphs101 - complete\main.c
+	"graphRepresentation.h"
+	"graphTraversals.h"
+	"graphAlgorithms.h"
+
+1429963577 c:\users\alex\desktop\predare\2014-2015 - sem2\dsa-lab\interesting stuff\graphs101 - complete\graphalgorithms.h
+	"graph.h"
+
+1429357212 source:c:\users\alex\desktop\predare\2014-2015 - sem2\dsa-lab\interesting stuff\graphs101 - complete\node.c
+	"node.h"
+
+1429963430 source:c:\users\alex\desktop\predare\2014-2015 - sem2\dsa-lab\interesting stuff\graphs101 - complete\queue.c
+	"queue.h"
+
+1429963449 source:c:\users\alex\desktop\predare\2014-2015 - sem2\dsa-lab\interesting stuff\graphs101 - complete\stack.c
+	"stack.h"
+

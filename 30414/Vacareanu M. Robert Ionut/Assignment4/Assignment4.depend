@@ -1,0 +1,15 @@
+# depslib dependency file v1.0
+1428408883 source:f:\facultyprogramming\data structure and algorithms\assignment4\main.cpp
+	"header.h"
+	"functions.cpp"
+
+1428361083 f:\facultyprogramming\data structure and algorithms\assignment4\header.h
+	<iostream>
+	<stdlib.h>
+	<stdio.h>
+	<string.h>
+	<math.h>
+
+1428408831 f:\facultyprogramming\data structure and algorithms\assignment4\functions.cpp
+	"header.h"
+

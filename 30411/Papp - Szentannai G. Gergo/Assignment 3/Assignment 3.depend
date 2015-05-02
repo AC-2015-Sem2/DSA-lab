@@ -1,0 +1,12 @@
+# depslib dependency file v1.0
+1427669209 source:e:\dropbox\utcn\dsa\dsa-lab\30411\papp - szentannai g. gergo\assignment 3\main.c
+	"tree.h"
+
+1427709758 e:\dropbox\utcn\dsa\dsa-lab\30411\papp - szentannai g. gergo\assignment 3\tree.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1427669512 source:e:\dropbox\utcn\dsa\dsa-lab\30411\papp - szentannai g. gergo\assignment 3\tree.c
+	"tree.h"
+

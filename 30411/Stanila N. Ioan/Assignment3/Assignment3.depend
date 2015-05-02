@@ -1,0 +1,35 @@
+# depslib dependency file v1.0
+1427550642 source:c:\users\johns\documents\programming\assignment3\doublylinkedlist.c
+	"doublyLinkedList.h"
+
+1427549134 c:\users\johns\documents\programming\assignment3\doublylinkedlist.h
+	<stdio.h>
+	<stdlib.h>
+
+1427644134 source:c:\users\johns\documents\programming\assignment3\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"functions.h"
+
+1427643010 source:c:\users\johns\documents\programming\assignment3\binarytree.c
+	"binaryTree.h"
+	<stdlib.h>
+
+1427641216 c:\users\johns\documents\programming\assignment3\binarytree.h
+	<stdio.h>
+
+1427649686 source:c:\users\johns\documents\programming\assignment3\functions.c
+	"functions.h"
+
+1427642204 c:\users\johns\documents\programming\assignment3\functions.h
+	"list.h"
+	"binaryTree.h"
+
+1427642435 c:\users\johns\documents\programming\assignment3\list.h
+	<stdio.h>
+
+1427642503 source:c:\users\johns\documents\programming\assignment3\list.c
+	"list.h"
+	<stdlib.h>
+

@@ -1,0 +1,45 @@
+# depslib dependency file v1.0
+1429687869 source:c:\users\andreea\desktop\graph\node.c
+	"node.h"
+
+1429687868 c:\users\andreea\desktop\graph\node.h
+	<stdio.h>
+	<stdlib.h>
+
+1429687868 source:c:\users\andreea\desktop\graph\queue.c
+	"queue.h"
+
+1429687867 c:\users\andreea\desktop\graph\queue.h
+	"node.h"
+
+1429687866 source:c:\users\andreea\desktop\graph\stack.c
+	"stack.h"
+
+1429687865 c:\users\andreea\desktop\graph\stack.h
+	"node.h"
+
+1430059549 source:c:\users\andreea\desktop\graph\main.c
+	"graph.h"
+	"adjacencyList.h"
+
+1430041027 c:\users\andreea\desktop\graph\graph.h
+	<stdio.h>
+
+1430039612 source:c:\users\andreea\desktop\graph\graph.c
+	<stdio.h>
+	<stdlib.h>
+	"graph.h"
+	"stack.h"
+	"queue.h"
+
+1430059442 source:c:\users\andreea\desktop\graph\adjacencylist.c
+	"graph.h"
+	"node.h"
+	<stdio.h>
+	<stdlib.h>
+	"queue.h"
+	"stack.h"
+
+1430059426 c:\users\andreea\desktop\graph\adjacencylist.h
+	"node.h"
+

@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1428436069 source:c:\users\alex\desktop\dgp dsa\dsa-lab\30414\popescu p. diana gabriela\assignment4_avltree\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+

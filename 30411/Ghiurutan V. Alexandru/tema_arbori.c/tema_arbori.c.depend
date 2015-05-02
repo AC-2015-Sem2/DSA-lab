@@ -1,0 +1,23 @@
+# depslib dependency file v1.0
+1427581475 source:d:\aplicatii\dsd\tema_arbori.c\list.c
+	"List.h"
+
+1427581451 d:\aplicatii\dsd\tema_arbori.c\list.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1427581244 source:d:\aplicatii\dsd\tema_arbori.c\main.c
+	"List.h"
+
+1427585278 source:d:\aplicatii\dsa\tema_arbori.c\main.c
+	"List.h"
+
+1427585278 d:\aplicatii\dsa\tema_arbori.c\list.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1427631804 source:d:\aplicatii\dsa\tema_arbori.c\list.c
+	"List.h"
+

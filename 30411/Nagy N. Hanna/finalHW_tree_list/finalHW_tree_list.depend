@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1427567595 source:f:\anul1sem2\dsa\laboratorul4\homework-samples\finalhw_tree_list\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+

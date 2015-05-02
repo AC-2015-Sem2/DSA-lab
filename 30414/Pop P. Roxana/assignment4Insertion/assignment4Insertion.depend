@@ -1,0 +1,18 @@
+# depslib dependency file v1.0
+1428139974 source:c:\users\rana\desktop\myfork\dsa-lab\30414\pop p. roxana\assignment4insertion\main.c
+	"tree.h"
+
+1428137236 c:\users\rana\desktop\myfork\dsa-lab\30414\pop p. roxana\assignment4insertion\tree.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1428139231 source:c:\users\rana\desktop\myfork\dsa-lab\30414\pop p. roxana\assignment4insertion\necessary.c
+	"tree.h"
+
+1428221949 source:c:\users\rana\desktop\myfork\dsa-lab\30414\pop p. roxana\assignment4insertion\rotationfunctions.c
+	"tree.h"
+
+1428139092 source:c:\users\rana\desktop\myfork\dsa-lab\30414\pop p. roxana\assignment4insertion\insertionfunction.c
+	"tree.h"
+

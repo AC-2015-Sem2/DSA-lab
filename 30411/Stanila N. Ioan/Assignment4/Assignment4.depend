@@ -1,0 +1,31 @@
+# depslib dependency file v1.0
+1428325656 source:c:\users\johns\documents\programming\assignment4\main.c
+	<stdio.h>
+	<stdlib.h>
+	"Tree.h"
+	"prettyPrint.h"
+
+1428324889 source:c:\users\johns\documents\programming\assignment4\prettyprint.c
+	"prettyPrint.h"
+	<stdio.h>
+
+1428229197 c:\users\johns\documents\programming\assignment4\prettyprint.h
+	"Tree.h"
+
+1428269638 c:\users\johns\documents\programming\assignment4\tree.h
+	<stdio.h>
+	<stdlib.h>
+
+1428228062 c:\users\johns\documents\programming\assignment4\utils.h
+	<stdio.h>
+	<stdlib.h>
+
+1428326333 source:c:\users\johns\documents\programming\assignment4\tree.c
+	"Tree.h"
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1428228065 source:c:\users\johns\documents\programming\assignment4\utils.c
+	"utils.h"
+

@@ -1,0 +1,7 @@
+# depslib dependency file v1.0
+1426709237 source:f:\facultate\prosteala\draghici_vlad\fisier.c
+
+1427873961 source:f:\facultate\prosteala\draghici_vlad\main.c
+	<stdio.h>
+	<stdlib.h>
+
