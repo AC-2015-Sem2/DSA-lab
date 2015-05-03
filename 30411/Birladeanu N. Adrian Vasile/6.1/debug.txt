@@ -1,0 +1,16 @@
+	start check:B ->G:
+	 end check
+	start check:C ->E:
+	 end check
+	start check:C ->D:
+E->D: 0	 end check
+	start check:E ->F:
+D->F: 0C->F: 0	 end check
+	start check:D ->F:
+F->F: 1E->F: 1C->F: 1	 end check
+	start check:A ->F:
+	 end check
+	start check:A ->E:
+E->E: 1F->E: 1	 end check
+	start check:C ->G:
+A->G: 0F->G: 0E->G: 0D->G: 0	 end check

@@ -1,0 +1,113 @@
+# depslib dependency file v1.0
+1430670096 source:c:\users\adrian\desktop\cp\sem 2\labs\6\6.1\graphalgorithms.c
+	"graph.h"
+	"graphRepresentation.h"
+	"graphTraversals.h"
+
+1430204944 c:\users\adrian\desktop\cp\sem 2\labs\6\6.1\graph.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"stack.h"
+	"queue.h"
+	"edge.h"
+
+1430148780 c:\users\adrian\desktop\cp\sem 2\labs\6\6.1\stack.h
+	"node.h"
+
+1430148780 c:\users\adrian\desktop\cp\sem 2\labs\6\6.1\node.h
+	<stdio.h>
+	<stdlib.h>
+
+1430148780 c:\users\adrian\desktop\cp\sem 2\labs\6\6.1\queue.h
+	"node.h"
+
+1430148780 c:\users\adrian\desktop\cp\sem 2\labs\6\6.1\edge.h
+
+1430495071 c:\users\adrian\desktop\cp\sem 2\labs\6\6.1\graphrepresentation.h
+	"graph.h"
+
+1430148780 c:\users\adrian\desktop\cp\sem 2\labs\6\6.1\graphtraversals.h
+	"graph.h"
+
+1430495149 source:c:\users\adrian\desktop\cp\sem 2\labs\6\6.1\graphrepresentation.c
+	<stdlib.h>
+	"graphRepresentation.h"
+
+1430670137 source:c:\users\adrian\desktop\cp\sem 2\labs\6\6.1\main.c
+	"graphRepresentation.h"
+	"graphTraversals.h"
+	"graphAlgorithms.h"
+
+1430670170 c:\users\adrian\desktop\cp\sem 2\labs\6\6.1\graphalgorithms.h
+	"graph.h"
+
+1430148780 source:c:\users\adrian\desktop\cp\sem 2\labs\6\6.1\graphtraversals.c
+	"graphTraversals.h"
+	"graphRepresentation.h"
+
+1430148780 source:c:\users\adrian\desktop\cp\sem 2\labs\6\6.1\node.c
+	"node.h"
+
+1430661148 source:c:\users\adrian\desktop\cp\sem 2\labs\6\6.1\queue.c
+	"queue.h"
+
+1430148780 source:c:\users\adrian\desktop\cp\sem 2\labs\6\6.1\stack.c
+	"stack.h"
+
+1430670096 source:c:\users\adrian\desktop\cp\dsa-lab\30411\birladeanu n. adrian vasile\6.1\graphalgorithms.c
+	"graph.h"
+	"graphRepresentation.h"
+	"graphTraversals.h"
+
+1430204944 c:\users\adrian\desktop\cp\dsa-lab\30411\birladeanu n. adrian vasile\6.1\graph.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"stack.h"
+	"queue.h"
+	"edge.h"
+
+1430148780 c:\users\adrian\desktop\cp\dsa-lab\30411\birladeanu n. adrian vasile\6.1\stack.h
+	"node.h"
+
+1430148780 c:\users\adrian\desktop\cp\dsa-lab\30411\birladeanu n. adrian vasile\6.1\node.h
+	<stdio.h>
+	<stdlib.h>
+
+1430148780 c:\users\adrian\desktop\cp\dsa-lab\30411\birladeanu n. adrian vasile\6.1\queue.h
+	"node.h"
+
+1430148780 c:\users\adrian\desktop\cp\dsa-lab\30411\birladeanu n. adrian vasile\6.1\edge.h
+
+1430495071 c:\users\adrian\desktop\cp\dsa-lab\30411\birladeanu n. adrian vasile\6.1\graphrepresentation.h
+	"graph.h"
+
+1430148780 c:\users\adrian\desktop\cp\dsa-lab\30411\birladeanu n. adrian vasile\6.1\graphtraversals.h
+	"graph.h"
+
+1430495149 source:c:\users\adrian\desktop\cp\dsa-lab\30411\birladeanu n. adrian vasile\6.1\graphrepresentation.c
+	<stdlib.h>
+	"graphRepresentation.h"
+
+1430148780 source:c:\users\adrian\desktop\cp\dsa-lab\30411\birladeanu n. adrian vasile\6.1\graphtraversals.c
+	"graphTraversals.h"
+	"graphRepresentation.h"
+
+1430148780 source:c:\users\adrian\desktop\cp\dsa-lab\30411\birladeanu n. adrian vasile\6.1\node.c
+	"node.h"
+
+1430661148 source:c:\users\adrian\desktop\cp\dsa-lab\30411\birladeanu n. adrian vasile\6.1\queue.c
+	"queue.h"
+
+1430148780 source:c:\users\adrian\desktop\cp\dsa-lab\30411\birladeanu n. adrian vasile\6.1\stack.c
+	"stack.h"
+
+1430670770 source:c:\users\adrian\desktop\cp\dsa-lab\30411\birladeanu n. adrian vasile\6.1\main.c
+	"graphRepresentation.h"
+	"graphTraversals.h"
+	"graphAlgorithms.h"
+
+1430670170 c:\users\adrian\desktop\cp\dsa-lab\30411\birladeanu n. adrian vasile\6.1\graphalgorithms.h
+	"graph.h"
+
