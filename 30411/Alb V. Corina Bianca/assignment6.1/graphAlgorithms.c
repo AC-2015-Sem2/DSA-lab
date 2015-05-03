@@ -216,9 +216,13 @@ void BellmanFord()
     int weight=0;
     for(i=0;i<nrOfBFVerteces;i++)
     {
-            weight+=pi[i];
+        weight+=d[i];
     }
-    printf("\n the cost of the shortest path is %d",weight);
+    printf("\n the cost of the shortest path is %d\n",weight);
+    for(i=0;i<nrOfBFVerteces;i++)
+    {
+        printf("\nthe predecessor of node %c is %c ",pi[i]+65,i+65);
+    }
     printf("\nBellman-Ford algorithm ended\n");
 }
 
