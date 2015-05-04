@@ -1,0 +1,58 @@
+# depslib dependency file v1.0
+1430729335 source:c:\users\alexh\desktop\fork\dsa-lab\30414\huruiala v. vasile alexandru\assignments\codeblocks\assignment6.2\graph.c
+	"graph.h"
+	"stack.h"
+
+1430729335 c:\users\alexh\desktop\fork\dsa-lab\30414\huruiala v. vasile alexandru\assignments\codeblocks\assignment6.2\graph.h
+	<stdio.h>
+	<stdlib.h>
+	"queue.h"
+
+1430318219 c:\users\alexh\desktop\fork\dsa-lab\30414\huruiala v. vasile alexandru\assignments\codeblocks\assignment6.2\queue.h
+	"node.h"
+	<stdio.h>
+
+1430555284 c:\users\alexh\desktop\fork\dsa-lab\30414\huruiala v. vasile alexandru\assignments\codeblocks\assignment6.2\node.h
+	<stdlib.h>
+
+1430318219 c:\users\alexh\desktop\fork\dsa-lab\30414\huruiala v. vasile alexandru\assignments\codeblocks\assignment6.2\stack.h
+
+1430730545 source:c:\users\alexh\desktop\fork\dsa-lab\30414\huruiala v. vasile alexandru\assignments\codeblocks\assignment6.2\graphalgorithms.c
+	"graphAlgorithms.h"
+	"utility.h"
+
+1430730545 c:\users\alexh\desktop\fork\dsa-lab\30414\huruiala v. vasile alexandru\assignments\codeblocks\assignment6.2\graphalgorithms.h
+	<stdio.h>
+	<stdlib.h>
+	<limits.h>
+
+1430731996 c:\users\alexh\desktop\fork\dsa-lab\30414\huruiala v. vasile alexandru\assignments\codeblocks\assignment6.2\utility.h
+
+1430732186 source:c:\users\alexh\desktop\fork\dsa-lab\30414\huruiala v. vasile alexandru\assignments\codeblocks\assignment6.2\main.c
+	<stdio.h>
+	<stdlib.h>
+	"graph.h"
+	"graphAlgorithms.h"
+	"vertex_cover.h"
+
+1430731312 c:\users\alexh\desktop\fork\dsa-lab\30414\huruiala v. vasile alexandru\assignments\codeblocks\assignment6.2\vertex_cover.h
+	<stdio.h>
+	<stdlib.h>
+
+1430318219 source:c:\users\alexh\desktop\fork\dsa-lab\30414\huruiala v. vasile alexandru\assignments\codeblocks\assignment6.2\node.c
+	"node.h"
+
+1430318219 source:c:\users\alexh\desktop\fork\dsa-lab\30414\huruiala v. vasile alexandru\assignments\codeblocks\assignment6.2\queue.c
+	"queue.h"
+
+1430318219 source:c:\users\alexh\desktop\fork\dsa-lab\30414\huruiala v. vasile alexandru\assignments\codeblocks\assignment6.2\stack.c
+	"node.h"
+
+1430731996 source:c:\users\alexh\desktop\fork\dsa-lab\30414\huruiala v. vasile alexandru\assignments\codeblocks\assignment6.2\utility.c
+	<stdlib.h>
+	"utility.h"
+
+1430731996 source:c:\users\alexh\desktop\fork\dsa-lab\30414\huruiala v. vasile alexandru\assignments\codeblocks\assignment6.2\vertex_cover.c
+	"vertex_cover.h"
+	"utility.h"
+

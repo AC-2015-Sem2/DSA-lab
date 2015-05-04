@@ -1,0 +1,42 @@
+# depslib dependency file v1.0
+1430555482 source:c:\users\alexh\desktop\fork\dsa-lab\30414\huruiala v. vasile alexandru\assignments\codeblocks\assignment6.1\graph.c
+	"graph.h"
+	"stack.h"
+
+1430318219 c:\users\alexh\desktop\fork\dsa-lab\30414\huruiala v. vasile alexandru\assignments\codeblocks\assignment6.1\graph.h
+	<stdio.h>
+	<stdlib.h>
+	"queue.h"
+
+1430318219 c:\users\alexh\desktop\fork\dsa-lab\30414\huruiala v. vasile alexandru\assignments\codeblocks\assignment6.1\queue.h
+	"node.h"
+	<stdio.h>
+
+1430555284 c:\users\alexh\desktop\fork\dsa-lab\30414\huruiala v. vasile alexandru\assignments\codeblocks\assignment6.1\node.h
+	<stdlib.h>
+
+1430318219 c:\users\alexh\desktop\fork\dsa-lab\30414\huruiala v. vasile alexandru\assignments\codeblocks\assignment6.1\stack.h
+
+1430557884 source:c:\users\alexh\desktop\fork\dsa-lab\30414\huruiala v. vasile alexandru\assignments\codeblocks\assignment6.1\graphalgorithms.c
+	"graphAlgorithms.h"
+
+1430554723 c:\users\alexh\desktop\fork\dsa-lab\30414\huruiala v. vasile alexandru\assignments\codeblocks\assignment6.1\graphalgorithms.h
+	<stdio.h>
+	<stdlib.h>
+	<limits.h>
+
+1430555482 source:c:\users\alexh\desktop\fork\dsa-lab\30414\huruiala v. vasile alexandru\assignments\codeblocks\assignment6.1\main.c
+	<stdio.h>
+	<stdlib.h>
+	"graph.h"
+	"graphAlgorithms.h"
+
+1430318219 source:c:\users\alexh\desktop\fork\dsa-lab\30414\huruiala v. vasile alexandru\assignments\codeblocks\assignment6.1\node.c
+	"node.h"
+
+1430318219 source:c:\users\alexh\desktop\fork\dsa-lab\30414\huruiala v. vasile alexandru\assignments\codeblocks\assignment6.1\queue.c
+	"queue.h"
+
+1430318219 source:c:\users\alexh\desktop\fork\dsa-lab\30414\huruiala v. vasile alexandru\assignments\codeblocks\assignment6.1\stack.c
+	"node.h"
+
