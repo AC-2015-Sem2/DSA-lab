@@ -30,9 +30,12 @@ edgeT getMinimumEdgeForAdjacencyMatrix(int ** adjMat)
     edgeT edge;
     edge.weight = MAX;
     int i, r;
-    for (i=0; i<nrOfVerteces; i++){
-        for (r=0; r<nrOfVerteces; r++){
-            if (adjMat[i][r]>0 && adjMat[i][r]<edge.weight){
+    for (i=0; i<nrOfVerteces; i++)
+    {
+        for (r=0; r<nrOfVerteces; r++)
+        {
+            if (adjMat[i][r]>0 && adjMat[i][r]<edge.weight)
+            {
                 edge.source = i;
                 edge.destination = r;
                 edge.weight = adjMat[i][r];
@@ -59,10 +62,12 @@ int ** getCopyOfAdjecencyMatrix()
 
 int getParent(int * parent, int i)
 {
-    if (parent[i]==-1){
+    if (parent[i]==-1)
+    {
         return i;
     }
-    else {
+    else
+    {
         return getParent(parent, parent[i]);
     }
 }
@@ -71,11 +76,13 @@ int uni(int * parent, int i,int j)
 {
     int iParent = getParent(parent, i);
     int jParent = getParent(parent, j);
-    if (iParent!=jParent){
+    if (iParent!=jParent)
+    {
         parent[jParent] = iParent;
         return 1;
     }
-    else {
+    else
+    {
         return 0;
     }
 }
@@ -86,13 +93,16 @@ void kruskal()
     int** adjCopy = getCopyOfAdjecencyMatrix();
     int* parentNodes = (int*)malloc(nrOfVerteces*sizeof(int));
     int i;
-    for (i=0; i<nrOfVerteces; i++){
+    for (i=0; i<nrOfVerteces; i++)
+    {
         parentNodes[i] = -1;
     }
     edgeT edge = getMinimumEdgeForAdjacencyMatrix(adjCopy);
     printf("Edges: ");
-    while (edge.weight != MAX){
-        if (uni(parentNodes, edge.source, edge.destination)){
+    while (edge.weight != MAX)
+    {
+        if (uni(parentNodes, edge.source, edge.destination))
+        {
             printf("%c-%c(%d) ", 65+edge.source, 65+edge.destination, edge.weight);
         }
         adjCopy[edge.source][edge.destination] = adjCopy[edge.destination][edge.source] = MAX;
@@ -103,7 +113,8 @@ void kruskal()
 
 //! Dijsktra related stuff
 
-int getMinDistanceVertex(int * distances, int * visited){
+int getMinDistanceVertex(int * distances, int * visited)
+{
 
 }
 
@@ -136,31 +147,40 @@ void dijkstra(int startNode)
 
 //! Bellman-Ford related stuff
 
-void printUTIL(int init, int* parent, int node){
-    if (node == init){
+void printUTIL(int init, int* parent, int node)
+{
+    if (node == init)
+    {
         printf("%c", 65+init);
     }
-    else{
+    else
+    {
         printUTIL(init, parent, parent[node]);
         printf("-%c", 65+node);
     }
 }
 
-void bellmanFord (int initNode){
+void bellmanFord (int initNode)
+{
     printf("Bellman-Ford started\n");
     int* distances = (int*)malloc(nrOfVerteces*sizeof(int));
     int* parentNodes = (int*)malloc(nrOfVerteces*sizeof(int));
     int i;
-    for (i=0; i<nrOfVerteces; i++){
+    for (i=0; i<nrOfVerteces; i++)
+    {
         distances[i] = MAX;
         parentNodes[i] = -1;
     }
     distances[initNode] = 0;
     int r, p;
-    for(i=0; i<nrOfVerteces-1; i++){
-        for(r=0; r<nrOfVerteces; r++){
-            for(p=0; p<nrOfVerteces; p++){
-                if(adjMatrix[r][p]>0 && r!=p && distances[r]+adjMatrix[r][p]<distances[p]){
+    for(i=0; i<nrOfVerteces-1; i++)
+    {
+        for(r=0; r<nrOfVerteces; r++)
+        {
+            for(p=0; p<nrOfVerteces; p++)
+            {
+                if(adjMatrix[r][p]>0 && r!=p && distances[r]+adjMatrix[r][p]<distances[p])
+                {
                     distances[p] = distances[r]+adjMatrix[r][p];
                     parentNodes[p] = r;
                 }
@@ -168,21 +188,27 @@ void bellmanFord (int initNode){
         }
     }
     int negFlag = 0;
-    for(r=0; r<nrOfVerteces; r++){
-            for(p=0; p<nrOfVerteces; p++){
-                    if (r!=p && adjMatrix[r][p]>0 && distances[r]+adjMatrix[r][p]<distances[p]){
-                    negFlag = 1;
+    for(r=0; r<nrOfVerteces; r++)
+    {
+        for(p=0; p<nrOfVerteces; p++)
+        {
+            if (r!=p && adjMatrix[r][p]>0 && distances[r]+adjMatrix[r][p]<distances[p])
+            {
+                negFlag = 1;
             }
-            }
+        }
     }
-    if (!negFlag){
+    if (!negFlag)
+    {
         printf("Paths:\n");
-        for (i=0; i<nrOfVerteces; i++){
+        for (i=0; i<nrOfVerteces; i++)
+        {
             printUTIL(initNode, parentNodes, i);
             printf("\n");
         }
     }
-    else {
+    else
+    {
         printf("Graph contains a negative-weight cycle\n");
     }
     printf("\nBellman-Ford ended\n");
