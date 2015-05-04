@@ -341,10 +341,10 @@ void dfsRecList(int v, int *mark, NodeT **adjList)  //dfs rec using adjacency li
     }
 }
 
-void dfsRecursList(int v)
+void dfsRecursList(int v, NodeT **adjList)
 {
     int *Visited;
 
     Visited = (int *)calloc(nrOfVerteces, sizeof(int));
-    dfsRec(v, Visited);
+    dfsRecList(v, Visited, adjList);
 }

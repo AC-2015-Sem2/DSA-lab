@@ -33,14 +33,14 @@
 1429364595 c:\users\alex\desktop\predare\2014-2015 - sem2\dsa-lab\interesting stuff\graphs101\graph.h
 	<stdio.h>
 
-1430142494 source:d:\codeblocks\graphs\graph.c
+1430158360 source:d:\codeblocks\graphs\graph.c
 	<stdio.h>
 	<stdlib.h>
 	"graph.h"
 	"stack.h"
 	"queue.h"
 
-1430141838 d:\codeblocks\graphs\graph.h
+1430158360 d:\codeblocks\graphs\graph.h
 	<stdio.h>
 	"node.h"
 
@@ -54,7 +54,7 @@
 1429594182 d:\codeblocks\graphs\queue.h
 	"node.h"
 
-1430142624 source:d:\codeblocks\graphs\main.c
+1430158374 source:d:\codeblocks\graphs\main.c
 	"queue.h"
 	"stack.h"
 	"graph.h"

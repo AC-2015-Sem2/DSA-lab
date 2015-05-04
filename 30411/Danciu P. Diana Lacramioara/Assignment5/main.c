@@ -37,6 +37,6 @@ int main()
     dfsList(0, adjacencyList);
     printf("\n");
     printf("The output of DFSrecurs is : \n");
-    dfsRecursList(0);
+    dfsRecursList(0, adjacencyList);
     return 0;
 }

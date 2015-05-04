@@ -25,4 +25,4 @@ int *getAllNeighborsOfVertexFromList(int v, NodeT **adjList);
 void bfsList(int searchNode, NodeT **adjList);
 void dfsList(int searchNode, NodeT **adjList);
 void dfsRecList(int v, int *mark, NodeT **adjList);
-void dfsRecursList(int v);
+void dfsRecursList(int v, NodeT **adjList);
