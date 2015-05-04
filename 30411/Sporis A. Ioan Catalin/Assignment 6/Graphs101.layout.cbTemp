@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_layout_file>
+	<ActiveTarget name="Debug" />
+	<File name="edge.h" open="0" top="0" tabpos="6">
+		<Cursor position="0" topLine="0" />
+	</File>
+	<File name="graph.h" open="0" top="0" tabpos="8">
+		<Cursor position="0" topLine="0" />
+	</File>
+	<File name="graphAlgorithms.c" open="1" top="0" tabpos="2">
+		<Cursor position="231" topLine="36" />
+	</File>
+	<File name="graphAlgorithms.h" open="0" top="0" tabpos="3">
+		<Cursor position="0" topLine="0" />
+	</File>
+	<File name="graphRepresentation.c" open="0" top="0" tabpos="0">
+		<Cursor position="446" topLine="0" />
+	</File>
+	<File name="graphRepresentation.h" open="0" top="0" tabpos="0">
+		<Cursor position="157" topLine="0" />
+	</File>
+	<File name="graphTraversals.c" open="1" top="1" tabpos="3">
+		<Cursor position="196" topLine="3" />
+	</File>
+	<File name="graphTraversals.h" open="0" top="0" tabpos="5">
+		<Cursor position="0" topLine="0" />
+	</File>
+	<File name="main.c" open="1" top="0" tabpos="1">
+		<Cursor position="313" topLine="0" />
+	</File>
+	<File name="node.c" open="0" top="0" tabpos="2">
+		<Cursor position="0" topLine="0" />
+	</File>
+	<File name="node.h" open="0" top="0" tabpos="5">
+		<Cursor position="0" topLine="0" />
+	</File>
+	<File name="queue.c" open="0" top="0" tabpos="3">
+		<Cursor position="272" topLine="0" />
+	</File>
+	<File name="queue.h" open="0" top="0" tabpos="6">
+		<Cursor position="0" topLine="0" />
+	</File>
+	<File name="stack.c" open="0" top="0" tabpos="4">
+		<Cursor position="0" topLine="0" />
+	</File>
+	<File name="stack.h" open="0" top="0" tabpos="7">
+		<Cursor position="92" topLine="0" />
+	</File>
+</CodeBlocks_layout_file>
