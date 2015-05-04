@@ -1,4 +1,4 @@
-# include "functions.h"
+# include "header.h"
 
 void readFromAdjMatrix(FILE * f)
 {
@@ -40,80 +40,79 @@ void printAdjMatrix()
 
 }
 
-int getNumberOfEdges(int **adjMatrix)
+edgeT *findEdge(int ind)
 {
-    int i, j, nrEdges = 0;
+    edgeT *p = firstEdge;
+
+    while(ind!=0)
+    {
+        p = p->next;
+        ind-=1;
+    }
+    return p;
+}
+
+void getTheEdges(int **adjMatrix)
+{
+    int i, j, nr = 0;
 
     for(i=0; i<nrOfVerteces; i++)
         for(j=0; j<nrOfVerteces; j++)
-            if(adjMatrix[i][j] != 0 && i<j)
-                nrEdges+=1;
-
-    return nrEdges;
-}
-
-edgeT findAnEdge(int **adjMatrix)
-{
-    int i, j;
-    edgeT e;
-    for(i=0; i<nrOfVerteces; i++)
-        for(j=0; j<nrOfVerteces; j++)
-            if(adjMatrix[i][j] > 0)
-            {
-                e.source = i;
-                e.dest = j;
-            }
-    return e;
-}
-
-void removeEdges(int nod, int *nrEdges)
-{
-    int i;
-
-    for(i=0; i<nrOfVerteces; i++)
-        if(adjMatrix[nod][i] > 0)
         {
-            adjMatrix[nod][i] = -1;
-            adjMatrix[i][nod] = -1;
-            *nrEdges-=1;
+            if(i<j && adjMatrix[i][j] != 0)
+            {
+                addAnEdge(i, j);
+            }
         }
-}
-
-int hasOtherAdjacentEdges(int nod)
-{
-    int i, nr = 0;
-    for(i=0; i<nrOfVerteces; i++)
-        if(adjMatrix[nod][i] !=0)
-            nr+=1;
-
-    if(nr>1)
-        return 1;
-    else
-        return 0;
 }
 
 void vertexCover()
 {
-    int nrEdges = getNumberOfEdges(adjMatrix), i;
-    edgeT edge;
+    getTheEdges(adjMatrix);
+    //printEdges();
+    edgeT *edge;
+    int nrEdges = getNrOfEdges();
+    int i, ind;
     int *vSet = (int*) malloc (nrOfVerteces * sizeof(int)), nrV = 0;
 
     while(nrEdges != 0)
     {
-        edge = findAnEdge(adjMatrix);
+        if(nrEdges > 1)
+        {
+            srand(time(NULL));
+            ind = rand()%(nrEdges - 1);
+        }
+        else
+            ind = 0;
 
-        if(hasOtherAdjacentEdges(edge.source)) // add it to the set only if it has more than 1 adjacent edges
-            vSet[nrV++] = edge.source;
 
-        if(hasOtherAdjacentEdges(edge.dest))
-            vSet[nrV++] = edge.dest;
+        edge = findEdge(ind);
+        int src = edge->source, dst = edge->dest;
 
-        removeEdges(edge.source, &nrEdges); //remove the edges adjacent to the nodes of the selected edge
+        //printf("%d %d       ", edge->source, edge->dest);
+
+        vSet[nrV++] = src;
+
+        if(hasOtherAdjacentEdges(edge->dest))// add it to the set only if it has more than 1 adjacent edges
+        vSet[nrV++] = dst;
+
+        removeEdges(src); //remove the edges adjacent to the nodes of the selected edge
+        nrEdges = getNrOfEdges();
+
         if(nrEdges != 0)
-            removeEdges(edge.dest, &nrEdges);
+        {
+            removeEdges(dst);
+            nrEdges = getNrOfEdges();
+        }
+
+        //printEdges();
+
     }
 
-    printf("The verteces from the st are: ");
+    printf("%d", nrV-1);
+    /*
+    printf("The verteces from the set are: ");
     for(i=0; i<nrV; i++)
         printf("%d ", vSet[i]);
+    */
 }
