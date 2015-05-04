@@ -253,7 +253,6 @@ int getNumberofEdges()
     nr = 0;
     for (i=0; i< nrOfVerteces; i++)
         for (j=0; j<nrOfVerteces; j++)              //find the number of edges
-            // if (i<j)                             //it works fine only if I comment this line
             if (adjMatrix[i][j] != 0)
                 nr++;
     return(nr);
@@ -269,7 +268,6 @@ edgeT *getAllEdges()
     k = 0;
     for (i=0; i< nrOfVerteces; i++)
         for (j=0; j<nrOfVerteces; j++)    //find the edges
-            // if (i<j)                    //it works fine only if I comment this line
             if (adjMatrix[i][j] != 0)
             {
                 alledges[k].source=i;
