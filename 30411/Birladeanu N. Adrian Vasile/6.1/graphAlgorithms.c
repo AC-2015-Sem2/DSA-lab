@@ -99,81 +99,53 @@ int ** getCopyOfAdjecencyMatrix()
     return copyAdjMatrix;
 }
 
-int checkTree(int start, int toFind, int* visited, edgeT* edges, int n)
+
+int getParent(int * parent, int i)
 {
-    if(start==toFind)
+    while(parent[i]!=-1)
     {
+        i=parent[i];
+    }
+    return i;
+}
+
+int uni(int * parent, int i,int j)
+{
+    if(i!=j)
+    {
+        parent[j]=i;
         return 1;
     }
-    int i, a=0;
-    visited[start]=1;
-    for(i=0; i<n; i++)
-    {
-        if(edges[i].destination==start)
-            if(visited[edges[i].source]==0)
-            {
-                a+=checkTree(edges[i].source, toFind, visited, edges, n);
-            }
-        if(edges[i].source==start)
-            if(visited[edges[i].destination]==0)
-            {
-                a+=checkTree(edges[i].destination, toFind, visited, edges, n);
-            }
-    }
-    return a;
-}
-
-int startCheck(int start, int toFind, edgeT* edges, int n)
-{
-    int i, a=0;
-    if(n==0 || n==1)
-    {
-        return 0;
-    }
-    int* visited=(int*)calloc(n+1, sizeof(int));
-    visited[start]=1;
-    for(i=0; i<n; i++)
-    {
-        if(edges[i].source==start)
-        {
-            a+=checkTree(edges[i].destination, toFind, visited, edges, n);
-        }
-        if(edges[i].destination==start)
-        {
-            a+=checkTree(edges[i].source, toFind, visited, edges, n);
-        }
-    }
-    return a;
-}
-
-void printEdge(edgeT e)
-{
-    printf("%c->%c ", e.source+65, e.destination+65);
+    return 0;
 }
 
 void kruskal()
 {
-    int** matrix=getCopyOfAdjecencyMatrix();
+    printf("Kruskal: \n");
+    int** matrix=getCopyOfAdjecencyMatrix(adjMatrix);
+    int* parent=(int*)malloc(nrOfVerteces*sizeof(int));
+    int i, weight=0;
+    for(i=0; i<nrOfVerteces; i++)
+    {
+        parent[i]=-1;
+    }
     int nrOfEdgesCovered=0;
-    int weight=0;
-    edgeT* edges=(edgeT*)calloc(nrOfVerteces-1, sizeof(edgeT));
+    edgeT* edges=(edgeT*)malloc(sizeof(nrOfVerteces-1));
     while(nrOfEdgesCovered<nrOfVerteces-1)
     {
         edgeT e=getMinimumEdgeForAdjacencyMatrix(matrix);
-        if(e.weight==MAX)
-        {
-            break;
-        }
         matrix[e.source][e.destination]=0;
         matrix[e.destination][e.source]=0;
-        if(startCheck(e.source, e.destination, edges, nrOfEdgesCovered)==0)
+        int u=getParent(parent, e.source);
+        int v=getParent(parent, e.destination);
+        if(uni(parent, u, v))
         {
             edges[nrOfEdgesCovered]=e;
             nrOfEdgesCovered++;
             weight+=e.weight;
-            printEdge(e);
         }
     }
+    printEdges(edges, nrOfEdgesCovered);
     printf("\n%d\n", weight);
 }
 
@@ -181,7 +153,7 @@ void kruskal()
 void bellmanFord()
 {
     int n=nrOfVerteces, source, i, j, a;
-    printf("source: ");
+    printf("Bellman-Ford\nsource: ");
     scanf("%d", &source);
     int* distance=(int*)calloc(n, sizeof(int));
     for(i=0; i<n; i++)
