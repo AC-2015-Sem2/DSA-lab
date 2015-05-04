@@ -47,6 +47,7 @@ void prim(int startNode)
     nrofCoveredEdges = 0;
     weight = 0;
 
+    printf("\nPrim Algorithm started !\n\n");
     while (nrofCoveredEdges < nrOfVerteces-1)
     {
         edgeT e = getMinimumEdgeForCurrentlyVisitedNodes(mst);
@@ -56,7 +57,10 @@ void prim(int startNode)
         nrofCoveredEdges++;
     }
     printEdges(edges, nrofCoveredEdges);
-    printf("%d ", weight);
+    printf("This is the weight of the covered vertices : %d\n", weight);
+
+    printf("\nPrim algorithm ended !\n\n");
+
 }
 /* ********************************************************************************************************************************/
 
@@ -112,12 +116,55 @@ int getParent(int * parent, int i)
 
 int uni(int * parent, int i,int j)
 {
-
+    if (i!=j)
+    {
+        parent[j]=i;
+        return(1);
+    }
+    return(0);
 }
 
 void kruskal()
 {
+    int nredge,i,j,u,v,d,s,minCost,minim;    //u,d = sources; v,s = destinations
+    edgeT minEdge;
+    int **matrix;
+    int *parents;
 
+    printf("\nKruskal Algorithm started ! \n");
+    nredge = 1;
+    minCost=0;
+    matrix = (int**)malloc(sizeof(nrOfVerteces)*sizeof(int*));
+    for (i=0; i<nrOfVerteces; i++)
+    {
+        matrix[i] =(int*)malloc(sizeof(int)*nrOfVerteces);
+    }
+    matrix = getCopyOfAdjecencyMatrix();
+    parents=(int *)malloc(sizeof(int)*nrOfVerteces);
+    for (i=0; i<nrOfVerteces; i++)
+        for(j=0; j<nrOfVerteces; j++)
+            if(matrix[i][j]==0)
+                matrix[i][j]=MAX;
+    for (i=0; i<nrOfVerteces; i++)
+        parents[i]=UNVISITED;
+    while (nredge < nrOfVerteces-1)
+    {
+        minEdge = getMinimumEdgeForAdjacencyMatrix(matrix);
+        minim = minEdge.weight;
+        u=d=minEdge.source;
+        v=s=minEdge.destination;
+        u=getParent(parents, u);
+        v=getParent(parents,v);
+        if (uni(parents, u,v))
+        {
+            printf("\nThe %d edge (%d,%d) added with the cost = %d\n",nredge++,d,s,minim);
+            minCost=minCost + minim;
+        }
+        matrix[d][s]=matrix[s][d]=MAX;
+    }
+    printf("\nMinimum cost = %d\n",minCost);
+
+    printf("\nKruskal Algorithm ended ! \n\n");
 }
 
 /* ********************************************************************************************************************************/
@@ -140,7 +187,7 @@ int getMinDistanceVertex(int * distances, int * visited)
 
 void dijkstra(int startNode)
 {
-    printf("Dijkstra's Algorithm started\n\n");
+    printf("\nDijkstra's Algorithm started\n\n");
     int * distances = (int*)malloc(nrOfVerteces * sizeof(int));
     int * previous  = (int*)malloc(nrOfVerteces * sizeof(int));
     int * visited   = (int*)malloc(nrOfVerteces * sizeof(int));
@@ -194,7 +241,7 @@ void dijkstra(int startNode)
         }
     }
 
-    printf("Dijkstra's Algorithm ended\n\n");
+    printf("\nDijkstra's Algorithm ended\n\n");
 }
 /* ********************************************************************************************************************************/
 //! Bellman Ford algorithm
@@ -206,9 +253,9 @@ int getNumberofEdges()
     nr = 0;
     for (i=0; i< nrOfVerteces; i++)
         for (j=0; j<nrOfVerteces; j++)              //find the number of edges
-           // if (i<j)                             //it works fine only if I comment this line
-                if (adjMatrix[i][j] != 0)
-                    nr++;
+            // if (i<j)                             //it works fine only if I comment this line
+            if (adjMatrix[i][j] != 0)
+                nr++;
     return(nr);
 }
 
@@ -222,14 +269,14 @@ edgeT *getAllEdges()
     k = 0;
     for (i=0; i< nrOfVerteces; i++)
         for (j=0; j<nrOfVerteces; j++)    //find the edges
-           // if (i<j)                    //it works fine only if I comment this line
-                if (adjMatrix[i][j] != 0)
-                {
-                    alledges[k].source=i;
-                    alledges[k].destination=j;
-                    alledges[k].weight=adjMatrix[i][j];
-                    k++;
-                }
+            // if (i<j)                    //it works fine only if I comment this line
+            if (adjMatrix[i][j] != 0)
+            {
+                alledges[k].source=i;
+                alledges[k].destination=j;
+                alledges[k].weight=adjMatrix[i][j];
+                k++;
+            }
     return (alledges);
 }
 void printSolution(int *dist, int source)
@@ -253,7 +300,7 @@ void BellmanFord(int src)
     edges = (edgeT *)calloc(nrofedges, sizeof(edgeT));
     edges = getAllEdges();
 
-    printf("Bellman Ford algorithm started ! \n\n");
+    printf("\nBellman Ford algorithm started ! \n\n");
     // Step 1: Initialize distances from src to all other vertices as INFINITE
     for (i = 0; i < nrOfVerteces; i++)
         dist[i]= MAX;
@@ -283,8 +330,8 @@ void BellmanFord(int src)
         int v = edges[i].destination;
         int weight = edges[i].weight;
         if (dist[u] != MAX && dist[u] + weight < dist[v])
-            printf("Graph contains negative weight cycle between %d and %d", u, v);
+            printf("Graph contains negative weight cycle between %d and %d\n", u, v);
     }
     printSolution(dist, src);
-    printf("Bellman ford algorithm ended ! \n\n");
+    printf("\nBellman ford algorithm ended ! \n\n");
 }

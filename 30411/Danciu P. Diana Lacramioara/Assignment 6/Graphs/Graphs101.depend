@@ -88,12 +88,12 @@
 1430064202 d:\codeblocks\graphs101 - complete\graphtraversals.h
 	"graph.h"
 
-1430725368 source:d:\codeblocks\graphs101 - complete\main.c
+1430729190 source:d:\codeblocks\graphs101 - complete\main.c
 	"graphRepresentation.h"
 	"graphTraversals.h"
 	"graphAlgorithms.h"
 
-1430723294 d:\codeblocks\graphs101 - complete\graphalgorithms.h
+1430728502 d:\codeblocks\graphs101 - complete\graphalgorithms.h
 	"graph.h"
 
 1429725598 source:d:\codeblocks\graphs101 - complete\node.c
@@ -105,7 +105,7 @@
 1430064202 source:d:\codeblocks\graphs101 - complete\stack.c
 	"stack.h"
 
-1430725382 source:d:\codeblocks\graphs101 - complete\graphalgorithms.c
+1430729244 source:d:\codeblocks\graphs101 - complete\graphalgorithms.c
 	"graph.h"
 	"graphRepresentation.h"
 
