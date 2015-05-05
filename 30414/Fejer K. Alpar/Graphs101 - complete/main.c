@@ -11,7 +11,9 @@ int main()
     dfs(0);
     dfsRecurs(0);
     prim(0);
+    bellman(0);
     kruskal();
+    printAdjMatrix();
     dijkstra(0);
     matrixToList();
     printAdjList();
@@ -20,5 +22,7 @@ int main()
     dfsRecurs(0);
     listToMatrix();
     printAdjMatrix();
+    prim(0);
+    dijkstra(0);
     return 0;
 }
