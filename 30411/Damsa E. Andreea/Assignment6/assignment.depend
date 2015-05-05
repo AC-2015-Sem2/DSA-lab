@@ -1,0 +1,193 @@
+# depslib dependency file v1.0
+1430148575 source:c:\users\bolo\desktop\new folder\graphalgorithms.c
+	"graph.h"
+	"graphRepresentation.h"
+
+1430148575 c:\users\bolo\desktop\new folder\graph.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"stack.h"
+	"queue.h"
+	"edge.h"
+
+1430148575 c:\users\bolo\desktop\new folder\stack.h
+	"node.h"
+
+1430161250 c:\users\bolo\desktop\new folder\node.h
+	<stdio.h>
+	<stdlib.h>
+
+1430148575 c:\users\bolo\desktop\new folder\queue.h
+	"node.h"
+
+1430148575 c:\users\bolo\desktop\new folder\edge.h
+
+1430251934 c:\users\bolo\desktop\new folder\graphrepresentation.h
+	"graph.h"
+
+1430252080 source:c:\users\bolo\desktop\new folder\graphrepresentation.c
+	<stdlib.h>
+	"graphRepresentation.h"
+
+1430148575 source:c:\users\bolo\desktop\new folder\graphtraversals.c
+	"graphTraversals.h"
+	"graphRepresentation.h"
+
+1430148575 c:\users\bolo\desktop\new folder\graphtraversals.h
+	"graph.h"
+
+1430253869 source:c:\users\bolo\desktop\new folder\main.c
+	"graphRepresentation.h"
+	"graphTraversals.h"
+	"graphAlgorithms.h"
+	"matrixtolistandviceversa.h"
+
+1430148575 c:\users\bolo\desktop\new folder\graphalgorithms.h
+	"graph.h"
+
+1430254009 c:\users\bolo\desktop\new folder\matrixtolistandviceversa.h
+	"graphRepresentation.h"
+	"graphTraversals.h"
+	"graphAlgorithms.h"
+
+1430254187 source:c:\users\bolo\desktop\new folder\matrixtolistandviceversa.c
+	"matrixtolistandviceversa.h"
+
+1430161250 source:c:\users\bolo\desktop\new folder\node.c
+	"node.h"
+
+1430148575 source:c:\users\bolo\desktop\new folder\queue.c
+	"queue.h"
+
+1430148575 source:c:\users\bolo\desktop\new folder\stack.c
+	"stack.h"
+
+1430302242 source:c:\users\bolo\desktop\assignment5\graphalgorithms.c
+	"graph.h"
+	"graphRepresentation.h"
+
+1430148575 c:\users\bolo\desktop\assignment5\graph.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"stack.h"
+	"queue.h"
+	"edge.h"
+
+1430148575 c:\users\bolo\desktop\assignment5\stack.h
+	"node.h"
+
+1430161250 c:\users\bolo\desktop\assignment5\node.h
+	<stdio.h>
+	<stdlib.h>
+
+1430148575 c:\users\bolo\desktop\assignment5\queue.h
+	"node.h"
+
+1430148575 c:\users\bolo\desktop\assignment5\edge.h
+
+1430251934 c:\users\bolo\desktop\assignment5\graphrepresentation.h
+	"graph.h"
+
+1430252080 source:c:\users\bolo\desktop\assignment5\graphrepresentation.c
+	<stdlib.h>
+	"graphRepresentation.h"
+
+1430148575 source:c:\users\bolo\desktop\assignment5\graphtraversals.c
+	"graphTraversals.h"
+	"graphRepresentation.h"
+
+1430148575 c:\users\bolo\desktop\assignment5\graphtraversals.h
+	"graph.h"
+
+1430302258 source:c:\users\bolo\desktop\assignment5\main.c
+	"graphRepresentation.h"
+	"graphTraversals.h"
+	"graphAlgorithms.h"
+	"matrixtolistandviceversa.h"
+
+1430148575 c:\users\bolo\desktop\assignment5\graphalgorithms.h
+	"graph.h"
+
+1430254009 c:\users\bolo\desktop\assignment5\matrixtolistandviceversa.h
+	"graphRepresentation.h"
+	"graphTraversals.h"
+	"graphAlgorithms.h"
+
+1430254187 source:c:\users\bolo\desktop\assignment5\matrixtolistandviceversa.c
+	"matrixtolistandviceversa.h"
+
+1430161250 source:c:\users\bolo\desktop\assignment5\node.c
+	"node.h"
+
+1430148575 source:c:\users\bolo\desktop\assignment5\queue.c
+	"queue.h"
+
+1430148575 source:c:\users\bolo\desktop\assignment5\stack.c
+	"stack.h"
+
+1430255680 source:c:\users\andreea\desktop\assignment5\graphrepresentation.c
+	<stdlib.h>
+	"graphRepresentation.h"
+
+1430255534 c:\users\andreea\desktop\assignment5\graphrepresentation.h
+	"graph.h"
+
+1430152175 c:\users\andreea\desktop\assignment5\graph.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"stack.h"
+	"queue.h"
+	"edge.h"
+
+1430152175 c:\users\andreea\desktop\assignment5\stack.h
+	"node.h"
+
+1430164850 c:\users\andreea\desktop\assignment5\node.h
+	<stdio.h>
+	<stdlib.h>
+
+1430152175 c:\users\andreea\desktop\assignment5\queue.h
+	"node.h"
+
+1430152175 c:\users\andreea\desktop\assignment5\edge.h
+
+1430152175 source:c:\users\andreea\desktop\assignment5\graphtraversals.c
+	"graphTraversals.h"
+	"graphRepresentation.h"
+
+1430152175 c:\users\andreea\desktop\assignment5\graphtraversals.h
+	"graph.h"
+
+1430768988 source:c:\users\andreea\desktop\assignment5\main.c
+	"graphRepresentation.h"
+	"graphTraversals.h"
+	"graphAlgorithms.h"
+	"matrixtolistandviceversa.h"
+
+1430152175 c:\users\andreea\desktop\assignment5\graphalgorithms.h
+	"graph.h"
+
+1430257609 c:\users\andreea\desktop\assignment5\matrixtolistandviceversa.h
+	"graphRepresentation.h"
+	"graphTraversals.h"
+	"graphAlgorithms.h"
+
+1430257787 source:c:\users\andreea\desktop\assignment5\matrixtolistandviceversa.c
+	"matrixtolistandviceversa.h"
+
+1430164850 source:c:\users\andreea\desktop\assignment5\node.c
+	"node.h"
+
+1430152175 source:c:\users\andreea\desktop\assignment5\queue.c
+	"queue.h"
+
+1430152175 source:c:\users\andreea\desktop\assignment5\stack.c
+	"stack.h"
+
+1430769500 source:c:\users\andreea\desktop\assignment5\graphalgorithms.c
+	"graph.h"
+	"graphRepresentation.h"
+
