@@ -1,0 +1,56 @@
+# depslib dependency file v1.0
+1430826996 source:c:\users\alex\desktop\assignment6\graphalgorithms.c
+	"graph.h"
+	"graphRepresentation.h"
+
+1429930554 c:\users\alex\desktop\assignment6\graph.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"stack.h"
+	"queue.h"
+	"edge.h"
+
+1429930554 c:\users\alex\desktop\assignment6\stack.h
+	"node.h"
+
+1429930554 c:\users\alex\desktop\assignment6\node.h
+	<stdio.h>
+	<stdlib.h>
+
+1429930554 c:\users\alex\desktop\assignment6\queue.h
+	"node.h"
+
+1429930554 c:\users\alex\desktop\assignment6\edge.h
+
+1429930554 c:\users\alex\desktop\assignment6\graphrepresentation.h
+	"graph.h"
+
+1429930554 source:c:\users\alex\desktop\assignment6\graphrepresentation.c
+	<stdlib.h>
+	"graphRepresentation.h"
+
+1430815375 source:c:\users\alex\desktop\assignment6\graphtraversals.c
+	"graphTraversals.h"
+	"graphRepresentation.h"
+
+1429930554 c:\users\alex\desktop\assignment6\graphtraversals.h
+	"graph.h"
+
+1430827295 source:c:\users\alex\desktop\assignment6\main.c
+	"graphRepresentation.h"
+	"graphTraversals.h"
+	"graphAlgorithms.h"
+
+1429930554 c:\users\alex\desktop\assignment6\graphalgorithms.h
+	"graph.h"
+
+1429930554 source:c:\users\alex\desktop\assignment6\node.c
+	"node.h"
+
+1429930554 source:c:\users\alex\desktop\assignment6\queue.c
+	"queue.h"
+
+1429930554 source:c:\users\alex\desktop\assignment6\stack.c
+	"stack.h"
+
