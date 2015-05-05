@@ -3,14 +3,16 @@
 #include "graph.h"
 #include "graphAlgorithms.h"
 #include "vertex_cover.h"
+#include "utility.h"
 
 int main()
 {
-    FILE* f = fopen("matrix2.txt", "r");
+    FILE* f = fopen("matrix6.txt", "r");
     int nrVert = 0;
     int** adjMat = NULL;
+    initRand();
 
-    readAdjMatrix(f, &nrVert, &adjMat);
+    readAdjMatrixEdges(f, &nrVert, &adjMat);
     printAdjMatrix(nrVert, adjMat);
 
     node** adjList = AdjMatToAdjList(adjMat, nrVert);
@@ -41,6 +43,10 @@ int main()
     bellman_ford(adjMat, nrVert, 0);
 
     printf("Minimum vertex cover approximation:\n");
-    minVertexCover(adjMat1, nrVert, 17);
+    minVertexCover(adjMat1, nrVert);
+    minVertexCoverNTimes(adjMat1, nrVert, 1000000);
+
+
+
     return 0;
 }
