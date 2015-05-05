@@ -7,7 +7,7 @@ int main()
     FILE * f = fopen("matrix.txt","r");
     readFromAdjMatrix(f);
     printAdjMatrix();
-
+    initRand();
 
     bfs(0);
     dfs(0);

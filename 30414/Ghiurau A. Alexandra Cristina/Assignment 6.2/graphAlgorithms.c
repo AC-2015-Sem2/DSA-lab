@@ -1,5 +1,7 @@
 #include "graph.h"
 #include "graphRepresentation.h"
+#include "graphAlgorithms.h"
+#include <time.h>
 
 //! Prim related stuff
 edgeT getMinimumEdgeForCurrentlyVisitedNodes(int * visited)
@@ -304,20 +306,30 @@ void bellmanFord(int startingNode)
     printf("Bellman Ford's ended\n\n");
 }
 //! Vertex Covering related stuff
-edgeT getEdgeAndRemoveIncidentEdges(int **adjMat)
+void initRand()
+{
+    srand(time(NULL));
+}
+int getRand(int n)
+{
+    return 1 + (rand()%n +1);
+}
+edgeT getEdgeAndRemoveIncidentEdges(int **adjMat, int arbN)
 {
     int i,j;
     edgeT minEdge;
     minEdge.weight = -1;
-    for (i=0; i<nrOfVerteces; i++)
+    int iteration = 0;
+    for (i=0; i<nrOfVerteces && iteration< arbN; i++)
     {
-        for (j=0; j<nrOfVerteces; j++)
+        for (j=0; j<nrOfVerteces && iteration< arbN; j++)
         {
             if(adjMat[i][j] > 0)
             {
                 minEdge.source = i;
                 minEdge.destination = j;
                 minEdge.weight = adjMat[i][j];
+                iteration++;
             }
         }
     }
@@ -344,7 +356,7 @@ void vertexCover(int **adjMat)
     int **adjMatAux = getCopyOfAdjecencyMatrix();
     while(adjMatrixIsEmpty(adjMatAux) == 0)
     {
-        edgeT edge = getEdgeAndRemoveIncidentEdges(adjMatAux);
+        edgeT edge = getEdgeAndRemoveIncidentEdges(adjMatAux, getRand(nrOfVerteces) );
         visited[counter++] = edge.source;
         visited[counter++] = edge.destination;
         printf("%c -> %c\t",edge.source+65,  edge.destination+65);
