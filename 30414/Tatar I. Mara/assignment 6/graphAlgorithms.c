@@ -155,21 +155,7 @@ int getMinDistanceVertex(int * distances, int * visited){
         }
     }
     return minV;
-}/*
-void dijkstra(int startNode)
-{
-    printf("Dijkstra started\n");
-int getMinDistanceVertex(int * distances, int * visited){
-    int min=MAX, i;
-    int minV;
-    for(i=0;i<nrOfVerteces;i++){
-        if(distances[i] < min && visited[i] == UNVISITED){
-            minV = i;
-        }
-    }
-    return minV;
 }
-*/
 void dijkstra(int startNode)
 {
     printf("Dijkstra's Algorithm started\n");
@@ -282,22 +268,17 @@ void bellmanFord(int startNode)
 
     int i;
  int *dist = (int*)malloc(sizeof(int)*(nrOfVerteces));
-    int *parent = (int*)malloc(sizeof(int)*(nrOfVerteces));
+    int *prev = (int*)malloc(sizeof(int)*(nrOfVerteces));
 
-    for(i=0; i<nrOfVerteces; i++)
-    {
-        if(i == startNode)
+   for(i=0; i<nrOfVerteces; i++)
         {
-            dist[i] = 0;
-            parent[i] = i;
+                   dist[i] = MAX;
+                    prev[i]=i;
         }
-        else
-        {
-            dist[i] = MAX;
-            parent[i] = i;
-        }
+    dist[startNode] = 0;
 
-    }
+
+
 
     int a, b;
 
@@ -310,12 +291,12 @@ void bellmanFord(int startNode)
                 if(a != b && adjMatrix[a][b] != 0)
                     if(dist[a] + adjMatrix[a][b] < dist[b])
                     {
-                        parent[b] = a;
+                        prev[b] = a;
                         dist[b] = dist[a] + adjMatrix[a][b];
 
                     }
 
-    printPaths(parent, dist,startNode);
+    printPaths(prev, dist,startNode);
 }
 
 
