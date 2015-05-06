@@ -2,7 +2,7 @@
 #include "stack.h"
 
 /// I/O
-void readAdjMatrix(FILE * f, int* size, int*** mat)
+void readAdjMatrix(FILE* f, int* size, int*** mat)
 {
     fscanf(f, "%d", size);
     int i, j;
@@ -14,6 +14,28 @@ void readAdjMatrix(FILE * f, int* size, int*** mat)
     for(i = 0; i < *size; i++)
         for(j = 0; j < *size; j++)
             fscanf(f, "%d", &adjMat[i][j]);
+
+    *mat = adjMat;
+}
+
+void readAdjMatrixEdges(FILE* f, int* size, int*** mat)
+{
+    fscanf(f, "%d", size);
+    int i, j, k;
+    int** adjMat = (int**)malloc((*size)*sizeof(int*));
+    for(i = 0; i < *size; i++)
+    {
+        *(adjMat + i) = (int*)malloc((*size)*sizeof(int));
+    }
+    for(i = 0; i < *size; i++)
+        for(j = 0; j < *size; j++)
+            adjMat[i][j] = 0;
+
+    while(fscanf(f, "%d %d %d", &i, &j, &k) != -1)
+    {
+        adjMat[i][j] = k;
+        adjMat[j][i] = k;
+    }
 
     *mat = adjMat;
 }
