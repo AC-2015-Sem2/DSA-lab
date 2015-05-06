@@ -1,4 +1,4 @@
-# include "functions.h"
+# include "header.h"
 
 int main()
 {
@@ -8,7 +8,6 @@ int main()
     //printAdjMatrix();
 
     vertexCover();
-
 
     return 0;
 }
