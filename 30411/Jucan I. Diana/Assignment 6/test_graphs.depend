@@ -1,0 +1,111 @@
+# depslib dependency file v1.0
+1430742881 source:c:\users\user\desktop\test_graphs - tema\graphalgorithms.c
+	"graph.h"
+	"graphRepresentation.h"
+
+1430738243 c:\users\user\desktop\test_graphs - tema\graph.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"stack.h"
+	"queue.h"
+	"edge.h"
+
+1430736976 c:\users\user\desktop\test_graphs - tema\stack.h
+	"node.h"
+
+1430737277 c:\users\user\desktop\test_graphs - tema\node.h
+	<stdio.h>
+	<stdlib.h>
+
+1430737118 c:\users\user\desktop\test_graphs - tema\queue.h
+	"node.h"
+
+1430738293 c:\users\user\desktop\test_graphs - tema\edge.h
+
+1430737885 c:\users\user\desktop\test_graphs - tema\graphrepresentation.h
+	"graph.h"
+
+1430738004 source:c:\users\user\desktop\test_graphs - tema\graphrepresentation.c
+	<stdlib.h>
+	"graphRepresentation.h"
+
+1430742769 source:c:\users\user\desktop\test_graphs - tema\graphtraversals.c
+	"graphTraversals.h"
+	"graphRepresentation.h"
+
+1430737585 c:\users\user\desktop\test_graphs - tema\graphtraversals.h
+	"graph.h"
+
+1430742392 source:c:\users\user\desktop\test_graphs - tema\main.c
+	"graphRepresentation.h"
+	"graphTraversals.h"
+	"graphAlgorithms.h"
+
+1430741992 c:\users\user\desktop\test_graphs - tema\graphalgorithms.h
+	"graph.h"
+
+1430737332 source:c:\users\user\desktop\test_graphs - tema\node.c
+	"node.h"
+
+1430737206 source:c:\users\user\desktop\test_graphs - tema\queue.c
+	"queue.h"
+
+1430737054 source:c:\users\user\desktop\test_graphs - tema\stack.c
+	"stack.h"
+
+1430758286 source:c:\users\user\desktop\graphs - tema\graphalgorithms.c
+	"graph.h"
+	"graphRepresentation.h"
+
+1430738243 c:\users\user\desktop\graphs - tema\graph.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"stack.h"
+	"queue.h"
+	"edge.h"
+
+1430736976 c:\users\user\desktop\graphs - tema\stack.h
+	"node.h"
+
+1430737277 c:\users\user\desktop\graphs - tema\node.h
+	<stdio.h>
+	<stdlib.h>
+
+1430737118 c:\users\user\desktop\graphs - tema\queue.h
+	"node.h"
+
+1430738293 c:\users\user\desktop\graphs - tema\edge.h
+
+1430737885 c:\users\user\desktop\graphs - tema\graphrepresentation.h
+	"graph.h"
+
+1430738004 source:c:\users\user\desktop\graphs - tema\graphrepresentation.c
+	<stdlib.h>
+	"graphRepresentation.h"
+
+1430758300 source:c:\users\user\desktop\graphs - tema\graphtraversals.c
+	"graphTraversals.h"
+	"graphRepresentation.h"
+
+1430737585 c:\users\user\desktop\graphs - tema\graphtraversals.h
+	"graph.h"
+
+1430750030 source:c:\users\user\desktop\graphs - tema\main.c
+	"graphRepresentation.h"
+	"graphTraversals.h"
+	"graphAlgorithms.h"
+
+1430741992 c:\users\user\desktop\graphs - tema\graphalgorithms.h
+	"graph.h"
+
+1430737332 source:c:\users\user\desktop\graphs - tema\node.c
+	"node.h"
+
+1430737206 source:c:\users\user\desktop\graphs - tema\queue.c
+	"queue.h"
+
+1430737054 source:c:\users\user\desktop\graphs - tema\stack.c
+	"stack.h"
+
