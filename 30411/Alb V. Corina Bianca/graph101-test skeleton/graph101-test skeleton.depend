@@ -1,0 +1,56 @@
+# depslib dependency file v1.0
+1430605046 source:c:\users\cori\desktop\graph101-test skeleton\graphrepresentation.c
+	<stdlib.h>
+	"graphRepresentation.h"
+
+1430604253 c:\users\cori\desktop\graph101-test skeleton\graphrepresentation.h
+	"graph.h"
+
+1430604319 c:\users\cori\desktop\graph101-test skeleton\graph.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"stack.h"
+	"queue.h"
+	"edge.h"
+
+1430565393 c:\users\cori\desktop\graph101-test skeleton\stack.h
+	"node.h"
+
+1430565413 c:\users\cori\desktop\graph101-test skeleton\node.h
+	<stdio.h>
+	<stdlib.h>
+
+1430565417 c:\users\cori\desktop\graph101-test skeleton\queue.h
+	"node.h"
+
+1430565428 c:\users\cori\desktop\graph101-test skeleton\edge.h
+
+1430565397 source:c:\users\cori\desktop\graph101-test skeleton\graphtraversals.c
+	"graphTraversals.h"
+	"graphRepresentation.h"
+
+1430565398 c:\users\cori\desktop\graph101-test skeleton\graphtraversals.h
+	"graph.h"
+
+1430604932 source:c:\users\cori\desktop\graph101-test skeleton\main.c
+	"graphRepresentation.h"
+	"graphTraversals.h"
+	"graphAlgorithms.h"
+
+1430565433 c:\users\cori\desktop\graph101-test skeleton\graphalgorithms.h
+	"graph.h"
+
+1430565411 source:c:\users\cori\desktop\graph101-test skeleton\node.c
+	"node.h"
+
+1430565415 source:c:\users\cori\desktop\graph101-test skeleton\queue.c
+	"queue.h"
+
+1430565418 source:c:\users\cori\desktop\graph101-test skeleton\stack.c
+	"stack.h"
+
+1430677357 source:c:\users\cori\desktop\graph101-test skeleton\graphalgorithms.c
+	"graph.h"
+	"graphRepresentation.h"
+
