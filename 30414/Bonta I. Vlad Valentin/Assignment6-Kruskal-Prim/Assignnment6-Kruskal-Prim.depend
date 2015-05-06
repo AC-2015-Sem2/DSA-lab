@@ -1,0 +1,56 @@
+# depslib dependency file v1.0
+1430904988 source:/home/vladms/Data_Structures/myGitRep/30414/Bonta I. Vlad Valentin/Assignnment6-Kruskal-Prim/graphAlgorithms.c
+	"graph.h"
+	"graphRepresentation.h"
+
+1430904988 /home/vladms/Data_Structures/myGitRep/30414/Bonta I. Vlad Valentin/Assignnment6-Kruskal-Prim/graph.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"stack.h"
+	"queue.h"
+	"edge.h"
+
+1430904988 /home/vladms/Data_Structures/myGitRep/30414/Bonta I. Vlad Valentin/Assignnment6-Kruskal-Prim/stack.h
+	"node.h"
+
+1430904988 /home/vladms/Data_Structures/myGitRep/30414/Bonta I. Vlad Valentin/Assignnment6-Kruskal-Prim/node.h
+	<stdio.h>
+	<stdlib.h>
+
+1430904988 /home/vladms/Data_Structures/myGitRep/30414/Bonta I. Vlad Valentin/Assignnment6-Kruskal-Prim/queue.h
+	"node.h"
+
+1430904988 /home/vladms/Data_Structures/myGitRep/30414/Bonta I. Vlad Valentin/Assignnment6-Kruskal-Prim/edge.h
+
+1430904988 /home/vladms/Data_Structures/myGitRep/30414/Bonta I. Vlad Valentin/Assignnment6-Kruskal-Prim/graphRepresentation.h
+	"graph.h"
+
+1430904988 source:/home/vladms/Data_Structures/myGitRep/30414/Bonta I. Vlad Valentin/Assignnment6-Kruskal-Prim/graphRepresentation.c
+	<stdlib.h>
+	"graphRepresentation.h"
+
+1430904988 source:/home/vladms/Data_Structures/myGitRep/30414/Bonta I. Vlad Valentin/Assignnment6-Kruskal-Prim/graphTraversals.c
+	"graphTraversals.h"
+	"graphRepresentation.h"
+
+1430904988 /home/vladms/Data_Structures/myGitRep/30414/Bonta I. Vlad Valentin/Assignnment6-Kruskal-Prim/graphTraversals.h
+	"graph.h"
+
+1430904988 source:/home/vladms/Data_Structures/myGitRep/30414/Bonta I. Vlad Valentin/Assignnment6-Kruskal-Prim/main.c
+	"graphRepresentation.h"
+	"graphTraversals.h"
+	"graphAlgorithms.h"
+
+1430904988 /home/vladms/Data_Structures/myGitRep/30414/Bonta I. Vlad Valentin/Assignnment6-Kruskal-Prim/graphAlgorithms.h
+	"graph.h"
+
+1430904988 source:/home/vladms/Data_Structures/myGitRep/30414/Bonta I. Vlad Valentin/Assignnment6-Kruskal-Prim/node.c
+	"node.h"
+
+1430904988 source:/home/vladms/Data_Structures/myGitRep/30414/Bonta I. Vlad Valentin/Assignnment6-Kruskal-Prim/queue.c
+	"queue.h"
+
+1430904988 source:/home/vladms/Data_Structures/myGitRep/30414/Bonta I. Vlad Valentin/Assignnment6-Kruskal-Prim/stack.c
+	"stack.h"
+
