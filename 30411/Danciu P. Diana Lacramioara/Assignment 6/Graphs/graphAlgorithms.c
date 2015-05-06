@@ -14,7 +14,7 @@ edgeT getMinimumEdgeForCurrentlyVisitedNodes(int * visited)
         {
             if (i != j)
             {
-                if (visited[i] ==VISITED && visited[j] ==UNVISITED && adjMatrix[i][j]<minE.weight && adjMatrix[i][j]>0)
+                if (visited[i] == VISITED && visited[j] ==UNVISITED && adjMatrix[i][j]<minE.weight && adjMatrix[i][j]>0)
                 {
                     minE.source = i;
                     minE.destination=j;
@@ -57,7 +57,7 @@ void prim(int startNode)
         nrofCoveredEdges++;
     }
     printEdges(edges, nrofCoveredEdges);
-    printf("This is the weight of the covered vertices : %d\n", weight);
+    printf("This is the cost of MST of the Prim's algorithm : %d\n", weight);
 
     printf("\nPrim algorithm ended !\n\n");
 
@@ -107,26 +107,30 @@ int ** getCopyOfAdjecencyMatrix()
 
 int getParent(int * parent, int i)
 {
-    if (parent[i]!=0)
-    {
-        i=parent[i];
-    }
-    return(i);
+    if (parent[i]==-1)
+        return i;
+    else
+        return getParent(parent, parent[i]);
 }
 
 int uni(int * parent, int i,int j)
 {
-    if (i!=j)
+    int parentforI = getParent(parent, i);
+    int parentforJ = getParent(parent, j);
+    if (parentforI!=parentforJ)
     {
-        parent[j]=i;
-        return(1);
+        parent[parentforJ] = parentforI;
+        return 1;
     }
-    return(0);
+    else
+    {
+        return 0;
+    }
 }
 
 void kruskal()
 {
-    int nredge,i,j,u,v,d,s,minCost,minim;    //u,d = sources; v,s = destinations
+    int nredge,i,j,u,v,d,s,minCost,minim;    //u,s = sources; v,d = destinations
     edgeT minEdge;
     int **matrix;
     int *parents;
@@ -134,33 +138,26 @@ void kruskal()
     printf("\nKruskal Algorithm started ! \n");
     nredge = 1;
     minCost=0;
-    matrix = (int**)malloc(sizeof(nrOfVerteces)*sizeof(int*));
-    for (i=0; i<nrOfVerteces; i++)
-    {
-        matrix[i] =(int*)malloc(sizeof(int)*nrOfVerteces);
-    }
-    matrix = getCopyOfAdjecencyMatrix();
+    matrix = getCopyOfAdjecencyMatrix(); // it is allocated in the function
     parents=(int *)malloc(sizeof(int)*nrOfVerteces);
     for (i=0; i<nrOfVerteces; i++)
         for(j=0; j<nrOfVerteces; j++)
             if(matrix[i][j]==0)
                 matrix[i][j]=MAX;
     for (i=0; i<nrOfVerteces; i++)
-        parents[i]=UNVISITED;
-    while (nredge < nrOfVerteces-1)
+        parents[i]=-1;
+    while (minim != MAX)
     {
         minEdge = getMinimumEdgeForAdjacencyMatrix(matrix);
         minim = minEdge.weight;
-        u=d=minEdge.source;
-        v=s=minEdge.destination;
-        u=getParent(parents, u);
-        v=getParent(parents,v);
-        if (uni(parents, u,v))
+        u=s=minEdge.source;
+        v=d=minEdge.destination;
+        if (uni(parents,u,v))
         {
-            printf("\nThe %d edge (%d,%d) added with the cost = %d\n",nredge++,d,s,minim);
+            printf("\nThe %d edge (%d,%d) added with the cost = %d\n",nredge++,s,d,minim);
             minCost=minCost + minim;
         }
-        matrix[d][s]=matrix[s][d]=MAX;
+        matrix[s][d]=matrix[d][s]=MAX;
     }
     printf("\nMinimum cost = %d\n",minCost);
 
