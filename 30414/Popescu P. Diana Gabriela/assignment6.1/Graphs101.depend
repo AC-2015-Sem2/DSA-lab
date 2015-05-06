@@ -1,0 +1,217 @@
+# depslib dependency file v1.0
+1429966391 source:c:\users\alex\desktop\predare\2014-2015 - sem2\dsa-lab\interesting stuff\graphs101 - complete\graphalgorithms.c
+	"graph.h"
+	"graphRepresentation.h"
+
+1429965536 c:\users\alex\desktop\predare\2014-2015 - sem2\dsa-lab\interesting stuff\graphs101 - complete\graph.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"stack.h"
+	"queue.h"
+	"edge.h"
+
+1429963444 c:\users\alex\desktop\predare\2014-2015 - sem2\dsa-lab\interesting stuff\graphs101 - complete\stack.h
+	"node.h"
+
+1429357788 c:\users\alex\desktop\predare\2014-2015 - sem2\dsa-lab\interesting stuff\graphs101 - complete\node.h
+	<stdio.h>
+	<stdlib.h>
+
+1429963437 c:\users\alex\desktop\predare\2014-2015 - sem2\dsa-lab\interesting stuff\graphs101 - complete\queue.h
+	"node.h"
+
+1429963176 c:\users\alex\desktop\predare\2014-2015 - sem2\dsa-lab\interesting stuff\graphs101 - complete\edge.h
+
+1429965239 source:c:\users\alex\desktop\predare\2014-2015 - sem2\dsa-lab\interesting stuff\graphs101 - complete\graphrepresentation.c
+	<stdlib.h>
+	"graphRepresentation.h"
+
+1429965257 c:\users\alex\desktop\predare\2014-2015 - sem2\dsa-lab\interesting stuff\graphs101 - complete\graphrepresentation.h
+	"graph.h"
+
+1429965266 source:c:\users\alex\desktop\predare\2014-2015 - sem2\dsa-lab\interesting stuff\graphs101 - complete\graphtraversals.c
+	"graphTraversals.h"
+	"graphRepresentation.h"
+
+1429962848 c:\users\alex\desktop\predare\2014-2015 - sem2\dsa-lab\interesting stuff\graphs101 - complete\graphtraversals.h
+	"graph.h"
+
+1429966118 source:c:\users\alex\desktop\predare\2014-2015 - sem2\dsa-lab\interesting stuff\graphs101 - complete\main.c
+	"graphRepresentation.h"
+	"graphTraversals.h"
+	"graphAlgorithms.h"
+
+1429963577 c:\users\alex\desktop\predare\2014-2015 - sem2\dsa-lab\interesting stuff\graphs101 - complete\graphalgorithms.h
+	"graph.h"
+
+1429357212 source:c:\users\alex\desktop\predare\2014-2015 - sem2\dsa-lab\interesting stuff\graphs101 - complete\node.c
+	"node.h"
+
+1429963430 source:c:\users\alex\desktop\predare\2014-2015 - sem2\dsa-lab\interesting stuff\graphs101 - complete\queue.c
+	"queue.h"
+
+1429963449 source:c:\users\alex\desktop\predare\2014-2015 - sem2\dsa-lab\interesting stuff\graphs101 - complete\stack.c
+	"stack.h"
+
+1430726612 source:c:\users\johns\documents\programming\graphs101 - complete\graphrepresentation.c
+	<stdlib.h>
+	"graphRepresentation.h"
+
+1430726612 c:\users\johns\documents\programming\graphs101 - complete\graphrepresentation.h
+	"graph.h"
+
+1430726612 c:\users\johns\documents\programming\graphs101 - complete\graph.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"stack.h"
+	"queue.h"
+	"edge.h"
+
+1430726612 c:\users\johns\documents\programming\graphs101 - complete\stack.h
+	"node.h"
+
+1430726612 c:\users\johns\documents\programming\graphs101 - complete\node.h
+	<stdio.h>
+	<stdlib.h>
+
+1430726612 c:\users\johns\documents\programming\graphs101 - complete\queue.h
+	"node.h"
+
+1430726612 c:\users\johns\documents\programming\graphs101 - complete\edge.h
+
+1430726612 source:c:\users\johns\documents\programming\graphs101 - complete\graphtraversals.c
+	"graphTraversals.h"
+	"graphRepresentation.h"
+
+1430726612 c:\users\johns\documents\programming\graphs101 - complete\graphtraversals.h
+	"graph.h"
+
+1430740653 source:c:\users\johns\documents\programming\graphs101 - complete\main.c
+	"graphRepresentation.h"
+	"graphTraversals.h"
+	"graphAlgorithms.h"
+
+1430739991 c:\users\johns\documents\programming\graphs101 - complete\graphalgorithms.h
+	"graph.h"
+
+1430726612 source:c:\users\johns\documents\programming\graphs101 - complete\node.c
+	"node.h"
+
+1430726612 source:c:\users\johns\documents\programming\graphs101 - complete\queue.c
+	"queue.h"
+
+1430726612 source:c:\users\johns\documents\programming\graphs101 - complete\stack.c
+	"stack.h"
+
+1430740522 source:c:\users\johns\documents\programming\graphs101 - complete\graphalgorithms.c
+	"graph.h"
+	"graphRepresentation.h"
+
+1430852585 source:c:\users\alex\desktop\graphsiii101 - complete\graphrepresentation.c
+	<stdlib.h>
+	"graphRepresentation.h"
+
+1430852585 c:\users\alex\desktop\graphsiii101 - complete\graphrepresentation.h
+	"graph.h"
+
+1430852585 c:\users\alex\desktop\graphsiii101 - complete\graph.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"stack.h"
+	"queue.h"
+	"edge.h"
+
+1430852585 c:\users\alex\desktop\graphsiii101 - complete\stack.h
+	"node.h"
+
+1430852585 c:\users\alex\desktop\graphsiii101 - complete\node.h
+	<stdio.h>
+	<stdlib.h>
+
+1430852585 c:\users\alex\desktop\graphsiii101 - complete\queue.h
+	"node.h"
+
+1430852585 c:\users\alex\desktop\graphsiii101 - complete\edge.h
+
+1430852585 source:c:\users\alex\desktop\graphsiii101 - complete\graphtraversals.c
+	"graphTraversals.h"
+	"graphRepresentation.h"
+
+1430852585 c:\users\alex\desktop\graphsiii101 - complete\graphtraversals.h
+	"graph.h"
+
+1430852585 source:c:\users\alex\desktop\graphsiii101 - complete\main.c
+	"graphRepresentation.h"
+	"graphTraversals.h"
+	"graphAlgorithms.h"
+
+1430852585 c:\users\alex\desktop\graphsiii101 - complete\graphalgorithms.h
+	"graph.h"
+
+1430852585 source:c:\users\alex\desktop\graphsiii101 - complete\node.c
+	"node.h"
+
+1430852585 source:c:\users\alex\desktop\graphsiii101 - complete\queue.c
+	"queue.h"
+
+1430852585 source:c:\users\alex\desktop\graphsiii101 - complete\stack.c
+	"stack.h"
+
+1430854824 source:c:\users\alex\desktop\graphsiii101 - complete\graphalgorithms.c
+	"graph.h"
+	"graphRepresentation.h"
+
+1430852585 source:c:\users\alex\desktop\dgp dsa\dsa-lab\30414\popescu p. diana gabriela\assignment6.1\graphrepresentation.c
+	<stdlib.h>
+	"graphRepresentation.h"
+
+1430852585 c:\users\alex\desktop\dgp dsa\dsa-lab\30414\popescu p. diana gabriela\assignment6.1\graphrepresentation.h
+	"graph.h"
+
+1430852585 c:\users\alex\desktop\dgp dsa\dsa-lab\30414\popescu p. diana gabriela\assignment6.1\graph.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"stack.h"
+	"queue.h"
+	"edge.h"
+
+1430852585 c:\users\alex\desktop\dgp dsa\dsa-lab\30414\popescu p. diana gabriela\assignment6.1\stack.h
+	"node.h"
+
+1430852585 c:\users\alex\desktop\dgp dsa\dsa-lab\30414\popescu p. diana gabriela\assignment6.1\node.h
+	<stdio.h>
+	<stdlib.h>
+
+1430852585 c:\users\alex\desktop\dgp dsa\dsa-lab\30414\popescu p. diana gabriela\assignment6.1\queue.h
+	"node.h"
+
+1430852585 c:\users\alex\desktop\dgp dsa\dsa-lab\30414\popescu p. diana gabriela\assignment6.1\edge.h
+
+1430852585 source:c:\users\alex\desktop\dgp dsa\dsa-lab\30414\popescu p. diana gabriela\assignment6.1\graphtraversals.c
+	"graphTraversals.h"
+	"graphRepresentation.h"
+
+1430852585 c:\users\alex\desktop\dgp dsa\dsa-lab\30414\popescu p. diana gabriela\assignment6.1\graphtraversals.h
+	"graph.h"
+
+1430852585 source:c:\users\alex\desktop\dgp dsa\dsa-lab\30414\popescu p. diana gabriela\assignment6.1\main.c
+	"graphRepresentation.h"
+	"graphTraversals.h"
+	"graphAlgorithms.h"
+
+1430852585 c:\users\alex\desktop\dgp dsa\dsa-lab\30414\popescu p. diana gabriela\assignment6.1\graphalgorithms.h
+	"graph.h"
+
+1430852585 source:c:\users\alex\desktop\dgp dsa\dsa-lab\30414\popescu p. diana gabriela\assignment6.1\node.c
+	"node.h"
+
+1430852585 source:c:\users\alex\desktop\dgp dsa\dsa-lab\30414\popescu p. diana gabriela\assignment6.1\queue.c
+	"queue.h"
+
+1430852585 source:c:\users\alex\desktop\dgp dsa\dsa-lab\30414\popescu p. diana gabriela\assignment6.1\stack.c
+	"stack.h"
+
