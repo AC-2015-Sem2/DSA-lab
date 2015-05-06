@@ -6,6 +6,7 @@
 #define VISITED 1
 
 void readAdjMatrix(FILE* f, int* size, int*** mat);
+void readAdjMatrixEdges(FILE* f, int* size, int*** mat);
 void printAdjMatrix(int size, int** mat);
 node** AdjMatToAdjList(int** mat, int size);
 void printAdjList(node** adjList, int size);

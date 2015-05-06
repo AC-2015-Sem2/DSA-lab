@@ -1,5 +1,17 @@
 #include <stdlib.h>
+#include <time.h>
 #include "utility.h"
+
+void initRand()
+{
+    srand(time(NULL));
+}
+
+//Random uint between min and max
+int getRand(int min, int max)
+{
+    return min + rand() % (max - min + 1);
+}
 
 int** getCopyOfAdjecencyMatrix(int** adjMat, int size)
 {
@@ -14,6 +26,19 @@ int** getCopyOfAdjecencyMatrix(int** adjMat, int size)
         }
     }
     return copyAdjMat;
+}
+
+///Only counts above the main diagonal
+int noOfEdges(int** adjMat, int size)
+{
+    int count = 0;
+    int i, j;
+    for(i = 0; i < size - 1; i++)
+        for(j = i + 1; j < size; j++)
+            if(adjMat[i][j] > 0)
+                count++;
+
+    return count;
 }
 
 edge extractMinEdge(int** adjMat, int size)
