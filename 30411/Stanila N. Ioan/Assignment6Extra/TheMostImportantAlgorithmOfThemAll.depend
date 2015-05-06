@@ -1,0 +1,16 @@
+# depslib dependency file v1.0
+1430763727 source:c:\users\johns\documents\programming\themostimportantalgorithmofthemall\graph.c
+	"graph.h"
+	<stdlib.h>
+
+1430751840 c:\users\johns\documents\programming\themostimportantalgorithmofthemall\graph.h
+	<stdio.h>
+	"edge.h"
+
+1430751832 source:c:\users\johns\documents\programming\themostimportantalgorithmofthemall\main.c
+	<stdio.h>
+	<stdlib.h>
+	"graph.h"
+
+1430750218 c:\users\johns\documents\programming\themostimportantalgorithmofthemall\edge.h
+
