@@ -34,8 +34,11 @@
 		<Unit filename="functions.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="functions.h" />
+		<Unit filename="header.h" />
 		<Unit filename="input.txt" />
+		<Unit filename="list.c">
+			<Option compilerVar="CC" />
+		</Unit>
 		<Unit filename="main.c">
 			<Option compilerVar="CC" />
 		</Unit>
