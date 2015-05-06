@@ -219,3 +219,58 @@
 1430651823 source:d:\graphs101 - test skeleton\stack.c
 	"stack.h"
 
+1430740241 source:d:\workspace c2\lab8\assignment6\graphalgorithms.c
+	"graph.h"
+	"graphRepresentation.h"
+
+1430651823 d:\workspace c2\lab8\assignment6\graph.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"stack.h"
+	"queue.h"
+	"edge.h"
+
+1430651823 d:\workspace c2\lab8\assignment6\stack.h
+	"node.h"
+
+1430651823 d:\workspace c2\lab8\assignment6\node.h
+	<stdio.h>
+	<stdlib.h>
+
+1430651823 d:\workspace c2\lab8\assignment6\queue.h
+	"node.h"
+
+1430651823 d:\workspace c2\lab8\assignment6\edge.h
+
+1430651823 d:\workspace c2\lab8\assignment6\graphrepresentation.h
+	"graph.h"
+
+1430651823 source:d:\workspace c2\lab8\assignment6\graphrepresentation.c
+	<stdlib.h>
+	"graphRepresentation.h"
+
+1430727597 source:d:\workspace c2\lab8\assignment6\graphtraversals.c
+	"graphTraversals.h"
+	"graphRepresentation.h"
+
+1430651823 d:\workspace c2\lab8\assignment6\graphtraversals.h
+	"graph.h"
+
+1430737120 source:d:\workspace c2\lab8\assignment6\main.c
+	"graphRepresentation.h"
+	"graphTraversals.h"
+	"graphAlgorithms.h"
+
+1430737178 d:\workspace c2\lab8\assignment6\graphalgorithms.h
+	"graph.h"
+
+1430651823 source:d:\workspace c2\lab8\assignment6\node.c
+	"node.h"
+
+1430651823 source:d:\workspace c2\lab8\assignment6\queue.c
+	"queue.h"
+
+1430651823 source:d:\workspace c2\lab8\assignment6\stack.c
+	"stack.h"
+
