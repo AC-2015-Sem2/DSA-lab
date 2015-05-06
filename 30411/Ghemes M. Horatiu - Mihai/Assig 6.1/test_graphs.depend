@@ -1,0 +1,56 @@
+# depslib dependency file v1.0
+1430734404 source:c:\users\user\desktop\test_graphs_tema\graphrepresentation.c
+	<stdlib.h>
+	"graphRepresentation.h"
+
+1430734285 c:\users\user\desktop\test_graphs_tema\graphrepresentation.h
+	"graph.h"
+
+1430734643 c:\users\user\desktop\test_graphs_tema\graph.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"stack.h"
+	"queue.h"
+	"edge.h"
+
+1430733376 c:\users\user\desktop\test_graphs_tema\stack.h
+	"node.h"
+
+1430733677 c:\users\user\desktop\test_graphs_tema\node.h
+	<stdio.h>
+	<stdlib.h>
+
+1430733518 c:\users\user\desktop\test_graphs_tema\queue.h
+	"node.h"
+
+1430734693 c:\users\user\desktop\test_graphs_tema\edge.h
+
+1430739411 source:c:\users\user\desktop\test_graphs_tema\graphtraversals.c
+	"graphTraversals.h"
+	"graphRepresentation.h"
+
+1430733985 c:\users\user\desktop\test_graphs_tema\graphtraversals.h
+	"graph.h"
+
+1430739411 source:c:\users\user\desktop\test_graphs_tema\main.c
+	"graphRepresentation.h"
+	"graphTraversals.h"
+	"graphAlgorithms.h"
+
+1430739411 c:\users\user\desktop\test_graphs_tema\graphalgorithms.h
+	"graph.h"
+
+1430733732 source:c:\users\user\desktop\test_graphs_tema\node.c
+	"node.h"
+
+1430733606 source:c:\users\user\desktop\test_graphs_tema\queue.c
+	"queue.h"
+
+1430733454 source:c:\users\user\desktop\test_graphs_tema\stack.c
+	"stack.h"
+
+1430754584 source:c:\users\user\desktop\test_graphs_tema\graphalgorithms.c
+	"graph.h"
+	"graphRepresentation.h"
+

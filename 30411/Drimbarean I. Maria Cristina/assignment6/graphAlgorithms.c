@@ -269,5 +269,9 @@ void Ford(int startNode)
             printf("\n");
         }
     }
+       for (i=0;i<nrOfVerteces;i++)
+        if (distances[i]<0)
+          {printf("we have a negative weight");
+          break;}
         printf("Bellman-Ford ended:\n");
     }

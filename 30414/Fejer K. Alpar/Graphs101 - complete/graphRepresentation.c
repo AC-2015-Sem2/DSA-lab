@@ -73,6 +73,7 @@ void printAdjList()
 {
     adjListNodeT* lNode=firstNode;
     adjListNeighborT* neighbor;
+    printf("\n");
     while (lNode!=NULL)
     {
         printf("%d:",lNode->node);
@@ -85,6 +86,7 @@ void printAdjList()
         printf("\n");
         lNode=lNode->next;
     }
+    printf("\n");
 }
 
 void readFromAdjMatrix(FILE * f)
