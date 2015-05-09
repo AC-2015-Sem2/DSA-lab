@@ -77,7 +77,7 @@ Lab 11: Sorting Algorithms - Bubble, Insertion, Selection, Merge, Quick, Radix.
 * Assignments 8: TBA
 
 ```
-Lab 12: Test 4 - Sorting Algorithms
+Lab 12: Test 4 - Sorting Algorithms & Hash Tables
 ```
 * Assignments: none
 
