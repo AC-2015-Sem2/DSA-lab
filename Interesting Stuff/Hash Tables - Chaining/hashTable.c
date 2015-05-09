@@ -4,6 +4,7 @@
 void initHashTable(int N)
 {
     //! initialize hash table with length "INITIAL_HT_SIZE_FACTOR" of N (1/3 of N)
+    //! also the size variable has to be initialized
 }
 
 void insertElement(char * element)
@@ -14,6 +15,7 @@ void insertElement(char * element)
 
 int hashFunction(char * content, int i)
 {
+    //! keep in mind, size in this case simply means the number of buckets
     return i % size;
 }
 
