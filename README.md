@@ -65,7 +65,10 @@ Lab 9: Test 3 - Graphs
 ```
 Lab 10: Hash Tables - introduction, collision detection, usages
 ```
-* Assignments 7: TBA
+* Assignments 7:
+	- [Meta-instructions] (https://github.com/AC-2015-Sem2/DSA-lab/tree/master/Assignments/Assignment%207)
+	- [Hash Tables - Open Addressing] (https://github.com/AC-2015-Sem2/DSA-lab/tree/master/Assignments/Assignment%207/Assignment%207.1%20-%20Hash%20Tables%20-%20Open%20Addressing)
+	- [Hash Tables - Chaining] (https://github.com/AC-2015-Sem2/DSA-lab/tree/master/Assignments/Assignment%207/Assignment%207.2%20-%20Hash%20Tables%20-%20Chaining)
 
 
 ```
