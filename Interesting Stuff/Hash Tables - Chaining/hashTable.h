@@ -6,7 +6,7 @@ listT * hashTable;
 int size;
 
 
-int hashFunction(int i);
+int hashFunction(char * content, int i);
 
 void initHashTable(int N);
 

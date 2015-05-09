@@ -12,7 +12,7 @@ void insertElement(char * element)
 
 }
 
-int hashFunction(int i)
+int hashFunction(char * content, int i)
 {
     return i % size;
 }
