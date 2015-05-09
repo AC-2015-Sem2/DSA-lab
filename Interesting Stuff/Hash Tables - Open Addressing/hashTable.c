@@ -20,6 +20,7 @@ void resizeHashTable()
     //! only call this when the current fill factor of your hash table > MAX_FILL_FACTOR
 
     //! careful, when resizing, the 'size' variable should be changed as well such that the 'hashFunction's distribution will work
+    //! be double careful! all the elements which are already in the hash table have to  be RE-hashed! (explanation @ lab)
 }
 
 int insertElement(char * element)
