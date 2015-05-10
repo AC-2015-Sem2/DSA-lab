@@ -1,0 +1,16 @@
+# depslib dependency file v1.0
+1431281177 source:c:\users\cori\desktop\5\main.c
+	<stdio.h>
+	<stdlib.h>
+	"structures.h"
+	"code.h"
+
+1431280824 source:c:\users\cori\desktop\5\code.c
+	<stdio.h>
+	<stdlib.h>
+	"structures.h"
+
+1431281093 c:\users\cori\desktop\5\structures.h
+
+1431281038 c:\users\cori\desktop\5\code.h
+
