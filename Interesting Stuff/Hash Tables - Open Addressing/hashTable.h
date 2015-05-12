@@ -2,7 +2,7 @@
 const float INITIAL_HT_SIZE_FACTOR = .25;
 const float MAX_FILL_FACTOR = .80;
 
-char * hashTable;
+char ** hashTable;
 int size;
 
 
