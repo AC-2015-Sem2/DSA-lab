@@ -4,7 +4,7 @@
 
 int main()
 {
-    FILE * f = fopen("matrix1.txt","r");
+    FILE * f = fopen("matrix.txt","r");
     readFromAdjMatrix(f);
     printAdjMatrix();
     bfs(0);
