@@ -2,12 +2,12 @@
 <CodeBlocks_project_file>
 	<FileVersion major="1" minor="6" />
 	<Project>
-		<Option title="graph101-test skeleton" />
+		<Option title="5" />
 		<Option pch_mode="2" />
 		<Option compiler="gcc" />
 		<Build>
 			<Target title="Debug">
-				<Option output="bin/Debug/graph101-test skeleton" prefix_auto="1" extension_auto="1" />
+				<Option output="bin/Debug/5" prefix_auto="1" extension_auto="1" />
 				<Option object_output="obj/Debug/" />
 				<Option type="1" />
 				<Option compiler="gcc" />
@@ -16,7 +16,7 @@
 				</Compiler>
 			</Target>
 			<Target title="Release">
-				<Option output="bin/Release/graph101-test skeleton" prefix_auto="1" extension_auto="1" />
+				<Option output="bin/Release/5" prefix_auto="1" extension_auto="1" />
 				<Option object_output="obj/Release/" />
 				<Option type="1" />
 				<Option compiler="gcc" />
@@ -31,35 +31,14 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
-		<Unit filename="edge.h" />
-		<Unit filename="graph.h" />
-		<Unit filename="graphAlgorithms.c">
+		<Unit filename="code.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="graphAlgorithms.h" />
-		<Unit filename="graphRepresentation.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="graphRepresentation.h" />
-		<Unit filename="graphTraversals.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="graphTraversals.h" />
+		<Unit filename="code.h" />
 		<Unit filename="main.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="node.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="node.h" />
-		<Unit filename="queue.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="queue.h" />
-		<Unit filename="stack.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="stack.h" />
+		<Unit filename="structures.h" />
 		<Extensions>
 			<code_completion />
 			<envvars />
