@@ -1,0 +1,51 @@
+# depslib dependency file v1.0
+1431168502 source:c:\users\alex\desktop\predare\2014-2015 - sem2\dsa-lab\interesting stuff\hash tables - chaining\io.c
+	"io.h"
+
+1431167734 c:\users\alex\desktop\predare\2014-2015 - sem2\dsa-lab\interesting stuff\hash tables - chaining\io.h
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	<string.h>
+
+1431164987 source:c:\users\alex\desktop\predare\2014-2015 - sem2\dsa-lab\interesting stuff\hash tables - chaining\main.c
+	"io.h"
+	"files.h"
+
+1431163464 c:\users\alex\desktop\predare\2014-2015 - sem2\dsa-lab\interesting stuff\hash tables - chaining\files.h
+
+1431168513 source:c:\users\alex\desktop\predare\2014-2015 - sem2\dsa-lab\interesting stuff\hash tables - chaining\list.c
+	"list.h"
+	"io.h"
+
+1431168508 c:\users\alex\desktop\predare\2014-2015 - sem2\dsa-lab\interesting stuff\hash tables - chaining\list.h
+
+1431697583 source:/home/vladms/Desktop/Hash Tables - Chaining/io.c
+	"io.h"
+
+1431721922 /home/vladms/Desktop/Hash Tables - Chaining/io.h
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	<string.h>
+
+1431722717 source:/home/vladms/Desktop/Hash Tables - Chaining/list.c
+	"list.h"
+	"io.h"
+
+1431722341 /home/vladms/Desktop/Hash Tables - Chaining/list.h
+
+1431724398 source:/home/vladms/Desktop/Hash Tables - Chaining/main.c
+	"io.h"
+	"files.h"
+
+1431680747 /home/vladms/Desktop/Hash Tables - Chaining/files.h
+
+1431861080 source:/home/vladms/Desktop/Hash Tables - Chaining/hashTable.c
+	"hashTable.h"
+	"io.h"
+
+1431724630 /home/vladms/Desktop/Hash Tables - Chaining/hashTable.h
+	"list.h"
+	<math.h>
+
