@@ -4,7 +4,7 @@
 
 int main()
 {
-    int N = _100000;
+    int N = _25000;
     char ** content = readFromFile(N);
     //printContentToConsole(content,N);
     initHashTable(N);
@@ -19,7 +19,7 @@ int main()
             insertOK = 0;
         }
         if (getFillFactor() > MAX_FILL_FACTOR) {
-            printf("%d: ", nrOfRehash++);
+            printf("%d: ", ++nrOfRehash);
             resizeHashTable();
             insertOK = 1;
         }
@@ -31,6 +31,7 @@ int main()
         //printf("%d: i; %d col\n", i, col);
         i++;
     }
+    printf("Done!\n");
     printf("%d elements had 0 collisions\n", elWith0Col);
     printf("Max num of collisions: %d\n", maxCol);
     return 0;

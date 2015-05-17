@@ -3,6 +3,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
+#include <string.h>
 
 void initHashTable(int N)
 {
@@ -19,14 +20,27 @@ void initHashTable(int N)
 void insertElement(char * element)
 {
     //! insert an element
-    int i = 0;
-    int key = hashFunction(element, i);
+    int key = hashFunction4(element);
     addToList(&hashTable[key], element);
 }
 
-int hashFunction(char * content, int i)
+int hashFunction0(char * content) {
+    return content[0]/4 % size;
+}
+
+int hashFunction1(char * content)
 {
-    //! keep in mind, size in this case simply means the number of buckets
+    int length = strlen(content);
+    int k, sum;
+    for (sum=0, k=0; k < length; k++)
+    {
+        sum += content[k];
+    }
+    return sum%size;
+}
+
+int hashFunction2(char * content)
+{
     long sum = 0;
     long mult = 1;
     for (int j = 0; j < 16; j++) {
@@ -41,12 +55,45 @@ int hashFunction(char * content, int i)
         sum += content[j]*mult;
         mult *= 256;
     }
-    /*
-    int sum = 0;
-    for (int j = 0; j < 64; j++)
-        sum += (int)content[j];
-    */
-    return (abs(sum) + i) % size;
+    return abs(sum)%size;
+}
+
+int hashFunction3(char* content) {
+    /* Bernstein hash */
+    long hash = 5381;
+    char* str = content;
+
+    while (*str) {
+        hash = ((hash << 5) + hash) + (int)(*str); /* hash * 33 + c */
+        str++;
+    }
+    return abs(hash)%size;
+}
+
+int hashFunction4(char * content) {
+    /* Slightly modified One-at-a-Time hash */
+    unsigned long hash = 186526133;//initially 0
+    for (int i = 0; i < 64; i++) {
+        hash += content[i];
+        hash += hash<<10;
+        hash ^= hash<<6;
+    }
+    hash += (hash << 3);
+    hash ^= (hash >> 11);
+    hash += (hash << 15);
+    return hash%size;
+}
+
+int hashFunction5(char * content) {
+    /* My hash function */
+    unsigned long hash = 73;
+    unsigned long mult = 1;
+    for (int i = 0; i < 64; i++) {
+        hash = hash*31 + (~content[i])*mult;
+        mult += 256;
+    }
+    hash += (~content[7])*13;
+    return hash%size;
 }
 
 void computeDistributionsPerBucket()
@@ -62,7 +109,6 @@ void computeDistributionsPerBucket()
         B3: ******* (~35%)
         .....
 
-
         hint : the bigger you choose X, the better approximation
         hint2: choose it somewhere between 20-40 such that it fits in one row in the console nicely
     */
@@ -72,7 +118,7 @@ void computeDistributionsPerBucket()
             maxSize = hashTable[i].size;
     for (int i = 0; i < size; i++) {
         printf("B%i: ", i);
-        int lev = (float)hashTable[i].size/maxSize * 40.0;
+        int lev = (float)hashTable[i].size/maxSize * 60.0;
         for (int j = 0; j < lev; j++)
             printf("*");
         printf("\n");

@@ -19,14 +19,14 @@
 
 1431166749 c:\users\alex\desktop\predare\2014-2015 - sem2\dsa-lab\interesting stuff\hash tables - open addressing\hashtable.h
 
-1431686586 source:c:\users\johns\documents\programming\hash tables\hash tables - open addressing\hashtable.c
+1431856642 source:c:\users\johns\documents\programming\hash tables\hash tables - open addressing\hashtable.c
 	"hashTable.h"
 	<stdio.h>
 	<string.h>
 	<stdlib.h>
 	<math.h>
 
-1431607658 c:\users\johns\documents\programming\hash tables\hash tables - open addressing\hashtable.h
+1431856785 c:\users\johns\documents\programming\hash tables\hash tables - open addressing\hashtable.h
 
 1431606634 c:\users\johns\documents\programming\hash tables\hash tables - open addressing\io.h
 	<stdio.h>
@@ -39,7 +39,7 @@
 1431686063 source:c:\users\johns\documents\programming\hash tables\hash tables - open addressing\io.c
 	"io.h"
 
-1431686369 source:c:\users\johns\documents\programming\hash tables\hash tables - open addressing\main.c
+1431855600 source:c:\users\johns\documents\programming\hash tables\hash tables - open addressing\main.c
 	"files.h"
 	"io.h"
 	"hashTable.h"

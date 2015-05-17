@@ -20,13 +20,14 @@
 
 1431168508 c:\users\alex\desktop\predare\2014-2015 - sem2\dsa-lab\interesting stuff\hash tables - chaining\list.h
 
-1431626383 source:c:\users\johns\documents\programming\hash tables\hash tables - chaining\hashtable.c
+1431863671 source:c:\users\johns\documents\programming\hash tables\hash tables - chaining\hashtable.c
 	"hashTable.h"
 	<stdio.h>
 	<stdlib.h>
 	<math.h>
+	<string.h>
 
-1431618964 c:\users\johns\documents\programming\hash tables\hash tables - chaining\hashtable.h
+1431863722 c:\users\johns\documents\programming\hash tables\hash tables - chaining\hashtable.h
 	"list.h"
 
 1431619498 c:\users\johns\documents\programming\hash tables\hash tables - chaining\list.h
@@ -44,10 +45,11 @@
 	"list.h"
 	"io.h"
 
-1431622974 source:c:\users\johns\documents\programming\hash tables\hash tables - chaining\main.c
+1431859791 source:c:\users\johns\documents\programming\hash tables\hash tables - chaining\main.c
 	"io.h"
 	"files.h"
 	"hashTable.h"
+	<math.h>
 
 1431266043 c:\users\johns\documents\programming\hash tables\hash tables - chaining\files.h
 
