@@ -26,7 +26,7 @@ void insertElement(char * element, int nrOfBuckets)
 {
     //! insert an element
 
-    int index = hashFunction(element, nrOfBuckets);
+    int index = hashFunction1(element, nrOfBuckets);
     addToList(&hashTable[index], element);
 }
 /*
@@ -37,7 +37,7 @@ int hashFunction(char * content, int i)
     return i % size;
 }
 */
-int hashFunction(char * content, int nrOfBuckets)
+int getSum(char * content)
 {
     int length = strlen(content);
     int k, sum;
@@ -45,8 +45,43 @@ int hashFunction(char * content, int nrOfBuckets)
     {
         sum += content[k];
     }
-    return  sum % nrOfBuckets;
+    return  sum;
 }
+
+int getSum2(char * content)
+{
+    int length = strlen(content);
+    int k, sum;
+    for (sum=0, k=0; k < length; k++)
+    {
+        sum += content[k] %2 ;
+    }
+    return  sum;
+}
+/*
+int getProduct(char *content)
+{
+    int length = strlen(content);
+    int k, product;
+    for (product=1, k=1; k < length; k++)
+    {
+        product *= content[k];
+    }
+    return  product;
+
+}
+*/
+
+int hashFunction1(char * content, int nrOfBuckets)
+{
+    return getSum(content)% nrOfBuckets;
+}
+
+int hashFunction0(char * content, int nrOfBuckets)
+{
+    return getSum2(content)% nrOfBuckets;
+}
+
 
 double square(double x)
 {
@@ -80,7 +115,7 @@ void computeDistributionsPerBucket(int N, int nrOfBuckets)
 
         for(j=0; j<x; j++)
         {
-            printf("$");
+            printf("*");
         }
         for(j=x; j<maxStars; j++)
         {

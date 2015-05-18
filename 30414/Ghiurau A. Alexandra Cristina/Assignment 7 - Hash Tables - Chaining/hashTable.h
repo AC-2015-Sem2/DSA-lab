@@ -1,12 +1,18 @@
 #include "list.h"
 
-static const float INITIAL_HT_SIZE_FACTOR = .33;
+static const float INITIAL_HT_SIZE_FACTOR = .85;
 
 listT * hashTable;
 int size;
 
 
-int hashFunction(char * content, int nrOfBuckets);
+int getSum(char * content);
+int getProduct(char *content);
+int getSum2(char * content);
+int getSum3(char * content);
+
+int hashFunction0(char * content, int nrOfBuckets);
+int hashFunction1(char * content, int nrOfBuckets);
 
 void initHashTable(int N, int nrOfBuckets);
 
