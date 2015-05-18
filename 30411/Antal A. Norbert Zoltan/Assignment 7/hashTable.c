@@ -23,7 +23,7 @@ float getFillFactor()
             n++;
         }
     }
-    fillFactor = (double)n/size;
+    fillFactor = (float)n/size;
     return fillFactor;
 }
 
@@ -43,12 +43,12 @@ void resizeHashTable()
         hashTable[i] = NULL;
     }
     for (i=0; i<size; i++){
+        if (tempHash[i]!=NULL)
         insertElement(tempHash[i]);
         //free(tempHash[i]);
     }
-    free(tempHash[i]);
+    free(tempHash);
     size = nSize;
-    nrResizes++;
 }
 
 int insertElement(char * element)
@@ -59,21 +59,18 @@ int insertElement(char * element)
         resizeHashTable();
     }
     int hash = hashFunction(element, 0);
-    int nrCol;
+    int nrCol = 0;
     while (nrCol<size && hashTable[hash]!=NULL){
         nrCol++;
-        hash = hashFunction(element, nrCol);
+        hash = hashFunction2(element, nrCol);
     }
     hashTable[hash] = (char*)malloc(MAX_STRING_LENGTH+1);
     strcpy(hashTable[hash], element);
-    printf("Inserted element %s\n", element);
     return nrCol;
 }
 
-
 int hashFunction(char * content, int i)
 {
-    printf("Hash for string %s\n", content);
     int length = strlen(content);
     int k, sum;
     for (sum=0, k=0; k < length; k++)

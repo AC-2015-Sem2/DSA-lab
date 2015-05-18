@@ -34,7 +34,7 @@ char ** readFromFile(int N)
 
 void printContentToConsole(char ** contents, int N)
 {
-    int i = 0;
+    int i;
     for(i=0; i<N; i++)
     {
         puts(*(contents+i));
