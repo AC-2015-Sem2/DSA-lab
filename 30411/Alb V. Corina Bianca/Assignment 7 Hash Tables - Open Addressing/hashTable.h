@@ -6,7 +6,8 @@ char ** hashTable;
 char ** content;
 int size;
 int N;
-int MIN;
+int MAX;
+int resizeTable;
 
 int *nrOfCollisions;
 int totalNrOfCollisions;

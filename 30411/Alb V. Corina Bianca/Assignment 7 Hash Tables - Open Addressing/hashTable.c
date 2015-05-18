@@ -4,8 +4,12 @@
 
 void initHashTable(int N)
 {
-    int i;
+    int i,j;
+    resizeTable=0;
     totalNrOfCollisions=0;
+    nrOfCollisions = (int*) malloc(sizeof(int) * N);
+    for(j=0;j<N;j++)
+            nrOfCollisions[j]=0;
     size=INITIAL_HT_SIZE_FACTOR * N;
     hashTable=(char**)malloc(sizeof(char*)*size);
     for(i=0;i<size;i++)
@@ -65,6 +69,7 @@ int insertElement(char *element, int i)
     if(getFillFactor()>=MAX_FILL_FACTOR)
     {
         resizeHashTable();
+        resizeTable++;
 
     }
     else
@@ -86,7 +91,9 @@ int insertElement(char *element, int i)
 
 int hashFunction(char * content, int i)
 {
-    int j;
+    //! H1
+
+    /*int j;
     int c=strlen(content);
     int sum=0;
     for(j=0;j<c;j++)
@@ -95,10 +102,43 @@ int hashFunction(char * content, int i)
     }
 
     int x=(int)sum%size;
+    return x;
+    */
 
+    //! H2
+
+   /* unsigned int x = 1315423911;
+    unsigned int j    = 0;
+
+    int len = strlen(content);
+
+    for(j = 0; j < len; content++, j++)
+    {
+        x ^= ((x << 5) + (*content) + (x >> 2));
+    }
+    return x;
+    */
+
+    //!  H3
+
+    unsigned int x = 0;
+    unsigned int y    = 0;
+    unsigned int j    = 0;
+
+    int len = strlen(content);
+
+    for(j = 0; j < len; content++, j++)
+    {
+        x = (x << 4) + (*content);
+        if((y = x & 0xF0000000L) != 0)
+        {
+            x ^= (y >> 24);
+        }
+        x &= ~y;
+    }
+
+    return y;
 
     nrOfCollisions[i]=insertElement(content,x);
 
-
-    return x;
 }

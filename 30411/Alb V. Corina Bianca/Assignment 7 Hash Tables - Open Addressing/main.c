@@ -4,12 +4,12 @@
 
 int main()
 {
-    int N = _100;
+    int N = _100000;
     char ** content = readFromFile(N);
-    printContentToConsole(content,N);
+    //printContentToConsole(content,N);
 
     initHashTable(N);
-
+    MAX=0;
     int i,j,x;
     for(i=0;i<N;i++)
     {
@@ -17,6 +17,8 @@ int main()
        if(getFillFactor()>=MAX_FILL_FACTOR)
     {
         int *nrOfCollisions=(int*)malloc(sizeof(int)*size);
+        for(j=0;j<size;j++)
+            nrOfCollisions[j]=0;
         for(j=0;j<=i;j++)
         {
 
@@ -26,14 +28,17 @@ int main()
     }
 
     }
-    int MIN=999999;
+
+    totalNrOfCollisions=0;
     for(i=0;i<N;i++)
     {
-        totalNrOfCollisions=nrOfCollisions[i];
+        totalNrOfCollisions+=nrOfCollisions[i];
         printf("\nelement %d : %d collisions",i,nrOfCollisions[i]);
-        if (MIN>nrOfCollisions[i])
-            MIN=nrOfCollisions[i];
+        if (MAX<nrOfCollisions[i])
+            MAX=nrOfCollisions[i];
     }
-    printf("\nthe minimum nr of collisions is %d", MIN);
+    printf("\nthe maximum nr of collisions is %d", MAX);
+    printf("\nthe total number of collisions is %d", totalNrOfCollisions);
+    printf("\nthe number of resizes is %d",resizeTable);
     return 0;
 }
