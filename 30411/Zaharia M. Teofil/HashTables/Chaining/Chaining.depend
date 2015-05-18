@@ -1,0 +1,43 @@
+# depslib dependency file v1.0
+1431967799 source:e:\utcluj\dsa\hashtables\chaining\hashtable.c
+	"HashTable.h"
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<math.h>
+
+1431894484 source:e:\utcluj\dsa\hashtables\chaining\tableelement.c
+	"TableElement.h"
+	<stdlib.h>
+	<string.h>
+
+1431896648 e:\utcluj\dsa\hashtables\chaining\tableelement.h
+	<stdio.h>
+
+1431968884 source:e:\utcluj\dsa\hashtables\chaining\main.c
+	<stdio.h>
+	<stdlib.h>
+	<math.h>
+	"HashTable.h"
+	"io.h"
+
+1431963902 source:e:\utcluj\dsa\hashtables\chaining\linkedlist.c
+	"LinkedList.h"
+	<stdlib.h>
+	<string.h>
+	<stdio.h>
+
+1431897786 e:\utcluj\dsa\hashtables\chaining\linkedlist.h
+
+1431967810 e:\utcluj\dsa\hashtables\chaining\hashtable.h
+	"LinkedList.h"
+
+1431266044 source:e:\utcluj\dsa\hashtables\chaining\io.c
+	"io.h"
+
+1431266044 e:\utcluj\dsa\hashtables\chaining\io.h
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	<string.h>
+
