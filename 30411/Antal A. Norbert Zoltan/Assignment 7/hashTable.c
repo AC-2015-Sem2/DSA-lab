@@ -45,7 +45,6 @@ void resizeHashTable()
     for (i=0; i<size; i++){
         if (tempHash[i]!=NULL)
         insertElement(tempHash[i]);
-        //free(tempHash[i]);
     }
     free(tempHash);
     size = nSize;
