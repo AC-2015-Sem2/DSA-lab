@@ -1,0 +1,23 @@
+# depslib dependency file v1.0
+1431867083 source:c:\users\alex\desktop\predare\2014-2015 - sem2\dsa-lab\interesting stuff\sorting\helperfunctions.c
+	"HelperFunctions.h"
+	"SortingAlgorithms.h"
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1431865957 c:\users\alex\desktop\predare\2014-2015 - sem2\dsa-lab\interesting stuff\sorting\helperfunctions.h
+
+1431864961 source:c:\users\alex\desktop\predare\2014-2015 - sem2\dsa-lab\interesting stuff\sorting\sortingalgorithms.c
+	"SortingAlgorithms.h"
+
+1431865935 c:\users\alex\desktop\predare\2014-2015 - sem2\dsa-lab\interesting stuff\sorting\sortingalgorithms.h
+	<stdio.h>
+	<stdlib.h>
+	<conio.h>
+	<time.h>
+
+1431867307 source:c:\users\alex\desktop\predare\2014-2015 - sem2\dsa-lab\interesting stuff\sorting\main.c
+	"SortingAlgorithms.h"
+	"HelperFunctions.h"
+
