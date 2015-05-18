@@ -14,6 +14,7 @@ void initHashTable(int N)
     for (i=0; i<size; i++)
         *(hashTable+i) = NULL;
     printf("\nInitial size: %d\n\n", size);
+    //printf("Element Collisions FillFactor\n\n");
 }
 
 float getFillFactor()
@@ -59,6 +60,7 @@ void resizeHashTable()
 
     printf(" size = %d\n\n", size);
     nrOfResize++;
+
 }
 
 int insertElement(char * element)

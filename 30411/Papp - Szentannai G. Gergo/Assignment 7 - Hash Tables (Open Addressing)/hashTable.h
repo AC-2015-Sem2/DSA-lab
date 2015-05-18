@@ -1,7 +1,7 @@
 #include <stdlib.h>
 
-static const float INITIAL_HT_SIZE_FACTOR = .5;
-static const float MAX_FILL_FACTOR = .9;
+static const float INITIAL_HT_SIZE_FACTOR = .3;
+static const float MAX_FILL_FACTOR = .8;
 
 char ** hashTable;
 int size;
