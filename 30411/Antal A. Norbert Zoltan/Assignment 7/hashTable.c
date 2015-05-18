@@ -58,11 +58,11 @@ int insertElement(char * element)
     if (getFillFactor()>MAX_FILL_FACTOR){
         resizeHashTable();
     }
-    int hash = hashFunction(element, 0);
+    int hash = hashFunction3(element, 0);
     int nrCol = 0;
     while (nrCol<size && hashTable[hash]!=NULL){
         nrCol++;
-        hash = hashFunction2(element, nrCol);
+        hash = hashFunction3(element, nrCol);
     }
     hashTable[hash] = (char*)malloc(MAX_STRING_LENGTH+1);
     strcpy(hashTable[hash], element);
@@ -87,4 +87,15 @@ int hashFunction2(char* content, int i)
         value = (value << 4) | toupper(*content++);
     }
     return (value + i) % size;
+}
+
+int hashFunction3(char* content, int i)
+{
+    unsigned long hash = 5381;
+    int c;
+
+    while (c = *content++)
+        hash = ((hash << 5) + hash) + c;
+
+    return (hash + i) % size;
 }
