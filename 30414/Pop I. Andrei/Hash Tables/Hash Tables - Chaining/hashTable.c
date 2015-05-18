@@ -99,9 +99,7 @@ int hashFunction0(char *content)
 void insertElement(char * element, listT *hash, int hashSize)
 {
     //! insert an element
-    int poz;
-
-    poz = hashFunction3(element);
+    int poz = hashFunction3(element);
     //printf("%d", poz);
     addToList(&hash[poz], element);
 

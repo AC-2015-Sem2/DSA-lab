@@ -121,9 +121,7 @@ int insertElement(char * element, int hashSize, char **hash)
     //! insert an element
     //! returns the number of collisions which occurred before the element was inserted
 
-    int i =0, poz;
-
-    poz = hashFunction2(element, i, hashSize);
+    int i =0, poz = hashFunction2(element, i, hashSize);
 
     while(hash[poz] != NULL)
     {
