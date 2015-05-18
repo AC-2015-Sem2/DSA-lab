@@ -7,7 +7,7 @@
 
 int main() {
 
-    const int N = 5000;
+    const int N = 1000;
 
     int nISF = 3, iISF;
     float ISF[] = {.20, .25, .50}, kISF;

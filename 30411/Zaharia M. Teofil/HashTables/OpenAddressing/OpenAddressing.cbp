@@ -31,6 +31,10 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
+		<Unit filename="HashFunctions.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="HashFunctions.h" />
 		<Unit filename="HashTable.c">
 			<Option compilerVar="CC" />
 		</Unit>
