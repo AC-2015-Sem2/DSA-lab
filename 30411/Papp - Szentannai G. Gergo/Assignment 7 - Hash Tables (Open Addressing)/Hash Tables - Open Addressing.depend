@@ -19,12 +19,13 @@
 
 1431166749 c:\users\alex\desktop\predare\2014-2015 - sem2\dsa-lab\interesting stuff\hash tables - open addressing\hashtable.h
 
-1431898127 source:e:\dropbox\utcn\dsa\dsa-lab\30411\papp - szentannai g. gergo\assignment 7 - hash tables (open addressing)\hashtable.c
+1431959399 source:e:\dropbox\utcn\dsa\dsa-lab\30411\papp - szentannai g. gergo\assignment 7 - hash tables (open addressing)\hashtable.c
 	"hashTable.h"
 	<string.h>
 	<stdio.h>
+	<math.h>
 
-1431898343 e:\dropbox\utcn\dsa\dsa-lab\30411\papp - szentannai g. gergo\assignment 7 - hash tables (open addressing)\hashtable.h
+1431956784 e:\dropbox\utcn\dsa\dsa-lab\30411\papp - szentannai g. gergo\assignment 7 - hash tables (open addressing)\hashtable.h
 	<stdlib.h>
 
 1431508326 source:e:\dropbox\utcn\dsa\dsa-lab\30411\papp - szentannai g. gergo\assignment 7 - hash tables (open addressing)\io.c
@@ -36,7 +37,7 @@
 	<time.h>
 	<string.h>
 
-1431898427 source:e:\dropbox\utcn\dsa\dsa-lab\30411\papp - szentannai g. gergo\assignment 7 - hash tables (open addressing)\main.c
+1431959339 source:e:\dropbox\utcn\dsa\dsa-lab\30411\papp - szentannai g. gergo\assignment 7 - hash tables (open addressing)\main.c
 	"io.h"
 	"files.h"
 	"hashTable.h"

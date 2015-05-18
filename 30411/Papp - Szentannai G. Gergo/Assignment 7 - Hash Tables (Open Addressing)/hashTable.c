@@ -1,6 +1,7 @@
 #include "hashTable.h"
 #include <string.h>
 #include <stdio.h>
+#include <math.h>
 
 void initHashTable(int N)
 {
@@ -39,7 +40,7 @@ void resizeHashTable()
 
     //! careful, when resizing, the 'size' variable should be changed as well such that the 'hashFunction's distribution will work
     //! be double careful! all the elements which are already in the hash table have to  be RE-hashed! (explanation @ lab)
-
+    printf("\nResizing...");
     char ** tempHashTable = hashTable;  // saving old hash table
 
     // I suppose this uses a free memory space, so the contents of the tempHashTable will mot be affected:
@@ -56,7 +57,7 @@ void resizeHashTable()
             insertElement(tempHashTable[i]);
     }
 
-    printf("\nResizing, size = %d\n\n", size);
+    printf(" size = %d\n\n", size);
     nrOfResize++;
 }
 
@@ -70,15 +71,52 @@ int insertElement(char * element)
         resizeHashTable();
 
     int i=0;
-    while(hashTable[hashFunction(element, i)] != NULL)
+    int aux_cycle = hashFunction(element, i), cycle=-1;
+    while (hashTable[hashFunction(element, i)] != NULL)
+    {
         i++;
+        if (aux_cycle == hashFunction(element, i)) //! If an element cannot be inserted, however there are free places
+            cycle++;
+        if (cycle>0)  // resize
+        {
+            resizeHashTable();
+            i=0;
+        }
+    }
     *(hashTable+hashFunction(element, i)) = element;
     return i;
 }
-
-
+//! H3
 int hashFunction(char * content, int i)
 {
+    int length = strlen(content);
+    int k, sum=content[0]*size;
+    for (k=0; k < length; k++)
+    {
+        sum += pow(content[k], 2);
+    }
+
+    return ((sum+(i*2)) % size);
+}
+
+
+/*//! H2
+int hashFunction(char * content, int i)
+{
+    int length = strlen(content);
+    int k, sum;
+    for (sum=0, k=0; k < length; k++)
+    {
+        sum += content[k];
+    }
+    sum = sum * 2;
+    return (sum+(i*3)) % size;
+}
+*/
+/*//! H1
+int hashFunction(char * content, int i)
+{
+
     int length = strlen(content);
     int k, sum;
     for (sum=0, k=0; k < length; k++)
@@ -88,3 +126,9 @@ int hashFunction(char * content, int i)
 
     return (sum+i) % size;
 }
+*/
+
+
+
+
+

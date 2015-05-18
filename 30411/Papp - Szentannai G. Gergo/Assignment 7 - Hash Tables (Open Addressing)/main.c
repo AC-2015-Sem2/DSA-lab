@@ -4,7 +4,7 @@
 
 int main()
 {
-    int N = _50000;
+    int N = _1000;
 
     char ** content = readFromFile(N);
     //printContentToConsole(content,N);
@@ -20,7 +20,9 @@ int main()
         printf("Element %3d; collisions: %3d", i, aux);
         if (maxColl < aux)
             maxColl = aux;
-        printf(", fillfactor: %.2f\n", getFillFactor());
+        printf(", fillfactor: %2.2f%% \n", 100*getFillFactor());
+
+
     }
     printf("\nNumber of resizes: %d\n", nrOfResize);
     printf("\nMaximal number of collisions: %d\n", maxColl);
