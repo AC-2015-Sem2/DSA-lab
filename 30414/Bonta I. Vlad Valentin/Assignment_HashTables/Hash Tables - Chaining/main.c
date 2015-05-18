@@ -4,7 +4,7 @@
 
 int main()
 {
-	int N = _10000;
+	int N = _100;
 
 	char ** content = readFromFile(N);
 	//printContentToConsole(content,N)

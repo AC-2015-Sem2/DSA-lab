@@ -26,29 +26,29 @@ void insertElement(char * element)
 
 	i = 0;
 	key = hashFunction(element, i);
-	addToList(&hashTable[key], element);
+	addToList(&(hashTable[key]), element);
 }
 
 int hashFunction(char * content, int i)
 {
 	//! keep in mind, size in this case simply means the number of buckets
 	/*unsigned char *p = content;
-	unsigned long long h = 0xcbf29ce484222325ULL;
+	  unsigned long long h = 0xcbf29ce484222325ULL;
+	  int j;
+	  for ( j = 0; j < size; j++ )
+	  h = ( h ^ p[j] ) * 0x100000001b3ULL;
+
+	  return h % size;*/
+
+	long sum = 0;
+	long mult = 1;
 	int j;
-	for ( j = 0; j < size; j++ )
-		h = ( h ^ p[j] ) * 0x100000001b3ULL;
-
-	return h % size;*/
-
-	   long sum = 0;
-	   long mult = 1;
-	   int j;
-	   for (j = 0; j < i; j++)
-	   {
-	   sum += size ^ content[j];
-	   mult = mult ^ content[j];
-	   }
-	   return (abs(sum) * mult + i) % size;
+	for (j = 0; j < size; j++)
+	{
+		sum += size ^ content[j];
+		mult = mult ^ content[j];
+	}
+	return (abs(sum) * mult) % size;
 }
 
 void computeDistributionsPerBucket()
@@ -95,7 +95,6 @@ hint2: choose it somewhere between 20-40 such that it fits in one row in the con
 	for (i = 0;i < size; ++i)
 	{
 		printf("B%d:", i);
-		//printf("adad==%lf",(float)hashTable[i].size/(float)maxSize);
 		fillPerBucket = (float)hashTable[i].size/(float)maxSize * 40.00;
 		for (j = 0; j < fillPerBucket; ++j)
 			printf("*");
