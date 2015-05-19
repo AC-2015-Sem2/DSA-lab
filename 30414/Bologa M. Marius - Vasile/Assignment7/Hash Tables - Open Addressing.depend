@@ -1,0 +1,69 @@
+# depslib dependency file v1.0
+1431164987 source:c:\users\alex\desktop\predare\2014-2015 - sem2\dsa-lab\interesting stuff\hash tables - open addressing\main.c
+	"io.h"
+	"files.h"
+
+1431166028 source:c:\users\alex\desktop\predare\2014-2015 - sem2\dsa-lab\interesting stuff\hash tables - open addressing\io.c
+	"io.h"
+
+1431167762 c:\users\alex\desktop\predare\2014-2015 - sem2\dsa-lab\interesting stuff\hash tables - open addressing\io.h
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	<string.h>
+
+1431163464 c:\users\alex\desktop\predare\2014-2015 - sem2\dsa-lab\interesting stuff\hash tables - open addressing\files.h
+
+1431166776 source:c:\users\alex\desktop\predare\2014-2015 - sem2\dsa-lab\interesting stuff\hash tables - open addressing\hashtable.c
+	"hashTable.h"
+
+1431166749 c:\users\alex\desktop\predare\2014-2015 - sem2\dsa-lab\interesting stuff\hash tables - open addressing\hashtable.h
+
+1431508047 source:c:\users\bolo\desktop\hash tables - open addressing\io.c
+	"io.h"
+
+1431508047 c:\users\bolo\desktop\hash tables - open addressing\io.h
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	<string.h>
+
+1432044641 source:c:\users\bolo\desktop\hash tables - open addressing\main.c
+	"io.h"
+	"files.h"
+	"hashTable.h"
+
+1431508047 c:\users\bolo\desktop\hash tables - open addressing\files.h
+
+1432053966 source:c:\users\bolo\desktop\hash tables - open addressing\hashtable.c
+	"hashTable.h"
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1432054131 c:\users\bolo\desktop\hash tables - open addressing\hashtable.h
+
+1432053966 source:c:\users\bolo\desktop\assignment7\hashtable.c
+	"hashTable.h"
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1432054131 c:\users\bolo\desktop\assignment7\hashtable.h
+
+1431508047 source:c:\users\bolo\desktop\assignment7\io.c
+	"io.h"
+
+1431508047 c:\users\bolo\desktop\assignment7\io.h
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	<string.h>
+
+1432044641 source:c:\users\bolo\desktop\assignment7\main.c
+	"io.h"
+	"files.h"
+	"hashTable.h"
+
+1431508047 c:\users\bolo\desktop\assignment7\files.h
+
