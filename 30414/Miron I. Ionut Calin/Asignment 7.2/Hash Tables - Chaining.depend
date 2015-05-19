@@ -1,0 +1,117 @@
+# depslib dependency file v1.0
+1431168502 source:c:\users\alex\desktop\predare\2014-2015 - sem2\dsa-lab\interesting stuff\hash tables - chaining\io.c
+	"io.h"
+
+1431167734 c:\users\alex\desktop\predare\2014-2015 - sem2\dsa-lab\interesting stuff\hash tables - chaining\io.h
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	<string.h>
+
+1431164987 source:c:\users\alex\desktop\predare\2014-2015 - sem2\dsa-lab\interesting stuff\hash tables - chaining\main.c
+	"io.h"
+	"files.h"
+
+1431163464 c:\users\alex\desktop\predare\2014-2015 - sem2\dsa-lab\interesting stuff\hash tables - chaining\files.h
+
+1431168513 source:c:\users\alex\desktop\predare\2014-2015 - sem2\dsa-lab\interesting stuff\hash tables - chaining\list.c
+	"list.h"
+	"io.h"
+
+1431168508 c:\users\alex\desktop\predare\2014-2015 - sem2\dsa-lab\interesting stuff\hash tables - chaining\list.h
+
+1431884612 source:c:\users\daioberelasebi\desktop\hash tables - chaining\hashtable.c
+	"hashTable.h"
+	<stdlib.h>
+	<string.h>
+	<stdio.h>
+	<math.h>
+
+1431884682 c:\users\daioberelasebi\desktop\hash tables - chaining\hashtable.h
+	"list.h"
+
+1431883228 c:\users\daioberelasebi\desktop\hash tables - chaining\list.h
+
+1431590548 source:c:\users\daioberelasebi\desktop\hash tables - chaining\io.c
+	"io.h"
+
+1431590548 c:\users\daioberelasebi\desktop\hash tables - chaining\io.h
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	<string.h>
+
+1431883950 source:c:\users\daioberelasebi\desktop\hash tables - chaining\main.c
+	"io.h"
+	"files.h"
+
+1431590548 c:\users\daioberelasebi\desktop\hash tables - chaining\files.h
+
+1431883234 source:c:\users\daioberelasebi\desktop\hash tables - chaining\list.c
+	"list.h"
+	"io.h"
+
+1431981135 source:c:\users\doleh\desktop\faculta\dsa\mine\dsa-lab\30414\dolineanu a. vlad ionut\assignment 7\hash tables - chaining\hashtable.c
+	"hashTable.h"
+	<stdlib.h>
+	<string.h>
+	<stdio.h>
+	<math.h>
+
+1431981122 c:\users\doleh\desktop\faculta\dsa\mine\dsa-lab\30414\dolineanu a. vlad ionut\assignment 7\hash tables - chaining\hashtable.h
+	"list.h"
+
+1431883228 c:\users\doleh\desktop\faculta\dsa\mine\dsa-lab\30414\dolineanu a. vlad ionut\assignment 7\hash tables - chaining\list.h
+
+1431590548 source:c:\users\doleh\desktop\faculta\dsa\mine\dsa-lab\30414\dolineanu a. vlad ionut\assignment 7\hash tables - chaining\io.c
+	"io.h"
+
+1431590548 c:\users\doleh\desktop\faculta\dsa\mine\dsa-lab\30414\dolineanu a. vlad ionut\assignment 7\hash tables - chaining\io.h
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	<string.h>
+
+1431883234 source:c:\users\doleh\desktop\faculta\dsa\mine\dsa-lab\30414\dolineanu a. vlad ionut\assignment 7\hash tables - chaining\list.c
+	"list.h"
+	"io.h"
+
+1431981165 source:c:\users\doleh\desktop\faculta\dsa\mine\dsa-lab\30414\dolineanu a. vlad ionut\assignment 7\hash tables - chaining\main.c
+	"io.h"
+	"files.h"
+	"hashTable.h"
+
+1431590548 c:\users\doleh\desktop\faculta\dsa\mine\dsa-lab\30414\dolineanu a. vlad ionut\assignment 7\hash tables - chaining\files.h
+
+1431981135 source:c:\users\john\desktop\hash tables - chaining\hashtable.c
+	"hashTable.h"
+	<stdlib.h>
+	<string.h>
+	<stdio.h>
+	<math.h>
+
+1431981122 c:\users\john\desktop\hash tables - chaining\hashtable.h
+	"list.h"
+
+1431883228 c:\users\john\desktop\hash tables - chaining\list.h
+
+1431590548 source:c:\users\john\desktop\hash tables - chaining\io.c
+	"io.h"
+
+1431590548 c:\users\john\desktop\hash tables - chaining\io.h
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	<string.h>
+
+1431883234 source:c:\users\john\desktop\hash tables - chaining\list.c
+	"list.h"
+	"io.h"
+
+1431981165 source:c:\users\john\desktop\hash tables - chaining\main.c
+	"io.h"
+	"files.h"
+	"hashTable.h"
+
+1431590548 c:\users\john\desktop\hash tables - chaining\files.h
+
