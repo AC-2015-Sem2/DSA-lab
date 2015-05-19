@@ -68,16 +68,16 @@ float getStandardDeviation()///not so sure it's correct... i've tried transposin
     sum=0;
     for(i=0;i<size;i++)
     {
-        sum=pow(hashTable[i].size-miu,2)/size;
+        sum=+pow(hashTable[i].size-miu,2)/size;
     }
     delta=sqrt(sum);
     return delta;
 }
 /********* TERRITORY OF HASH FUNCTIONS *************************************/
 
-int h0(char * content, int i)///WHAT SHOULD I HAVE DONE WITH THIS FUNCTION? WHAT IS THE MATTER WITH THAT i?
+int h0(char * content)
 {
-    return i % size;
+    return (content[1]%size);
 }
 
 int h1(char* content)

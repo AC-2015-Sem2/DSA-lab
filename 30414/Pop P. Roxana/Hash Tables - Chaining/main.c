@@ -5,8 +5,8 @@
 
 int main()
 {
-    int N = _10000;
-    hashFunction=h2;
+    int N = _100;
+    hashFunction=h3;
     char ** content = readFromFile(N);
     printContentToConsole(content,N);
     initHashTable(N);
