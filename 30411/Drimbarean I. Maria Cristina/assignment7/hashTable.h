@@ -1,6 +1,6 @@
 #include "list.h"
 
-static const float INITIAL_HT_SIZE_FACTOR = .33;
+static const float INITIAL_HT_SIZE_FACTOR = .85;
 
 listT * hashTable;
 int size;

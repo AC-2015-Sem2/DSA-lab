@@ -4,7 +4,7 @@
 nodeT * createNode(char * content)
 {
     nodeT * n = (nodeT*) malloc(sizeof(nodeT));
-    n->content = (char*) malloc(sizeof(char) * MAX_STRING_LENGTH);
+    n->content = (char*) malloc(sizeof(char) * MAX_STRING_LENGTH+1);
     strcpy(n->content, content);
     n->next = NULL;
     return n;

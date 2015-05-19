@@ -32,7 +32,7 @@ int hashFunction(char * content, int i)
     int k;
     for (k=0;k<length;k++)
     {
-        i+=content[k];
+      i+=content[k]*2654435761 % 2^32;
     }
     return i % size;
 }
