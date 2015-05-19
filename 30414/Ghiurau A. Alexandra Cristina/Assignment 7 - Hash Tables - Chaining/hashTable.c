@@ -26,62 +26,9 @@ void insertElement(char * element, int nrOfBuckets)
 {
     //! insert an element
 
-    int index = hashFunction1(element, nrOfBuckets);
+    int index = hashFunction3(element, nrOfBuckets);
     addToList(&hashTable[index], element);
 }
-/*
-int hashFunction(char * content, int i)
-{
-    //! keep in mind, size in this case simply means the number of buckets
-
-    return i % size;
-}
-*/
-int getSum(char * content)
-{
-    int length = strlen(content);
-    int k, sum;
-    for (sum=0, k=0; k < length; k++)
-    {
-        sum += content[k];
-    }
-    return  sum;
-}
-
-int getSum2(char * content)
-{
-    int length = strlen(content);
-    int k, sum;
-    for (sum=0, k=0; k < length; k++)
-    {
-        sum += content[k] %2 ;
-    }
-    return  sum;
-}
-/*
-int getProduct(char *content)
-{
-    int length = strlen(content);
-    int k, product;
-    for (product=1, k=1; k < length; k++)
-    {
-        product *= content[k];
-    }
-    return  product;
-
-}
-*/
-
-int hashFunction1(char * content, int nrOfBuckets)
-{
-    return getSum(content)% nrOfBuckets;
-}
-
-int hashFunction0(char * content, int nrOfBuckets)
-{
-    return getSum2(content)% nrOfBuckets;
-}
-
 
 double square(double x)
 {
@@ -98,12 +45,10 @@ void computeDistributionsPerBucket(int N, int nrOfBuckets)
         if(maxElements< hashTable[i].size)
             maxElements = hashTable[i].size;
     }
-
     /** regula de 3 simplă:
     maxElements -> maxStars
     hashTable[i].size -> x
     */
-
     int maxStars = 30;
     int x;
     int j;
@@ -129,9 +74,7 @@ void computeDistributionsPerBucket(int N, int nrOfBuckets)
 
     printf("\n x= %d", x);
     */
-
     //! to compute the distribution: sum -> average -> sum of deviations -> variance -> std deviation
-
     int sum = 0;
     double average = 0.0;
     double deviationsSum = 0.0;
@@ -154,4 +97,62 @@ void computeDistributionsPerBucket(int N, int nrOfBuckets)
     stdDeviation = sqrt(variance);
 
     printf("\nstdDev: %f", stdDeviation);
+}
+
+int getSum0(char * content)
+{
+    int length = strlen(content);
+    int k, sum;
+    for (sum=0, k=0; k < length; k++)
+    {
+        sum += content[k];
+    }
+    return  sum;
+}
+
+int getSum1(char * content)
+{
+    int length = strlen(content);
+    int k, sum;
+    for (sum=0, k=0; k < length; k++)
+    {
+        sum += content[k] %2 ;
+    }
+    return  sum;
+}
+
+int hashFunction0(char * content, int nrOfBuckets)
+{
+    return getSum0(content)% nrOfBuckets;
+}
+
+int hashFunction1(char * content, int nrOfBuckets)
+{
+    return getSum1(content)% nrOfBuckets;
+}
+
+//! by Dan Bernstein; another version of this algorithm (now favored by bernstein) uses xor: hash(i) = hash(i - 1) * 33 ^ str[i];
+int hashFunction2(char * str, int nrOfBuckets)
+{
+    unsigned long hash = 5381;
+    int c;
+
+    while(c = *str++)
+
+        hash = ((hash << 5) + hash) + c; /* hash * 33 + c */
+
+    return hash % nrOfBuckets;
+}
+
+//! the actual function is hash(i) = hash(i - 1) * 65599 + str[i];
+int hashFunction3(char * str, int nrOfBuckets)
+{
+    unsigned long hash = 0;
+    int c;
+
+    while (c = *str++)
+
+        hash = c + (hash << 6) + (hash << 16) - hash;
+
+    return hash%nrOfBuckets;
 }
