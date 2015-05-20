@@ -44,3 +44,28 @@
 
 1432057231 c:\users\gabriel\desktop\hash tables - open addressing\files.h
 
+1432107203 source:c:\users\gabriel\desktop\gabigit\30411\gego gabriel\hash tables - open addressing\hashtable.c
+	"hashTable.h"
+	<string.h>
+	<stdio.h>
+	<stdlib.h>
+
+1432107111 c:\users\gabriel\desktop\gabigit\30411\gego gabriel\hash tables - open addressing\hashtable.h
+
+1432057231 source:c:\users\gabriel\desktop\gabigit\30411\gego gabriel\hash tables - open addressing\io.c
+	"io.h"
+
+1432057231 c:\users\gabriel\desktop\gabigit\30411\gego gabriel\hash tables - open addressing\io.h
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	<string.h>
+
+1432107176 source:c:\users\gabriel\desktop\gabigit\30411\gego gabriel\hash tables - open addressing\main.c
+	"io.h"
+	"files.h"
+	"hashTable.h"
+	<string.h>
+
+1432057231 c:\users\gabriel\desktop\gabigit\30411\gego gabriel\hash tables - open addressing\files.h
+

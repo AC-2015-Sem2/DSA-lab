@@ -1,5 +1,5 @@
-static const float INITIAL_HT_SIZE_FACTOR = .25;
-static const float MAX_FILL_FACTOR = .85;
+static const float INITIAL_HT_SIZE_FACTOR = .50;
+static const float MAX_FILL_FACTOR = .90;
 
 char ** hashTable;
 int size;
