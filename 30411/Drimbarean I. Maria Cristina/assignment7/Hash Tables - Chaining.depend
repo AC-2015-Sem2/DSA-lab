@@ -1,0 +1,84 @@
+# depslib dependency file v1.0
+1431168502 source:c:\users\alex\desktop\predare\2014-2015 - sem2\dsa-lab\interesting stuff\hash tables - chaining\io.c
+	"io.h"
+
+1431167734 c:\users\alex\desktop\predare\2014-2015 - sem2\dsa-lab\interesting stuff\hash tables - chaining\io.h
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	<string.h>
+
+1431164987 source:c:\users\alex\desktop\predare\2014-2015 - sem2\dsa-lab\interesting stuff\hash tables - chaining\main.c
+	"io.h"
+	"files.h"
+
+1431163464 c:\users\alex\desktop\predare\2014-2015 - sem2\dsa-lab\interesting stuff\hash tables - chaining\files.h
+
+1431168513 source:c:\users\alex\desktop\predare\2014-2015 - sem2\dsa-lab\interesting stuff\hash tables - chaining\list.c
+	"list.h"
+	"io.h"
+
+1431168508 c:\users\alex\desktop\predare\2014-2015 - sem2\dsa-lab\interesting stuff\hash tables - chaining\list.h
+
+1431700971 source:d:\workspace c2\lab10\hash tables - chaining\io.c
+	"io.h"
+
+1431700977 d:\workspace c2\lab10\hash tables - chaining\io.h
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	<string.h>
+
+1431700998 source:d:\workspace c2\lab10\hash tables - chaining\list.c
+	"list.h"
+	"io.h"
+
+1431696751 d:\workspace c2\lab10\hash tables - chaining\list.h
+
+1431704090 source:d:\workspace c2\lab10\hash tables - chaining\hashtable.c
+	"hashTable.h"
+	<stdlib.h>
+	<stdio.h>
+	<string.h>
+
+1431703775 d:\workspace c2\lab10\hash tables - chaining\hashtable.h
+	"list.h"
+
+1431704211 source:d:\workspace c2\lab10\hash tables - chaining\main.c
+	"io.h"
+	"files.h"
+	"hashTable.h"
+
+1431675938 d:\workspace c2\lab10\hash tables - chaining\files.h
+
+1432032846 source:d:\workspace c2\lab10\assignment7\hashtable.c
+	"hashTable.h"
+	<stdlib.h>
+	<stdio.h>
+	<string.h>
+
+1432033290 d:\workspace c2\lab10\assignment7\hashtable.h
+	"list.h"
+
+1431696751 d:\workspace c2\lab10\assignment7\list.h
+
+1431700971 source:d:\workspace c2\lab10\assignment7\io.c
+	"io.h"
+
+1431700977 d:\workspace c2\lab10\assignment7\io.h
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	<string.h>
+
+1432030355 source:d:\workspace c2\lab10\assignment7\main.c
+	"io.h"
+	"files.h"
+	"hashTable.h"
+
+1431675938 d:\workspace c2\lab10\assignment7\files.h
+
+1432026696 source:d:\workspace c2\lab10\assignment7\list.c
+	"list.h"
+	"io.h"
+
