@@ -1,0 +1,50 @@
+# depslib dependency file v1.0
+1431168502 source:c:\users\alex\desktop\predare\2014-2015 - sem2\dsa-lab\interesting stuff\hash tables - chaining\io.c
+	"io.h"
+
+1431167734 c:\users\alex\desktop\predare\2014-2015 - sem2\dsa-lab\interesting stuff\hash tables - chaining\io.h
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	<string.h>
+
+1431164987 source:c:\users\alex\desktop\predare\2014-2015 - sem2\dsa-lab\interesting stuff\hash tables - chaining\main.c
+	"io.h"
+	"files.h"
+
+1431163464 c:\users\alex\desktop\predare\2014-2015 - sem2\dsa-lab\interesting stuff\hash tables - chaining\files.h
+
+1431168513 source:c:\users\alex\desktop\predare\2014-2015 - sem2\dsa-lab\interesting stuff\hash tables - chaining\list.c
+	"list.h"
+	"io.h"
+
+1431168508 c:\users\alex\desktop\predare\2014-2015 - sem2\dsa-lab\interesting stuff\hash tables - chaining\list.h
+
+1432071861 source:c:\users\fejer\desktop\fejer\30414\fejer k. alpar\hash tables - chaining\hashtable.c
+	"hashTable.h"
+
+1432065461 c:\users\fejer\desktop\fejer\30414\fejer k. alpar\hash tables - chaining\hashtable.h
+	"list.h"
+	"stdlib.h"
+
+1432068054 c:\users\fejer\desktop\fejer\30414\fejer k. alpar\hash tables - chaining\list.h
+
+1432070098 source:c:\users\fejer\desktop\fejer\30414\fejer k. alpar\hash tables - chaining\io.c
+	"io.h"
+
+1432045401 c:\users\fejer\desktop\fejer\30414\fejer k. alpar\hash tables - chaining\io.h
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	<string.h>
+
+1432069418 source:c:\users\fejer\desktop\fejer\30414\fejer k. alpar\hash tables - chaining\list.c
+	"list.h"
+	"io.h"
+
+1432071598 source:c:\users\fejer\desktop\fejer\30414\fejer k. alpar\hash tables - chaining\main.c
+	"io.h"
+	"files.h"
+
+1432045401 c:\users\fejer\desktop\fejer\30414\fejer k. alpar\hash tables - chaining\files.h
+
