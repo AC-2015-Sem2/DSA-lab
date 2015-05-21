@@ -1,0 +1,20 @@
+#include "io.h"
+#include "files.h"
+
+int main()
+{
+    int N = _1000;
+    FILE *out = fopen("result.data", "w");
+
+    char ** content = readFromFile(N);
+
+    addContentToHash(content, N);
+
+    //printHashTableToConsole();
+
+    //printContentToConsole(content,N);
+
+    computeDistributionsPerBucket(out);
+
+    return 0;
+}
