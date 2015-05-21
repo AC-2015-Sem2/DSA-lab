@@ -1,0 +1,28 @@
+H1
+
+.25, .60 : 852 collisions, 3 resizes;
+.20, .75 : 853 collisions, 3 resizes;
+.20, .80 : 854 collisions, 3 resizes;
+.25, .83 : 852 collisions, 3 resizes;
+.25, .85 : 852 collision3, 3 resizes;
+.50, .90 : 852 collisions, 2 resizes;
+
+H2
+
+.25, .60 : 17 collisions, 3 resizes;
+.20, .75 : 226 collisions, 3 resizes;
+.20, .80 : 226 collisions, 3 resizes;
+.25, .83 : 23 collisions, 3 resizes;
+.25, .85 : 24 collision3, 3 resizes;
+.50, .90 : 47 collisions, 2 resizes;
+
+H3
+
+.25, .60 : 16 collisions, 3 resizes;
+.20, .75 : 74 collisions, 3 resizes;
+.20, .80 : 74 collisions, 3 resizes;
+.25, .83 : 110 collisions, 3 resizes;
+.25, .85 : 110 collision3, 3 resizes;
+.50, .90 : 129 collisions, 2 resizes;
+
+
