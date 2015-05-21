@@ -1,0 +1,118 @@
+# depslib dependency file v1.0
+1431168502 source:c:\users\alex\desktop\predare\2014-2015 - sem2\dsa-lab\interesting stuff\hash tables - chaining\io.c
+	"io.h"
+
+1431167734 c:\users\alex\desktop\predare\2014-2015 - sem2\dsa-lab\interesting stuff\hash tables - chaining\io.h
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	<string.h>
+
+1431164987 source:c:\users\alex\desktop\predare\2014-2015 - sem2\dsa-lab\interesting stuff\hash tables - chaining\main.c
+	"io.h"
+	"files.h"
+
+1431163464 c:\users\alex\desktop\predare\2014-2015 - sem2\dsa-lab\interesting stuff\hash tables - chaining\files.h
+
+1431168513 source:c:\users\alex\desktop\predare\2014-2015 - sem2\dsa-lab\interesting stuff\hash tables - chaining\list.c
+	"list.h"
+	"io.h"
+
+1431168508 c:\users\alex\desktop\predare\2014-2015 - sem2\dsa-lab\interesting stuff\hash tables - chaining\list.h
+
+1431511646 source:c:\users\alexa\desktop\hash tables - chaining\io.c
+	"io.h"
+
+1431511646 c:\users\alexa\desktop\hash tables - chaining\io.h
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	<string.h>
+
+1431801738 source:c:\users\alexa\desktop\hash tables - chaining\list.c
+	"list.h"
+	"io.h"
+
+1431788013 c:\users\alexa\desktop\hash tables - chaining\list.h
+
+1431802864 source:c:\users\alexa\desktop\hash tables - chaining\main.c
+	"io.h"
+	"files.h"
+	"hashTable.h"
+
+1431511646 c:\users\alexa\desktop\hash tables - chaining\files.h
+
+1431802418 source:c:\users\alexa\desktop\hash tables - chaining\hashtable.c
+	"hashTable.h"
+	<string.h>
+	<stdlib.h>
+	<math.h>
+	<stdio.h>
+
+1431795963 c:\users\alexa\desktop\hash tables - chaining\hashtable.h
+	"list.h"
+
+1431511646 source:c:\users\alexa\desktop\hash tables - chaining``\io.c
+	"io.h"
+
+1431511646 c:\users\alexa\desktop\hash tables - chaining``\io.h
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	<string.h>
+
+1431801738 source:c:\users\alexa\desktop\hash tables - chaining``\list.c
+	"list.h"
+	"io.h"
+
+1431788013 c:\users\alexa\desktop\hash tables - chaining``\list.h
+
+1431806715 source:c:\users\alexa\desktop\hash tables - chaining``\main.c
+	"io.h"
+	"files.h"
+	"hashTable.h"
+
+1431511646 c:\users\alexa\desktop\hash tables - chaining``\files.h
+
+1431805987 c:\users\alexa\desktop\hash tables - chaining``\hashtable.h
+	"list.h"
+
+1431806331 source:c:\users\alexa\desktop\hash tables - chaining``\hashtable.c
+	"hashTable.h"
+	<string.h>
+	<stdlib.h>
+	<math.h>
+	<stdio.h>
+
+1431511646 source:c:\users\alexa\desktop\facultate eu\semestrul ii\data structures and algorithms\myownrepository\dsa-lab\30414\ghiurau a. alexandra cristina\assignment 7 - hash tables - chaining\io.c
+	"io.h"
+
+1431511646 c:\users\alexa\desktop\facultate eu\semestrul ii\data structures and algorithms\myownrepository\dsa-lab\30414\ghiurau a. alexandra cristina\assignment 7 - hash tables - chaining\io.h
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	<string.h>
+
+1431801738 source:c:\users\alexa\desktop\facultate eu\semestrul ii\data structures and algorithms\myownrepository\dsa-lab\30414\ghiurau a. alexandra cristina\assignment 7 - hash tables - chaining\list.c
+	"list.h"
+	"io.h"
+
+1431788013 c:\users\alexa\desktop\facultate eu\semestrul ii\data structures and algorithms\myownrepository\dsa-lab\30414\ghiurau a. alexandra cristina\assignment 7 - hash tables - chaining\list.h
+
+1431806715 source:c:\users\alexa\desktop\facultate eu\semestrul ii\data structures and algorithms\myownrepository\dsa-lab\30414\ghiurau a. alexandra cristina\assignment 7 - hash tables - chaining\main.c
+	"io.h"
+	"files.h"
+	"hashTable.h"
+
+1431511646 c:\users\alexa\desktop\facultate eu\semestrul ii\data structures and algorithms\myownrepository\dsa-lab\30414\ghiurau a. alexandra cristina\assignment 7 - hash tables - chaining\files.h
+
+1432057477 c:\users\alexa\desktop\facultate eu\semestrul ii\data structures and algorithms\myownrepository\dsa-lab\30414\ghiurau a. alexandra cristina\assignment 7 - hash tables - chaining\hashtable.h
+	"list.h"
+
+1432057477 source:c:\users\alexa\desktop\facultate eu\semestrul ii\data structures and algorithms\myownrepository\dsa-lab\30414\ghiurau a. alexandra cristina\assignment 7 - hash tables - chaining\hashtable.c
+	"hashTable.h"
+	<string.h>
+	<stdlib.h>
+	<math.h>
+	<stdio.h>
+
