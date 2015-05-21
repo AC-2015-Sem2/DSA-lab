@@ -1,0 +1,77 @@
+# depslib dependency file v1.0
+1431978781 source:e:\utcluj\dsa\hashtables\openaddressing\main.c
+	<stdio.h>
+	<stdlib.h>
+	"HashTable.h"
+	"HashFunctions.h"
+	"io.h"
+
+1431976646 source:e:\utcluj\dsa\hashtables\openaddressing\tableelement.c
+	"TableElement.h"
+	<stdlib.h>
+	<string.h>
+
+1431979752 source:e:\utcluj\dsa\hashtables\openaddressing\hashtable.c
+	"HashTable.h"
+	<stdlib.h>
+	<stdio.h>
+
+1431976506 e:\utcluj\dsa\hashtables\openaddressing\hashtable.h
+	"TableElement.h"
+	"HashFunctions.h"
+
+1431976676 e:\utcluj\dsa\hashtables\openaddressing\tableelement.h
+	<stdio.h>
+
+1431266044 source:e:\utcluj\dsa\hashtables\openaddressing\io.c
+	"io.h"
+
+1431266044 e:\utcluj\dsa\hashtables\openaddressing\io.h
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	<string.h>
+
+1431975272 source:e:\utcluj\dsa\hashtables\openaddressing\hashfunctions.c
+	"HashFunctions.h"
+
+1431975272 e:\utcluj\dsa\hashtables\openaddressing\hashfunctions.h
+
+1431979752 source:e:\utcluj\dsa-lab\30411\zaharia m. teofil\hashtables\openaddressing\hashtable.c
+	"HashTable.h"
+	<stdlib.h>
+	<stdio.h>
+
+1431976506 e:\utcluj\dsa-lab\30411\zaharia m. teofil\hashtables\openaddressing\hashtable.h
+	"TableElement.h"
+	"HashFunctions.h"
+
+1431976676 e:\utcluj\dsa-lab\30411\zaharia m. teofil\hashtables\openaddressing\tableelement.h
+	<stdio.h>
+
+1431975272 e:\utcluj\dsa-lab\30411\zaharia m. teofil\hashtables\openaddressing\hashfunctions.h
+
+1431266044 source:e:\utcluj\dsa-lab\30411\zaharia m. teofil\hashtables\openaddressing\io.c
+	"io.h"
+
+1431266044 e:\utcluj\dsa-lab\30411\zaharia m. teofil\hashtables\openaddressing\io.h
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	<string.h>
+
+1431980985 source:e:\utcluj\dsa-lab\30411\zaharia m. teofil\hashtables\openaddressing\main.c
+	<stdio.h>
+	<stdlib.h>
+	"HashTable.h"
+	"HashFunctions.h"
+	"io.h"
+
+1431976646 source:e:\utcluj\dsa-lab\30411\zaharia m. teofil\hashtables\openaddressing\tableelement.c
+	"TableElement.h"
+	<stdlib.h>
+	<string.h>
+
+1431975272 source:e:\utcluj\dsa-lab\30411\zaharia m. teofil\hashtables\openaddressing\hashfunctions.c
+	"HashFunctions.h"
+
