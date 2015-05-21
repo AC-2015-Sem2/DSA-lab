@@ -1,0 +1,121 @@
+# depslib dependency file v1.0
+1431164987 source:c:\users\alex\desktop\predare\2014-2015 - sem2\dsa-lab\interesting stuff\hash tables - open addressing\main.c
+	"io.h"
+	"files.h"
+
+1431166028 source:c:\users\alex\desktop\predare\2014-2015 - sem2\dsa-lab\interesting stuff\hash tables - open addressing\io.c
+	"io.h"
+
+1431167762 c:\users\alex\desktop\predare\2014-2015 - sem2\dsa-lab\interesting stuff\hash tables - open addressing\io.h
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	<string.h>
+
+1431163464 c:\users\alex\desktop\predare\2014-2015 - sem2\dsa-lab\interesting stuff\hash tables - open addressing\files.h
+
+1431166776 source:c:\users\alex\desktop\predare\2014-2015 - sem2\dsa-lab\interesting stuff\hash tables - open addressing\hashtable.c
+	"hashTable.h"
+
+1431166749 c:\users\alex\desktop\predare\2014-2015 - sem2\dsa-lab\interesting stuff\hash tables - open addressing\hashtable.h
+
+1431183053 source:c:\users\rana\desktop\assignment7\hash tables - open addressing\io.c
+	"io.h"
+
+1431183053 c:\users\rana\desktop\assignment7\hash tables - open addressing\io.h
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	<string.h>
+
+1431725178 source:c:\users\rana\desktop\assignment7\hash tables - open addressing\main.c
+	"io.h"
+	"files.h"
+	"hashTable.h"
+
+1431183053 c:\users\rana\desktop\assignment7\hash tables - open addressing\files.h
+
+1431725842 source:c:\users\rana\desktop\assignment7\hash tables - open addressing\hashtable.c
+	"hashTable.h"
+
+1431721796 c:\users\rana\desktop\assignment7\hash tables - open addressing\hashtable.h
+	<stdlib.h>
+	<string.h>
+	<stdio.h>
+
+1431183053 source:d:\faculta\an1\sem_2\dsa\laborator\assignment7\hash tables - open addressing\io.c
+	"io.h"
+
+1431183053 d:\faculta\an1\sem_2\dsa\laborator\assignment7\hash tables - open addressing\io.h
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	<string.h>
+
+1431774314 source:d:\faculta\an1\sem_2\dsa\laborator\assignment7\hash tables - open addressing\main.c
+	"io.h"
+	"files.h"
+	"hashTable.h"
+
+1431183053 d:\faculta\an1\sem_2\dsa\laborator\assignment7\hash tables - open addressing\files.h
+
+1431766715 d:\faculta\an1\sem_2\dsa\laborator\assignment7\hash tables - open addressing\hashtable.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1431775289 source:d:\faculta\an1\sem_2\dsa\laborator\assignment7\hash tables - open addressing\hashtable.c
+	"hashTable.h"
+
+1432060621 source:d:\faculta\an1\sem_2\dsa\laborator\assignment7\hash tables - open addressing1\hashtable.c
+	"hashTable.h"
+	"io.h"
+	<math.h>
+
+1432061060 d:\faculta\an1\sem_2\dsa\laborator\assignment7\hash tables - open addressing1\hashtable.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1431183053 source:d:\faculta\an1\sem_2\dsa\laborator\assignment7\hash tables - open addressing1\io.c
+	"io.h"
+
+1431183053 d:\faculta\an1\sem_2\dsa\laborator\assignment7\hash tables - open addressing1\io.h
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	<string.h>
+
+1432061027 source:d:\faculta\an1\sem_2\dsa\laborator\assignment7\hash tables - open addressing1\main.c
+	"io.h"
+	"files.h"
+	"hashTable.h"
+
+1431183053 d:\faculta\an1\sem_2\dsa\laborator\assignment7\hash tables - open addressing1\files.h
+
+1432060621 source:c:\users\rana\desktop\ranarepo\dsa-lab\30414\pop p. roxana\hash tables - open addressing1\hashtable.c
+	"hashTable.h"
+	"io.h"
+	<math.h>
+
+1432061524 c:\users\rana\desktop\ranarepo\dsa-lab\30414\pop p. roxana\hash tables - open addressing1\hashtable.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1431183053 c:\users\rana\desktop\ranarepo\dsa-lab\30414\pop p. roxana\hash tables - open addressing1\io.h
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	<string.h>
+
+1431183053 source:c:\users\rana\desktop\ranarepo\dsa-lab\30414\pop p. roxana\hash tables - open addressing1\io.c
+	"io.h"
+
+1432061499 source:c:\users\rana\desktop\ranarepo\dsa-lab\30414\pop p. roxana\hash tables - open addressing1\main.c
+	"io.h"
+	"files.h"
+	"hashTable.h"
+
+1431183053 c:\users\rana\desktop\ranarepo\dsa-lab\30414\pop p. roxana\hash tables - open addressing1\files.h
+
