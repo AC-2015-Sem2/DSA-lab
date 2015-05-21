@@ -17,3 +17,17 @@
 	<stdlib.h>
 	<string.h>
 
+1425077983 source:c:\users\alexa\desktop\facultate eu\semestrul ii\data structures and algorithms\myownrepository\dsa-lab\30414\ghiurau a. alexandra cristina\assignment1\functions.c
+	"functions.h"
+
+1425077531 c:\users\alexa\desktop\facultate eu\semestrul ii\data structures and algorithms\myownrepository\dsa-lab\30414\ghiurau a. alexandra cristina\assignment1\functions.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1425075176 source:c:\users\alexa\desktop\facultate eu\semestrul ii\data structures and algorithms\myownrepository\dsa-lab\30414\ghiurau a. alexandra cristina\assignment1\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"functions.h"
+

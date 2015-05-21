@@ -15,7 +15,7 @@ typedef struct listT
 {
     struct node *head;
     struct node *tail;
-} listT;,
+} listT;
 listT *firstList;
 listT *secondList;
 

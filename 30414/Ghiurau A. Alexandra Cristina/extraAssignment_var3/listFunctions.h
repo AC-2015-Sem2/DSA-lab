@@ -15,5 +15,6 @@ void deleteFirst(listOfLists *countryHead);
 void readFromFile(FILE *file, FILE *fileOutput);
 void sentinelsDown(FILE *fileOutput,int maxLife, char mostPowerfulCountry[100]);
 void lastHit(FILE *fileOutput, int totalLifeOfSentinels );
+char *getWeakestCountry(int lifeOfaCountry);
 
 //#endif // LISTFUNCTIONS_H_INCLUDED
