@@ -88,26 +88,25 @@ void countSort(int *x, int n, int exp)
 {
     int *output = (int*)malloc(n* sizeof(int));
     int i;
-    //int count =(int*)malloc(10* sizeof(int));
+
     int count[10] = {0};
 
-    //Store count of occurrences in *count
     for(i=0; i<n; i++)
     {
         count[(x[i]/exp)%10]++;
     }
-    // Change count[i] so that count[i] now contains actual position of this digit in *output
+
     for(i=1; i<10; i++)
     {
         count[i]+= count[i-1];
     }
-    // Build the output array
+
     for(i=n-1; i>=0; i--)
     {
         output[count[(x[i]/exp)%10]-1] = x[i];
         count[(x[i]/exp)%10]--;
     }
-    // Copy the output array to *x, so that *x now contains sorted numbers according to current digit
+
     for(i=0; i<n ;i++)
         x[i] = output[i];
 }

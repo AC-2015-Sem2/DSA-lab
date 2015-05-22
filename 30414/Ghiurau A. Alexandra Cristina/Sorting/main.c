@@ -12,7 +12,7 @@ void outOfPlaceSort(void (*funct)(int *a, int n, int *endResult), int which);
 
 int main()
 {
-    printf("A - Bubble Sort\nB - Insertion Sort\nC - Selection Sort\nD - Merge Sort\nE - QuickSort\nF - All Sorting Algorithms\nX - Remove Files\nN - Change constants\nQ - Quit\n");
+    printf("A - Bubble Sort\nB - Insertion Sort\nC - Selection Sort\nD - Merge Sort\nE - QuickSort\nG - Radix Sort\nF - All Sorting Algorithms\nX - Remove Files\nN - Change constants\nQ - Quit\n");
     initFunctions();
 
     char choice;
@@ -44,7 +44,7 @@ int main()
             break;
 
         case 'G':
-             inPlaceSort(inPlaceSortingFunctions[RADIXSORT], RADIXSORT);
+             outOfPlaceSort(outOfPlaceSortingFunctions[RADIXSORT], RADIXSORT);
             break;
 
         case 'F':
@@ -53,7 +53,7 @@ int main()
             inPlaceSort(inPlaceSortingFunctions[SELECTION], SELECTION);
             outOfPlaceSort(outOfPlaceSortingFunctions[MERGESORT], MERGESORT);
             inPlaceSort(inPlaceSortingFunctions[QUICKSORT], QUICKSORT);
-            inPlaceSort(inPlaceSortingFunctions[RADIXSORT], RADIXSORT);
+            outOfPlaceSort(outOfPlaceSortingFunctions[RADIXSORT], RADIXSORT);
             break;
         case 'X':
             removeFiles();

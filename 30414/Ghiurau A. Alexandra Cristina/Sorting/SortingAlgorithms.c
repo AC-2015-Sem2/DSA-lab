@@ -6,8 +6,8 @@ void initFunctions(){
     inPlaceSortingFunctions[INSERTION] = insertionSort;
     inPlaceSortingFunctions[SELECTION] = selectionSort;
     inPlaceSortingFunctions[QUICKSORT] = quicksort;
-    inPlaceSortingFunctions[RADIXSORT] = radixSort;
 
+    outOfPlaceSortingFunctions[RADIXSORT] = radixSort;
     outOfPlaceSortingFunctions[MERGESORT] = mergeSort;
 }
 
@@ -219,12 +219,12 @@ void resetCounters()
 ******************* Radix Sort **********************
 ****************************************************/
 
-void radixSort(int *x, int n)
+void radixSort(int *a, int n, int *endResult)
 {
-    int m = getMax(x, n);
+    int m = getMax(a, n);
     int exp = 1;
     for(exp = 1; m/exp > 0; exp *=10)
-        countSort(x,n,exp);
+        countSort(a,n,exp);
 }
 
 

@@ -7,16 +7,16 @@ enum inPlaceSortingFunctions{
     BUBBLE = 0,
     INSERTION = 1,
     SELECTION = 2,
-    QUICKSORT = 3,
-    RADIXSORT = 4
+    QUICKSORT = 3
 };
 
 enum outOfPlaceSortingFunctions{
-    MERGESORT = 0
+    MERGESORT = 0,
+    RADIXSORT = 1
 };
 
-static const char* inPlaceSortingFunctionNames[] = { "Bubble Sort", "Insertion Sort", "Selection Sort", "Quicksort", "Radix Sort" };
-static const char* outOfPlaceSortingFunctionNames[] = { "Merge Sort" };
+static const char* inPlaceSortingFunctionNames[] = { "Bubble Sort", "Insertion Sort", "Selection Sort", "Quicksort" };
+static const char* outOfPlaceSortingFunctionNames[] = { "Merge Sort", "Radix Sort" };
 
 //! counters which will be reset after each sorting execution
 long comparisons;
@@ -26,7 +26,7 @@ long assignments;
 void (*inPlaceSortingFunctions[5])(int *x, int n);
 
 //! 1 out-of-place sorting functions (merge)
-void (*outOfPlaceSortingFunctions[1])(int *a, int n, int *endResult);
+void (*outOfPlaceSortingFunctions[2])(int *a, int n, int *endResult);
 
 void initFunctions();
 
@@ -37,7 +37,7 @@ void bubbleSort(int *x, int n);
 void insertionSort(int *x, int n);
 void selectionSort(int *x, int n);
 void quicksort(int *x, int n);
-void radixSort(int *x, int n);
+void radixSort(int *x, int n, int *endResult);
 
 //! in-place sorting functions
 void mergeSort(int *a, int n, int *endResult);
