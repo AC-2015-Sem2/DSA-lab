@@ -13,7 +13,7 @@ void removeFiles();
 
 int getMax(int *x, int n);
 
-void countSort(int *x, int n, int exp);
+void countSort(int *x, int n, int exp, int *endResult);
 
 char * formFileName(const char * funct, char * type);
 

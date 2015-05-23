@@ -221,10 +221,11 @@ void resetCounters()
 
 void radixSort(int *a, int n, int *endResult)
 {
+    endResult = (int*)malloc(n* sizeof(int));
     int m = getMax(a, n);
     int exp = 1;
     for(exp = 1; m/exp > 0; exp *=10)
-        countSort(a,n,exp);
+        countSort(a,n,exp, endResult);
 }
 
 
