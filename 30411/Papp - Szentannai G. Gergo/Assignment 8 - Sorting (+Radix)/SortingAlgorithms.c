@@ -261,7 +261,7 @@ void radixSort(int *a, int n, int *endResult)  //! LSD (Least Significant Digit)
     int nrOfLevels = getLenghtOfMax(a, n);
     int k;
 
-    for (k = 0; k <= nrOfLevels; k++)
+    for (k = 0; k < nrOfLevels; k++)
     {
         int pos = 0;
         int i = 0;
