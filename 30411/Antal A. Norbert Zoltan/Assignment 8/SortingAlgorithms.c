@@ -221,13 +221,11 @@ void resetCounters()
 ****************************************************/
 
 void radixUTIL (int* x, int n, int digit){
-    int i, nr;
+    int i;
     int* temp1 = (int*)malloc(n*sizeof(int));
     for (i=0; i<n; i++){
-        nr = x[i];
-        nr /= pow(10, digit-1);
-        temp1[i] = nr%10;
-        assignments += 3;
+        temp1[i] = (x[i]/(int)pow(10, digit-1))%10;
+        assignments++;
     }
     int* buckets = (int*)calloc(10, sizeof(int));
     int* temp2 = (int*)malloc(n*sizeof(int));
