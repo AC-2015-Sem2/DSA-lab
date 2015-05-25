@@ -225,9 +225,9 @@ void radixSort (int* x, int n){
     for (i=0; i<n; i++){
         if (x[i]>lNo){
             lNo = x[i];
-            comparisons++;
             assignments++;
         }
+        comparisons++;
     }
     int digitSel = 1;
     int temp[n];
