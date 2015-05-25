@@ -264,7 +264,7 @@ void radixSort (int* x, int n){
     while(lNo != 0){
         lNo /= 10;
         digits++;
-        assignments++;
+        assignments += 2;
     }
     for(i=1; i<=digits; i++){
         radixUTIL(x, n, i);
