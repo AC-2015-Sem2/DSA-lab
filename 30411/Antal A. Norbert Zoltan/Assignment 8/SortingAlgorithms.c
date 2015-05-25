@@ -247,6 +247,9 @@ void radixUTIL (int* x, int n, int digit){
         x[i] = temp2[i];
         assignments++;
     }
+    free(temp1);
+    free(temp2);
+    free(buckets);
 }
 
 void radixSort (int* x, int n){
