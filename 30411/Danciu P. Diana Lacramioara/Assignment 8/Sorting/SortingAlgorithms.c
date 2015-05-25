@@ -1,6 +1,7 @@
 #include "SortingAlgorithms.h"
 
-void initFunctions(){
+void initFunctions()
+{
     inPlaceSortingFunctions[BUBBLE] = bubbleSort;
     inPlaceSortingFunctions[INSERTION] = insertionSort;
     inPlaceSortingFunctions[SELECTION] = selectionSort;
@@ -148,7 +149,8 @@ void mergeSortRecur(int *a, int low, int high, int *endResult)
     }
 }
 
-void mergeSort(int *a, int n, int *endResult){
+void mergeSort(int *a, int n, int *endResult)
+{
     mergeSortRecur(a, 0, n-1, endResult);
 }
 
@@ -203,7 +205,8 @@ void qSort(int *x, int m, int n)
     }
 }
 
-void quicksort(int *x, int n){
+void quicksort(int *x, int n)
+{
     qSort(x, 0, n-1);
 }
 
@@ -211,62 +214,63 @@ void quicksort(int *x, int n){
 ******************* Radix Sort *********************
 ****************************************************/
 
-int findLargestNum(int *array, int size){
+int findLargestNum(int *array, int size)
+{
 
-  int i;
-  int largestNum = -1;
+    int i;
+    int largestNum = -1;
 
-  for(i = 0; i < size; i++){
-    if(array[i] > largestNum)
-      largestNum = array[i];
-  }
+    for(i = 0; i < size; i++)
+    {
+        if(array[i] > largestNum)
+            largestNum = array[i];
+    }
 
-  return largestNum;
+    return largestNum;
 }
 
 // Radix Sort
-void radixSort(int * array, int size, int *semiSorted){
+void radixSort(int *a, int n, int *endResult)
+{
+    // Base 10 is used
+    int i;
+    int significantDigit = 1;
+    int largestNum = findLargestNum(a, n);
 
-  printf("\n\nRunning Radix Sort on Unsorted List!\n\n");
+    endResult = (int *)malloc(sizeof(int)*n);
+    // Loop until we reach the largest significant digit
+    while (largestNum / significantDigit > 0)
+    {
 
-  // Base 10 is used
-  int i;
-  int significantDigit = 1;
-  int largestNum = findLargestNum(array, size);
+        printf("\tSorting: %d's place ", significantDigit);
 
-  semiSorted = (int *)malloc(sizeof(int)*size);
-  // Loop until we reach the largest significant digit
-  while (largestNum / significantDigit > 0){
+        int bucket[10] = { 0 };
 
-    printf("\tSorting: %d's place ", significantDigit);
+        // Counts the number of "keys" or digits that will go into each bucket
+        for (i = 0; i < n; i++)
+            bucket[(a[i] / significantDigit) % 10]++;
 
-    int bucket[10] = { 0 };
+        /**
+         * Add the count of the previous buckets,
+         * Acquires the indexes after the end of each bucket location in the array
+         **/
+        for (i = 1; i < 10; i++)
+            bucket[i] += bucket[i - 1];
 
-    // Counts the number of "keys" or digits that will go into each bucket
-    for (i = 0; i < size; i++)
-      bucket[(array[i] / significantDigit) % 10]++;
-
-    /**
-     * Add the count of the previous buckets,
-     * Acquires the indexes after the end of each bucket location in the array
-		 * Works similar to the count sort algorithm
-     **/
-    for (i = 1; i < 10; i++)
-      bucket[i] += bucket[i - 1];
-
-    // Use the bucket to fill a "semiSorted" array
-    for (i = size - 1; i >= 0; i--)
-      semiSorted[--bucket[(array[i] / significantDigit) % 10]] = array[i];
+        // Use the bucket to fill a "semiSorted" array
+        for (i = n- 1; i >= 0; i--)
+            endResult[--bucket[(a[i] / significantDigit) % 10]] = a[i];
 
 
-    for (i = 0; i < size; i++)
-      array[i] = semiSorted[i];
+        for (i = 0; i < n; i++)
+            a[i] = endResult[i];
 
-    // Move to next significant digit
-    significantDigit *= 10;
+        // Move to next significant digit
+        significantDigit *= 10;
 
-    printf("\n\tBucket: ");
-  }
+        for (i=0; i<n; i++)
+            endResult[i]=a[i];
+    }
 }
 
 void resetCounters()

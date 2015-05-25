@@ -30,7 +30,7 @@
 
 1432012046 d:\codeblocks\sorting\helperfunctions.h
 
-1432569352 d:\codeblocks\sorting\sortingalgorithms.h
+1432569986 d:\codeblocks\sorting\sortingalgorithms.h
 	<stdio.h>
 	<stdlib.h>
 	<conio.h>
@@ -40,6 +40,6 @@
 	"SortingAlgorithms.h"
 	"HelperFunctions.h"
 
-1432569352 source:d:\codeblocks\sorting\sortingalgorithms.c
+1432569994 source:d:\codeblocks\sorting\sortingalgorithms.c
 	"SortingAlgorithms.h"
 

@@ -25,7 +25,7 @@ long assignments;
 //! 3 in-place sorting functions (bubble, insertion, selection, quicksort)
 void (*inPlaceSortingFunctions[4])(int *x, int n);
 
-//! 1 out-of-place sorting functions (merge)
+//! 2 out-of-place sorting functions (merge, radix)
 void (*outOfPlaceSortingFunctions[2])(int *a, int n, int *endResult);
 
 void initFunctions();
@@ -40,6 +40,6 @@ void quicksort(int *x, int n);
 
 //! in-place sorting functions
 void mergeSort(int *a, int n, int *endResult);
-void radixSort(int *array, int size, int *semiSorted);
+void radixSort(int *a, int n, int *endResult);
 
 
