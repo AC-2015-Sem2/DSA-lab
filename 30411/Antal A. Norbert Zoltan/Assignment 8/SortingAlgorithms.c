@@ -219,44 +219,6 @@ void resetCounters()
 ******************* Radix Sort **********************
 ****************************************************/
 
-void radixSort (int* x, int n){
-    int lNo = INT_MIN;
-    int i;
-    for (i=0; i<n; i++){
-        if (x[i]>lNo){
-            lNo = x[i];
-            assignments++;
-        }
-        comparisons++;
-    }
-    int digitSel = 1;
-    int temp[n];
-    while (lNo/digitSel > 0){
-        int buckets[10] = {0};
-        for(i=0; i<n; i++)
-        {
-            buckets[(x[i]/digitSel)%10]++;
-            assignments++;
-        }
-        for(i=1; i<10; i++)
-        {
-            buckets[i]+=buckets[i-1];
-            assignments++;
-        }
-        for(i=n-1; i>=0; i--){
-            temp[--buckets[(x[i]/digitSel)%10]] = x[i];
-            assignments++;
-        }
-        for(i=0; i<n; i++)
-        {
-            x[i]=temp[i];
-            assignments++;
-        }
-        digitSel *= 10;
-        assignments++;
-    }
-}
-
 
 
 
