@@ -248,7 +248,7 @@ int getLenghtOfMax(int *a, int n) // only for positive integers!
     {
         i++;
         aux = aux/10;
-        assignments++;
+        assignments = assignments+2;
     }
     return i;
 }
