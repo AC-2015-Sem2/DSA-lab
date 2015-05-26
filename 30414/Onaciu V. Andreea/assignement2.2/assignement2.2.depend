@@ -1,0 +1,12 @@
+# depslib dependency file v1.0
+1426525496 source:c:\users\andreea\desktop\dsa-andreea\30414\onaciu v. andreea\assignement2.2\main.c
+	<stdio.h>
+	<stdlib.h>
+	"queuesFunctionsh.h"
+
+1426525495 c:\users\andreea\desktop\dsa-andreea\30414\onaciu v. andreea\assignement2.2\queuesfunctionsh.h
+
+1426525496 source:c:\users\andreea\desktop\dsa-andreea\30414\onaciu v. andreea\assignement2.2\queuesfunctions.c
+	<stdlib.h>
+	<stdio.h>
+
