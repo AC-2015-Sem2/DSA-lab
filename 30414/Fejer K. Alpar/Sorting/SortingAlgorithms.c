@@ -217,7 +217,7 @@ void radix(int *x, int n, int max, int exp)
     for (i=1; i<10; i++) lsd[i]+=lsd[i-1];  assignments+=9;
     for (i=0; i<n; i++)
     {
-        a[lsd[(x[i]/exp)%10]]=x[i];
+        a[lsd[(x[i]/exp)%10]--]=x[i];
         assignments++;
     }
     for (i=0; i<n; i++)
