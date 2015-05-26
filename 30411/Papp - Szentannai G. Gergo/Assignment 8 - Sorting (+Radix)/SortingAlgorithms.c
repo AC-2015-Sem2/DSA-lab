@@ -1,15 +1,15 @@
 #include "SortingAlgorithms.h"
-#include "HelperFunctions.h"
-void initFunctions(){
 
+void initFunctions(){
     inPlaceSortingFunctions[BUBBLE] = bubbleSort;
     inPlaceSortingFunctions[INSERTION] = insertionSort;
     inPlaceSortingFunctions[SELECTION] = selectionSort;
     inPlaceSortingFunctions[QUICKSORT] = quicksort;
 
-    outOfPlaceSortingFunctions[RADIXSORT] = radixSort;
     outOfPlaceSortingFunctions[MERGESORT] = mergeSort;
+    outOfPlaceSortingFunctions[RADIX] = radixSort;
 }
+
 
 /****************************************************
 ******************* Bubble Sort *********************
@@ -31,6 +31,7 @@ void bubbleSort(int *x, int n)
         }
 }
 
+
 /****************************************************
 ******************* Insertion Sort ******************
 ****************************************************/
@@ -51,6 +52,7 @@ void insertionSort(int *x, int n)
         }
     }
 }
+
 
 /****************************************************
 ******************* Selection Sort ******************
@@ -82,6 +84,7 @@ void selectionSort(int *x, int n)
         }
     }
 }
+
 
 /****************************************************
 ******************* Merge Sort **********************
@@ -154,6 +157,7 @@ void mergeSort(int *a, int n, int *endResult){
     mergeSortRecur(a, 0, n-1, endResult);
 }
 
+
 /****************************************************
 ******************* Quick Sort **********************
 ****************************************************/
@@ -209,23 +213,86 @@ void quicksort(int *x, int n){
     qSort(x, 0, n-1);
 }
 
-void resetCounters()
-{
-    comparisons=0;
-    assignments=0;
-}
 
 /****************************************************
 ******************* Radix Sort **********************
 ****************************************************/
 
-void radixSort(int *a, int n, int *endResult)
+void copyArray(int *a, int n, int *endResult)
 {
-    endResult = (int*)malloc(n* sizeof(int));
-    int m = getMax(a, n);
-    int exp = 1;
-    for(exp = 1; m/exp > 0; exp *=10)
-        countSort(a,n,exp, endResult);
+    int i;
+    for (i=0; i<n; i++)
+    {
+        *(a+i) = *(endResult+i);
+        assignments++;
+    }
+
+}
+
+int getLenghtOfMax(int *a, int n) // only for positive integers!
+{
+    int aux = *a;
+    int i;
+    for (i=1; i<n; i++)
+    {
+        if (*(a+i)>aux)
+        {
+            aux = *(a+i);
+            comparisons++;
+            assignments++;
+        }
+
+    }
+    i = 1;
+    while(aux>9)
+    {
+        i++;
+        aux = aux/10;
+        assignments = assignments+2;
+    }
+    return i;
+}
+
+void radixSort(int *a, int n, int *endResult)  //! LSD (Least Significant Digit) radix sort
+{
+
+    int Radix = 10;
+    int level = 1;  // number of digit to compare (tens, hundreds, etc.)
+    int nrOfLevels = getLenghtOfMax(a, n);
+    int k;
+
+    for (k = 0; k < nrOfLevels; k++)
+    {
+        int pos = 0;
+        int i = 0;
+        int j;
+
+        for (i=0; i<Radix; i++)
+        {
+            for (j=0; j<n; j++)
+            {
+                if ((a[j]/level)%Radix == i)
+                {
+                    comparisons++;
+                    *(endResult+pos) = *(a+j); // arranging in new array
+                    pos++;
+                    assignments = assignments+2;
+                }
+            }
+        }
+        copyArray(a, n, endResult); // partially sorted array becomes the next one to be sorted
+        level = level*10; // increase level
+        assignments++;
+    }
+}
+
+
+/***************** Other Functions *****************/
+
+void resetCounters()
+{
+    comparisons=0;
+    assignments=0;
 }
 
 

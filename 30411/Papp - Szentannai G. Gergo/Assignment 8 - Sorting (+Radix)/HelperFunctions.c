@@ -72,44 +72,7 @@ void removeFiles()
 
     printf("Done!\n");
 }
-int getMax(int *x, int n)
-{
-    int max = x[0];
-    int i;
-    for(i=0; i<n; i++)
 
-        if(x[i] > max)
-            max = x[i];
-        return max;
-
-}
-//! A function to do counting sort of *x according to the digit represented by exp
-void countSort(int *x, int n, int exp, int *endResult)
-{
-    //int *output = (int*)malloc(n* sizeof(int));
-    int i;
-
-    int count[10] = {0};
-
-    for(i=0; i<n; i++)
-    {
-        count[(x[i]/exp)%10]++;
-    }
-
-    for(i=1; i<10; i++)
-    {
-        count[i]+= count[i-1];
-    }
-
-    for(i=n-1; i>=0; i--)
-    {
-        endResult[count[(x[i]/exp)%10]-1] = x[i];
-        count[(x[i]/exp)%10]--;
-    }
-
-    for(i=0; i<n ;i++)
-        x[i] = endResult[i];
-}
 char * formFileName(const char * funct, char * type){
     char *filename = (char*) malloc(sizeof(char) * 75);
     strcpy(filename,"results/");
