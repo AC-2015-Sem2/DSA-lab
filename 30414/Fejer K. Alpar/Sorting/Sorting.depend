@@ -52,16 +52,16 @@
 
 1432045401 c:\users\fejer\desktop\fejer\30414\fejer k. alpar\sorting\helperfunctions.h
 
-1432654429 c:\users\fejer\desktop\fejer\30414\fejer k. alpar\sorting\sortingalgorithms.h
+1432657745 c:\users\fejer\desktop\fejer\30414\fejer k. alpar\sorting\sortingalgorithms.h
 	<stdio.h>
 	<stdlib.h>
 	<conio.h>
 	<time.h>
 
-1432654498 source:c:\users\fejer\desktop\fejer\30414\fejer k. alpar\sorting\main.c
+1432657036 source:c:\users\fejer\desktop\fejer\30414\fejer k. alpar\sorting\main.c
 	"SortingAlgorithms.h"
 	"HelperFunctions.h"
 
-1432654429 source:c:\users\fejer\desktop\fejer\30414\fejer k. alpar\sorting\sortingalgorithms.c
+1432657534 source:c:\users\fejer\desktop\fejer\30414\fejer k. alpar\sorting\sortingalgorithms.c
 	"SortingAlgorithms.h"
 

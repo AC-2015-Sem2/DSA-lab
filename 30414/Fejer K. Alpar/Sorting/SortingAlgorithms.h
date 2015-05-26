@@ -8,7 +8,7 @@ enum inPlaceSortingFunctions{
     INSERTION = 1,
     SELECTION = 2,
     QUICKSORT = 3,
-    RADIXSORT = 4
+    RADIX = 4
 };
 
 enum outOfPlaceSortingFunctions{
@@ -22,7 +22,7 @@ static const char* outOfPlaceSortingFunctionNames[] = { "Merge Sort" };
 long comparisons;
 long assignments;
 
-//! 4 in-place sorting functions (bubble, insertion, selection, quicksort, radix)
+//! 5 in-place sorting functions (bubble, insertion, selection, quicksort, radix)
 void (*inPlaceSortingFunctions[5])(int *x, int n);
 
 //! 1 out-of-place sorting functions (merge)

@@ -6,6 +6,7 @@ void initFunctions()
     inPlaceSortingFunctions[INSERTION] = insertionSort;
     inPlaceSortingFunctions[SELECTION] = selectionSort;
     inPlaceSortingFunctions[QUICKSORT] = quicksort;
+    inPlaceSortingFunctions[RADIX] = radixSort;
 
     outOfPlaceSortingFunctions[MERGESORT] = mergeSort;
 }
@@ -230,8 +231,8 @@ void radix(int *x, int n, int max, int exp)
 
 void radixSort(int *x, int n)
 {
-    int max=x[0],i;
-    for (i=1; i<n; i++) if (x[i]>max)
+    int max=0,i;
+    for (i=0; i<n; i++) if (x[i]>max)
         {
             max=x[i];
             assignments++;

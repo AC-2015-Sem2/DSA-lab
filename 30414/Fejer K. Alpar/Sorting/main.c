@@ -44,7 +44,7 @@ int main()
             break;
 
         case 'F':
-            inPlaceSort(inPlaceSortingFunctions[RADIXSORT], RADIXSORT);
+            inPlaceSort(inPlaceSortingFunctions[RADIX], RADIX);
             break;
 
         case 'G':
@@ -53,6 +53,7 @@ int main()
             inPlaceSort(inPlaceSortingFunctions[SELECTION], SELECTION);
             outOfPlaceSort(outOfPlaceSortingFunctions[MERGESORT], MERGESORT);
             inPlaceSort(inPlaceSortingFunctions[QUICKSORT], QUICKSORT);
+            inPlaceSort(inPlaceSortingFunctions[RADIX], RADIX);
             break;
         case 'X':
             removeFiles();
