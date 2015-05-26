@@ -1,0 +1,69 @@
+# depslib dependency file v1.0
+1431867083 source:c:\users\alex\desktop\predare\2014-2015 - sem2\dsa-lab\interesting stuff\sorting\helperfunctions.c
+	"HelperFunctions.h"
+	"SortingAlgorithms.h"
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1431865957 c:\users\alex\desktop\predare\2014-2015 - sem2\dsa-lab\interesting stuff\sorting\helperfunctions.h
+
+1431864961 source:c:\users\alex\desktop\predare\2014-2015 - sem2\dsa-lab\interesting stuff\sorting\sortingalgorithms.c
+	"SortingAlgorithms.h"
+
+1431865935 c:\users\alex\desktop\predare\2014-2015 - sem2\dsa-lab\interesting stuff\sorting\sortingalgorithms.h
+	<stdio.h>
+	<stdlib.h>
+	<conio.h>
+	<time.h>
+
+1431867307 source:c:\users\alex\desktop\predare\2014-2015 - sem2\dsa-lab\interesting stuff\sorting\main.c
+	"SortingAlgorithms.h"
+	"HelperFunctions.h"
+
+1432322525 source:c:\users\alexa\desktop\sorting\helperfunctions.c
+	"HelperFunctions.h"
+	"SortingAlgorithms.h"
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1432322525 c:\users\alexa\desktop\sorting\helperfunctions.h
+
+1432322808 c:\users\alexa\desktop\sorting\sortingalgorithms.h
+	<stdio.h>
+	<stdlib.h>
+	<conio.h>
+	<time.h>
+
+1432322524 source:c:\users\alexa\desktop\sorting\main.c
+	"SortingAlgorithms.h"
+	"HelperFunctions.h"
+
+1432322752 source:c:\users\alexa\desktop\sorting\sortingalgorithms.c
+	"SortingAlgorithms.h"
+	"HelperFunctions.h"
+
+1432394512 source:c:\users\alexa\desktop\facultate eu\semestrul ii\data structures and algorithms\myownrepository\dsa-lab\30414\ghiurau a. alexandra cristina\sorting\helperfunctions.c
+	"HelperFunctions.h"
+	"SortingAlgorithms.h"
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1432394534 c:\users\alexa\desktop\facultate eu\semestrul ii\data structures and algorithms\myownrepository\dsa-lab\30414\ghiurau a. alexandra cristina\sorting\helperfunctions.h
+
+1432327946 c:\users\alexa\desktop\facultate eu\semestrul ii\data structures and algorithms\myownrepository\dsa-lab\30414\ghiurau a. alexandra cristina\sorting\sortingalgorithms.h
+	<stdio.h>
+	<stdlib.h>
+	<conio.h>
+	<time.h>
+
+1432327614 source:c:\users\alexa\desktop\facultate eu\semestrul ii\data structures and algorithms\myownrepository\dsa-lab\30414\ghiurau a. alexandra cristina\sorting\main.c
+	"SortingAlgorithms.h"
+	"HelperFunctions.h"
+
+1432394512 source:c:\users\alexa\desktop\facultate eu\semestrul ii\data structures and algorithms\myownrepository\dsa-lab\30414\ghiurau a. alexandra cristina\sorting\sortingalgorithms.c
+	"SortingAlgorithms.h"
+	"HelperFunctions.h"
+
