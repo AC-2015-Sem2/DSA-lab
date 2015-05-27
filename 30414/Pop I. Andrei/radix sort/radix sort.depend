@@ -1,0 +1,19 @@
+# depslib dependency file v1.0
+1432385364 source:c:\users\andrei\desktop\myfolder\dsa-lab\30414\pop i. andrei\radix sort\list.c
+	"list.h"
+
+1432385247 c:\users\andrei\desktop\myfolder\dsa-lab\30414\pop i. andrei\radix sort\list.h
+	<stdio.h>
+	<stdlib.h>
+
+1432385947 source:c:\users\andrei\desktop\myfolder\dsa-lab\30414\pop i. andrei\radix sort\main.c
+	"radix.h"
+
+1432382835 c:\users\andrei\desktop\myfolder\dsa-lab\30414\pop i. andrei\radix sort\radix.h
+	<stdio.h>
+	<stdlib.h>
+
+1432385885 source:c:\users\andrei\desktop\myfolder\dsa-lab\30414\pop i. andrei\radix sort\radix_functions.c
+	"radix.h"
+	"list.h"
+
